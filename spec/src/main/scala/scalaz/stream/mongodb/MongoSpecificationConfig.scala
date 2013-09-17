@@ -11,8 +11,9 @@ sealed trait MongoSpecificationConfig {
 
 /**
  * Basic configuration class to fine-tune mongo runtime. If this configuration is used, then tests spawns own mongo instance
- * and creates databases. Instances are spawn concurrently, so it is completely safe to use specifications, where examples
- * executes concurrently.  Please note concurrent execution may require significant amount of RAM, make sure you have few GB 
+ * and creates databases. Instances are spawn concurrently, so it is completely safe to use specifications that are run in parallel. 
+ * Examples must however be written in a way that they do not use conflicting namespaces.  
+ * Please note concurrent execution may require significant amount of RAM, make sure you have few GB  
  * spare on top of your test environment. 
  *
  * Databases are than cleaned after full spec is processed and instance of mongo is teared down. 

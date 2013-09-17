@@ -19,7 +19,8 @@ case class RunningMongoInstance(port: Int, p: ScalaProcess, dataDir: Path, confi
 
   def db(name: String) = client.getDB(name)
 
-  def shutdown {
+  def shutdown { 
+    MongoInstances.instances.remove(port)
     client.close()
     p.destroy()
     p.exitValue()

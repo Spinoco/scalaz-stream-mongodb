@@ -56,8 +56,8 @@ trait MongoSpecificationBase extends SpecificationLike {
    * @param collName  Name of the mongo collection, on randomly generated if not specified
    */
   abstract class WithMongoCollection(val collName: String = randomMongoName) extends Scope {
-    val dbName: String       = randomMongoName
-    val coll  : DBCollection = instance.db(dbName).getCollection(collName)
+    val dbName    : String       = randomMongoName
+    val collection: DBCollection = instance.db(dbName).getCollection(collName)
   }
 
   /**
@@ -69,9 +69,9 @@ trait MongoSpecificationBase extends SpecificationLike {
   /**
    * Starts database, connects client and perform cleanup after specs are done 
    */
-  override def map(fs: => Fragments) = 
-    Step(instance) ^ 
-      Step(stopOnFail = {instance.shutdown; true }) ^
+  override def map(fs: => Fragments) =
+    Step(instance) ^
+      Step(stopOnFail = true) ^
       fs ^
       Step(instance.shutdown)
 

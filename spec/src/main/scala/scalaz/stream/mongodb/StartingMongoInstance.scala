@@ -20,7 +20,7 @@ import scala.sys.process.{Process => ScalaProcess, ProcessIO}
 case class StartingMongoInstance(port: Int) extends MongoInstance {
 
 
-  private[mongodb] val client = sys.error("unimplemented in this state")
+  private[mongodb] lazy val client = sys.error("unimplemented in this state")
 
   private def echo(is: InputStream, os: OutputStream) = {
     val buffer = Array.ofDim[Byte](1024)
@@ -60,9 +60,9 @@ case class StartingMongoInstance(port: Int) extends MongoInstance {
 
           case Failure(f) =>
             Thread.sleep(delay)
-
+            tryConnection(remains - 1, delay)
         }
-        tryConnection(remains - 1, delay)
+
       }
     }
 
@@ -70,6 +70,7 @@ case class StartingMongoInstance(port: Int) extends MongoInstance {
     // give chance to db to warm up before we will load it 
     tryConnection(50, 200)
 
+    Thread.sleep(2000)
     new MongoClient(ip, port)
 
   }

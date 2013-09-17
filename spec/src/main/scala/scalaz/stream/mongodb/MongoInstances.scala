@@ -27,14 +27,20 @@ object MongoInstances {
             case None =>
               val starting = StartingMongoInstance(from)
               instances.putIfAbsent(from, starting) match {
-                case Some(present) => go(from + 1)
-                case None => starting.start(runtime).fold(
-                  l = err => {
-                    instances.remove(from)
-                    throw err //just rethrow so we can force Examples not to be executed
-                  }
-                  , r = instance => instance
-                )
+                case Some(present) =>
+                  go(from + 1)
+                case None =>
+                  starting.start(runtime).fold(
+                    l = err => {
+                      instances.remove(from)
+                      throw err //just rethrow so we can force Examples not to be executed
+                    }
+                    , r = instance => {
+                      instances.put(from, instance)
+                      instance
+                    }
+
+                  )
               }
           }
 
