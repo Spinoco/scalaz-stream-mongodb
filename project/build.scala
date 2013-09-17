@@ -36,7 +36,6 @@ object build extends Build {
       , "org.mongodb" % "mongo-java-driver" % "2.11.2" withSources()
       , "spinoco" %% "scalaz-stream" % "0.1.0.26-SNAPSHOT" withSources()
     )
-    , libraryDependencies <+= (scalaVersion)("org.scala-lang" % "scala-reflect" % _)
   )
 
   lazy val testLibraries =
@@ -56,29 +55,29 @@ object build extends Build {
     Defaults.defaultSettings ++
       Seq(
         organization := "spinoco"
-        , name := "scalaz-stream-mongodb"
         , version := "0.1.0-SNAPSHOT"
         , scalaVersion := "2.10.2"
-      ,conflictWarning ~= {
+        , conflictWarning ~= {
           cw =>
             cw.copy(filter = (id: ModuleID) => true, group = (id: ModuleID) => id.organization + ":" + id.name, level = Level.Error, failOnConflict = true)
         }
-      ,  shellPrompt := ShellPrompt.buildShellPrompt
+        , shellPrompt := ShellPrompt.buildShellPrompt
       ) ++
       resolverSettings ++
       credentialsSettings ++
       libraries ++
       testLibraries ++
+      compileSettings ++ 
       net.virtualvoid.sbt.graph.Plugin.graphSettings
-      
 
 
   lazy val main = Project("scalaz-stream-mongodb", file("."), settings = buildSettings)
 
-  lazy val core = Project("scalaz-stream-mongodb-core", file("core"), settings = buildSettings)
+  lazy val core = Project("scalaz-stream-mongodb-core", file("core"), settings = buildSettings).dependsOn(spec % "test")
 
   lazy val spec = Project("scalaz-stream-mongodb-spec", file("spec"), settings = buildSettings ++ Seq(
     libraryDependencies += "org.specs2" %% "specs2" % specs2Version withSources() exclude("org.scalaz", "*")
+    , libraryDependencies <+= (scalaVersion)("org.scala-lang" % "scala-reflect" % _)
   ))
 
 }
