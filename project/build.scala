@@ -1,10 +1,12 @@
 
 
 import sbt._
-import sbt.Keys._ 
+import sbt.Keys._
+import scala.Some
 
 object build extends Build {
 
+  lazy val specs2Version = "2.3-scalaz-7.1.0-SNAPSHOT"
 
   lazy val resolverSettings =
     resolvers ++= Seq(
@@ -40,7 +42,7 @@ object build extends Build {
   lazy val testLibraries =
     libraryDependencies ++= Seq(
       "org.scalacheck" %% "scalacheck" % "1.10.0" % "test" withSources()
-      , "org.specs2" %% "specs2" % "2.3-scalaz-7.1.0-SNAPSHOT" % "test" withSources() exclude("org.scalaz", "*")
+      , "org.specs2" %% "specs2" % specs2Version % "test" withSources() exclude("org.scalaz", "*")
     )
 
 
@@ -75,6 +77,9 @@ object build extends Build {
 
   lazy val core = Project("scalaz-stream-mongodb-core", file("core"), settings = buildSettings)
 
+  lazy val spec = Project("scalaz-stream-mongodb-spec", file("spec"), settings = buildSettings ++ Seq(
+    libraryDependencies += "org.specs2" %% "specs2" % specs2Version withSources() exclude("org.scalaz", "*")
+  ))
 
 }
 
