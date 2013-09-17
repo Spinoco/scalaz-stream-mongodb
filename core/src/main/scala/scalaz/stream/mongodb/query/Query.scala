@@ -1,11 +1,16 @@
 package scalaz.stream.mongodb.query
 
 
-import com.mongodb.{BasicDBObject, DBObject}
+import com.mongodb.{DBCollection, BasicDBObject, DBObject}
 
 
 import scalaz.stream.mongodb.collectionSyntax._
+import scalaz.stream.mongodb.MongoCommand
+import scalaz.stream.Process
+import scalaz.stream.Process._
 import scalaz.stream.mongodb.index.CollectionIndex
+import scalaz.concurrent.Task
+import scalaz.stream.mongodb.channel.ChannelResult
 
 
 /**
@@ -33,7 +38,7 @@ case class Query(bq: BasicQuery,
                  snapshotFlag: Option[Boolean] = None,
                  comment: Option[String] = None,
                  readPreference: Option[ReadPreference] = None
-                  ) {
+                  ) extends MongoCommand[DBObject] {
 
   def sort(h: OrderPair, t: OrderPair*): Query = copy(sort = Some(QuerySort(h +: t)))
 
@@ -58,6 +63,39 @@ case class Query(bq: BasicQuery,
   def snapshot(b: Boolean): Query = copy(snapshotFlag = Some(b))
 
   def comment(s: String): Query = copy(comment = Some(s))
+
+
+  def toChannelResult: ChannelResult[DBObject] = {
+    val channel: Channel[Task, DBCollection, Process[Task, DBObject]] =
+      emit(Task.now {
+        c: DBCollection =>
+          Task.now {
+            scalaz.stream.io.resource(
+              Task.delay {
+                val cursor = this.projection match {
+                  case Some(p) => c.find(this.asDBObject, p.asDBObject)
+                  case None => c.find(this.asDBObject)
+                }
+                this.skip.foreach(cursor.skip(_))
+                this.limit.foreach(cursor.limit(_))
+                this.readPreference.foreach(rp => cursor.setReadPreference(rp.asMongoDbReadPreference))
+                cursor
+              })(
+              c => Task.delay(c.close()))(
+              c => Task.delay {
+                if (c.hasNext) {
+                    c.next
+                } else { 
+                  throw End
+                }
+              }
+            )
+          }
+      }).eval
+
+    ChannelResult(channel)
+  }
+
 
   /**
    * Compiles query to mongodb DBOBject representation
