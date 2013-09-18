@@ -22,6 +22,9 @@ trait UpdateSyntax {
   /** syntax for inserting supplied object */
   def insert(o: DBObject): InsertAction = InsertAction(o)
 
+  /** syntax for removing documents */
+  def remove: RemoveAction = RemoveAction()
+
   /** specific syntax for array update operations **/
   def pull[A](qp: QueryPair[A]*): DBObjectUpdatePair = DBObjectUpdatePair("$pull", BasicQuery(qp: _*).o)
 

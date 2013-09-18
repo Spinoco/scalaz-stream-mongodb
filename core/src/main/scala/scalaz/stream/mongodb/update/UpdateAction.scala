@@ -34,13 +34,7 @@ case class UpdateAction(update: SimpleUpdate
           } else {
             q.bq.o
           }
-        wc match {
-          case Some(w) =>
-            WriteResult(c.update(qq, update.asDBObject, upsert, multi, w))
-          case None =>
-            WriteResult(c.update(qq, update.asDBObject, upsert, multi))
-        }
-
+        WriteResult(c.update(qq, update.asDBObject, upsert, multi, wc.getOrElse(c.getWriteConcern))) 
       }
   }
 
