@@ -9,6 +9,7 @@ import scalaz.stream.Process
 import scalaz.stream.Process._
 
 import scala.language.implicitConversions
+import scalaz.stream.mongodb.update.{UpdateSyntax, FindAndModifySyntax}
 
 trait Collection {
 
@@ -16,20 +17,19 @@ trait Collection {
   type JavaScript = String
 
 
-  implicit def dbCollection2Process(c:DBCollection):Process[Task,DBCollection] = emit(Task.now(c)).eval
-  
-  def use(c:DBCollection):Process[Task,DBCollection] = emit(Task.now(c)).eval
+  implicit def dbCollection2Process(c: DBCollection): Process[Task, DBCollection] = emit(Task.now(c)).eval
 
-  implicit class DBCollectionSyntax(c:DBCollection) {
-    def through[A](f: Channel[Task,DBCollection,Process[Task,A]]): Process[Task,A] = {
-      (emit(Task.now(c)).eval through f).flatMap(p=>p)
-    } 
-    
-    def >>>[A](f: Channel[Task,DBCollection,Process[Task,A]]):Process[Task,A] = through(f) 
+  def use(c: DBCollection): Process[Task, DBCollection] = emit(Task.now(c)).eval
+
+  implicit class DBCollectionSyntax(c: DBCollection) {
+    def through[A](f: Channel[Task, DBCollection, Process[Task, A]]): Process[Task, A] = {
+      (emit(Task.now(c)).eval through f).flatMap(p => p)
+    }
+
+    def >>>[A](f: Channel[Task, DBCollection, Process[Task, A]]): Process[Task, A] = through(f)
   }
-  
-  
-  
+
+
 }
 
 
@@ -41,6 +41,7 @@ object collectionSyntax extends Collection
                                 with QuerySyntax with QueryEnums
                                 with CollectionIndexSyntax
                                 with channel.ChannelResultSyntax
+                                with UpdateSyntax with FindAndModifySyntax
                                 with BSONValues with BSONValuesImplicits
  
 
