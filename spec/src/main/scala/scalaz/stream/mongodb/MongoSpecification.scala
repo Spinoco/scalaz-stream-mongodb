@@ -44,7 +44,7 @@ trait MongoSpecificationBase extends SpecificationLike {
    * This enables environment, where dbName is either randomly generated or specified, 
    * and multiple collection may be retrieved by their name  
    */
-  abstract class WithMongoCollections(val dbName: String = randomMongoName) extends Scope {
+  class WithMongoCollections(val dbName: String = randomMongoName) extends Scope {
 
     /** Provides collection of given name */
     def collection(collName: String): DBCollection = instance.db(dbName).getCollection(collName)
@@ -55,7 +55,7 @@ trait MongoSpecificationBase extends SpecificationLike {
    * Helper to create scope for only one collection 
    * @param collName  Name of the mongo collection, on randomly generated if not specified
    */
-  abstract class WithMongoCollection(val collName: String = randomMongoName) extends Scope {
+  class WithMongoCollection(val collName: String = randomMongoName) extends Scope {
     val dbName    : String       = randomMongoName
     val collection: DBCollection = instance.db(dbName).getCollection(collName)
   }

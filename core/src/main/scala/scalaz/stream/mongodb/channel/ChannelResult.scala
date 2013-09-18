@@ -10,6 +10,15 @@ import scalaz._
 
 case class ChannelResult[A](self: Channel[Task, DBCollection, Process[Task, A]]) extends ChannelResultOps[A]
 
+object ChannelResult {
+  
+  /** Helper to wrap simple tasks in channel result **/
+  def apply[A]( f: DBCollection => Task[A]) : ChannelResult[A] =  
+    ChannelResult(wrap(Task.now((coll:DBCollection) => Task.now(wrap(f(coll))))))
+  
+  
+}
+
 
 trait ChannelResultOps[A] extends Ops[Channel[Task, DBCollection, Process[Task, A]]] {
 
