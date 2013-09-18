@@ -6,6 +6,8 @@ import scalaz.concurrent.Task
 import com.mongodb.DBCollection
 import scalaz.stream.Process
 
+import scala.language.implicitConversions
+
 /**
  * Syntax helpers for channel
  */

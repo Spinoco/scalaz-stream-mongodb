@@ -8,9 +8,9 @@ import scalaz.stream.mongodb.collectionSyntax._
 import scalaz.stream.mongodb.MongoCommand
 import scalaz.stream.Process
 import scalaz.stream.Process._
-import scalaz.stream.mongodb.index.CollectionIndex
 import scalaz.concurrent.Task
 import scalaz.stream.mongodb.channel.ChannelResult
+import scalaz.stream.mongodb.index.CollectionIndex 
 
 
 /**
@@ -64,6 +64,9 @@ case class Query(bq: BasicQuery,
 
   def comment(s: String): Query = copy(comment = Some(s))
 
+  /** Applies action on query result **/
+  def and[A](a: QueryAction[A]): ChannelResult[A] = a.withQuery(this)
+
 
   def toChannelResult: ChannelResult[DBObject] = {
     val channel: Channel[Task, DBCollection, Process[Task, DBObject]] =
@@ -84,8 +87,8 @@ case class Query(bq: BasicQuery,
               c => Task.delay(c.close()))(
               c => Task.delay {
                 if (c.hasNext) {
-                    c.next
-                } else { 
+                  c.next
+                } else {
                   throw End
                 }
               }
