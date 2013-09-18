@@ -1,6 +1,6 @@
 package scalaz.stream.mongodb.update
 
-import com.mongodb.{WriteResult, BasicDBObject, WriteConcern}
+import com.mongodb.{BasicDBObject, WriteConcern}
 import scala.Some
 import scalaz.stream.mongodb.query.{Query, QueryAction}
 import scalaz.stream.mongodb.channel.ChannelResult
@@ -16,10 +16,10 @@ import scalaz.concurrent.Task
  * @param wc            WriteConcern to use
  */
 case class UpdateAction(update: SimpleUpdate
-                        ,upsert: Boolean = false
-                       , multi: Boolean = false
-                       , isIsolated: Boolean = false
-                        ,wc: Option[WriteConcern] = None) extends QueryAction[WriteResult] {
+                        , upsert: Boolean = false
+                        , multi: Boolean = false
+                        , isIsolated: Boolean = false
+                        , wc: Option[WriteConcern] = None) extends QueryAction[WriteResult] {
 
 
   def withQuery(q: Query): ChannelResult[WriteResult] = ChannelResult {
@@ -33,15 +33,15 @@ case class UpdateAction(update: SimpleUpdate
             o
           } else {
             q.bq.o
-          } 
+          }
         wc match {
           case Some(w) =>
-            c.update(qq, update.asDBObject, upsert, multi,w)
+            WriteResult(c.update(qq, update.asDBObject, upsert, multi, w))
           case None =>
-            c.update(qq, update.asDBObject, upsert, multi)
+            WriteResult(c.update(qq, update.asDBObject, upsert, multi))
         }
-        
-      } 
+
+      }
   }
 
   def ensure(w: WriteConcern) = copy(wc = Some(w))

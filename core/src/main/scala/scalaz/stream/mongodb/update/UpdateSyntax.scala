@@ -16,6 +16,12 @@ trait UpdateSyntax {
   /** syntax creating update action that replaces the whole document */
   def update(o: DBObject): UpdateAction = UpdateAction(ReplaceDocument(o))
 
+  /** syntax for saving supplied uobject */
+  def save(o: DBObject): SaveAction = SaveAction(o)
+
+  /** syntax for inserting supplied object */
+  def insert(o: DBObject): InsertAction = InsertAction(o)
+
   /** specific syntax for array update operations **/
   def pull[A](qp: QueryPair[A]*): DBObjectUpdatePair = DBObjectUpdatePair("$pull", BasicQuery(qp: _*).o)
 
