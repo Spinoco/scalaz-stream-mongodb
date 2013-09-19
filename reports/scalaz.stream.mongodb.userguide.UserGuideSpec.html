@@ -1,0 +1,80 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <style type="text/css" media="all">
+        @import url('./css/maven-base.css');
+        @import url('./css/maven-theme.css');
+      </style>
+      <link href="./css/prettify.css" type="text/css" rel="stylesheet" />
+      <script type="text/javascript" src="./css/prettify.js"></script>
+      <link rel="stylesheet" href="./css/print.css" type="text/css" media="print" />
+      <link href="./css/tooltip.css" rel="stylesheet" type="text/css" />
+      <link href="./css/specs2-user.css" type="text/css" rel="stylesheet" />
+
+      <script type="text/javascript" src="./css/jquery.js"></script>
+      <script type="text/javascript" src="./css/jquery.cookie.js"></script>
+      <script type="text/javascript" src="./css/jquery.hotkeys.js"></script>
+      <script type="text/javascript" src="./css/jquery.jstree.js"></script>
+      <script type="text/javascript" src="./css/tooltip.js"></script>
+      <script type="text/javascript" src="./js/specs2-user.js"></script>
+      <script language="javascript">$.getScript("./js/specs2-user.js", initUserScript(document));</script>
+      <script language="javascript">
+      function init() {  prettyPrint(); };
+      /* found on : http://www.tek-tips.com/faqs.cfm?fid=6620 */
+      String.prototype.endsWith = function(str) { return (this.match(str+'$') == str) };
+      function changeWidth(id,width) {  document.getElementById(id).style.width = width; };
+      function changeMarginLeft(id, margin) { document.getElementById(id).style.marginLeft = margin; };
+      function toggleImage(image) {
+        if (image.src.endsWith('images/expanded.gif')) 
+          image.src = image.src.replace('expanded', 'collapsed');
+        else 
+          image.src = image.src.replace('collapsed', 'expanded');
+      };
+      function showHide(id) {
+        element = document.getElementById(id);
+        element.style.display = (element.style.display == 'block')? 'none' : 'block';
+      };
+      function showHideByClass(name) {
+        var elements = document.getElementsByClassName(name);
+        for (i = 0; i < elements.length; i++) {
+          elements[i].style.display = (elements[i].style.display == 'none') ? elements[i].style.display = '': 'none';
+        }
+      };
+      function showByClass(name) {
+        var elements = document.getElementsByClassName(name);
+        for (i = 0; i < elements.length; i++) {
+          elements[i].style.display = 'block';
+        }
+      };
+      function hideByClass(name) {
+        var elements = document.getElementsByClassName(name);
+        for (i = 0; i < elements.length; i++) {
+          elements[i].style.display = 'none';
+        }
+      };
+      function showById(id) {
+        document.getElementById(id).style.display = ''
+      };
+      function hideById(id) {
+        document.getElementById(id).style.display = 'none'
+      };
+    </script>
+      <script language="javascript">window.onload=init;</script>
+      <!-- the tabber.js file must be loaded after the onload function has been set, in order to run the
+           tabber code, then the init code -->
+      <script type="text/javascript" src="./css/tabber.js"></script>
+      <link rel="stylesheet" href="./css/tabber.css" type="text/css" media="screen" />
+      <title>Mongo Streams User Guide</title>
+    </head><body><div class="colmask threecol">
+            <div class="colmid">
+              <div class="colleft">
+                <div class="col1"><div id="central"><html><title>Mongo Streams User Guide</title><a name="Mongo+Streams+User+Guide"><h2 specId="1276742822">Mongo Streams User Guide</h2></a><status class="ok"><div style="display: show; text-indent:30px;"><p>This library offers wrapper over standard mongodb java driver to work with scalaz-stream library. </p></div></status><subtoc specId="1288944986"></subtoc><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_pending_sml.gif" /> Basic Usage <a href="scalaz.stream.mongodb.userguide.BasicUsageSpec.html" tooltip="">Basic usage patterns</a></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><subtoc specId="1935709598"></subtoc><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> Query Predicate DSL <a href="scalaz.stream.mongodb.query.QueryBuilderSpec.html" tooltip="">Query DSL</a></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><subtoc specId="800955333"></subtoc><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> Query DSL <a href="scalaz.stream.mongodb.query.CollectionQuerySpec.html" tooltip="">Querying on mongoDB collection</a></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><subtoc specId="1979752004"></subtoc><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> Updating Collection <a href="scalaz.stream.mongodb.update.UpdateBuilderSpec.html" tooltip="">UpdateBuilderSpec</a></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><subtoc specId="714853497"></subtoc><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> Find and Modify on Collection <a href="scalaz.stream.mongodb.update.CollectionFindAndModifySpec.html" tooltip="">Find And Modify</a></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><subtoc specId="1677600503"></subtoc><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> Inserting or Saving new document <a href="scalaz.stream.mongodb.update.InsertAndSaveSpec.html" tooltip="">Inserting documents to collection</a></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><subtoc specId="1939681929"></subtoc><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> Removing document <a href="scalaz.stream.mongodb.update.CollectionRemoveSpec.html" tooltip="">Removing documents</a></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><subtoc specId="651829647"></subtoc><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> Index DSL <a href="scalaz.stream.mongodb.index.IndexBuilderSpec.html" tooltip="">Collection Indexes</a></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><subtoc specId="323632744"></subtoc><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> Removing Index <a href="scalaz.stream.mongodb.index.CollectionEnsureIndexSpec.html" tooltip="">Ensuring Index on collection</a></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><subtoc specId="1965973070"></subtoc><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> Dropping Index <a href="scalaz.stream.mongodb.index.CollectionDropIndexSpec.html" tooltip="">Dropping Index on collection</a></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><subtoc specId="1695259484"></subtoc><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> BSON DSL <a href="scalaz.stream.mongodb.bson.BSONSpec.html" tooltip="">BSONSpec</a></div></status><status class="ok"><div style="display: show; text-indent:5px;"></div></status></html></div></div>
+                <div class="col2"><div id="leftcolumn"><div id="tree">
+      <ul><li id="1276742822"><a href="scalaz.stream.mongodb.userguide.UserGuideSpec.html#Mongo+Streams+User+Guide">Mongo Streams User Guide</a>
+            <ul></ul>
+          </li></ul>
+      <script>$(function () {  $('#tree').jstree({'core':{'initially_open':['1276742822','1276742822'], 'animation':200}, 'plugins':['themes', 'html_data']}); });</script>
+    </div></div></div>
+                <div class="col3"><div id="rightcolumn"></div></div>
+              </div>
+            </div>
+          </div></body></html>

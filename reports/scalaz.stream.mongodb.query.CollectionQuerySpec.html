@@ -1,0 +1,142 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <style type="text/css" media="all">
+        @import url('./css/maven-base.css');
+        @import url('./css/maven-theme.css');
+      </style>
+      <link href="./css/prettify.css" type="text/css" rel="stylesheet" />
+      <script type="text/javascript" src="./css/prettify.js"></script>
+      <link rel="stylesheet" href="./css/print.css" type="text/css" media="print" />
+      <link href="./css/tooltip.css" rel="stylesheet" type="text/css" />
+      <link href="./css/specs2-user.css" type="text/css" rel="stylesheet" />
+
+      <script type="text/javascript" src="./css/jquery.js"></script>
+      <script type="text/javascript" src="./css/jquery.cookie.js"></script>
+      <script type="text/javascript" src="./css/jquery.hotkeys.js"></script>
+      <script type="text/javascript" src="./css/jquery.jstree.js"></script>
+      <script type="text/javascript" src="./css/tooltip.js"></script>
+      <script type="text/javascript" src="./js/specs2-user.js"></script>
+      <script language="javascript">$.getScript("./js/specs2-user.js", initUserScript(document));</script>
+      <script language="javascript">
+      function init() {  prettyPrint(); };
+      /* found on : http://www.tek-tips.com/faqs.cfm?fid=6620 */
+      String.prototype.endsWith = function(str) { return (this.match(str+'$') == str) };
+      function changeWidth(id,width) {  document.getElementById(id).style.width = width; };
+      function changeMarginLeft(id, margin) { document.getElementById(id).style.marginLeft = margin; };
+      function toggleImage(image) {
+        if (image.src.endsWith('images/expanded.gif')) 
+          image.src = image.src.replace('expanded', 'collapsed');
+        else 
+          image.src = image.src.replace('collapsed', 'expanded');
+      };
+      function showHide(id) {
+        element = document.getElementById(id);
+        element.style.display = (element.style.display == 'block')? 'none' : 'block';
+      };
+      function showHideByClass(name) {
+        var elements = document.getElementsByClassName(name);
+        for (i = 0; i < elements.length; i++) {
+          elements[i].style.display = (elements[i].style.display == 'none') ? elements[i].style.display = '': 'none';
+        }
+      };
+      function showByClass(name) {
+        var elements = document.getElementsByClassName(name);
+        for (i = 0; i < elements.length; i++) {
+          elements[i].style.display = 'block';
+        }
+      };
+      function hideByClass(name) {
+        var elements = document.getElementsByClassName(name);
+        for (i = 0; i < elements.length; i++) {
+          elements[i].style.display = 'none';
+        }
+      };
+      function showById(id) {
+        document.getElementById(id).style.display = ''
+      };
+      function hideById(id) {
+        document.getElementById(id).style.display = 'none'
+      };
+    </script>
+      <script language="javascript">window.onload=init;</script>
+      <!-- the tabber.js file must be loaded after the onload function has been set, in order to run the
+           tabber code, then the init code -->
+      <script type="text/javascript" src="./css/tabber.js"></script>
+      <link rel="stylesheet" href="./css/tabber.css" type="text/css" media="screen" />
+      <title>Querying on mongoDB collection</title>
+    </head><body><div class="colmask threecol">
+            <div class="colmid">
+              <div class="colleft">
+                <div class="col1"><div id="central"><html><title>Querying on mongoDB collection</title><a name="Querying+on+mongoDB+collection"><h2 specId="859962741">Querying on mongoDB collection</h2></a><status class="ok"><p></p></status><status class="ok"><p></p></status><status class="ok"><div style="display: show; text-indent:20px;"><pre><code class="prettyprint">Basic construct to query on mongo is to use `query` command. Query command creates process of BSONObjects, that can be further
+processed by scalaz.stream process combinator. Query supports simple DSL that can be further combined to produce remove, update and modify operations. 
+
+to make a simple query that return process of BSONObjects you can do 
+</code></pre></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">query(&quot;key&quot; -&gt; &quot;value&quot;)</code><br /></div></status><status class="ok"><div style="display: show; text-indent:35px;"><pre><code class="prettyprint">if you want limit the amount of the documents returned you can use limit and skip combinators
+</code></pre></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">query(&quot;key&quot; -&gt; &quot;value&quot;) skip 1 limit 3</code><br /></div></status><status class="ok"><div style="display: show; text-indent:35px;"><pre><code class="prettyprint">if you want to sort documents before returning them back you can use sort combinator. Sort combinator allows you to specify order and multiple keys 
+that will be used when sorting. Please note two syntax for ordering allowed 
+</code></pre></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">query(&quot;key&quot; -&gt; &quot;value&quot;) sort(&quot;key&quot; Ascending, &quot;otherKey&quot; -&gt; Order.Descending)</code><br /></div></status><status class="ok"><div style="display: show; text-indent:20px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">query(&quot;key&quot; -&gt; &quot;value&quot;) orderby(&quot;key&quot; Ascending, &quot;otherKey&quot; -&gt; Order.Descending)</code><br /></div></status><status class="ok"><div style="display: show; text-indent:35px;"><pre><code class="prettyprint"># Replica sets #
+
+MongoDb allows various functionality when working with replica sets. Essentially the possible options are described in ReadPreference on [[http://docs.mongodb.org/manual/core/read-preference/]].
+All of these options are supported via `from` combinator:
+</code></pre>
+<pre><code class="prettyprint">import scalaz.stream.mongodb.query.ReadPreference._
+      query(&quot;key&quot; -&gt; &quot;value&quot;) from Nearest.preferred(false)
+</code></pre>
+<pre><code class="prettyprint">In mongoDB environments potentially you want to read certain data only with specific members. This can be be achieved by tagging the read preference : 
+</code></pre>
+<pre><code class="prettyprint">import scalaz.stream.mongodb.query.ReadPreference._
+      query(&quot;key&quot; -&gt; &quot;value&quot;) from Nearest.preferred(true).tags(&quot;disk&quot; -&gt; &quot;ssd&quot;, &quot;memory&quot; -&gt; &quot;huge&quot;)
+</code></pre>
+<pre><code class="prettyprint"># Projections # 
+
+For the complex documents you maybe want to get only certain data as result of the query to reduce time when deserializing data. This is achieved 
+with project combinator: 
+
+`query(&quot;key&quot; -&gt; &quot;value&quot;) project(&quot;key1&quot;, &quot;key2&quot; $, &quot;key3&quot; first 4, &quot;key4&quot; last 6, &quot;key5&quot; skip 6 limit 5, &quot;key6&quot; elementMatch (&quot;ek&quot; -&gt; 1))`   
+
+As you may see projection combinator acepts many form of limiting the content of documents returned. Lets describe their meaning 
+Further you can see in details description of their functionality in mongoDB docs on [[http://docs.mongodb.org/manual/reference/operator/projection/]]
+
+To return only key1 from documents  :                     
+</code></pre></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">query() project (&quot;key1&quot;)</code><br /></div></status><status class="ok"><div style="display: show; text-indent:20px;"><pre><code class="prettyprint">To return only first element of any array under key1:     
+</code></pre></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">query(&quot;key3&quot; &gt;= 1) project (&quot;key3&quot; $)</code><br /></div></status><status class="ok"><div style="display: show; text-indent:20px;"><pre><code class="prettyprint">To return only first 4 elements of any array under key1:  
+</code></pre></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">query() project (&quot;key1&quot; first 4)</code><br /></div></status><status class="ok"><div style="display: show; text-indent:20px;"><pre><code class="prettyprint">To return only last 4 elements of any array under key1:   
+</code></pre></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">query() project (&quot;key1&quot; last 4)</code><br /></div></status><status class="ok"><div style="display: show; text-indent:20px;"><pre><code class="prettyprint">To return elements 4-6 from an array under key1:          
+</code></pre></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">query() project (&quot;key1&quot; skip 3 limit 3)</code><br /></div></status><status class="ok"><div style="display: show; text-indent:20px;"><pre><code class="prettyprint">To return elements that have ek == 1 under key 1:         
+</code></pre></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">query() project (&quot;key1&quot; elementMatch (&quot;ek&quot; === 1))</code><br /></div></status><status class="ok"><div style="display: show; text-indent:35px;"><pre><code class="prettyprint"># Explain Query #
+
+To see the actual indexes that are consulted when running the query and additional statistics, query may be run in explain mode. 
+See [[http://docs.mongodb.org/manual/reference/method/cursor.explain/#cursor.explain]]: 
+</code></pre></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">query(&quot;key&quot; -&gt; &quot;value&quot;) explain (ExplainVerbosity.Normal)</code><br /></div></status><status class="ok"><div style="display: show; text-indent:20px;"><pre><code class="prettyprint">or 
+</code></pre></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">query(&quot;key&quot; -&gt; &quot;value&quot;) explain (ExplainVerbosity.Verbose)</code><br /></div></status><status class="ok"><div style="display: show; text-indent:10px;"><pre><code class="prettyprint"># Query Hints #
+
+Query can contain index hints to choose appropriate index for given query.
+
+This indicates index named &quot;indexName&quot; shall be used
+</code></pre></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">query(&quot;key&quot; -&gt; &quot;value&quot;) hint (&quot;indexName&quot;)</code><br /></div></status><status class="ok"><div style="display: show; text-indent:35px;"><pre><code class="prettyprint">or this picks index on &quot;key1&quot; to be used with query
+</code></pre></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">query(&quot;key&quot; -&gt; &quot;value&quot;) hint (index(&quot;key1&quot; Ascending))</code><br /></div></status><status class="ok"><div style="display: show; text-indent:35px;"><pre><code class="prettyprint"># Query snapshot #
+
+Query can be in &quot;snapshot&quot; mode to make sure that documents are not returned multiple times when iterating over results. 
+Queries with size less than 1M are automatically in snapshot mode. 
+
+`query(&quot;key&quot; -&gt; &quot;value&quot;) snapshot (true)`  
+
+
+# Query comment #
+
+Query can be commented to have this comment appear in profile log
+</code></pre></div></status><status class="ok"><div style="display: show; text-indent:0px;"><code class="prettyprint">query(&quot;key1&quot; -&gt; &quot;value&quot;) comment (&quot;Long duration query&quot;)</code></div></status><status class="ok"><div style="display: show; text-indent:30px;"></div></status><status class="ok"><br /></status><table class="dataTable">
+        <tr><th colSpan="2">Total for specification CollectionQuerySpec</th></tr>
+        <tr><td>Finished in</td><td class="info">31 seconds, 683 ms</td></tr>
+        <tr><td>Results</td><td class="success">14 examples, 1400 expectations, 0 failure, 0 error</td></tr>
+      </table></html></div></div>
+                <div class="col2"><div id="leftcolumn"><div id="tree">
+      <ul><li id="859962741"><a href="scalaz.stream.mongodb.query.CollectionQuerySpec.html#Querying+on+mongoDB+collection">Querying on mongoDB collection</a>
+            
+          </li></ul>
+      <script>$(function () {  $('#tree').jstree({'core':{'initially_open':['859962741','859962741'], 'animation':200}, 'plugins':['themes', 'html_data']}); });</script>
+    </div></div></div>
+                <div class="col3"><div id="rightcolumn"></div></div>
+              </div>
+            </div>
+          </div></body></html>

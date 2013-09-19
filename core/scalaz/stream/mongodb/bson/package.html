@@ -1,0 +1,222 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>bson - scalaz.stream.mongodb.bson</title>
+          <meta name="description" content="bson - scalaz.stream.mongodb.bson" />
+          <meta name="keywords" content="bson scalaz.stream.mongodb.bson" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'scalaz.stream.mongodb.bson.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="scalaz">scalaz</a>.<a href="../../package.html" class="extype" name="scalaz.stream">stream</a>.<a href="../package.html" class="extype" name="scalaz.stream.mongodb">mongodb</a></p>
+        <h1>bson</h1>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">bson</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scalaz.stream.mongodb.bson.BSONSerializable" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BSONSerializable[A]extendsAnyRef"></a>
+      <a id="BSONSerializable[A]:BSONSerializable[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="BSONSerializable.html"><span class="name">BSONSerializable</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Instance of BSONSerializable must exists for every scala type that may be directly converted to BSON.</p>
+    </li><li name="scalaz.stream.mongodb.bson.BSONValueTag" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BSONValueTagextendsAnyRef"></a>
+      <a id="BSONValueTag:BSONValueTag"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="BSONValueTag.html"><span class="name">BSONValueTag</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">tag used to mark BSON Values *</p>
+    </li><li name="scalaz.stream.mongodb.bson.BSONValues" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BSONValuesextendsAnyRef"></a>
+      <a id="BSONValues:BSONValues"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="BSONValues.html"><span class="name">BSONValues</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">We do a little of type  <code>magic</code> here to get all witnesses and implicits right
+on supported types
+</p>
+    </li><li name="scalaz.stream.mongodb.bson.BSONValuesImplicits" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BSONValuesImplicitsextendsAnyRef"></a>
+      <a id="BSONValuesImplicits:BSONValuesImplicits"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="BSONValuesImplicits.html"><span class="name">BSONValuesImplicits</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Various conversions for tagged values
+</p>
+    </li><li name="scalaz.stream.mongodb.bson.CollectionBSONOps" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="CollectionBSONOps[C[_]&lt;:Iterable[_]]extendsOps[C[_]]"></a>
+      <a id="CollectionBSONOps[C[_]&lt;:Iterable[_]]:CollectionBSONOps[C]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="CollectionBSONOps.html"><span class="name">CollectionBSONOps</span></a><span class="tparams">[<span name="C">C<span class="tparams">[<span name="_">_</span>]</span> &lt;: <span class="extype" name="scala.Iterable">Iterable</span>[_]</span>]</span><span class="result"> extends <span class="extype" name="scalaz.syntax.Ops">Ops</span>[<span class="extype" name="scalaz.stream.mongodb.bson.CollectionBSONOps.C">C</span>[_]]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">User: pach
+Date: 7/27/13
+Time: 12:22 AM
+(c) 2011-2013 Spinoco Czech Republic, a.</p>
+    </li><li name="scalaz.stream.mongodb.bson.DBObjectOps" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="DBObjectOps[A&lt;:org.bson.BSONObject]extendsOps[A]"></a>
+      <a id="DBObjectOps[A&lt;:BSONObject]:DBObjectOps[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="DBObjectOps.html"><span class="name">DBObjectOps</span></a><span class="tparams">[<span name="A">A &lt;: <span class="extype" name="org.bson.BSONObject">BSONObject</span></span>]</span><span class="result"> extends <span class="extype" name="scalaz.syntax.Ops">Ops</span>[<span class="extype" name="scalaz.stream.mongodb.bson.DBObjectOps.A">A</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Operations on mongodb object.</p>
+    </li><li name="scalaz.stream.mongodb.bson.MapBSONOps" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="MapBSONOps[Map[_,_]]extendsOps[Map[_,_]]"></a>
+      <a id="MapBSONOps[Map[_,_]]:MapBSONOps[Map]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MapBSONOps.html"><span class="name">MapBSONOps</span></a><span class="tparams">[<span name="Map">Map<span class="tparams">[<span name="_">_</span>, <span name="_">_</span>]</span></span>]</span><span class="result"> extends <span class="extype" name="scalaz.syntax.Ops">Ops</span>[<span class="extype" name="scalaz.stream.mongodb.bson.MapBSONOps.Map">Map</span>[_, _]]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">User: pach
+Date: 7/27/13
+Time: 12:21 AM
+(c) 2011-2013 Spinoco Czech Republic, a.</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scalaz.stream.mongodb.bson.BSONSerializable" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BSONSerializable"></a>
+      <a id="BSONSerializable:BSONSerializable"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="BSONSerializable$.html"><span class="name">BSONSerializable</span></a>
+      </span>
+      </h4>
+      
+    </li><li name="scalaz.stream.mongodb.bson.BSONType" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BSONType"></a>
+      <a id="BSONType:BSONType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="BSONType$.html"><span class="name">BSONType</span></a><span class="result"> extends <span class="extype" name="scala.Enumeration">Enumeration</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Helper to map proper BSON Types
+</p>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+      <script defer="defer" type="text/javascript" id="jquery-js" src="../../../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../../../lib/template.js"></script>
+    </body>
+      </html>

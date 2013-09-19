@@ -1,0 +1,242 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>mongodb - scalaz.stream.mongodb</title>
+          <meta name="description" content="mongodb - scalaz.stream.mongodb" />
+          <meta name="keywords" content="mongodb scalaz.stream.mongodb" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'scalaz.stream.mongodb.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../../../lib/package_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="scalaz">scalaz</a>.<a href="../package.html" class="extype" name="scalaz.stream">stream</a></p>
+        <h1>mongodb</h1>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">mongodb</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scalaz.stream.mongodb.ExternalMongoInstance" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ExternalMongoInstanceextendsMongoInstancewithProductwithSerializable"></a>
+      <a id="ExternalMongoInstance:ExternalMongoInstance"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ExternalMongoInstance.html"><span class="name">ExternalMongoInstance</span></a><span class="params">(<span name="config">config: <a href="MongoInstanceConfig.html" class="extype" name="scalaz.stream.mongodb.MongoInstanceConfig">MongoInstanceConfig</a></span>)</span><span class="result"> extends <a href="MongoInstance.html" class="extype" name="scalaz.stream.mongodb.MongoInstance">MongoInstance</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">External mongo instance.</p>
+    </li><li name="scalaz.stream.mongodb.MongoInstance" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="MongoInstanceextendsAnyRef"></a>
+      <a id="MongoInstance:MongoInstance"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MongoInstance.html"><span class="name">MongoInstance</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Abstracts over various mongo instance environments the specs can be run within.</p>
+    </li><li name="scalaz.stream.mongodb.MongoInstanceConfig" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoInstanceConfigextendsMongoSpecificationConfigwithProductwithSerializable"></a>
+      <a id="MongoInstanceConfig:MongoInstanceConfig"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="MongoInstanceConfig.html"><span class="name">MongoInstanceConfig</span></a><span class="params">(<span name="bindPort">bindPort: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">27017</span></span>, <span name="bindIp">bindIp: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;127.0.0.1&quot;</span></span>, <span name="prefix">prefix: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;spec_&quot;</span></span>, <span name="uniqueName">uniqueName: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">true</span></span>, <span name="dropDatabases">dropDatabases: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">true</span></span>)</span><span class="result"> extends <a href="MongoSpecificationConfig.html" class="extype" name="scalaz.stream.mongodb.MongoSpecificationConfig">MongoSpecificationConfig</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">If this configuration is used, mongo will connect to current database on given port and ip and will use that
+database to perform tests.</p>
+    </li><li name="scalaz.stream.mongodb.MongoInstanceSpecification" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="MongoInstanceSpecificationextendsMongoSpecificationBase"></a>
+      <a id="MongoInstanceSpecification:MongoInstanceSpecification"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MongoInstanceSpecification.html"><span class="name">MongoInstanceSpecification</span></a><span class="result"> extends <a href="MongoSpecificationBase.html" class="extype" name="scalaz.stream.mongodb.MongoSpecificationBase">MongoSpecificationBase</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Specification, that when used will connect to singel instance and for each spec will create own database that is shared
+between examples
+</p>
+    </li><li name="scalaz.stream.mongodb.MongoRuntimeConfig" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoRuntimeConfigextendsMongoSpecificationConfigwithProductwithSerializable"></a>
+      <a id="MongoRuntimeConfig:MongoRuntimeConfig"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="MongoRuntimeConfig.html"><span class="name">MongoRuntimeConfig</span></a><span class="params">(<span name="bindPort">bindPort: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">27717</span></span>, <span name="bindIp">bindIp: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;127.0.0.1&quot;</span></span>, <span name="dataPath">dataPath: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="java.nio.file.Path">Path</span>] = <span class="symbol">scala.None</span></span>, <span name="nssSize">nssSize: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">1</span></span>, <span name="noPrealloc">noPrealloc: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">true</span></span>, <span name="cmdLinePars">cmdLinePars: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="mongodPath">mongodPath: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="java.nio.file.Path">Path</span>] = <span class="symbol">scala.None</span></span>, <span name="mongodEchoStdOut">mongodEchoStdOut: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="java.io.OutputStream">OutputStream</span>] = <span class="symbol">scala.None</span></span>, <span name="mongodEchoStdErr">mongodEchoStdErr: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="java.io.OutputStream">OutputStream</span>] = <span class="symbol">scala.None</span></span>)</span><span class="result"> extends <a href="MongoSpecificationConfig.html" class="extype" name="scalaz.stream.mongodb.MongoSpecificationConfig">MongoSpecificationConfig</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Basic configuration class to fine-tune mongo runtime.</p>
+    </li><li name="scalaz.stream.mongodb.MongoRuntimeSpecification" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="MongoRuntimeSpecificationextendsMongoSpecificationBase"></a>
+      <a id="MongoRuntimeSpecification:MongoRuntimeSpecification"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MongoRuntimeSpecification.html"><span class="name">MongoRuntimeSpecification</span></a><span class="result"> extends <a href="MongoSpecificationBase.html" class="extype" name="scalaz.stream.mongodb.MongoSpecificationBase">MongoSpecificationBase</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Specification, that will spawn the mongo databases for each spec instance run and shares the instance between examples
+</p>
+    </li><li name="scalaz.stream.mongodb.MongoSpecificationBase" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="MongoSpecificationBaseextendsSpecificationLike"></a>
+      <a id="MongoSpecificationBase:MongoSpecificationBase"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MongoSpecificationBase.html"><span class="name">MongoSpecificationBase</span></a><span class="result"> extends <span class="extype" name="org.specs2.SpecificationLike">SpecificationLike</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Base mongo specification trait.</p>
+    </li><li name="scalaz.stream.mongodb.MongoSpecificationConfig" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="MongoSpecificationConfigextendsAnyRef"></a>
+      <a id="MongoSpecificationConfig:MongoSpecificationConfig"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MongoSpecificationConfig.html"><span class="name">MongoSpecificationConfig</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="scalaz.stream.mongodb.RunningMongoInstance" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RunningMongoInstanceextendsMongoInstancewithProductwithSerializable"></a>
+      <a id="RunningMongoInstance:RunningMongoInstance"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="RunningMongoInstance.html"><span class="name">RunningMongoInstance</span></a><span class="params">(<span name="port">port: <span class="extype" name="scala.Int">Int</span></span>, <span name="p">p: <span class="extype" name="scala.sys.process.Process">scala.sys.process.Process</span></span>, <span name="dataDir">dataDir: <span class="extype" name="java.nio.file.Path">Path</span></span>, <span name="config">config: <a href="MongoRuntimeConfig.html" class="extype" name="scalaz.stream.mongodb.MongoRuntimeConfig">MongoRuntimeConfig</a></span>, <span name="client">client: <span class="extype" name="com.mongodb.MongoClient">MongoClient</span></span>)</span><span class="result"> extends <a href="MongoInstance.html" class="extype" name="scalaz.stream.mongodb.MongoInstance">MongoInstance</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="scalaz.stream.mongodb.StartingMongoInstance" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="StartingMongoInstanceextendsMongoInstancewithProductwithSerializable"></a>
+      <a id="StartingMongoInstance:StartingMongoInstance"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="StartingMongoInstance.html"><span class="name">StartingMongoInstance</span></a><span class="params">(<span name="port">port: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result"> extends <a href="MongoInstance.html" class="extype" name="scalaz.stream.mongodb.MongoInstance">MongoInstance</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Instance that is just starting</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scalaz.stream.mongodb.MongoInstances" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoInstances"></a>
+      <a id="MongoInstances:MongoInstances"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MongoInstances$.html"><span class="name">MongoInstances</span></a>
+      </span>
+      </h4>
+      <p class="comment cmt">Holds information about mongo instances used during execution of specs.</p>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+      <script defer="defer" type="text/javascript" id="jquery-js" src="../../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../../lib/template.js"></script>
+    </body>
+      </html>

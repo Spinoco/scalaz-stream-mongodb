@@ -1,0 +1,480 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>query - scalaz.stream.mongodb.query</title>
+          <meta name="description" content="query - scalaz.stream.mongodb.query" />
+          <meta name="keywords" content="query scalaz.stream.mongodb.query" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'scalaz.stream.mongodb.query.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="scalaz">scalaz</a>.<a href="../../package.html" class="extype" name="scalaz.stream">stream</a>.<a href="../package.html" class="extype" name="scalaz.stream.mongodb">mongodb</a></p>
+        <h1>query</h1>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">query</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scalaz.stream.mongodb.query.BasicQuery" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BasicQueryextendsProductwithSerializable"></a>
+      <a id="BasicQuery:BasicQuery"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="BasicQuery.html"><span class="name">BasicQuery</span></a><span class="params">(<span name="o">o: <span class="extype" name="com.mongodb.DBObject">DBObject</span> = <span class="symbol">new com.mongodb.BasicDBObject()</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Simple key-value query to mongo
+</p>
+    </li><li name="scalaz.stream.mongodb.query.BasicQueryOps" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BasicQueryOpsextendsQueryPredicateOps[scalaz.stream.mongodb.query.BasicQuery]"></a>
+      <a id="BasicQueryOps:BasicQueryOps"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="BasicQueryOps.html"><span class="name">BasicQueryOps</span></a><span class="result"> extends <a href="QueryPredicateOps.html" class="extype" name="scalaz.stream.mongodb.query.QueryPredicateOps">QueryPredicateOps</a>[<a href="BasicQuery.html" class="extype" name="scalaz.stream.mongodb.query.BasicQuery">BasicQuery</a>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Syntax for building basic queries *</p>
+    </li><li name="scalaz.stream.mongodb.query.BasicQueryPair" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BasicQueryPair[+A]extendsQueryPair[A]withProductwithSerializable"></a>
+      <a id="BasicQueryPair[+A]:BasicQueryPair[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="BasicQueryPair.html"><span class="name">BasicQueryPair</span></a><span class="tparams">[<span name="A">+A</span>]</span><span class="params">(<span name="key">key: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="pattern">pattern: <span class="extype" name="scalaz.stream.mongodb.query.BasicQueryPair.A">A</span></span>, <span name="dbo">dbo: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="com.mongodb.DBObject">DBObject</span>] = <span class="symbol">scala.None</span></span>, <span name="not">not: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>)</span><span class="result"> extends <a href="QueryPair.html" class="extype" name="scalaz.stream.mongodb.query.QueryPair">QueryPair</a>[<span class="extype" name="scalaz.stream.mongodb.query.BasicQueryPair.A">A</span>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Predicate pair that builds query on given key</p>
+    </li><li name="scalaz.stream.mongodb.query.ElemMatchPair" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ElemMatchPairextendsProjectionPairwithQueryPair[scalaz.stream.mongodb.query.BasicQuery]withProductwithSerializable"></a>
+      <a id="ElemMatchPair:ElemMatchPair"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ElemMatchPair.html"><span class="name">ElemMatchPair</span></a><span class="params">(<span name="key">key: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="q">q: <a href="BasicQuery.html" class="extype" name="scalaz.stream.mongodb.query.BasicQuery">BasicQuery</a></span>, <span name="not">not: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>)</span><span class="result"> extends <a href="ProjectionPair.html" class="extype" name="scalaz.stream.mongodb.query.ProjectionPair">ProjectionPair</a> with <a href="QueryPair.html" class="extype" name="scalaz.stream.mongodb.query.QueryPair">QueryPair</a>[<a href="BasicQuery.html" class="extype" name="scalaz.stream.mongodb.query.BasicQuery">BasicQuery</a>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Pair used in projection from the query as well as in query itself</p>
+    </li><li name="scalaz.stream.mongodb.query.OrderPair" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="OrderPairextendsProductwithSerializable"></a>
+      <a id="OrderPair:OrderPair"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="OrderPair.html"><span class="name">OrderPair</span></a><span class="params">(<span name="k">k: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="o">o: <a href="QueryEnums$Order$.html#ValueextendsOrdered[Enumeration.this.Value]withSerializable" class="extmbr" name="scalaz.stream.mongodb.query.QueryEnums.Order.Value">QueryEnums.Order.Value</a></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Pair that defines ordering *</p>
+    </li><li name="scalaz.stream.mongodb.query.OrderingOps" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="OrderingOpsextendsOps[String]"></a>
+      <a id="OrderingOps:OrderingOps"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="OrderingOps.html"><span class="name">OrderingOps</span></a><span class="result"> extends <span class="extype" name="scalaz.syntax.Ops">Ops</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Syntax to allow creation of OrderPairs from string
+</p>
+    </li><li name="scalaz.stream.mongodb.query.ProjectionOps" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ProjectionOpsextendsOps[String]"></a>
+      <a id="ProjectionOps:ProjectionOps"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ProjectionOps.html"><span class="name">ProjectionOps</span></a><span class="result"> extends <span class="extype" name="scalaz.syntax.Ops">Ops</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Syntax to build projection pairs</p>
+    </li><li name="scalaz.stream.mongodb.query.ProjectionPair" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ProjectionPairextendsAnyRef"></a>
+      <a id="ProjectionPair:ProjectionPair"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ProjectionPair.html"><span class="name">ProjectionPair</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="scalaz.stream.mongodb.query.Query" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="QueryextendsMongoCommand[com.mongodb.DBObject]withQueryOpswithProductwithSerializable"></a>
+      <a id="Query:Query"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Query.html"><span class="name">Query</span></a><span class="params">(<span name="bq">bq: <a href="BasicQuery.html" class="extype" name="scalaz.stream.mongodb.query.BasicQuery">BasicQuery</a></span>, <span name="where">where: <span class="extype" name="scala.Option">Option</span>[<a href="../collectionSyntax$.html#JavaScript=String" class="extmbr" name="scalaz.stream.mongodb.collectionSyntax.JavaScript">collectionSyntax.JavaScript</a>] = <span class="symbol">scala.None</span></span>, <span name="sort">sort: <span class="extype" name="scala.Option">Option</span>[<a href="QuerySort.html" class="extype" name="scalaz.stream.mongodb.query.QuerySort">QuerySort</a>] = <span class="symbol">scala.None</span></span>, <span name="hint">hint: <span class="extype" name="scala.Option">Option</span>[<a href="QueryHint.html" class="extype" name="scalaz.stream.mongodb.query.QueryHint">QueryHint</a>] = <span class="symbol">scala.None</span></span>, <span name="limit">limit: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol">scala.None</span></span>, <span name="skip">skip: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol">scala.None</span></span>, <span name="projection">projection: <span class="extype" name="scala.Option">Option</span>[<a href="QueryProjection.html" class="extype" name="scalaz.stream.mongodb.query.QueryProjection">QueryProjection</a>] = <span class="symbol">scala.None</span></span>, <span name="explainFlag">explainFlag: <span class="extype" name="scala.Option">Option</span>[<a href="QueryEnums$ExplainVerbosity$.html#ValueextendsOrdered[Enumeration.this.Value]withSerializable" class="extmbr" name="scalaz.stream.mongodb.query.QueryEnums.ExplainVerbosity.Value">QueryEnums.ExplainVerbosity.Value</a>] = <span class="symbol">scala.None</span></span>, <span name="snapshotFlag">snapshotFlag: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Boolean">Boolean</span>] = <span class="symbol">scala.None</span></span>, <span name="comment">comment: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="readPreference">readPreference: <span class="extype" name="scala.Option">Option</span>[<a href="ReadPreference.html" class="extype" name="scalaz.stream.mongodb.query.ReadPreference">ReadPreference</a>] = <span class="symbol">scala.None</span></span>)</span><span class="result"> extends <a href="../MongoCommand.html" class="extype" name="scalaz.stream.mongodb.MongoCommand">MongoCommand</a>[<span class="extype" name="com.mongodb.DBObject">DBObject</span>] with <a href="QueryOps.html" class="extype" name="scalaz.stream.mongodb.query.QueryOps">QueryOps</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">mongodb Query definition</p>
+    </li><li name="scalaz.stream.mongodb.query.QueryAction" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="QueryAction[A]extendsAnyRef"></a>
+      <a id="QueryAction[A]:QueryAction[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="QueryAction.html"><span class="name">QueryAction</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Action that uses query.</p>
+    </li><li name="scalaz.stream.mongodb.query.QueryEnums" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="QueryEnumsextendsAnyRef"></a>
+      <a id="QueryEnums:QueryEnums"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="QueryEnums.html"><span class="name">QueryEnums</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Enumerations used in Query definition *</p>
+    </li><li name="scalaz.stream.mongodb.query.QueryHint" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="QueryHintextendsAnyRef"></a>
+      <a id="QueryHint:QueryHint"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="QueryHint.html"><span class="name">QueryHint</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Hints to pick correct index with Query *</p>
+    </li><li name="scalaz.stream.mongodb.query.QueryHintByKey" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="QueryHintByKeyextendsQueryHintwithProductwithSerializable"></a>
+      <a id="QueryHintByKey:QueryHintByKey"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="QueryHintByKey.html"><span class="name">QueryHintByKey</span></a><span class="params">(<span name="keys">keys: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result"> extends <a href="QueryHint.html" class="extype" name="scalaz.stream.mongodb.query.QueryHint">QueryHint</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Query hint to pick index that contain the specified keys *</p>
+    </li><li name="scalaz.stream.mongodb.query.QueryHintIndexName" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="QueryHintIndexNameextendsQueryHintwithProductwithSerializable"></a>
+      <a id="QueryHintIndexName:QueryHintIndexName"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="QueryHintIndexName.html"><span class="name">QueryHintIndexName</span></a><span class="params">(<span name="index">index: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="QueryHint.html" class="extype" name="scalaz.stream.mongodb.query.QueryHint">QueryHint</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Query hint by name of index *</p>
+    </li><li name="scalaz.stream.mongodb.query.QueryOps" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="QueryOpsextendsOps[scalaz.stream.mongodb.query.Query]"></a>
+      <a id="QueryOps:QueryOps"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="QueryOps.html"><span class="name">QueryOps</span></a><span class="result"> extends <span class="extype" name="scalaz.syntax.Ops">Ops</span>[<a href="Query.html" class="extype" name="scalaz.stream.mongodb.query.Query">Query</a>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">User: pach
+Date: 9/19/13
+Time: 8:00 AM
+(c) 2011-2013 Spinoco Czech Republic, a.</p>
+    </li><li name="scalaz.stream.mongodb.query.QueryPair" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="QueryPair[+A]extendsAnyRef"></a>
+      <a id="QueryPair[+A]:QueryPair[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="QueryPair.html"><span class="name">QueryPair</span></a><span class="tparams">[<span name="A">+A</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="scalaz.stream.mongodb.query.QueryPairBuilderOps" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="QueryPairBuilderOpsextendsOps[String]"></a>
+      <a id="QueryPairBuilderOps:QueryPairBuilderOps"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="QueryPairBuilderOps.html"><span class="name">QueryPairBuilderOps</span></a><span class="result"> extends <span class="extype" name="scalaz.syntax.Ops">Ops</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li name="scalaz.stream.mongodb.query.QueryPairOps" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="QueryPairOps[A]extendsQueryPredicateOps[scalaz.stream.mongodb.query.QueryPair[A]]"></a>
+      <a id="QueryPairOps[A]:QueryPairOps[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="QueryPairOps.html"><span class="name">QueryPairOps</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="result"> extends <a href="QueryPredicateOps.html" class="extype" name="scalaz.stream.mongodb.query.QueryPredicateOps">QueryPredicateOps</a>[<a href="QueryPair.html" class="extype" name="scalaz.stream.mongodb.query.QueryPair">QueryPair</a>[<span class="extype" name="scalaz.stream.mongodb.query.QueryPairOps.A">A</span>]]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Predicate combinators *</p>
+    </li><li name="scalaz.stream.mongodb.query.QueryPredicateOps" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="QueryPredicateOps[A]extendsOps[A]"></a>
+      <a id="QueryPredicateOps[A]:QueryPredicateOps[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="QueryPredicateOps.html"><span class="name">QueryPredicateOps</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="result"> extends <span class="extype" name="scalaz.syntax.Ops">Ops</span>[<span class="extype" name="scalaz.stream.mongodb.query.QueryPredicateOps.A">A</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Basic syntax on Query Predicates</p>
+    </li><li name="scalaz.stream.mongodb.query.QueryPredicateWitness" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="QueryPredicateWitness[A]extendsAnyRef"></a>
+      <a id="QueryPredicateWitness[A]:QueryPredicateWitness[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="QueryPredicateWitness.html"><span class="name">QueryPredicateWitness</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Witness for allowed predicates in query</p>
+    </li><li name="scalaz.stream.mongodb.query.QueryProjection" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="QueryProjectionextendsProductwithSerializable"></a>
+      <a id="QueryProjection:QueryProjection"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="QueryProjection.html"><span class="name">QueryProjection</span></a><span class="params">(<span name="qp">qp: <span class="extype" name="scala.Seq">Seq</span>[<a href="ProjectionPair.html" class="extype" name="scalaz.stream.mongodb.query.ProjectionPair">ProjectionPair</a>]</span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Holds the projection pairs</p>
+    </li><li name="scalaz.stream.mongodb.query.QuerySort" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="QuerySortextendsProductwithSerializable"></a>
+      <a id="QuerySort:QuerySort"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="QuerySort.html"><span class="name">QuerySort</span></a><span class="params">(<span name="op">op: <span class="extype" name="scala.Seq">Seq</span>[<a href="OrderPair.html" class="extype" name="scalaz.stream.mongodb.query.OrderPair">OrderPair</a>]</span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Holder for sort options</p>
+    </li><li name="scalaz.stream.mongodb.query.QuerySyntax" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="QuerySyntaxextendsAnyRef"></a>
+      <a id="QuerySyntax:QuerySyntax"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="QuerySyntax.html"><span class="name">QuerySyntax</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Syntax to build up the query *</p>
+    </li><li name="scalaz.stream.mongodb.query.ReadPreference" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ReadPreferenceextendsProductwithSerializable"></a>
+      <a id="ReadPreference:ReadPreference"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ReadPreference.html"><span class="name">ReadPreference</span></a><span class="params">(<span name="pref">pref: <a href="ReadPreference$.html#ValueextendsOrdered[Enumeration.this.Value]withSerializable" class="extmbr" name="scalaz.stream.mongodb.query.ReadPreference.Value">ReadPreference.Value</a></span>, <span name="preferred">preferred: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>, <span name="tag">tag: <span class="extype" name="scala.List">List</span>[(<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>)] = <span class="symbol">immutable.this.Nil</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">mongodb ReadPreference constructor Helper
+</p>
+    </li><li name="scalaz.stream.mongodb.query.SimpleProjection" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SimpleProjectionextendsProjectionPairwithProductwithSerializable"></a>
+      <a id="SimpleProjection:SimpleProjection"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="SimpleProjection.html"><span class="name">SimpleProjection</span></a><span class="params">(<span name="key">key: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="exclude">exclude: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>)</span><span class="result"> extends <a href="ProjectionPair.html" class="extype" name="scalaz.stream.mongodb.query.ProjectionPair">ProjectionPair</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Simple projection pair
+</p>
+    </li><li name="scalaz.stream.mongodb.query.SliceProjection" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SliceProjectionextendsProjectionPairwithProductwithSerializable"></a>
+      <a id="SliceProjection:SliceProjection"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="SliceProjection.html"><span class="name">SliceProjection</span></a><span class="params">(<span name="key">key: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="index">index: <span class="extype" name="scala.Int">Int</span></span>, <span name="size">size: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol">scala.None</span></span>)</span><span class="result"> extends <a href="ProjectionPair.html" class="extype" name="scalaz.stream.mongodb.query.ProjectionPair">ProjectionPair</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Allows to project slices of arrays
+</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scalaz.stream.mongodb.query.BasicQuery" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BasicQuery"></a>
+      <a id="BasicQuery:BasicQuery"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="BasicQuery$.html"><span class="name">BasicQuery</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Helper to build Basic query in case there are multiple key conditions.</p>
+    </li><li name="scalaz.stream.mongodb.query.QueryPredicateWitness" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="QueryPredicateWitness"></a>
+      <a id="QueryPredicateWitness:QueryPredicateWitness"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="QueryPredicateWitness$.html"><span class="name">QueryPredicateWitness</span></a>
+      </span>
+      </h4>
+      
+    </li><li name="scalaz.stream.mongodb.query.ReadPreference" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ReadPreference"></a>
+      <a id="ReadPreference:ReadPreference"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ReadPreference$.html"><span class="name">ReadPreference</span></a><span class="result"> extends <span class="extype" name="scala.Enumeration">Enumeration</span></span>
+      </span>
+      </h4>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+      <script defer="defer" type="text/javascript" id="jquery-js" src="../../../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../../../lib/template.js"></script>
+    </body>
+      </html>
