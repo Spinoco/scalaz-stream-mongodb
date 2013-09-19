@@ -122,5 +122,10 @@ trait ChannelResultOps[A] extends Ops[Channel[Task, DBCollection, Process[Task, 
   /** applies [[scalaz.stream.Process.until]] on resulting stream **/
   def until[B >: A](condition: Process[Task, Boolean]): ChannelResult[B] = modify(condition.tee(_)(scalaz.stream.tee.until))
 
+  /** applies [[scalaz.stream.Process.ProcessSyntax.through]] on resulting stream **/
+  def through[B](p:Channel[Task,A,B]) = modify(_ through p)
+
+  /** applies [[scalaz.stream.Process.ProcessSyntax.to]] on resulting stream **/
+  def to(p:Sink[Task,A]) = modify(_ to p)
 
 }
