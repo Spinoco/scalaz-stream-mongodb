@@ -1,8 +1,15 @@
 
 
+
 import sbt._
 import sbt.Keys._
-import scala.Some
+import com.typesafe.sbt._
+import SbtGhPages._
+import GhPagesKeys._
+import SbtSite._
+import SiteKeys._
+import SbtGit._
+import GitKeys._
 
 object build extends Build {
 
@@ -42,6 +49,7 @@ object build extends Build {
     libraryDependencies ++= Seq(
       "org.scalacheck" %% "scalacheck" % "1.10.0" % "test" withSources()
       , "org.specs2" %% "specs2" % specs2Version % "test" withSources() exclude("org.scalaz", "*")
+      , "org.pegdown" % "pegdown" % "1.2.1" % "test"
     )
 
 
@@ -67,9 +75,31 @@ object build extends Build {
       credentialsSettings ++
       libraries ++
       testLibraries ++
-      compileSettings ++ 
+      compileSettings ++
       net.virtualvoid.sbt.graph.Plugin.graphSettings
 
+
+  /*lazy val siteSettings = ghpages.settings ++ SbtSite.site.settings ++ Seq(
+    siteSourceDirectory <<= target(_ / "scalaz-stream-mongodb-reports"),
+    // depending on the version, copy the api files to a different directory
+    siteMappings <++= (mappings in packageDoc in Compile, version) map {
+      (m, v) =>
+        for ((f, d) <- m) yield (f, if (v.trim.endsWith("SNAPSHOT")) ("api/master/" + d) else ("api/streams-mongodb-" + v + "/" + d))
+    },
+    // override the synchLocal task to avoid removing the existing files
+    synchLocal <<= (privateMappings, updatedRepository, gitRunner, streams) map {
+      (mappings, repo, git, s) =>
+        val betterMappings = mappings map { case (file, target) => (file, repo / target) }
+        IO.copy(betterMappings)
+        repo
+    },
+    gitRemoteRepo := "git@github.com:Spinoco/scalaz-stream-mongodb.git"
+  )
+        */
+
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  //
+  //       PROJECTS
 
   lazy val main = Project("scalaz-stream-mongodb", file("."), settings = buildSettings)
 
