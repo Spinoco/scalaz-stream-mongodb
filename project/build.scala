@@ -5,7 +5,6 @@ import sbt._
 import sbt.Keys._
 import com.typesafe.sbt._
 import SbtGhPages._
-import GhPagesKeys._
 import SbtSite._
 import SiteKeys._
 import SbtGit._
@@ -50,12 +49,25 @@ object build extends Build {
       "org.scalacheck" %% "scalacheck" % "1.10.0" % "test" withSources()
       , "org.specs2" %% "specs2" % specs2Version % "test" withSources() exclude("org.scalaz", "*")
       , "org.pegdown" % "pegdown" % "1.2.1" % "test"
+      , "junit" % "junit" % "4.7" % "test"
     )
 
 
   lazy val compileSettings = Seq(
     scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature")
     , scalacOptions in Test ++= Seq("-Yrangepos")
+  )
+
+
+  lazy val webSettings = SbtSite.site.settings ++ SbtSite.site.includeScaladoc()
+
+  lazy val siteSettings = Seq(
+    siteMappings <++= (mappings in packageDoc in Compile, version) map {
+      (m, v) =>
+        for ((f, d) <- m) yield {
+          (f, if (v.trim.endsWith("SNAPSHOT")) ("/api/master/" + d) else ("/api/streams-mongodb-" + v + "/" + d))
+        }
+    }
   )
 
 
@@ -70,44 +82,43 @@ object build extends Build {
             cw.copy(filter = (id: ModuleID) => true, group = (id: ModuleID) => id.organization + ":" + id.name, level = Level.Error, failOnConflict = true)
         }
         , shellPrompt := ShellPrompt.buildShellPrompt
+        , testOptions in Test += Tests.Argument("html", "console", "junitxml")
       ) ++
       resolverSettings ++
       credentialsSettings ++
       libraries ++
       testLibraries ++
       compileSettings ++
+      webSettings ++
       net.virtualvoid.sbt.graph.Plugin.graphSettings
 
-
-  /*lazy val siteSettings = ghpages.settings ++ SbtSite.site.settings ++ Seq(
-    siteSourceDirectory <<= target(_ / "scalaz-stream-mongodb-reports"),
-    // depending on the version, copy the api files to a different directory
-    siteMappings <++= (mappings in packageDoc in Compile, version) map {
-      (m, v) =>
-        for ((f, d) <- m) yield (f, if (v.trim.endsWith("SNAPSHOT")) ("api/master/" + d) else ("api/streams-mongodb-" + v + "/" + d))
-    },
-    // override the synchLocal task to avoid removing the existing files
-    synchLocal <<= (privateMappings, updatedRepository, gitRunner, streams) map {
-      (mappings, repo, git, s) =>
-        val betterMappings = mappings map { case (file, target) => (file, repo / target) }
-        IO.copy(betterMappings)
-        repo
-    },
-    gitRemoteRepo := "git@github.com:Spinoco/scalaz-stream-mongodb.git"
-  )
-        */
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   //
   //       PROJECTS
+  //
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-  lazy val main = Project("scalaz-stream-mongodb", file("."), settings = buildSettings)
+  lazy val main = Project("scalaz-stream-mongodb", file("."), settings = buildSettings ++ ghpages.settings ++
+    SbtSite.site.addMappingsToSiteDir(mappings in packageDoc in core in Compile, "/core") ++
+    SbtSite.site.addMappingsToSiteDir(mappings in packageDoc in spec in Compile, "/spec") ++
+    Seq(
+      gitRemoteRepo := "git@github.com:Spinoco/scalaz-stream-mongodb.git"
+      , siteMappings <++= target map ((p: File) => {
+        val pfxSz = p.toPath.resolve("specs2-reports").toString.size
+        val newPfx = "reports"
+        (((p \ "specs2-reports") ** "*") x (f => Some(newPfx + f.toString.substring(pfxSz))))
+      })
+    )).aggregate(core, spec)
 
-  lazy val core = Project("scalaz-stream-mongodb-core", file("core"), settings = buildSettings).dependsOn(spec % "test")
+  lazy val core = Project("scalaz-stream-mongodb-core", file("core"), settings = buildSettings ++ siteSettings ++ Seq(
+    previewSite <<= sourceDirectory map (_ => ())
+  )).dependsOn(spec % "test")
 
-  lazy val spec = Project("scalaz-stream-mongodb-spec", file("spec"), settings = buildSettings ++ Seq(
+  lazy val spec = Project("scalaz-stream-mongodb-spec", file("spec"), settings = buildSettings ++ siteSettings ++ Seq(
     libraryDependencies += "org.specs2" %% "specs2" % specs2Version withSources() exclude("org.scalaz", "*")
     , libraryDependencies <+= (scalaVersion)("org.scala-lang" % "scala-reflect" % _)
+    , previewSite <<= sourceDirectory map (_ => ())
   ))
 
 }
