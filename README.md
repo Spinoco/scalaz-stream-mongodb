@@ -21,4 +21,6 @@ Library is supposed to have all the functionality that makes sense to wrap in sc
 * Aggregation framework
 * Javascript queries
 * Asynchronous execution of mongodb queries
-* Thank you for your interest in Mongo Streams.
+
+
+Thank you for your interest in Mongo Streams.
