@@ -5,8 +5,9 @@ import com.mongodb.DBObject
 import scala.language.implicitConversions
 
 import scalaz.stream.mongodb.collectionSyntax._
+import scalaz.stream.mongodb.channel.ChannelResult
 
- 
+
 /** Syntax to build up the query **/
 trait QuerySyntax {
 
@@ -28,6 +29,8 @@ trait QuerySyntax {
 
   implicit def rpv2ReadPreference(rp: ReadPreference.Value) = ReadPreference(rp)
 
+  implicit def query2ChannelResult(q:Query):ChannelResult[DBObject] = q.toChannelResult
+  
 
   def query[A](q: QueryPair[A]*): Query = Query(BasicQuery(q: _*))
 

@@ -10,7 +10,6 @@ import scalaz.stream.Process
 import scalaz.stream.Process._
 import scalaz.concurrent.Task
 import scalaz.stream.mongodb.channel.ChannelResult
-import scalaz.stream.mongodb.index.CollectionIndex 
 
 
 /**
@@ -38,35 +37,8 @@ case class Query(bq: BasicQuery,
                  snapshotFlag: Option[Boolean] = None,
                  comment: Option[String] = None,
                  readPreference: Option[ReadPreference] = None
-                  ) extends MongoCommand[DBObject] {
-
-  def sort(h: OrderPair, t: OrderPair*): Query = copy(sort = Some(QuerySort(h +: t)))
-
-  def orderby(h: OrderPair, t: OrderPair*): Query = sort(h, t: _*)
-
-  def limit(max: Int): Query = copy(limit = Some(max))
-
-  def skip(by: Int): Query = copy(skip = Some(by))
-
-  def from(pref: ReadPreference): Query = copy(readPreference = Some(pref))
-
-  def from(pref: ReadPreference.Value): Query = copy(readPreference = Some(ReadPreference(pref)))
-
-  def project(h: ProjectionPair, t: ProjectionPair*): Query = copy(projection = Some(QueryProjection(h +: t)))
-
-  def explain(flag: ExplainVerbosity.Value): Query = copy(explainFlag = Some(flag))
-
-  def hint(n: String): Query = copy(hint = Some(QueryHintIndexName(n)))
-
-  def hint(index: CollectionIndex): Query = copy(hint = Some(QueryHintByKey(index.keys.keySet.toSet)))
-
-  def snapshot(b: Boolean): Query = copy(snapshotFlag = Some(b))
-
-  def comment(s: String): Query = copy(comment = Some(s))
-
-  /** Applies action on query result **/
-  def and[A](a: QueryAction[A]): ChannelResult[A] = a.withQuery(this)
-
+                  ) extends MongoCommand[DBObject] with QueryOps {
+  val self = this
 
   def toChannelResult: ChannelResult[DBObject] = {
     val channel: Channel[Task, DBCollection, Process[Task, DBObject]] =
