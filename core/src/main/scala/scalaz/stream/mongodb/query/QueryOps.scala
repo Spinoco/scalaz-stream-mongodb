@@ -40,10 +40,10 @@ trait QueryOps extends Ops[Query] {
   def comment(s: String): Query = self.copy(comment = Some(s))
 
   /** Applies action on query result **/
-  def and[A](a: QueryAction[A]): ChannelResult[A] = a.withQuery(self)
+  def and[A](a: QueryAction[A]): ChannelResult[DBCollection,A] = a.withQuery(self)
 
   /** Appends results of two queries together **/
-  def append(q: Query): ChannelResult[DBObject] = ChannelResult {
+  def append(q: Query): ChannelResult[DBCollection,DBObject] = ChannelResult {
     self.toChannelResult.self.zipWith(q.toChannelResult.self) {
       (qf1, qf2) => (c: DBCollection) =>
         qf1(c).flatMap(p1 => qf2(c).map(p2 => p1 ++ p2))
@@ -51,7 +51,7 @@ trait QueryOps extends Ops[Query] {
   }
 
   /** alias for `append` **/
-  def ++(q: Query): ChannelResult[DBObject] = append(q)
+  def ++(q: Query): ChannelResult[DBCollection,DBObject] = append(q)
 
 
 }

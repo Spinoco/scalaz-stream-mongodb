@@ -2,7 +2,7 @@ package scalaz.stream.mongodb.update
 
 import org.specs2.Specification
 import org.specs2.specification.Snippets
-import com.mongodb.{WriteConcern, DBObject}
+import com.mongodb.{DBCollection, WriteConcern, DBObject}
 import org.specs2.matcher.MatchResult
 import scalaz.stream.mongodb.MongoRuntimeSpecification
 import scalaz.stream.mongodb.collectionSyntax._
@@ -49,7 +49,7 @@ class InsertAndSaveSpec extends Specification with Snippets with MongoRuntimeSpe
   }
 
 
-  case class intoCollection(p: ChannelResult[WriteResult]) {
+  case class intoCollection(p: ChannelResult[DBCollection,WriteResult]) {
 
     lazy val mongo = new WithMongoCollection()
 

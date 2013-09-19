@@ -1,18 +1,19 @@
 package scalaz.stream.mongodb.index
 
-import scalaz.stream.mongodb.MongoCommand
+import scalaz.stream.mongodb.MongoCollectionCommand
 import scalaz.stream.mongodb.channel.ChannelResult
 
 import scalaz.concurrent.Task
+import com.mongodb.DBCollection
 
 
-case class DropIndexByName(name: String) extends MongoCommand[Unit] {
-  def toChannelResult: ChannelResult[Unit] =
+case class DropIndexByName(name: String) extends MongoCollectionCommand[Unit] {
+  def toChannelResult: ChannelResult[DBCollection,Unit] =
     ChannelResult(c => Task.now(c.dropIndex(name)))
 
 }
 
-case class DropIndexByKeys(idx: CollectionIndex) extends MongoCommand[Unit] {
-  def toChannelResult: ChannelResult[Unit] =
+case class DropIndexByKeys(idx: CollectionIndex) extends MongoCollectionCommand[Unit] {
+  def toChannelResult: ChannelResult[DBCollection,Unit] =
     ChannelResult(c => Task.now(c.dropIndex(idx.keysAsBson)))
 }

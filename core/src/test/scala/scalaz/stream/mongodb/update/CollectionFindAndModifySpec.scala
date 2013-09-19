@@ -4,7 +4,7 @@ import org.specs2.Specification
 import org.specs2.specification.Snippets
 import org.bson.types.ObjectId
 import scalaz.stream.Process
-import com.mongodb.{BasicDBObjectBuilder, DBObject}
+import com.mongodb.{DBCollection, BasicDBObjectBuilder, DBObject}
 import org.specs2.matcher.MatchResult
 import scalaz.stream.mongodb.MongoRuntimeSpecification
 import scalaz.stream.mongodb.collectionSyntax._
@@ -89,7 +89,7 @@ class CollectionFindAndModifySpec extends Specification with Snippets with Mongo
   }
 
 
-  case class updateWith(up: ChannelResult[Option[DBObject]]) {
+  case class updateWith(up: ChannelResult[DBCollection,Option[DBObject]]) {
 
     lazy val mongo = new WithMongoCollection()
 

@@ -2,130 +2,129 @@ package scalaz.stream.mongodb.channel
 
 import scalaz.stream.Process
 import scalaz.stream.Process._
-import com.mongodb.DBCollection
 import scalaz.syntax.Ops
 import scalaz.concurrent.Task
 import scalaz._
 
 
-case class ChannelResult[A](self: Channel[Task, DBCollection, Process[Task, A]]) extends ChannelResultOps[A]
+case class ChannelResult[R, A](self: Channel[Task, R, Process[Task, A]]) extends ChannelResultOps[R, A]
 
 object ChannelResult {
-  
+
   /** Helper to wrap simple tasks in channel result **/
-  def apply[A]( f: DBCollection => Task[A]) : ChannelResult[A] =  
-    ChannelResult(wrap(Task.now((coll:DBCollection) => Task.now(wrap(f(coll))))))
-  
-  
+  def apply[R, A](f: R => Task[A]): ChannelResult[R, A] =
+    ChannelResult(wrap(Task.now((res: R) => Task.now(wrap(f(res))))))
+
+
 }
 
 
-trait ChannelResultOps[A] extends Ops[Channel[Task, DBCollection, Process[Task, A]]] {
+trait ChannelResultOps[R, A] extends Ops[Channel[Task, R, Process[Task, A]]] {
 
-  private def modify[B](f: Process[Task, A] => Process[Task, B]): ChannelResult[B] =
+  private def modify[B](f: Process[Task, A] => Process[Task, B]): ChannelResult[R, B] =
     ChannelResult(self.map(c => c andThen (pt => pt.map(p => f(p)))))
 
   /** applies [[scalaz.stream.Process.map]] on resulting stream **/
-  def map[B](f: A => B): ChannelResult[B] = modify(_.map(f))
+  def map[B](f: A => B): ChannelResult[R, B] = modify(_.map(f))
 
   /** applies [[scalaz.stream.Process.flatMap]] on resulting stream **/
-  def flatMap[B](f: A => Process[Task, B]): ChannelResult[B] = modify(_.flatMap(f))
+  def flatMap[B](f: A => Process[Task, B]): ChannelResult[R, B] = modify(_.flatMap(f))
 
   /** applies [[scalaz.stream.Process.append]] on resulting stream **/
-  def append[B >: A](p2: => Process[Task, B]): ChannelResult[B] = modify(_.append(p2))
+  def append[B >: A](p2: => Process[Task, B]): ChannelResult[R, B] = modify(_.append(p2))
 
   /** applies [[scalaz.stream.Process.append]] on resulting stream **/
-  def ++[B >: A]()(p2: => Process[Task, B]): ChannelResult[B] = append(p2)
+  def ++[B >: A]()(p2: => Process[Task, B]): ChannelResult[R, B] = append(p2)
 
   /** applies [[scalaz.stream.Process.then]] on resulting stream **/
-  def fby[B >: A](p2: => Process[Task, B]): ChannelResult[B] = modify(_.then(p2))
+  def fby[B >: A](p2: => Process[Task, B]): ChannelResult[R, B] = modify(_.then(p2))
 
   /** applies [[scalaz.stream.Process.repeat]] on resulting stream **/
-  def repeat[B >: A]: ChannelResult[B] = modify(_.repeat)
+  def repeat[B >: A]: ChannelResult[R, B] = modify(_.repeat)
 
   /** applies [[scalaz.stream.Process.kill]] on resulting stream **/
-  def kill: ChannelResult[Nothing] = modify(_.kill)
+  def kill: ChannelResult[R, Nothing] = modify(_.kill)
 
   /** applies [[scalaz.stream.Process.killBy]] on resulting stream **/
-  def killBy(e: Throwable): ChannelResult[Nothing] = modify(_.killBy(e))
+  def killBy(e: Throwable): ChannelResult[R, Nothing] = modify(_.killBy(e))
 
   /** applies [[scalaz.stream.Process.causedBy]] on resulting stream **/
-  def causedBy[B >: A](e: Throwable): ChannelResult[B] = modify(_.causedBy(e))
+  def causedBy[B >: A](e: Throwable): ChannelResult[R, B] = modify(_.causedBy(e))
 
   /** applies [[scalaz.stream.Process.fallback]] on resulting stream **/
-  def fallback: ChannelResult[A] = modify(_.fallback)
+  def fallback: ChannelResult[R, A] = modify(_.fallback)
 
   /** applies [[scalaz.stream.Process.orElse]] on resulting stream **/
-  def orElse[B >: A](fallback: => Process[Task, B], cleanup: => Process[Task, B] = halt): ChannelResult[B] = modify(_.orElse(fallback, cleanup))
+  def orElse[B >: A](fallback: => Process[Task, B], cleanup: => Process[Task, B] = halt): ChannelResult[R, B] = modify(_.orElse(fallback, cleanup))
 
   /** applies [[scalaz.stream.Process.onFailure]] on resulting stream **/
-  def onFailure[B >: A](p2: => Process[Task, B]): ChannelResult[B] = modify(_.onFailure(p2))
+  def onFailure[B >: A](p2: => Process[Task, B]): ChannelResult[R, B] = modify(_.onFailure(p2))
 
   /** applies [[scalaz.stream.Process.onComplete]] on resulting stream **/
-  def onComplete[B >: A](p2: => Process[Task, B]): ChannelResult[B] = modify(_.onComplete(p2))
+  def onComplete[B >: A](p2: => Process[Task, B]): ChannelResult[R, B] = modify(_.onComplete(p2))
 
   /** applies [[scalaz.stream.Process.disconnect]] on resulting stream **/
-  def disconnect: ChannelResult[A] = modify(_.disconnect)
+  def disconnect: ChannelResult[R, A] = modify(_.disconnect)
 
   /** applies [[scalaz.stream.Process.hardDisconnect]] on resulting stream **/
-  def hardDisconnect: ChannelResult[A] = modify(_.hardDisconnect)
+  def hardDisconnect: ChannelResult[R, A] = modify(_.hardDisconnect)
 
   /** applies [[scalaz.stream.Process.trim]] on resulting stream **/
-  def trim: ChannelResult[A] = modify(_.trim)
+  def trim: ChannelResult[R, A] = modify(_.trim)
 
   /** applies [[scalaz.stream.Process.drain]] on resulting stream **/
-  def drain: ChannelResult[Nothing] = modify(_.drain)
+  def drain: ChannelResult[R, Nothing] = modify(_.drain)
 
   /** applies [[scalaz.stream.Process.pipe]] on resulting stream **/
-  def pipe[B](p2: Process1[A, B]): ChannelResult[B] = modify(_.pipe(p2))
+  def pipe[B](p2: Process1[A, B]): ChannelResult[R, B] = modify(_.pipe(p2))
 
   /** applies [[scalaz.stream.Process.pipe]] on resulting stream **/
-  def |>[B](p2: Process1[A, B]): ChannelResult[B] = pipe(p2)
+  def |>[B](p2: Process1[A, B]): ChannelResult[R, B] = pipe(p2)
 
   /** applies [[scalaz.stream.Process.tee]] on resulting stream **/
-  def tee[B, C](p2: Process[Task, B])(t: Tee[A, B, C]): ChannelResult[C] = modify(_.tee(p2)(t))
+  def tee[B, C](p2: Process[Task, B])(t: Tee[A, B, C]): ChannelResult[R, C] = modify(_.tee(p2)(t))
 
   /** applies [[scalaz.stream.Process.wye]] on resulting stream **/
-  def wye[B, C](p2: Process[Task, B])(y: Wye[A, B, C]): ChannelResult[C] = modify(_.wye(p2)(y))
+  def wye[B, C](p2: Process[Task, B])(y: Wye[A, B, C]): ChannelResult[R, C] = modify(_.wye(p2)(y))
 
   /** applies [[scalaz.stream.Process.attempt]] on resulting stream **/
-  def attempt[B](f: Throwable => Process[Task, B] = (t: Throwable) => emit(Task.fail(t)).eval): ChannelResult[B \/ A] = modify(_.attempt(f))
+  def attempt[B](f: Throwable => Process[Task, B] = (t: Throwable) => emit(Task.fail(t)).eval): ChannelResult[R, B \/ A] = modify(_.attempt(f))
 
   /** applies [[scalaz.stream.Process.handle]] on resulting stream **/
-  def handle[B](f: PartialFunction[Throwable, Process[Task, B]]): ChannelResult[B] = modify(_.handle(f))
+  def handle[B](f: PartialFunction[Throwable, Process[Task, B]]): ChannelResult[R, B] = modify(_.handle(f))
 
   /** applies [[scalaz.stream.Process.partialAttempt]] on resulting stream **/
-  def partialAttempt[B](f: PartialFunction[Throwable, Process[Task, B]]): ChannelResult[B \/ A] = modify(_.partialAttempt(f))
+  def partialAttempt[B](f: PartialFunction[Throwable, Process[Task, B]]): ChannelResult[R, B \/ A] = modify(_.partialAttempt(f))
 
 
   /** applies [[scalaz.stream.Process.zipWith]] on resulting stream **/
-  def zipWith[B, C](p2: Process[Task, B])(f: (A, B) => C): ChannelResult[C] = modify(_.zipWith(p2)(f))
+  def zipWith[B, C](p2: Process[Task, B])(f: (A, B) => C): ChannelResult[R, C] = modify(_.zipWith(p2)(f))
 
   /** applies [[scalaz.stream.Process.zip]] on resulting stream **/
-  def zip[B](p2: Process[Task, B]): ChannelResult[(A, B)] = modify(_.zip(p2))
+  def zip[B](p2: Process[Task, B]): ChannelResult[R, (A, B)] = modify(_.zip(p2))
 
   /** applies [[scalaz.stream.Process.yipWith]] on resulting stream **/
-  def yipWith[B, C](p2: Process[Task, B])(f: (A, B) => C): ChannelResult[C] = modify(_.yipWith(p2)(f))
+  def yipWith[B, C](p2: Process[Task, B])(f: (A, B) => C): ChannelResult[R, C] = modify(_.yipWith(p2)(f))
 
   /** applies [[scalaz.stream.Process.yip]] on resulting stream **/
-  def yip[B](p2: Process[Task, B]): ChannelResult[(A, B)] = modify(_.yip(p2))
+  def yip[B](p2: Process[Task, B]): ChannelResult[R, (A, B)] = modify(_.yip(p2))
 
   /** applies [[scalaz.stream.Process.merge]] on resulting stream **/
-  def merge[B >: A](p2: Process[Task, B]): ChannelResult[B] = modify(_.wye(p2)(scalaz.stream.wye.merge))
+  def merge[B >: A](p2: Process[Task, B]): ChannelResult[R, B] = modify(_.wye(p2)(scalaz.stream.wye.merge))
 
   /** applies [[scalaz.stream.Process.either]] on resulting stream **/
-  def either[B >: A, C](p2: Process[Task, C]): ChannelResult[B \/ C] = modify(_.wye(p2)(scalaz.stream.wye.either))
+  def either[B >: A, C](p2: Process[Task, C]): ChannelResult[R, B \/ C] = modify(_.wye(p2)(scalaz.stream.wye.either))
 
   /** applies [[scalaz.stream.Process.when]] on resulting stream **/
-  def when[B >: A](condition: Process[Task, Boolean]): ChannelResult[B] = modify(condition.tee(_)(scalaz.stream.tee.when))
+  def when[B >: A](condition: Process[Task, Boolean]): ChannelResult[R, B] = modify(condition.tee(_)(scalaz.stream.tee.when))
 
   /** applies [[scalaz.stream.Process.until]] on resulting stream **/
-  def until[B >: A](condition: Process[Task, Boolean]): ChannelResult[B] = modify(condition.tee(_)(scalaz.stream.tee.until))
+  def until[B >: A](condition: Process[Task, Boolean]): ChannelResult[R, B] = modify(condition.tee(_)(scalaz.stream.tee.until))
 
   /** applies [[scalaz.stream.Process.ProcessSyntax.through]] on resulting stream **/
-  def through[B](p:Channel[Task,A,B]) = modify(_ through p)
+  def through[B](p: Channel[Task, A, B]) = modify(_ through p)
 
   /** applies [[scalaz.stream.Process.ProcessSyntax.to]] on resulting stream **/
-  def to(p:Sink[Task,A]) = modify(_ to p)
+  def to(p: Sink[Task, A]) = modify(_ to p)
 
 }
