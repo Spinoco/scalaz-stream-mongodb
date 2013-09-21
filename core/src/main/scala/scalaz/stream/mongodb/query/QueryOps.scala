@@ -44,7 +44,7 @@ trait QueryOps extends Ops[Query] {
 
   /** Appends results of two queries together **/
   def append(q: Query): ChannelResult[DBCollection,DBObject] = ChannelResult {
-    self.toChannelResult.self.zipWith(q.toChannelResult.self) {
+    self.toChannelResult.channel.zipWith(q.toChannelResult.channel) {
       (qf1, qf2) => (c: DBCollection) =>
         qf1(c).flatMap(p1 => qf2(c).map(p2 => p1 ++ p2))
     }
