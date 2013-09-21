@@ -14,7 +14,7 @@ import scala.language.implicitConversions
 trait ChannelResultSyntax {
   implicit def mongoCommand2ChannelResult[A](cmd: MongoCollectionCommand[A]): ChannelResult[DBCollection, A] = cmd.toChannelResult
 
-  implicit def mongoCommand2Channel[A](cmd: MongoCollectionCommand[A]): Channel[Task, DBCollection, Process[Task, A]] = cmd.toChannelResult.self
+  implicit def mongoCommand2Channel[A](cmd: MongoCollectionCommand[A]): Channel[Task, DBCollection, Process[Task, A]] = cmd.toChannelResult.channel
 
-  implicit def channelResult2Channel[R, A](r: ChannelResult[R, A]) = r.self
+  implicit def channelResult2Channel[R, A](r: ChannelResult[R, A]) = r.channel
 }

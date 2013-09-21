@@ -147,11 +147,11 @@ their blogs from internet? Then we can still combine  mongo stream with some pro
 
     def findBlog(sw: DBObject): Process[Task, String] = ???
 
-    def skyWalkersBlogs = 
-    for {
-      sw <- query("name" -> "luke")
-      blog <- findBlog(sw)
-    } yield (sw, blog)
+    def skyWalkersBlogs =
+      query("name" -> "luke").flatMapProcess(sw=>
+        findBlog(sw).map(blog => (sw,blog))
+      )
+    
 
 
     starWars through skyWalkersBlogs

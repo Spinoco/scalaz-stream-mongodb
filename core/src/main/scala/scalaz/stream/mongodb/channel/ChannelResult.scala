@@ -2,33 +2,32 @@ package scalaz.stream.mongodb.channel
 
 import scalaz.stream.Process
 import scalaz.stream.Process._
-import scalaz.syntax.Ops
 import scalaz.concurrent.Task
 import scalaz._
+import scalaz.stream.mongodb.channel.ChannelResult
 
 
-case class ChannelResult[R, A](self: Channel[Task, R, Process[Task, A]]) extends ChannelResultOps[R, A]
+case class ChannelResult[R, A](channel: Channel[Task, R, Process[Task, A]]) {
 
-object ChannelResult {
+  private[mongodb] def modify[B](f: Process[Task, A] => Process[Task, B]): ChannelResult[R, B] =
+    ChannelResult(channel.map(r => r andThen (pt => pt.map(p => f(p)))))
 
-  /** Helper to wrap simple tasks in channel result **/
-  def apply[R, A](f: R => Task[A]): ChannelResult[R, A] =
-    ChannelResult(wrap(Task.now((res: R) => Task.now(wrap(f(res))))))
-
-
-}
-
-
-trait ChannelResultOps[R, A] extends Ops[Channel[Task, R, Process[Task, A]]] {
-
-  private def modify[B](f: Process[Task, A] => Process[Task, B]): ChannelResult[R, B] =
-    ChannelResult(self.map(c => c andThen (pt => pt.map(p => f(p)))))
 
   /** applies [[scalaz.stream.Process.map]] on resulting stream **/
   def map[B](f: A => B): ChannelResult[R, B] = modify(_.map(f))
 
   /** applies [[scalaz.stream.Process.flatMap]] on resulting stream **/
-  def flatMap[B](f: A => Process[Task, B]): ChannelResult[R, B] = modify(_.flatMap(f))
+  def flatMapProcess[B](f: A => Process[Task, B]): ChannelResult[R, B] = modify(_.flatMap(f))
+
+  /** binds other ChanelResult to this ChannelResult **/
+  def flatMap[B](f: A => ChannelResult[R, B]): ChannelResult[R, B] = ChannelResult {
+    channel.map(
+      (g: R => Task[Process[Task, A]]) => (r: R) =>
+        g(r).map(pa => pa.flatMap((a: A) =>
+          f(a).channel.flatMap(h => wrap(h(r)).flatMap(identity))
+        ))
+    )
+  }
 
   /** applies [[scalaz.stream.Process.append]] on resulting stream **/
   def append[B >: A](p2: => Process[Task, B]): ChannelResult[R, B] = modify(_.append(p2))
@@ -100,8 +99,24 @@ trait ChannelResultOps[R, A] extends Ops[Channel[Task, R, Process[Task, A]]] {
   /** applies [[scalaz.stream.Process.zipWith]] on resulting stream **/
   def zipWith[B, C](p2: Process[Task, B])(f: (A, B) => C): ChannelResult[R, C] = modify(_.zipWith(p2)(f))
 
+  /** zips inner processes of ChannelResults */
+  def zipWith[B, C](ch2: ChannelResult[R, B])(f: (A, B) => C): ChannelResult[R, C] = ChannelResult {
+    val zipper: ((R => Task[Process[Task, A]], R => Task[Process[Task, B]]) => (R => Task[Process[Task, C]])) = {
+      (fa, fb) => (r: R) =>
+        for {
+          pa <- fa(r)
+          pb <- fb(r)
+        } yield (pa.zipWith(pb)(f))
+    }
+
+    channel.zipWith(ch2.channel)(zipper)
+  }
+
   /** applies [[scalaz.stream.Process.zip]] on resulting stream **/
   def zip[B](p2: Process[Task, B]): ChannelResult[R, (A, B)] = modify(_.zip(p2))
+
+  /** zips two channels together */
+  def zip[B](ch2: ChannelResult[R, B]): ChannelResult[R, (A, B)] = zipWith(ch2)((a, b) => (a, b))
 
   /** applies [[scalaz.stream.Process.yipWith]] on resulting stream **/
   def yipWith[B, C](p2: Process[Task, B])(f: (A, B) => C): ChannelResult[R, C] = modify(_.yipWith(p2)(f))
@@ -127,4 +142,15 @@ trait ChannelResultOps[R, A] extends Ops[Channel[Task, R, Process[Task, A]]] {
   /** applies [[scalaz.stream.Process.ProcessSyntax.to]] on resulting stream **/
   def to(p: Sink[Task, A]) = modify(_ to p)
 
+
 }
+
+object ChannelResult {
+
+  /** Helper to wrap simple tasks in channel result **/
+  def apply[R, A](f: R => Task[A]): ChannelResult[R, A] =
+    ChannelResult(wrap(Task.now((res: R) => Task.now(wrap(f(res))))))
+
+
+}
+
