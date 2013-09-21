@@ -1,4 +1,4 @@
->package scalaz.stream.mongodb.query
+package scalaz.stream.mongodb.query
 
 import com.mongodb._
 import org.bson.types.ObjectId
