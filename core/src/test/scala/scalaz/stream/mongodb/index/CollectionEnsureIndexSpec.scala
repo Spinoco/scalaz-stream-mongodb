@@ -19,22 +19,22 @@ class CollectionEnsureIndexSpec extends Specification with Snippets with MongoRu
 
   def is = s2"""
   ${"Ensuring Index on collection".title}
-  
+
   Indexes on collections may be created via ensure action:
-  
-  for example: 
-  
-  creates one index that will be constructed in background : ${ snippet { ensure(index("foo" -> Order.Ascending) background true) }}     
-  creates one compound index that is sparse :                ${ snippet { ensure(index("foo" -> Order.Descending, "doo" -> Order.Ascending) sparse true) }}          
-  
-  All attributes that can be specified are found in [[http://docs.mongodb.org/manual/reference/method/db.collection.ensureIndex/#db.collection.ensureIndex]].            
-  
-  Operations: 
-               
+
+  for example:
+
+  creates one index that will be constructed in background : ${ snippet { ensure(index("foo" -> Order.Ascending) background true) }}
+  creates one compound index that is sparse :                ${ snippet { ensure(index("foo" -> Order.Descending, "doo" -> Order.Ascending) sparse true) }}
+
+  All attributes that can be specified can be found in [[http://docs.mongodb.org/manual/reference/method/db.collection.ensureIndex/#db.collection.ensureIndex]].
+
+  Operations:
+
   $ensureNewIndex
-  $ensurePresentIndex            
-  
-  
+  $ensurePresentIndex
+
+
   """
 
   def ensureNewIndex = {
@@ -64,7 +64,7 @@ class CollectionEnsureIndexSpec extends Specification with Snippets with MongoRu
       (mongo.collection through (ensure(index("foo" -> Order.Ascending) background false sparse true unique true name ("goosh")))).run.run
 
       val maybeIdx = mongo.collection.getIndexInfo.asScala.find(_.get("name") == "goosh")
-      
+
       (start must_== 2) and
         (maybeIdx mustNotEqual None) and
         (maybeIdx.get.get("unique") must_== null) and

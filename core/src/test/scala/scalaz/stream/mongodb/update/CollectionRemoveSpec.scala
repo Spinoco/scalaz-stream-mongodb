@@ -14,25 +14,25 @@ import collection.JavaConverters._
 class CollectionRemoveSpec extends Specification with Snippets with MongoRuntimeSpecification {
   def is =
     s2"""
-      
+
       ${"Removing documents".title}
-       
+
       Documents are removed from the collection by simple remove command:
-       
+
       ${ snippet { query("key" === 1) and remove }}     $r1
-      
-       
-      Additionally you can specify write concern for remove command by ensure 
-       
-      ${ snippet { query("key" === 1) and remove.ensure(WriteConcern.MAJORITY) }}  
-       
-      
+
+
+      Additionally you can specify write concern for remove command by using `ensure`
+
+      ${ snippet { query("key" === 1) and remove.ensure(WriteConcern.MAJORITY) }}
+
+
       Lastly, if the remove command on non sharded collection has to be isolated (this mean that no other updated may interleave during its execution),
-      just add isolated modifier to it  
-      
-       ${ snippet { query("key" === 1) and remove.isolated(true) }}  
-       
-      
+      just add isolated modifier to it
+
+       ${ snippet { query("key" === 1) and remove.isolated(true) }}
+
+
     """
 
   case class checkQuery(remove: ChannelResult[WriteResult]) {

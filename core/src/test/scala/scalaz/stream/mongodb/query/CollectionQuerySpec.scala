@@ -1,4 +1,4 @@
-package scalaz.stream.mongodb.query
+>package scalaz.stream.mongodb.query
 
 import com.mongodb._
 import org.bson.types.ObjectId
@@ -25,100 +25,100 @@ class CollectionQuerySpec extends Specification with Snippets with MongoRuntimeS
 
     s2"""
     ${"Querying on mongoDB collection".title}
-       
-    Basic construct to query on mongo is to use `query` command. Query command creates process of BSONObjects, that can be further
-    processed by scalaz.stream process combinator. Query supports simple DSL that can be further combined to produce remove, update and modify operations. 
-      
-    to make a simple query that return process of BSONObjects you can do 
-      
+
+    Basic construct to query on mongo is `query` command. Query command creates process of BSONObjects, that can be further
+    processed by scalaz.stream process combinators. Query supports simple DSL that can be further combined to produce remove, update and modify operations.
+
+    to make a simple query that returns process of BSONObjects you can do
+
     ${ snippet { query("key" -> "value") } }  $q1
-       
-    if you want limit the amount of the documents returned you can use limit and skip combinators
-    
+
+    if you want limit the amount of the documents returned, you can use `limit` and `skip` combinators
+
     ${ snippet { query("key" -> "value") skip 1 limit 3 }}   $q2
-       
-    if you want to sort documents before returning them back you can use sort combinator. Sort combinator allows you to specify order and multiple keys 
-    that will be used when sorting. Please note two syntax for ordering allowed 
-    
+
+    if you want to sort documents before returning them back, you can use `sort` combinator. Sort combinator allows you to specify order and multiple keys
+    that will be used when sorting. Please note two syntax for ordering allowed
+
     ${ snippet { query("key" -> "value") sort("key" Ascending, "otherKey" -> Order.Descending) }}      $q3
     ${ snippet { query("key" -> "value") orderby("key" Ascending, "otherKey" -> Order.Descending) }}   $q4
-       
+
     # Replica sets #
-      
-    MongoDb allows various functionality when working with replica sets. Essentially the possible options are described in ReadPreference on [[http://docs.mongodb.org/manual/core/read-preference/]].
+
+    MongoDb allows various functionality when working with replica sets. Essentially, the possible options are described in ReadPreference in [[http://docs.mongodb.org/manual/core/read-preference/]].
     All of these options are supported via `from` combinator:
-    
+
     ${ snippet {
       import scalaz.stream.mongodb.query.ReadPreference._
       query("key" -> "value") from Nearest.preferred(false)
     }}
-        
-    
-    In mongoDB environments potentially you want to read certain data only with specific members. This can be be achieved by tagging the read preference : 
-     
+
+
+    In mongoDB environments you may potentially want to read certain data only with specific members. This can be be achieved by tagging the read preference :
+
     ${ snippet {
       import scalaz.stream.mongodb.query.ReadPreference._
       query("key" -> "value") from Nearest.preferred(true).tags("disk" -> "ssd", "memory" -> "huge")
     }}
-     
-    # Projections # 
-       
-    For the complex documents you maybe want to get only certain data as result of the query to reduce time when deserializing data. This is achieved 
-    with project combinator: 
-       
-    ${ snippet { query("key" -> "value") project("key1", "key2" $, "key3" first 4, "key4" last 6, "key5" skip 6 limit 5, "key6" elementMatch ("ek" -> 1)) }}   
-    
-    As you may see projection combinator acepts many form of limiting the content of documents returned. Lets describe their meaning 
-    Further you can see in details description of their functionality in mongoDB docs on [[http://docs.mongodb.org/manual/reference/operator/projection/]]
-    
+
+    # Projections #
+
+    For the complex documents you maybe want to get only certain data as a result of the query to reduce time when deserializing data. This is achieved
+    with project combinator:
+
+    ${ snippet { query("key" -> "value") project("key1", "key2" $, "key3" first 4, "key4" last 6, "key5" skip 6 limit 5, "key6" elementMatch ("ek" -> 1)) }}
+
+    As you may see projection combinator acepts many form of limiting the content of documents returned. Lets describe their meaning
+    For more information you can see detailed description of their functionality in mongoDB docs [[http://docs.mongodb.org/manual/reference/operator/projection/]]
+
     To return only key1 from documents  :                     ${ snippet { query() project ("key1") }}                               ${projections.q1}
     To return only first element of any array under key1:     ${ snippet { query("key3" >= 1) project ("key3" $) }}                  ${projections.q2}
     To return only first 4 elements of any array under key1:  ${ snippet { query() project ("key1" first 4) }}                       ${projections.q3}
     To return only last 4 elements of any array under key1:   ${ snippet { query() project ("key1" last 4) }}                        ${projections.q4}
     To return elements 4-6 from an array under key1:          ${ snippet { query() project ("key1" skip 3 limit 3) }}                ${projections.q5}
     To return elements that have ek == 1 under key 1:         ${ snippet { query() project ("key1" elementMatch ("ek" === 1)) }}     ${projections.q6}
-       
-       
+
+
     # Explain Query #
-       
-    To see the actual indexes that are consulted when running the query and additional statistics, query may be run in explain mode. 
-    See [[http://docs.mongodb.org/manual/reference/method/cursor.explain/#cursor.explain]]: 
-        
+
+    To see the actual indexes that are consulted when running the query and additional statistics, query may be run in explain mode.
+    See [[http://docs.mongodb.org/manual/reference/method/cursor.explain/#cursor.explain]]:
+
     ${ snippet { query("key" -> "value") explain (ExplainVerbosity.Normal) }}   ${explain.normal}
-    
-    or 
-       
-    ${ snippet { query("key" -> "value") explain (ExplainVerbosity.Verbose) }}  ${explain.verbose}  
-    
-    
+
+    or
+
+    ${ snippet { query("key" -> "value") explain (ExplainVerbosity.Verbose) }}  ${explain.verbose}
+
+
     # Query Hints #
-       
+
     Query can contain index hints to choose appropriate index for given query.
-         
+
     This indicates index named "indexName" shall be used
-     
+
     ${ snippet { query("key" -> "value") hint ("indexName") }}                    ${explain.withHintByName}
-       
+
     or this picks index on "key1" to be used with query
-   
+
     ${ snippet { query("key" -> "value") hint (index("key1" Ascending)) }}        ${explain.withHintByKeys}
-       
-       
+
+
     # Query snapshot #
-       
-    Query can be in "snapshot" mode to make sure that documents are not returned multiple times when iterating over results. 
-    Queries with size less than 1M are automatically in snapshot mode. 
- 
-    ${ snippet { query("key" -> "value") snapshot (true) }}  
-       
-    
+
+    Query can be in "snapshot" mode to make sure that documents are not returned multiple times when iterating over results.
+    Queries with size less than 1M are automatically in snapshot mode.
+
+    ${ snippet { query("key" -> "value") snapshot (true) }}
+
+
     # Query comment #
-       
-    Query can be commented to have this comment appear in profile log
-        
-    ${ snippet { query("key1" -> "value") comment ("Long duration query") }}      
-   
-        
+
+    Query can be commented to have given comment appear in profile log
+
+    ${ snippet { query("key1" -> "value") comment ("Long duration query") }}
+
+
     """
 
 
@@ -263,7 +263,7 @@ class CollectionQuerySpec extends Specification with Snippets with MongoRuntimeS
     def mustBeSameAs(vf: (Seq[DBObject], DBCollection) => DBCursor) = {
       Prop.forAll {
         (documents: Seq[DBObject]) => (documents.size > 0) ==> {
-          //println("\n"*5) 
+          //println("\n"*5)
 
           val q = qf(documents)
 
@@ -297,7 +297,7 @@ class CollectionQuerySpec extends Specification with Snippets with MongoRuntimeS
 
       Prop.forAll {
         (documents: Seq[DBObject]) => (documents.size > 0) ==> {
-          //println("\n"*5) 
+          //println("\n"*5)
 
           before.foreach(_(mongo.collection))
 
