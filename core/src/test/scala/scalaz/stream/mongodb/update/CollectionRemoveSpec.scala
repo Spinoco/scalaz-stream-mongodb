@@ -2,7 +2,7 @@ package scalaz.stream.mongodb.update
 
 import org.specs2.Specification
 import org.specs2.specification.Snippets
-import com.mongodb.{DBObject, BasicDBObjectBuilder, WriteConcern}
+import com.mongodb.{DBCollection, DBObject, BasicDBObjectBuilder, WriteConcern}
 import org.bson.types.ObjectId
 import org.specs2.matcher.MatchResult
 import scalaz.stream.mongodb.collectionSyntax._
@@ -35,7 +35,7 @@ class CollectionRemoveSpec extends Specification with Snippets with MongoRuntime
 
     """
 
-  case class checkQuery(remove: ChannelResult[WriteResult]) {
+  case class checkQuery(remove: ChannelResult[DBCollection,WriteResult]) {
 
 
     lazy val mongo = new WithMongoCollection()

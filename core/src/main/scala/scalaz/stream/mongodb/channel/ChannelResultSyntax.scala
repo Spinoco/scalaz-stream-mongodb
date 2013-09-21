@@ -1,6 +1,6 @@
 package scalaz.stream.mongodb.channel
 
-import scalaz.stream.mongodb.MongoCommand
+import scalaz.stream.mongodb.MongoCollectionCommand
 import scalaz.stream.Process._
 import scalaz.concurrent.Task
 import com.mongodb.DBCollection
@@ -12,9 +12,9 @@ import scala.language.implicitConversions
  * Syntax helpers for channel
  */
 trait ChannelResultSyntax {
-  implicit def mongoCommand2ChannelResult[A](cmd: MongoCommand[A]): ChannelResult[A] = cmd.toChannelResult
+  implicit def mongoCommand2ChannelResult[A](cmd: MongoCollectionCommand[A]): ChannelResult[DBCollection, A] = cmd.toChannelResult
 
-  implicit def mongoCommand2Channel[A](cmd: MongoCommand[A]): Channel[Task, DBCollection, Process[Task, A]] = cmd.toChannelResult.self
+  implicit def mongoCommand2Channel[A](cmd: MongoCollectionCommand[A]): Channel[Task, DBCollection, Process[Task, A]] = cmd.toChannelResult.self
 
-  implicit def channelResult2Channel[A](r: ChannelResult[A]) = r.self
+  implicit def channelResult2Channel[R, A](r: ChannelResult[R, A]) = r.self
 }

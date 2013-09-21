@@ -1,6 +1,6 @@
 package scalaz.stream.mongodb.update
 
-import com.mongodb.{BasicDBObject, WriteConcern}
+import com.mongodb.{DBCollection, BasicDBObject, WriteConcern}
 import scala.Some
 import scalaz.concurrent.Task
 import scalaz.stream.mongodb.query.{Query, QueryAction}
@@ -14,7 +14,7 @@ import scalaz.stream.mongodb.channel.ChannelResult
 case class RemoveAction(isIsolated: Boolean = false, wc: Option[WriteConcern] = None) extends QueryAction[WriteResult] {
 
 
-  def withQuery(q: Query): ChannelResult[WriteResult] = ChannelResult {
+  def withQuery(q: Query): ChannelResult[DBCollection,WriteResult] = ChannelResult {
     c => Task.now {
       val qq =
         if (isIsolated) {

@@ -1,6 +1,6 @@
 package scalaz.stream.mongodb.update
 
-import com.mongodb.{BasicDBObject, WriteConcern}
+import com.mongodb.{DBCollection, BasicDBObject, WriteConcern}
 import scala.Some
 import scalaz.stream.mongodb.query.{Query, QueryAction}
 import scalaz.stream.mongodb.channel.ChannelResult
@@ -22,7 +22,7 @@ case class UpdateAction(update: SimpleUpdate
                         , wc: Option[WriteConcern] = None) extends QueryAction[WriteResult] {
 
 
-  def withQuery(q: Query): ChannelResult[WriteResult] = ChannelResult {
+  def withQuery(q: Query): ChannelResult[DBCollection,WriteResult] = ChannelResult {
     c =>
       Task.now {
         val qq =

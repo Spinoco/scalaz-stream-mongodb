@@ -5,7 +5,7 @@ import com.mongodb.{DBCollection, BasicDBObject, DBObject}
 
 
 import scalaz.stream.mongodb.collectionSyntax._
-import scalaz.stream.mongodb.MongoCommand
+import scalaz.stream.mongodb.MongoCollectionCommand
 import scalaz.stream.Process
 import scalaz.stream.Process._
 import scalaz.concurrent.Task
@@ -37,10 +37,10 @@ case class Query(bq: BasicQuery,
                  snapshotFlag: Option[Boolean] = None,
                  comment: Option[String] = None,
                  readPreference: Option[ReadPreference] = None
-                  ) extends MongoCommand[DBObject] with QueryOps {
+                  ) extends MongoCollectionCommand[DBObject] with QueryOps {
   val self = this
 
-  def toChannelResult: ChannelResult[DBObject] = {
+  def toChannelResult: ChannelResult[DBCollection,DBObject] = {
     val channel: Channel[Task, DBCollection, Process[Task, DBObject]] =
       emit(Task.now {
         c: DBCollection =>

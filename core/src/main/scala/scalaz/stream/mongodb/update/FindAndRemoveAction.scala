@@ -1,6 +1,6 @@
 package scalaz.stream.mongodb.update
 
-import com.mongodb.DBObject
+import com.mongodb.{DBCollection, DBObject}
 import scalaz.stream.mongodb.query._
 import scalaz.stream.mongodb.channel.ChannelResult
 import scalaz.concurrent.Task
@@ -10,7 +10,7 @@ import scalaz.concurrent.Task
  * Find and modify with remove flag set == true
  */
 case class FindAndRemoveAction() extends QueryAction[Option[DBObject]] {
-  def withQuery(q: Query): ChannelResult[Option[DBObject]] =
+  def withQuery(q: Query): ChannelResult[DBCollection,Option[DBObject]] =
     ChannelResult {
       c =>
         Task.now(

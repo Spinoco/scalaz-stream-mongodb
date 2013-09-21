@@ -1,7 +1,7 @@
 package scalaz.stream.mongodb.update
 
 import scalaz.stream.mongodb.query._
-import com.mongodb.DBObject
+import com.mongodb.{DBCollection, DBObject}
 import scalaz.stream.mongodb.channel.ChannelResult
 import scalaz.concurrent.Task
 
@@ -20,7 +20,7 @@ case class FindAndModifyAction(update: SimpleUpdate
                                , upsert: Boolean = false) extends QueryAction[Option[DBObject]] {
 
 
-  def withQuery(q: Query): ChannelResult[Option[DBObject]] = {
+  def withQuery(q: Query): ChannelResult[DBCollection,Option[DBObject]] = {
     ChannelResult {
       c =>
         Task.now(
