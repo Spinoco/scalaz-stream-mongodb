@@ -1,5 +1,7 @@
 package scalaz.stream.mongodb.query
 
+import org.bson.types.ObjectId
+
 
 /**
  * Witness for allowed predicates in query
@@ -20,6 +22,8 @@ object QueryPredicateWitness {
   implicit val longWitness = new QueryPredicateWitness[Long] {}
 
   implicit val doubleWitness = new QueryPredicateWitness[Double] {}
+  
+  implicit val objectIdWitness = new QueryPredicateWitness[ObjectId] {}
 
 
 }
