@@ -2,7 +2,7 @@ package scalaz.stream.mongodb.bson
 
 import org.specs2.{ScalaCheck, Specification}
 import org.specs2.specification.Snippets
-import com.mongodb.{BasicDBObjectBuilder, DBObject} 
+import com.mongodb.{BasicDBObjectBuilder, DBObject}
 import scalaz.stream.mongodb.collectionSyntax
 import collectionSyntax._
 import java.util.Date
@@ -22,54 +22,54 @@ class BSONSpec extends Specification with ScalaCheck with Snippets {
 
   def is =
     s2"""
-      
+
       ${"BSON Constructors"}
-      
-      
-       Mongo Streams use standard BSON primitives from underlying Java Driver. However there is syntactic sugar that allows 
-       using standard scala Maps, Lists, Sets (and more) to be easily converted to DBObject. It is designed with maximum 
-       type-safety possible. This mean You would not be able to construct DBObject that would contain invalid types (i.e. class Foo)
-       that would not be handled by BSON Serializer. 
-       
-       
+
+
+       Mongo Streams use standard BSON primitives from underlying Java Driver. However there is syntactic sugar that allows
+       easy conversions of Scala datastructures (List, Maps, Sets and more) into DBObject. It is designed for maximum
+       type-safety possible. That means You are not be able to construct DBObject that would contain invalid types (i.e. arbitrary class Foo)
+       that would not be handled by Java BSON Serializer.
+
+
        To construct simple BSONObject just use:
-       
+
        Simple               :  ${ snippet { BSONObject("int" -> int2BSONValue(1), "str" -> "str", "bool" -> true, "date" -> new Date(), "double" -> 0.1d) } }                          $simpleBson
        With lists, sets     :  ${ snippet { BSONObject("l1" -> BSONList(1, 2, 3), "s1" -> BSONSet(1, 2, 3, 4), "q1" -> BSONList(BSONSet("a", "b"), BSONList(1, 2))) }}                 $listBson
-                            or ${ snippet { BSONObject("l1" -> List(1, 2, 3).asBSON, "s1" -> Set(1, 2, 3, 4).asBSON, "q1" -> BSONList(Set("a", "b").asBSON, List(1, 2).asBSON)) }}    
+                            or ${ snippet { BSONObject("l1" -> List(1, 2, 3).asBSON, "s1" -> Set(1, 2, 3, 4).asBSON, "q1" -> BSONList(Set("a", "b").asBSON, List(1, 2).asBSON)) }}
        Nested objects       :  ${ snippet { BSONObject("o1" -> BSONObject("l2" -> BSONList(1, 2, 3)), "o2" -> BSONList(BSONObject("b" -> 1))) }}                                                     $nestedBson
-       
+
        Special values:
-       
+
        BSON Specification allows for null              :  ${ snippet { BSONObject("nullField" -> BSONNull) } }   $nullValue
        Options are added to object only when nonEmpty :  ${ snippet { BSONObject("one" -> Some(1)) } }                      $optionValue
-       
-       
-       To get any value from DBObject you can use syntactic sugar
-       
+
+
+       To get a value from DBObject You can use syntactic sugar
+
        To maybe get String value safely   :  ${ snippet { dbObject.tryGetAs[String]("s1"): Option[Try[String]] } }    ${retrieve.maybeSafe}
        To maybe get String value unsafe   :  ${ snippet { dbObject.getAs[String]("s1"): Option[String] } }            ${retrieve.maybeUnSafe}
        To get String value safely         :  ${ snippet { dbObject.tryAs[String]("s1"): Try[String] } }               ${retrieve.safe}
        To get String value safely         :  ${ snippet { dbObject.as[String]("s1"): String } }                       ${retrieve.unSafe}
                                           or ${ snippet { dbObject[String]("s1"): String } }
-       
+
        You may also get collections from DBObject
-       
+
        To get List[String]                :  ${ snippet { dbObject.getAs[List[String]]("s1"): Option[List[String]] } }                               ${retrieve.asList}
        To get Set[String]                 :  ${ snippet { dbObject.getAs[Set[String]]("s1"): Option[Set[String]] } }                                 ${retrieve.asSet}
        To get Map[String,String]          :  ${ snippet { dbObject.getAs[Map[String, String]]("s1"): Option[Map[String, String]] } }                 ${retrieve.asMap}
        To get Nested List                 :  ${ snippet { dbObject.getAs[List[Set[String]]]("s1"): Option[List[Set[String]]] } }                     ${retrieve.asNestedList}
        Or nested Set within Map           :  ${ snippet { dbObject.getAs[Map[String, Set[String]]]("s1"): Option[Map[String, Set[String]]] } }       ${retrieve.asNestedSetInMap}
-       
-       Last you may also modify content of the DBObject with simple operations:
-       
+
+       Finally, You may also modify content of the DBObject with simple operations:
+
        To add single key and value pair   :  ${ snippet { dbObject += ("s1" -> "string") } }                                ${modify.addOne}
        To add more key and value pairs    :  ${ snippet { dbObject ++= BSONObject("s1" -> "string", "s2" -> "string2") } }         ${modify.addMany}
                                           or ${ snippet { dbObject ++= otherDbObject }    }
        To remove single key               :  ${ snippet { dbObject -= "s1" } }                                              ${modify.removeOne}
        To remove more keys                :  ${ snippet { dbObject --= List("s1", "s2") } }                                 ${modify.removeMany}
-       
-       
+
+
     """
 
   //def is= s2"""$nestedBson"""
