@@ -11,7 +11,7 @@ import java.util.Date
 import scalaz.stream.processes._
 import scalaz.syntax.monad._
 import java.io.InputStream
-import scalaz.stream.mongodb.filesystem.MongoFileRead
+import scalaz.stream.mongodb.filesystem.{FSListSpec, MongoFileRead}
 
 /**
  *
@@ -93,7 +93,9 @@ ${ snippet {
     val olderFiles = filesystem() list files("uploadDate" <= new Date)
 
 
-  }}           
+  }}        
+     
+Please see more in ${link(new FSListSpec)}.     
 
 
 ### Reading from files 
