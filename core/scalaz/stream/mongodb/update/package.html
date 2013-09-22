@@ -151,7 +151,7 @@
       <p class="comment cmt">Find and modify with remove flag set == true
 </p>
     </li><li name="scalaz.stream.mongodb.update.InsertAction" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="InsertActionextendsMongoCommand[scalaz.stream.mongodb.update.WriteResult]withObjectIdSupportwithProductwithSerializable"></a>
+      <a id="InsertActionextendsMongoCollectionCommand[scalaz.stream.mongodb.update.WriteResult]withObjectIdSupportwithProductwithSerializable"></a>
       <a id="InsertAction:InsertAction"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -159,7 +159,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="InsertAction.html"><span class="name">InsertAction</span></a><span class="params">(<span name="o">o: <span class="extype" name="com.mongodb.DBObject">DBObject</span></span>, <span name="wc">wc: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="com.mongodb.WriteConcern">WriteConcern</span>] = <span class="symbol">scala.None</span></span>)</span><span class="result"> extends <a href="../MongoCommand.html" class="extype" name="scalaz.stream.mongodb.MongoCommand">MongoCommand</a>[<a href="WriteResult.html" class="extype" name="scalaz.stream.mongodb.update.WriteResult">WriteResult</a>] with <a href="ObjectIdSupport.html" class="extype" name="scalaz.stream.mongodb.update.ObjectIdSupport">ObjectIdSupport</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a href="InsertAction.html"><span class="name">InsertAction</span></a><span class="params">(<span name="o">o: <span class="extype" name="com.mongodb.DBObject">DBObject</span></span>, <span name="wc">wc: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="com.mongodb.WriteConcern">WriteConcern</span>] = <span class="symbol">scala.None</span></span>)</span><span class="result"> extends <a href="../MongoCollectionCommand.html" class="extype" name="scalaz.stream.mongodb.MongoCollectionCommand">MongoCollectionCommand</a>[<a href="WriteResult.html" class="extype" name="scalaz.stream.mongodb.update.WriteResult">WriteResult</a>] with <a href="ObjectIdSupport.html" class="extype" name="scalaz.stream.mongodb.update.ObjectIdSupport">ObjectIdSupport</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       <p class="comment cmt">Performs simple insert of document with optional write concern
@@ -233,7 +233,7 @@ Time: 3:45 PM
       </h4>
       <p class="comment cmt">Just simple replace of the document *</p>
     </li><li name="scalaz.stream.mongodb.update.SaveAction" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="SaveActionextendsMongoCommand[scalaz.stream.mongodb.update.WriteResult]withObjectIdSupportwithProductwithSerializable"></a>
+      <a id="SaveActionextendsMongoCollectionCommand[scalaz.stream.mongodb.update.WriteResult]withObjectIdSupportwithProductwithSerializable"></a>
       <a id="SaveAction:SaveAction"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -241,7 +241,7 @@ Time: 3:45 PM
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="SaveAction.html"><span class="name">SaveAction</span></a><span class="params">(<span name="o">o: <span class="extype" name="com.mongodb.DBObject">DBObject</span></span>, <span name="wc">wc: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="com.mongodb.WriteConcern">WriteConcern</span>] = <span class="symbol">scala.None</span></span>)</span><span class="result"> extends <a href="../MongoCommand.html" class="extype" name="scalaz.stream.mongodb.MongoCommand">MongoCommand</a>[<a href="WriteResult.html" class="extype" name="scalaz.stream.mongodb.update.WriteResult">WriteResult</a>] with <a href="ObjectIdSupport.html" class="extype" name="scalaz.stream.mongodb.update.ObjectIdSupport">ObjectIdSupport</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a href="SaveAction.html"><span class="name">SaveAction</span></a><span class="params">(<span name="o">o: <span class="extype" name="com.mongodb.DBObject">DBObject</span></span>, <span name="wc">wc: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="com.mongodb.WriteConcern">WriteConcern</span>] = <span class="symbol">scala.None</span></span>)</span><span class="result"> extends <a href="../MongoCollectionCommand.html" class="extype" name="scalaz.stream.mongodb.MongoCollectionCommand">MongoCollectionCommand</a>[<a href="WriteResult.html" class="extype" name="scalaz.stream.mongodb.update.WriteResult">WriteResult</a>] with <a href="ObjectIdSupport.html" class="extype" name="scalaz.stream.mongodb.update.ObjectIdSupport">ObjectIdSupport</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       <p class="comment cmt">Saves the supplied document with optional write concern

@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>filesystem - scalaz.stream.mongodb.filesystem</title>
+          <meta name="description" content="filesystem - scalaz.stream.mongodb.filesystem" />
+          <meta name="keywords" content="filesystem scalaz.stream.mongodb.filesystem" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'scalaz.stream.mongodb.filesystem.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="scalaz">scalaz</a>.<a href="../../package.html" class="extype" name="scalaz.stream">stream</a>.<a href="../package.html" class="extype" name="scalaz.stream.mongodb">mongodb</a></p>
+        <h1>filesystem</h1>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">filesystem</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scalaz.stream.mongodb.filesystem.FileChannelResultOps" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="FileChannelResultOpsextendsOps[scalaz.stream.mongodb.channel.ChannelResult[com.mongodb.DB,scalaz.stream.mongodb.filesystem.MongoFileRead]]"></a>
+      <a id="FileChannelResultOps:FileChannelResultOps"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="FileChannelResultOps.html"><span class="name">FileChannelResultOps</span></a><span class="result"> extends <span class="extype" name="scalaz.syntax.Ops">Ops</span>[<a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="com.mongodb.DB">DB</span>, <a href="MongoFileRead.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFileRead">MongoFileRead</a>]]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Ops to be available for list() command
+</p>
+    </li><li name="scalaz.stream.mongodb.filesystem.FileQuery" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="FileQueryextendsProductwithSerializable"></a>
+      <a id="FileQuery:FileQuery"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="FileQuery.html"><span class="name">FileQuery</span></a><span class="params">(<span name="q">q: <a href="../query/Query.html" class="extype" name="scalaz.stream.mongodb.query.Query">Query</a></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Query that allows to pick multiple files</p>
+    </li><li name="scalaz.stream.mongodb.filesystem.FileSystemSyntax" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="FileSystemSyntaxextendsAnyRef"></a>
+      <a id="FileSystemSyntax:FileSystemSyntax"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="FileSystemSyntax.html"><span class="name">FileSystemSyntax</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="scalaz.stream.mongodb.filesystem.GridFs" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GridFsextendsProductwithSerializable"></a>
+      <a id="GridFs:GridFs"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="GridFs.html"><span class="name">GridFs</span></a><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Represents grid fs instance</p>
+    </li><li name="scalaz.stream.mongodb.filesystem.GridFsOps" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="GridFsOpsextendsOps[scalaz.stream.mongodb.filesystem.GridFs]"></a>
+      <a id="GridFsOps:GridFsOps"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="GridFsOps.html"><span class="name">GridFsOps</span></a><span class="result"> extends <span class="extype" name="scalaz.syntax.Ops">Ops</span>[<a href="GridFs.html" class="extype" name="scalaz.stream.mongodb.filesystem.GridFs">GridFs</a>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">User: pach
+Date: 9/19/13
+Time: 9:09 PM
+(c) 2011-2013 Spinoco Czech Republic, a.</p>
+    </li><li name="scalaz.stream.mongodb.filesystem.MongoFile" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="MongoFileextendsAnyRef"></a>
+      <a id="MongoFile:MongoFile"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MongoFile.html"><span class="name">MongoFile</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="scalaz.stream.mongodb.filesystem.MongoFileRead" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoFileReadextendsMongoFilewithProductwithSerializable"></a>
+      <a id="MongoFileRead:MongoFileRead"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="MongoFileRead.html"><span class="name">MongoFileRead</span></a><span class="params">(<span name="meta">meta: <span class="extype" name="com.mongodb.DBObject">DBObject</span></span>, <span name="fileSystem">fileSystem: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="MongoFile.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFile">MongoFile</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Mongo file information that are read from the filesystem</p>
+    </li><li name="scalaz.stream.mongodb.filesystem.MongoFileWrite" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoFileWriteextendsMongoFilewithProductwithSerializable"></a>
+      <a id="MongoFileWrite:MongoFileWrite"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="MongoFileWrite.html"><span class="name">MongoFileWrite</span></a><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="id">id: <span class="extype" name="org.bson.types.ObjectId">ObjectId</span></span>, <span name="userMeta">userMeta: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="com.mongodb.DBObject">DBObject</span>]</span>, <span name="contentType">contentType: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result"> extends <a href="MongoFile.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFile">MongoFile</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Object holding information about the concrete file to be written
+</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scalaz.stream.mongodb.filesystem.FileUtil" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="FileUtil"></a>
+      <a id="FileUtil:FileUtil"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="FileUtil$.html"><span class="name">FileUtil</span></a>
+      </span>
+      </h4>
+      <p class="comment cmt">User: pach
+Date: 9/21/13
+Time: 9:34 AM
+(c) 2011-2013 Spinoco Czech Republic, a.</p>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+      <script defer="defer" type="text/javascript" id="jquery-js" src="../../../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../../../lib/template.js"></script>
+    </body>
+      </html>

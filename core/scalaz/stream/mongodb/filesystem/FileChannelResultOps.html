@@ -2,17 +2,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>MongoCommand - scalaz.stream.mongodb.MongoCommand</title>
-          <meta name="description" content="MongoCommand - scalaz.stream.mongodb.MongoCommand" />
-          <meta name="keywords" content="MongoCommand scalaz.stream.mongodb.MongoCommand" />
+          <title>FileChannelResultOps - scalaz.stream.mongodb.filesystem.FileChannelResultOps</title>
+          <meta name="description" content="FileChannelResultOps - scalaz.stream.mongodb.filesystem.FileChannelResultOps" />
+          <meta name="keywords" content="FileChannelResultOps scalaz.stream.mongodb.filesystem.FileChannelResultOps" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
-      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
-      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
       <script type="text/javascript">
          if(top === self) {
-            var url = '../../../index.html';
-            var hash = 'scalaz.stream.mongodb.MongoCommand';
+            var url = '../../../../index.html';
+            var hash = 'scalaz.stream.mongodb.filesystem.FileChannelResultOps';
             var anchor = window.location.hash;
             var anchor_opt = '';
             if (anchor.length >= 1)
@@ -24,9 +24,9 @@
         </head>
         <body class="type">
       <div id="definition">
-        <img src="../../../lib/trait_big.png" />
-        <p id="owner"><a href="../../package.html" class="extype" name="scalaz">scalaz</a>.<a href="../package.html" class="extype" name="scalaz.stream">stream</a>.<a href="package.html" class="extype" name="scalaz.stream.mongodb">mongodb</a></p>
-        <h1>MongoCommand</h1>
+        <img src="../../../../lib/trait_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="scalaz">scalaz</a>.<a href="../../package.html" class="extype" name="scalaz.stream">stream</a>.<a href="../package.html" class="extype" name="scalaz.stream.mongodb">mongodb</a>.<a href="package.html" class="extype" name="scalaz.stream.mongodb.filesystem">filesystem</a></p>
+        <h1>FileChannelResultOps</h1>
       </div>
 
       <h4 id="signature" class="signature">
@@ -35,17 +35,17 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <span class="name">MongoCommand</span><span class="tparams">[<span name="A">A</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <span class="name">FileChannelResultOps</span><span class="result"> extends <span class="extype" name="scalaz.syntax.Ops">Ops</span>[<a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="com.mongodb.DB">DB</span>, <a href="MongoFileRead.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFileRead">MongoFileRead</a>]]</span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Each operation on mongo shall result in this command</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>Type of result. DBObject or command now
-</p></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Ops to be available for list() command
+</p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="scalaz.syntax.Ops">Ops</span>[<a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="com.mongodb.DB">DB</span>, <a href="MongoFileRead.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFileRead">MongoFileRead</a>]], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div><div class="toggleContainer block">
           <span class="toggle">Known Subclasses</span>
-          <div class="subClasses hiddenContent"><a href="index/DropIndexByKeys.html" class="extype" name="scalaz.stream.mongodb.index.DropIndexByKeys">DropIndexByKeys</a>, <a href="index/DropIndexByName.html" class="extype" name="scalaz.stream.mongodb.index.DropIndexByName">DropIndexByName</a>, <a href="index/EnsureIndex.html" class="extype" name="scalaz.stream.mongodb.index.EnsureIndex">EnsureIndex</a>, <a href="update/InsertAction.html" class="extype" name="scalaz.stream.mongodb.update.InsertAction">InsertAction</a>, <a href="query/Query.html" class="extype" name="scalaz.stream.mongodb.query.Query">Query</a>, <a href="update/SaveAction.html" class="extype" name="scalaz.stream.mongodb.update.SaveAction">SaveAction</a></div>
+          <div class="subClasses hiddenContent"><a href="FileSystemSyntax$FileChannelResultSyntax.html" class="extype" name="scalaz.stream.mongodb.filesystem.FileSystemSyntax.FileChannelResultSyntax">FileChannelResultSyntax</a></div>
         </div></div>
         
 
@@ -63,7 +63,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="scalaz.stream.mongodb.MongoCommand"><span>MongoCommand</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="scalaz.stream.mongodb.filesystem.FileChannelResultOps"><span>FileChannelResultOps</span></li><li class="in" name="scalaz.syntax.Ops"><span>Ops</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -87,19 +87,19 @@
 
         <div id="values" class="values members">
               <h3>Abstract Value Members</h3>
-              <ol><li name="scalaz.stream.mongodb.MongoCommand#toChannelResult" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="toChannelResult:scalaz.stream.mongodb.channel.ChannelResult[A]"></a>
-      <a id="toChannelResult:ChannelResult[A]"></a>
+              <ol><li name="scalaz.syntax.Ops#self" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="self:A"></a>
+      <a id="self:ChannelResult[DB,MongoFileRead]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">abstract </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">toChannelResult</span><span class="result">: <a href="channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.MongoCommand.A">A</span>]</span>
+        <span class="name">self</span><span class="result">: <a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="com.mongodb.DB">DB</span>, <a href="MongoFileRead.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFileRead">MongoFileRead</a>]</span>
       </span>
       </h4>
-      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Ops</dd></dl></div>
     </li></ol>
             </div>
 
@@ -195,13 +195,39 @@
         <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
       <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="scalaz.stream.mongodb.filesystem.FileChannelResultOps#deleteFiles" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="deleteFiles:scalaz.stream.mongodb.channel.ChannelResult[com.mongodb.DB,(scalaz.stream.mongodb.filesystem.MongoFileRead,Unit)]"></a>
+      <a id="deleteFiles:ChannelResult[DB,(MongoFileRead,Unit)]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">deleteFiles</span><span class="result">: <a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="com.mongodb.DB">DB</span>, (<a href="MongoFileRead.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFileRead">MongoFileRead</a>, <span class="extype" name="scala.Unit">Unit</span>)]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">deletes all files listed *</p>
+    </li><li name="scalaz.stream.mongodb.filesystem.FileChannelResultOps#deleteOneFile" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="deleteOneFile:scalaz.stream.mongodb.channel.ChannelResult[com.mongodb.DB,Unit]"></a>
+      <a id="deleteOneFile:ChannelResult[DB,Unit]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">deleteOneFile</span><span class="result">: <a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="com.mongodb.DB">DB</span>, <span class="extype" name="scala.Unit">Unit</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">deletes very first file listed.</p><div class="fullcomment"><div class="comment cmt"><p>deletes very first file listed. *</p></div></div>
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a>
       <a id="eq(AnyRef):Boolean"></a>
@@ -240,7 +266,7 @@
         <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
       <span class="symbol">classOf[java.lang.Throwable]</span>
@@ -325,6 +351,32 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scalaz.stream.mongodb.filesystem.FileChannelResultOps#readFiles" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="readFiles(buffSize:Int):scalaz.stream.mongodb.channel.ChannelResult[com.mongodb.DB,(scalaz.stream.mongodb.filesystem.MongoFileRead,scalaz.stream.Process[scalaz.concurrent.Task,scalaz.stream.Bytes])]"></a>
+      <a id="readFiles(Int):ChannelResult[DB,(MongoFileRead,Process[Task,Bytes])]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">readFiles</span><span class="params">(<span name="buffSize">buffSize: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">GridFS.DEFAULT_CHUNKSIZE</span></span>)</span><span class="result">: <a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="com.mongodb.DB">DB</span>, (<a href="MongoFileRead.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFileRead">MongoFileRead</a>, <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.Bytes">Bytes</span>])]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">reads all files listed *</p>
+    </li><li name="scalaz.stream.mongodb.filesystem.FileChannelResultOps#readOneFile" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="readOneFile(buffSize:Int):scalaz.stream.mongodb.channel.ChannelResult[com.mongodb.DB,scalaz.stream.Bytes]"></a>
+      <a id="readOneFile(Int):ChannelResult[DB,Bytes]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">readOneFile</span><span class="params">(<span name="buffSize">buffSize: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">GridFS.DEFAULT_CHUNKSIZE</span></span>)</span><span class="result">: <a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="com.mongodb.DB">DB</span>, <span class="extype" name="scalaz.stream.Bytes">Bytes</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">reads very first file listed *</p>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>
@@ -417,7 +469,9 @@
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="scala.AnyRef">
+        <div class="parent" name="scalaz.syntax.Ops">
+              <h3>Inherited from <span class="extype" name="scalaz.syntax.Ops">Ops</span>[<a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="com.mongodb.DB">DB</span>, <a href="MongoFileRead.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFileRead">MongoFileRead</a>]]</h3>
+            </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">
               <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
@@ -437,6 +491,6 @@
       <div id="tooltip"></div>
 
       <div id="footer">  </div>
-      <script defer="defer" type="text/javascript" id="jquery-js" src="../../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../../lib/template.js"></script>
+      <script defer="defer" type="text/javascript" id="jquery-js" src="../../../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../../../lib/template.js"></script>
     </body>
       </html>

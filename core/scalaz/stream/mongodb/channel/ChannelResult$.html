@@ -151,15 +151,15 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
     </li><li name="scalaz.stream.mongodb.channel.ChannelResult#apply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="apply[A](f:com.mongodb.DBCollection=&gt;scalaz.concurrent.Task[A]):scalaz.stream.mongodb.channel.ChannelResult[A]"></a>
-      <a id="apply[A]((DBCollection)⇒Task[A]):ChannelResult[A]"></a>
+      <a id="apply[R,A](f:R=&gt;scalaz.concurrent.Task[A]):scalaz.stream.mongodb.channel.ChannelResult[R,A]"></a>
+      <a id="apply[R,A]((R)⇒Task[A]):ChannelResult[R,A]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="com.mongodb.DBCollection">DBCollection</span>) ⇒ <span class="extype" name="scalaz.concurrent.Task">Task</span>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.apply.A">A</span>]</span>)</span><span class="result">: <a href="ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.apply.A">A</span>]</span>
+        <span class="name">apply</span><span class="tparams">[<span name="R">R</span>, <span name="A">A</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.apply.R">R</span>) ⇒ <span class="extype" name="scalaz.concurrent.Task">Task</span>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.apply.A">A</span>]</span>)</span><span class="result">: <a href="ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.apply.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.apply.A">A</span>]</span>
       </span>
       </h4>
       <p class="shortcomment cmt">Helper to wrap simple tasks in channel result *</p>

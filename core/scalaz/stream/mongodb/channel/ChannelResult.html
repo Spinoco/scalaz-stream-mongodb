@@ -35,13 +35,13 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">ChannelResult</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="self">self: <span class="extype" name="scalaz.stream.Process.Channel">Channel</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="com.mongodb.DBCollection">DBCollection</span>, <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>]]</span>)</span><span class="result"> extends <a href="ChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps">ChannelResultOps</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">ChannelResult</span><span class="tparams">[<span name="R">R</span>, <span name="A">A</span>]</span><span class="params">(<span name="channel">channel: <span class="extype" name="scalaz.stream.Process.Channel">Channel</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>]]</span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.Product">Product</span>, <span class="extype" name="scala.Equals">Equals</span>, <a href="ChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps">ChannelResultOps</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>], <span class="extype" name="scalaz.syntax.Ops">Ops</span>[<span class="extype" name="scalaz.stream.Process.Channel">Channel</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="com.mongodb.DBCollection">DBCollection</span>, <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>]]], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.Product">Product</span>, <span class="extype" name="scala.Equals">Equals</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -59,7 +59,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="scalaz.stream.mongodb.channel.ChannelResult"><span>ChannelResult</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="scalaz.stream.mongodb.channel.ChannelResultOps"><span>ChannelResultOps</span></li><li class="in" name="scalaz.syntax.Ops"><span>Ops</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="scalaz.stream.mongodb.channel.ChannelResult"><span>ChannelResult</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -80,15 +80,15 @@
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="scalaz.stream.mongodb.channel.ChannelResult#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(self:scalaz.stream.Process.Channel[scalaz.concurrent.Task,com.mongodb.DBCollection,scalaz.stream.Process[scalaz.concurrent.Task,A]]):scalaz.stream.mongodb.channel.ChannelResult[A]"></a>
-      <a id="&lt;init&gt;:ChannelResult[A]"></a>
+      <a id="&lt;init&gt;(channel:scalaz.stream.Process.Channel[scalaz.concurrent.Task,R,scalaz.stream.Process[scalaz.concurrent.Task,A]]):scalaz.stream.mongodb.channel.ChannelResult[R,A]"></a>
+      <a id="&lt;init&gt;:ChannelResult[R,A]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">ChannelResult</span><span class="params">(<span name="self">self: <span class="extype" name="scalaz.stream.Process.Channel">Channel</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="com.mongodb.DBCollection">DBCollection</span>, <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>]]</span>)</span>
+        <span class="name">ChannelResult</span><span class="params">(<span name="channel">channel: <span class="extype" name="scalaz.stream.Process.Channel">Channel</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>]]</span>)</span>
       </span>
       </h4>
       
@@ -140,19 +140,32 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.channel.ChannelResultOps#++" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="++[B&gt;:A]()(p2:=&gt;scalaz.stream.Process[scalaz.concurrent.Task,B]):scalaz.stream.mongodb.channel.ChannelResult[B]"></a>
-      <a id="++[B&gt;:A]()(⇒Process[Task,B]):ChannelResult[B]"></a>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#++" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="++[B&gt;:A](ch2:scalaz.stream.mongodb.channel.ChannelResult[R,B]):scalaz.stream.mongodb.channel.ChannelResult[R,B]"></a>
+      <a id="++[B&gt;:A](ChannelResult[R,B]):ChannelResult[R,B]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $plus$plus" class="name">++</span><span class="tparams">[<span name="B">B &gt;: <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span></span>]</span><span class="params">()</span><span class="params">(<span name="p2">p2: ⇒ <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.++.B">B</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.++.B">B</span>]</span>
+        <span title="gt4s: $plus$plus" class="name">++</span><span class="tparams">[<span name="B">B &gt;: <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span></span>]</span><span class="params">(<span name="ch2">ch2: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.++.B">B</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.++.B">B</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.append">scalaz.stream.Process.append</span> on resulting stream *</p><div class="fullcomment"><div class="comment cmt"><p>applies <span class="extype" name="scalaz.stream.Process.append">scalaz.stream.Process.append</span> on resulting stream *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps">ChannelResultOps</a></dd></dl></div>
+      <p class="shortcomment cmt">alias for <code>append</code> of ChannelResult *</p>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#++" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="++[B&gt;:A]()(p2:=&gt;scalaz.stream.Process[scalaz.concurrent.Task,B]):scalaz.stream.mongodb.channel.ChannelResult[R,B]"></a>
+      <a id="++[B&gt;:A]()(⇒Process[Task,B]):ChannelResult[R,B]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $plus$plus" class="name">++</span><span class="tparams">[<span name="B">B &gt;: <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span></span>]</span><span class="params">()</span><span class="params">(<span name="p2">p2: ⇒ <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.++.B">B</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.++.B">B</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.append">scalaz.stream.Process.append</span> on resulting stream *</p>
     </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="==(x$1:AnyRef):Boolean"></a>
       <a id="==(AnyRef):Boolean"></a>
@@ -179,19 +192,32 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.channel.ChannelResultOps#append" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="append[B&gt;:A](p2:=&gt;scalaz.stream.Process[scalaz.concurrent.Task,B]):scalaz.stream.mongodb.channel.ChannelResult[B]"></a>
-      <a id="append[B&gt;:A](⇒Process[Task,B]):ChannelResult[B]"></a>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#append" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="append[B&gt;:A](ch2:scalaz.stream.mongodb.channel.ChannelResult[R,B]):scalaz.stream.mongodb.channel.ChannelResult[R,B]"></a>
+      <a id="append[B&gt;:A](ChannelResult[R,B]):ChannelResult[R,B]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">append</span><span class="tparams">[<span name="B">B &gt;: <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span></span>]</span><span class="params">(<span name="p2">p2: ⇒ <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.append.B">B</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.append.B">B</span>]</span>
+        <span class="name">append</span><span class="tparams">[<span name="B">B &gt;: <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span></span>]</span><span class="params">(<span name="ch2">ch2: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.append.B">B</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.append.B">B</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.append">scalaz.stream.Process.append</span> on resulting stream *</p><div class="fullcomment"><div class="comment cmt"><p>applies <span class="extype" name="scalaz.stream.Process.append">scalaz.stream.Process.append</span> on resulting stream *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps">ChannelResultOps</a></dd></dl></div>
+      <p class="shortcomment cmt">append variant taking the ChannelResult as its second argument.</p><div class="fullcomment"><div class="comment cmt"><p>append variant taking the ChannelResult as its second argument. Please note her that the argument is strict *</p></div></div>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#append" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="append[B&gt;:A](p2:=&gt;scalaz.stream.Process[scalaz.concurrent.Task,B]):scalaz.stream.mongodb.channel.ChannelResult[R,B]"></a>
+      <a id="append[B&gt;:A](⇒Process[Task,B]):ChannelResult[R,B]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">append</span><span class="tparams">[<span name="B">B &gt;: <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span></span>]</span><span class="params">(<span name="p2">p2: ⇒ <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.append.B">B</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.append.B">B</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.append">scalaz.stream.Process.append</span> on resulting stream *</p>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -205,32 +231,45 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.channel.ChannelResultOps#attempt" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="attempt[B](f:Throwable=&gt;scalaz.stream.Process[scalaz.concurrent.Task,B]):scalaz.stream.mongodb.channel.ChannelResult[scalaz.\/[B,A]]"></a>
-      <a id="attempt[B]((Throwable)⇒Process[Task,B]):ChannelResult[\/[B,A]]"></a>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#attempt" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="attempt[B](f:Throwable=&gt;scalaz.stream.Process[scalaz.concurrent.Task,B]):scalaz.stream.mongodb.channel.ChannelResult[R,scalaz.\/[B,A]]"></a>
+      <a id="attempt[B]((Throwable)⇒Process[Task,B]):ChannelResult[R,\/[B,A]]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">attempt</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="scala.Throwable">Throwable</span>) ⇒ <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.attempt.B">B</span>] = <span class="defval" name='<span class="name"><a href="../../../package.html">(t: Throwable) =&gt; emit(Task.fail(t)).eval</a></span>'>...</span></span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.\/">\/</span>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.attempt.B">B</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>]]</span>
+        <span class="name">attempt</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="scala.Throwable">Throwable</span>) ⇒ <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.attempt.B">B</span>] = <span class="defval" name='<span class="name"><a href="../../../package.html">(t: Throwable) =&gt; emit(Task.fail(t)).eval</a></span>'>...</span></span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.\/">\/</span>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.attempt.B">B</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>]]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.attempt">scalaz.stream.Process.attempt</span> on resulting stream *</p><div class="fullcomment"><div class="comment cmt"><p>applies <span class="extype" name="scalaz.stream.Process.attempt">scalaz.stream.Process.attempt</span> on resulting stream *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps">ChannelResultOps</a></dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.channel.ChannelResultOps#causedBy" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="causedBy[B&gt;:A](e:Throwable):scalaz.stream.mongodb.channel.ChannelResult[B]"></a>
-      <a id="causedBy[B&gt;:A](Throwable):ChannelResult[B]"></a>
+      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.attempt">scalaz.stream.Process.attempt</span> on resulting stream *</p>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#causedBy" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="causedBy[B&gt;:A](e:Throwable):scalaz.stream.mongodb.channel.ChannelResult[R,B]"></a>
+      <a id="causedBy[B&gt;:A](Throwable):ChannelResult[R,B]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">causedBy</span><span class="tparams">[<span name="B">B &gt;: <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span></span>]</span><span class="params">(<span name="e">e: <span class="extype" name="scala.Throwable">Throwable</span></span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.causedBy.B">B</span>]</span>
+        <span class="name">causedBy</span><span class="tparams">[<span name="B">B &gt;: <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span></span>]</span><span class="params">(<span name="e">e: <span class="extype" name="scala.Throwable">Throwable</span></span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.causedBy.B">B</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.causedBy">scalaz.stream.Process.causedBy</span> on resulting stream *</p><div class="fullcomment"><div class="comment cmt"><p>applies <span class="extype" name="scalaz.stream.Process.causedBy">scalaz.stream.Process.causedBy</span> on resulting stream *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps">ChannelResultOps</a></dd></dl></div>
+      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.causedBy">scalaz.stream.Process.causedBy</span> on resulting stream *</p>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#channel" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="channel:scalaz.stream.Process.Channel[scalaz.concurrent.Task,R,scalaz.stream.Process[scalaz.concurrent.Task,A]]"></a>
+      <a id="channel:Channel[Task,R,Process[Task,A]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">channel</span><span class="result">: <span class="extype" name="scalaz.stream.Process.Channel">Channel</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>]]</span>
+      </span>
+      </h4>
+      
     </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a>
       <a id="clone():AnyRef"></a>
@@ -250,45 +289,45 @@
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.channel.ChannelResultOps#disconnect" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="disconnect:scalaz.stream.mongodb.channel.ChannelResult[A]"></a>
-      <a id="disconnect:ChannelResult[A]"></a>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#disconnect" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="disconnect:scalaz.stream.mongodb.channel.ChannelResult[R,A]"></a>
+      <a id="disconnect:ChannelResult[R,A]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">disconnect</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>]</span>
+        <span class="name">disconnect</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.disconnect">scalaz.stream.Process.disconnect</span> on resulting stream *</p><div class="fullcomment"><div class="comment cmt"><p>applies <span class="extype" name="scalaz.stream.Process.disconnect">scalaz.stream.Process.disconnect</span> on resulting stream *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps">ChannelResultOps</a></dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.channel.ChannelResultOps#drain" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="drain:scalaz.stream.mongodb.channel.ChannelResult[Nothing]"></a>
-      <a id="drain:ChannelResult[Nothing]"></a>
+      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.disconnect">scalaz.stream.Process.disconnect</span> on resulting stream *</p>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#drain" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="drain:scalaz.stream.mongodb.channel.ChannelResult[R,Nothing]"></a>
+      <a id="drain:ChannelResult[R,Nothing]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">drain</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scala.Nothing">Nothing</span>]</span>
+        <span class="name">drain</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scala.Nothing">Nothing</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.drain">scalaz.stream.Process.drain</span> on resulting stream *</p><div class="fullcomment"><div class="comment cmt"><p>applies <span class="extype" name="scalaz.stream.Process.drain">scalaz.stream.Process.drain</span> on resulting stream *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps">ChannelResultOps</a></dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.channel.ChannelResultOps#either" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="either[B&gt;:A,C](p2:scalaz.stream.Process[scalaz.concurrent.Task,C]):scalaz.stream.mongodb.channel.ChannelResult[scalaz.\/[B,C]]"></a>
-      <a id="either[B&gt;:A,C](Process[Task,C]):ChannelResult[\/[B,C]]"></a>
+      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.drain">scalaz.stream.Process.drain</span> on resulting stream *</p>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#either" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="either[B&gt;:A,C](p2:scalaz.stream.Process[scalaz.concurrent.Task,C]):scalaz.stream.mongodb.channel.ChannelResult[R,scalaz.\/[B,C]]"></a>
+      <a id="either[B&gt;:A,C](Process[Task,C]):ChannelResult[R,\/[B,C]]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">either</span><span class="tparams">[<span name="B">B &gt;: <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span></span>, <span name="C">C</span>]</span><span class="params">(<span name="p2">p2: <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.either.C">C</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.\/">\/</span>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.either.B">B</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.either.C">C</span>]]</span>
+        <span class="name">either</span><span class="tparams">[<span name="B">B &gt;: <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span></span>, <span name="C">C</span>]</span><span class="params">(<span name="p2">p2: <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.either.C">C</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.\/">\/</span>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.either.B">B</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.either.C">C</span>]]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.either">scalaz.stream.Process.either</span> on resulting stream *</p><div class="fullcomment"><div class="comment cmt"><p>applies <span class="extype" name="scalaz.stream.Process.either">scalaz.stream.Process.either</span> on resulting stream *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps">ChannelResultOps</a></dd></dl></div>
+      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.either">scalaz.stream.Process.either</span> on resulting stream *</p>
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a>
       <a id="eq(AnyRef):Boolean"></a>
@@ -302,32 +341,32 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.channel.ChannelResultOps#fallback" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="fallback:scalaz.stream.mongodb.channel.ChannelResult[A]"></a>
-      <a id="fallback:ChannelResult[A]"></a>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#fallback" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="fallback:scalaz.stream.mongodb.channel.ChannelResult[R,A]"></a>
+      <a id="fallback:ChannelResult[R,A]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">fallback</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>]</span>
+        <span class="name">fallback</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.fallback">scalaz.stream.Process.fallback</span> on resulting stream *</p><div class="fullcomment"><div class="comment cmt"><p>applies <span class="extype" name="scalaz.stream.Process.fallback">scalaz.stream.Process.fallback</span> on resulting stream *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps">ChannelResultOps</a></dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.channel.ChannelResultOps#fby" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="fby[B&gt;:A](p2:=&gt;scalaz.stream.Process[scalaz.concurrent.Task,B]):scalaz.stream.mongodb.channel.ChannelResult[B]"></a>
-      <a id="fby[B&gt;:A](⇒Process[Task,B]):ChannelResult[B]"></a>
+      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.fallback">scalaz.stream.Process.fallback</span> on resulting stream *</p>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#fby" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="fby[B&gt;:A](p2:=&gt;scalaz.stream.Process[scalaz.concurrent.Task,B]):scalaz.stream.mongodb.channel.ChannelResult[R,B]"></a>
+      <a id="fby[B&gt;:A](⇒Process[Task,B]):ChannelResult[R,B]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">fby</span><span class="tparams">[<span name="B">B &gt;: <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span></span>]</span><span class="params">(<span name="p2">p2: ⇒ <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.fby.B">B</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.fby.B">B</span>]</span>
+        <span class="name">fby</span><span class="tparams">[<span name="B">B &gt;: <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span></span>]</span><span class="params">(<span name="p2">p2: ⇒ <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.fby.B">B</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.fby.B">B</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.then">scalaz.stream.Process.then</span> on resulting stream *</p><div class="fullcomment"><div class="comment cmt"><p>applies <span class="extype" name="scalaz.stream.Process.then">scalaz.stream.Process.then</span> on resulting stream *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps">ChannelResultOps</a></dd></dl></div>
+      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.then">scalaz.stream.Process.then</span> on resulting stream *</p>
     </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <a id="finalize():Unit"></a>
@@ -347,19 +386,32 @@
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.channel.ChannelResultOps#flatMap" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="flatMap[B](f:A=&gt;scalaz.stream.Process[scalaz.concurrent.Task,B]):scalaz.stream.mongodb.channel.ChannelResult[B]"></a>
-      <a id="flatMap[B]((A)⇒Process[Task,B]):ChannelResult[B]"></a>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#flatMap" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="flatMap[B](f:A=&gt;scalaz.stream.mongodb.channel.ChannelResult[R,B]):scalaz.stream.mongodb.channel.ChannelResult[R,B]"></a>
+      <a id="flatMap[B]((A)⇒ChannelResult[R,B]):ChannelResult[R,B]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">flatMap</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>) ⇒ <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.flatMap.B">B</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.flatMap.B">B</span>]</span>
+        <span class="name">flatMap</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>) ⇒ <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.flatMap.B">B</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.flatMap.B">B</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.flatMap">scalaz.stream.Process.flatMap</span> on resulting stream *</p><div class="fullcomment"><div class="comment cmt"><p>applies <span class="extype" name="scalaz.stream.Process.flatMap">scalaz.stream.Process.flatMap</span> on resulting stream *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps">ChannelResultOps</a></dd></dl></div>
+      <p class="shortcomment cmt">binds other ChanelResult to this ChannelResult *</p>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#flatMapProcess" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="flatMapProcess[B](f:A=&gt;scalaz.stream.Process[scalaz.concurrent.Task,B]):scalaz.stream.mongodb.channel.ChannelResult[R,B]"></a>
+      <a id="flatMapProcess[B]((A)⇒Process[Task,B]):ChannelResult[R,B]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">flatMapProcess</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>) ⇒ <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.flatMapProcess.B">B</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.flatMapProcess.B">B</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.flatMap">scalaz.stream.Process.flatMap</span> on resulting stream *</p>
     </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <a id="getClass():Class[_]"></a>
@@ -373,32 +425,32 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.channel.ChannelResultOps#handle" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="handle[B](f:PartialFunction[Throwable,scalaz.stream.Process[scalaz.concurrent.Task,B]]):scalaz.stream.mongodb.channel.ChannelResult[B]"></a>
-      <a id="handle[B](PartialFunction[Throwable,Process[Task,B]]):ChannelResult[B]"></a>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#handle" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="handle[B](f:PartialFunction[Throwable,scalaz.stream.Process[scalaz.concurrent.Task,B]]):scalaz.stream.mongodb.channel.ChannelResult[R,B]"></a>
+      <a id="handle[B](PartialFunction[Throwable,Process[Task,B]]):ChannelResult[R,B]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">handle</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="f">f: <span class="extype" name="scala.PartialFunction">PartialFunction</span>[<span class="extype" name="scala.Throwable">Throwable</span>, <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.handle.B">B</span>]]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.handle.B">B</span>]</span>
+        <span class="name">handle</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="f">f: <span class="extype" name="scala.PartialFunction">PartialFunction</span>[<span class="extype" name="scala.Throwable">Throwable</span>, <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.handle.B">B</span>]]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.handle.B">B</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.handle">scalaz.stream.Process.handle</span> on resulting stream *</p><div class="fullcomment"><div class="comment cmt"><p>applies <span class="extype" name="scalaz.stream.Process.handle">scalaz.stream.Process.handle</span> on resulting stream *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps">ChannelResultOps</a></dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.channel.ChannelResultOps#hardDisconnect" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="hardDisconnect:scalaz.stream.mongodb.channel.ChannelResult[A]"></a>
-      <a id="hardDisconnect:ChannelResult[A]"></a>
+      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.handle">scalaz.stream.Process.handle</span> on resulting stream *</p>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#hardDisconnect" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="hardDisconnect:scalaz.stream.mongodb.channel.ChannelResult[R,A]"></a>
+      <a id="hardDisconnect:ChannelResult[R,A]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">hardDisconnect</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>]</span>
+        <span class="name">hardDisconnect</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.hardDisconnect">scalaz.stream.Process.hardDisconnect</span> on resulting stream *</p><div class="fullcomment"><div class="comment cmt"><p>applies <span class="extype" name="scalaz.stream.Process.hardDisconnect">scalaz.stream.Process.hardDisconnect</span> on resulting stream *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps">ChannelResultOps</a></dd></dl></div>
+      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.hardDisconnect">scalaz.stream.Process.hardDisconnect</span> on resulting stream *</p>
     </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <a id="isInstanceOf[T0]:Boolean"></a>
@@ -412,58 +464,58 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.channel.ChannelResultOps#kill" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="kill:scalaz.stream.mongodb.channel.ChannelResult[Nothing]"></a>
-      <a id="kill:ChannelResult[Nothing]"></a>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#kill" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="kill:scalaz.stream.mongodb.channel.ChannelResult[R,Nothing]"></a>
+      <a id="kill:ChannelResult[R,Nothing]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">kill</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scala.Nothing">Nothing</span>]</span>
+        <span class="name">kill</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scala.Nothing">Nothing</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.kill">scalaz.stream.Process.kill</span> on resulting stream *</p><div class="fullcomment"><div class="comment cmt"><p>applies <span class="extype" name="scalaz.stream.Process.kill">scalaz.stream.Process.kill</span> on resulting stream *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps">ChannelResultOps</a></dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.channel.ChannelResultOps#killBy" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="killBy(e:Throwable):scalaz.stream.mongodb.channel.ChannelResult[Nothing]"></a>
-      <a id="killBy(Throwable):ChannelResult[Nothing]"></a>
+      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.kill">scalaz.stream.Process.kill</span> on resulting stream *</p>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#killBy" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="killBy(e:Throwable):scalaz.stream.mongodb.channel.ChannelResult[R,Nothing]"></a>
+      <a id="killBy(Throwable):ChannelResult[R,Nothing]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">killBy</span><span class="params">(<span name="e">e: <span class="extype" name="scala.Throwable">Throwable</span></span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scala.Nothing">Nothing</span>]</span>
+        <span class="name">killBy</span><span class="params">(<span name="e">e: <span class="extype" name="scala.Throwable">Throwable</span></span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scala.Nothing">Nothing</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.killBy">scalaz.stream.Process.killBy</span> on resulting stream *</p><div class="fullcomment"><div class="comment cmt"><p>applies <span class="extype" name="scalaz.stream.Process.killBy">scalaz.stream.Process.killBy</span> on resulting stream *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps">ChannelResultOps</a></dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.channel.ChannelResultOps#map" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="map[B](f:A=&gt;B):scalaz.stream.mongodb.channel.ChannelResult[B]"></a>
-      <a id="map[B]((A)⇒B):ChannelResult[B]"></a>
+      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.killBy">scalaz.stream.Process.killBy</span> on resulting stream *</p>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#map" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="map[B](f:A=&gt;B):scalaz.stream.mongodb.channel.ChannelResult[R,B]"></a>
+      <a id="map[B]((A)⇒B):ChannelResult[R,B]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">map</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>) ⇒ <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.map.B">B</span></span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.map.B">B</span>]</span>
+        <span class="name">map</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>) ⇒ <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.map.B">B</span></span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.map.B">B</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.map">scalaz.stream.Process.map</span> on resulting stream *</p><div class="fullcomment"><div class="comment cmt"><p>applies <span class="extype" name="scalaz.stream.Process.map">scalaz.stream.Process.map</span> on resulting stream *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps">ChannelResultOps</a></dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.channel.ChannelResultOps#merge" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="merge[B&gt;:A](p2:scalaz.stream.Process[scalaz.concurrent.Task,B]):scalaz.stream.mongodb.channel.ChannelResult[B]"></a>
-      <a id="merge[B&gt;:A](Process[Task,B]):ChannelResult[B]"></a>
+      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.map">scalaz.stream.Process.map</span> on resulting stream *</p>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#merge" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="merge[B&gt;:A](p2:scalaz.stream.Process[scalaz.concurrent.Task,B]):scalaz.stream.mongodb.channel.ChannelResult[R,B]"></a>
+      <a id="merge[B&gt;:A](Process[Task,B]):ChannelResult[R,B]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">merge</span><span class="tparams">[<span name="B">B &gt;: <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span></span>]</span><span class="params">(<span name="p2">p2: <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.merge.B">B</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.merge.B">B</span>]</span>
+        <span class="name">merge</span><span class="tparams">[<span name="B">B &gt;: <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span></span>]</span><span class="params">(<span name="p2">p2: <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.merge.B">B</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.merge.B">B</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.merge">scalaz.stream.Process.merge</span> on resulting stream *</p><div class="fullcomment"><div class="comment cmt"><p>applies <span class="extype" name="scalaz.stream.Process.merge">scalaz.stream.Process.merge</span> on resulting stream *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps">ChannelResultOps</a></dd></dl></div>
+      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.merge">scalaz.stream.Process.merge</span> on resulting stream *</p>
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>
@@ -503,97 +555,84 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.channel.ChannelResultOps#onComplete" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="onComplete[B&gt;:A](p2:=&gt;scalaz.stream.Process[scalaz.concurrent.Task,B]):scalaz.stream.mongodb.channel.ChannelResult[B]"></a>
-      <a id="onComplete[B&gt;:A](⇒Process[Task,B]):ChannelResult[B]"></a>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#onComplete" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="onComplete[B&gt;:A](p2:=&gt;scalaz.stream.Process[scalaz.concurrent.Task,B]):scalaz.stream.mongodb.channel.ChannelResult[R,B]"></a>
+      <a id="onComplete[B&gt;:A](⇒Process[Task,B]):ChannelResult[R,B]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">onComplete</span><span class="tparams">[<span name="B">B &gt;: <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span></span>]</span><span class="params">(<span name="p2">p2: ⇒ <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.onComplete.B">B</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.onComplete.B">B</span>]</span>
+        <span class="name">onComplete</span><span class="tparams">[<span name="B">B &gt;: <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span></span>]</span><span class="params">(<span name="p2">p2: ⇒ <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.onComplete.B">B</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.onComplete.B">B</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.onComplete">scalaz.stream.Process.onComplete</span> on resulting stream *</p><div class="fullcomment"><div class="comment cmt"><p>applies <span class="extype" name="scalaz.stream.Process.onComplete">scalaz.stream.Process.onComplete</span> on resulting stream *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps">ChannelResultOps</a></dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.channel.ChannelResultOps#onFailure" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="onFailure[B&gt;:A](p2:=&gt;scalaz.stream.Process[scalaz.concurrent.Task,B]):scalaz.stream.mongodb.channel.ChannelResult[B]"></a>
-      <a id="onFailure[B&gt;:A](⇒Process[Task,B]):ChannelResult[B]"></a>
+      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.onComplete">scalaz.stream.Process.onComplete</span> on resulting stream *</p>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#onFailure" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="onFailure[B&gt;:A](p2:=&gt;scalaz.stream.Process[scalaz.concurrent.Task,B]):scalaz.stream.mongodb.channel.ChannelResult[R,B]"></a>
+      <a id="onFailure[B&gt;:A](⇒Process[Task,B]):ChannelResult[R,B]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">onFailure</span><span class="tparams">[<span name="B">B &gt;: <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span></span>]</span><span class="params">(<span name="p2">p2: ⇒ <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.onFailure.B">B</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.onFailure.B">B</span>]</span>
+        <span class="name">onFailure</span><span class="tparams">[<span name="B">B &gt;: <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span></span>]</span><span class="params">(<span name="p2">p2: ⇒ <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.onFailure.B">B</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.onFailure.B">B</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.onFailure">scalaz.stream.Process.onFailure</span> on resulting stream *</p><div class="fullcomment"><div class="comment cmt"><p>applies <span class="extype" name="scalaz.stream.Process.onFailure">scalaz.stream.Process.onFailure</span> on resulting stream *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps">ChannelResultOps</a></dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.channel.ChannelResultOps#orElse" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="orElse[B&gt;:A](fallback:=&gt;scalaz.stream.Process[scalaz.concurrent.Task,B],cleanup:=&gt;scalaz.stream.Process[scalaz.concurrent.Task,B]):scalaz.stream.mongodb.channel.ChannelResult[B]"></a>
-      <a id="orElse[B&gt;:A](⇒Process[Task,B],⇒Process[Task,B]):ChannelResult[B]"></a>
+      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.onFailure">scalaz.stream.Process.onFailure</span> on resulting stream *</p>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#orElse" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="orElse[B&gt;:A](fallback:=&gt;scalaz.stream.Process[scalaz.concurrent.Task,B],cleanup:=&gt;scalaz.stream.Process[scalaz.concurrent.Task,B]):scalaz.stream.mongodb.channel.ChannelResult[R,B]"></a>
+      <a id="orElse[B&gt;:A](⇒Process[Task,B],⇒Process[Task,B]):ChannelResult[R,B]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">orElse</span><span class="tparams">[<span name="B">B &gt;: <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span></span>]</span><span class="params">(<span name="fallback">fallback: ⇒ <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.orElse.B">B</span>]</span>, <span name="cleanup">cleanup: ⇒ <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.orElse.B">B</span>] = <span class="symbol"><span class="name"><a href="../../../package.html">halt</a></span></span></span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.orElse.B">B</span>]</span>
+        <span class="name">orElse</span><span class="tparams">[<span name="B">B &gt;: <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span></span>]</span><span class="params">(<span name="fallback">fallback: ⇒ <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.orElse.B">B</span>]</span>, <span name="cleanup">cleanup: ⇒ <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.orElse.B">B</span>] = <span class="symbol"><span class="name"><a href="../../../package.html">halt</a></span></span></span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.orElse.B">B</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.orElse">scalaz.stream.Process.orElse</span> on resulting stream *</p><div class="fullcomment"><div class="comment cmt"><p>applies <span class="extype" name="scalaz.stream.Process.orElse">scalaz.stream.Process.orElse</span> on resulting stream *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps">ChannelResultOps</a></dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.channel.ChannelResultOps#partialAttempt" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="partialAttempt[B](f:PartialFunction[Throwable,scalaz.stream.Process[scalaz.concurrent.Task,B]]):scalaz.stream.mongodb.channel.ChannelResult[scalaz.\/[B,A]]"></a>
-      <a id="partialAttempt[B](PartialFunction[Throwable,Process[Task,B]]):ChannelResult[\/[B,A]]"></a>
+      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.orElse">scalaz.stream.Process.orElse</span> on resulting stream *</p>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#partialAttempt" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="partialAttempt[B](f:PartialFunction[Throwable,scalaz.stream.Process[scalaz.concurrent.Task,B]]):scalaz.stream.mongodb.channel.ChannelResult[R,scalaz.\/[B,A]]"></a>
+      <a id="partialAttempt[B](PartialFunction[Throwable,Process[Task,B]]):ChannelResult[R,\/[B,A]]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">partialAttempt</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="f">f: <span class="extype" name="scala.PartialFunction">PartialFunction</span>[<span class="extype" name="scala.Throwable">Throwable</span>, <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.partialAttempt.B">B</span>]]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.\/">\/</span>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.partialAttempt.B">B</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>]]</span>
+        <span class="name">partialAttempt</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="f">f: <span class="extype" name="scala.PartialFunction">PartialFunction</span>[<span class="extype" name="scala.Throwable">Throwable</span>, <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.partialAttempt.B">B</span>]]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.\/">\/</span>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.partialAttempt.B">B</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>]]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.partialAttempt">scalaz.stream.Process.partialAttempt</span> on resulting stream *</p><div class="fullcomment"><div class="comment cmt"><p>applies <span class="extype" name="scalaz.stream.Process.partialAttempt">scalaz.stream.Process.partialAttempt</span> on resulting stream *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps">ChannelResultOps</a></dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.channel.ChannelResultOps#pipe" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="pipe[B](p2:scalaz.stream.Process.Process1[A,B]):scalaz.stream.mongodb.channel.ChannelResult[B]"></a>
-      <a id="pipe[B](Process1[A,B]):ChannelResult[B]"></a>
+      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.partialAttempt">scalaz.stream.Process.partialAttempt</span> on resulting stream *</p>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#pipe" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="pipe[B](p2:scalaz.stream.Process.Process1[A,B]):scalaz.stream.mongodb.channel.ChannelResult[R,B]"></a>
+      <a id="pipe[B](Process1[A,B]):ChannelResult[R,B]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">pipe</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="p2">p2: <span class="extype" name="scalaz.stream.Process.Process1">Process1</span>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.pipe.B">B</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.pipe.B">B</span>]</span>
+        <span class="name">pipe</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="p2">p2: <span class="extype" name="scalaz.stream.Process.Process1">Process1</span>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.pipe.B">B</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.pipe.B">B</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.pipe">scalaz.stream.Process.pipe</span> on resulting stream *</p><div class="fullcomment"><div class="comment cmt"><p>applies <span class="extype" name="scalaz.stream.Process.pipe">scalaz.stream.Process.pipe</span> on resulting stream *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps">ChannelResultOps</a></dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.channel.ChannelResultOps#repeat" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="repeat[B&gt;:A]:scalaz.stream.mongodb.channel.ChannelResult[B]"></a>
-      <a id="repeat[B&gt;:A]:ChannelResult[B]"></a>
+      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.pipe">scalaz.stream.Process.pipe</span> on resulting stream *</p>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#repeat" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="repeat[B&gt;:A]:scalaz.stream.mongodb.channel.ChannelResult[R,B]"></a>
+      <a id="repeat[B&gt;:A]:ChannelResult[R,B]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">repeat</span><span class="tparams">[<span name="B">B &gt;: <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span></span>]</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.repeat.B">B</span>]</span>
+        <span class="name">repeat</span><span class="tparams">[<span name="B">B &gt;: <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span></span>]</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.repeat.B">B</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.repeat">scalaz.stream.Process.repeat</span> on resulting stream *</p><div class="fullcomment"><div class="comment cmt"><p>applies <span class="extype" name="scalaz.stream.Process.repeat">scalaz.stream.Process.repeat</span> on resulting stream *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps">ChannelResultOps</a></dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#self" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="self:scalaz.stream.Process.Channel[scalaz.concurrent.Task,com.mongodb.DBCollection,scalaz.stream.Process[scalaz.concurrent.Task,A]]"></a>
-      <a id="self:Channel[Task,DBCollection,Process[Task,A]]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">self</span><span class="result">: <span class="extype" name="scalaz.stream.Process.Channel">Channel</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="com.mongodb.DBCollection">DBCollection</span>, <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>]]</span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a> → Ops</dd></dl></div>
+      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.repeat">scalaz.stream.Process.repeat</span> on resulting stream *</p>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>
@@ -607,71 +646,71 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.channel.ChannelResultOps#tee" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="tee[B,C](p2:scalaz.stream.Process[scalaz.concurrent.Task,B])(t:scalaz.stream.Process.Tee[A,B,C]):scalaz.stream.mongodb.channel.ChannelResult[C]"></a>
-      <a id="tee[B,C](Process[Task,B])(Tee[A,B,C]):ChannelResult[C]"></a>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#tee" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="tee[B,C](p2:scalaz.stream.Process[scalaz.concurrent.Task,B])(t:scalaz.stream.Process.Tee[A,B,C]):scalaz.stream.mongodb.channel.ChannelResult[R,C]"></a>
+      <a id="tee[B,C](Process[Task,B])(Tee[A,B,C]):ChannelResult[R,C]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">tee</span><span class="tparams">[<span name="B">B</span>, <span name="C">C</span>]</span><span class="params">(<span name="p2">p2: <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.tee.B">B</span>]</span>)</span><span class="params">(<span name="t">t: <span class="extype" name="scalaz.stream.Process.Tee">Tee</span>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.tee.B">B</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.tee.C">C</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.tee.C">C</span>]</span>
+        <span class="name">tee</span><span class="tparams">[<span name="B">B</span>, <span name="C">C</span>]</span><span class="params">(<span name="p2">p2: <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.tee.B">B</span>]</span>)</span><span class="params">(<span name="t">t: <span class="extype" name="scalaz.stream.Process.Tee">Tee</span>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.tee.B">B</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.tee.C">C</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.tee.C">C</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.tee">scalaz.stream.Process.tee</span> on resulting stream *</p><div class="fullcomment"><div class="comment cmt"><p>applies <span class="extype" name="scalaz.stream.Process.tee">scalaz.stream.Process.tee</span> on resulting stream *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps">ChannelResultOps</a></dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.channel.ChannelResultOps#through" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="through[B](p:scalaz.stream.Process.Channel[scalaz.concurrent.Task,A,B]):scalaz.stream.mongodb.channel.ChannelResult[B]"></a>
-      <a id="through[B](Channel[Task,A,B]):ChannelResult[B]"></a>
+      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.tee">scalaz.stream.Process.tee</span> on resulting stream *</p>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#through" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="through[B](p:scalaz.stream.Process.Channel[scalaz.concurrent.Task,A,B]):scalaz.stream.mongodb.channel.ChannelResult[R,B]"></a>
+      <a id="through[B](Channel[Task,A,B]):ChannelResult[R,B]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">through</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="p">p: <span class="extype" name="scalaz.stream.Process.Channel">Channel</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.through.B">B</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.through.B">B</span>]</span>
+        <span class="name">through</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="p">p: <span class="extype" name="scalaz.stream.Process.Channel">Channel</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.through.B">B</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.through.B">B</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.ProcessSyntax.through">scalaz.stream.Process.ProcessSyntax.through</span> on resulting stream *</p><div class="fullcomment"><div class="comment cmt"><p>applies <span class="extype" name="scalaz.stream.Process.ProcessSyntax.through">scalaz.stream.Process.ProcessSyntax.through</span> on resulting stream *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps">ChannelResultOps</a></dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.channel.ChannelResultOps#to" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="to(p:scalaz.stream.Process.Sink[scalaz.concurrent.Task,A]):scalaz.stream.mongodb.channel.ChannelResult[Unit]"></a>
-      <a id="to(Process.Sink[Task,A]):ChannelResult[Unit]"></a>
+      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.ProcessSyntax.through">scalaz.stream.Process.ProcessSyntax.through</span> on resulting stream *</p>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#to" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="to(p:scalaz.stream.Process.Sink[scalaz.concurrent.Task,A]):scalaz.stream.mongodb.channel.ChannelResult[R,Unit]"></a>
+      <a id="to(Process.Sink[Task,A]):ChannelResult[R,Unit]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">to</span><span class="params">(<span name="p">p: <span class="extype" name="scalaz.stream.Process.Sink">Process.Sink</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scala.Unit">Unit</span>]</span>
+        <span class="name">to</span><span class="params">(<span name="p">p: <span class="extype" name="scalaz.stream.Process.Sink">Process.Sink</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scala.Unit">Unit</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.ProcessSyntax.to">scalaz.stream.Process.ProcessSyntax.to</span> on resulting stream *</p><div class="fullcomment"><div class="comment cmt"><p>applies <span class="extype" name="scalaz.stream.Process.ProcessSyntax.to">scalaz.stream.Process.ProcessSyntax.to</span> on resulting stream *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps">ChannelResultOps</a></dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.channel.ChannelResultOps#trim" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="trim:scalaz.stream.mongodb.channel.ChannelResult[A]"></a>
-      <a id="trim:ChannelResult[A]"></a>
+      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.ProcessSyntax.to">scalaz.stream.Process.ProcessSyntax.to</span> on resulting stream *</p>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#trim" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="trim:scalaz.stream.mongodb.channel.ChannelResult[R,A]"></a>
+      <a id="trim:ChannelResult[R,A]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">trim</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>]</span>
+        <span class="name">trim</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.trim">scalaz.stream.Process.trim</span> on resulting stream *</p><div class="fullcomment"><div class="comment cmt"><p>applies <span class="extype" name="scalaz.stream.Process.trim">scalaz.stream.Process.trim</span> on resulting stream *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps">ChannelResultOps</a></dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.channel.ChannelResultOps#until" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="until[B&gt;:A](condition:scalaz.stream.Process[scalaz.concurrent.Task,Boolean]):scalaz.stream.mongodb.channel.ChannelResult[B]"></a>
-      <a id="until[B&gt;:A](Process[Task,Boolean]):ChannelResult[B]"></a>
+      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.trim">scalaz.stream.Process.trim</span> on resulting stream *</p>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#until" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="until[B&gt;:A](condition:scalaz.stream.Process[scalaz.concurrent.Task,Boolean]):scalaz.stream.mongodb.channel.ChannelResult[R,B]"></a>
+      <a id="until[B&gt;:A](Process[Task,Boolean]):ChannelResult[R,B]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">until</span><span class="tparams">[<span name="B">B &gt;: <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span></span>]</span><span class="params">(<span name="condition">condition: <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scala.Boolean">Boolean</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.until.B">B</span>]</span>
+        <span class="name">until</span><span class="tparams">[<span name="B">B &gt;: <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span></span>]</span><span class="params">(<span name="condition">condition: <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scala.Boolean">Boolean</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.until.B">B</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.until">scalaz.stream.Process.until</span> on resulting stream *</p><div class="fullcomment"><div class="comment cmt"><p>applies <span class="extype" name="scalaz.stream.Process.until">scalaz.stream.Process.until</span> on resulting stream *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps">ChannelResultOps</a></dd></dl></div>
+      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.until">scalaz.stream.Process.until</span> on resulting stream *</p>
     </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <a id="wait():Unit"></a>
@@ -729,97 +768,123 @@
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.channel.ChannelResultOps#when" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="when[B&gt;:A](condition:scalaz.stream.Process[scalaz.concurrent.Task,Boolean]):scalaz.stream.mongodb.channel.ChannelResult[B]"></a>
-      <a id="when[B&gt;:A](Process[Task,Boolean]):ChannelResult[B]"></a>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#when" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="when[B&gt;:A](condition:scalaz.stream.Process[scalaz.concurrent.Task,Boolean]):scalaz.stream.mongodb.channel.ChannelResult[R,B]"></a>
+      <a id="when[B&gt;:A](Process[Task,Boolean]):ChannelResult[R,B]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">when</span><span class="tparams">[<span name="B">B &gt;: <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span></span>]</span><span class="params">(<span name="condition">condition: <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scala.Boolean">Boolean</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.when.B">B</span>]</span>
+        <span class="name">when</span><span class="tparams">[<span name="B">B &gt;: <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span></span>]</span><span class="params">(<span name="condition">condition: <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scala.Boolean">Boolean</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.when.B">B</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.when">scalaz.stream.Process.when</span> on resulting stream *</p><div class="fullcomment"><div class="comment cmt"><p>applies <span class="extype" name="scalaz.stream.Process.when">scalaz.stream.Process.when</span> on resulting stream *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps">ChannelResultOps</a></dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.channel.ChannelResultOps#wye" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="wye[B,C](p2:scalaz.stream.Process[scalaz.concurrent.Task,B])(y:scalaz.stream.Process.Wye[A,B,C]):scalaz.stream.mongodb.channel.ChannelResult[C]"></a>
-      <a id="wye[B,C](Process[Task,B])(Wye[A,B,C]):ChannelResult[C]"></a>
+      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.when">scalaz.stream.Process.when</span> on resulting stream *</p>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#wye" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="wye[B,C](p2:scalaz.stream.Process[scalaz.concurrent.Task,B])(y:scalaz.stream.Process.Wye[A,B,C]):scalaz.stream.mongodb.channel.ChannelResult[R,C]"></a>
+      <a id="wye[B,C](Process[Task,B])(Wye[A,B,C]):ChannelResult[R,C]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">wye</span><span class="tparams">[<span name="B">B</span>, <span name="C">C</span>]</span><span class="params">(<span name="p2">p2: <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.wye.B">B</span>]</span>)</span><span class="params">(<span name="y">y: <span class="extype" name="scalaz.stream.Process.Wye">Wye</span>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.wye.B">B</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.wye.C">C</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.wye.C">C</span>]</span>
+        <span class="name">wye</span><span class="tparams">[<span name="B">B</span>, <span name="C">C</span>]</span><span class="params">(<span name="p2">p2: <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.wye.B">B</span>]</span>)</span><span class="params">(<span name="y">y: <span class="extype" name="scalaz.stream.Process.Wye">Wye</span>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.wye.B">B</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.wye.C">C</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.wye.C">C</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.wye">scalaz.stream.Process.wye</span> on resulting stream *</p><div class="fullcomment"><div class="comment cmt"><p>applies <span class="extype" name="scalaz.stream.Process.wye">scalaz.stream.Process.wye</span> on resulting stream *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps">ChannelResultOps</a></dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.channel.ChannelResultOps#yip" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="yip[B](p2:scalaz.stream.Process[scalaz.concurrent.Task,B]):scalaz.stream.mongodb.channel.ChannelResult[(A,B)]"></a>
-      <a id="yip[B](Process[Task,B]):ChannelResult[(A,B)]"></a>
+      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.wye">scalaz.stream.Process.wye</span> on resulting stream *</p>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#yip" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="yip[B](p2:scalaz.stream.Process[scalaz.concurrent.Task,B]):scalaz.stream.mongodb.channel.ChannelResult[R,(A,B)]"></a>
+      <a id="yip[B](Process[Task,B]):ChannelResult[R,(A,B)]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">yip</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="p2">p2: <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.yip.B">B</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[(<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.yip.B">B</span>)]</span>
+        <span class="name">yip</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="p2">p2: <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.yip.B">B</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, (<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.yip.B">B</span>)]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.yip">scalaz.stream.Process.yip</span> on resulting stream *</p><div class="fullcomment"><div class="comment cmt"><p>applies <span class="extype" name="scalaz.stream.Process.yip">scalaz.stream.Process.yip</span> on resulting stream *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps">ChannelResultOps</a></dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.channel.ChannelResultOps#yipWith" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="yipWith[B,C](p2:scalaz.stream.Process[scalaz.concurrent.Task,B])(f:(A,B)=&gt;C):scalaz.stream.mongodb.channel.ChannelResult[C]"></a>
-      <a id="yipWith[B,C](Process[Task,B])((A,B)⇒C):ChannelResult[C]"></a>
+      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.yip">scalaz.stream.Process.yip</span> on resulting stream *</p>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#yipWith" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="yipWith[B,C](p2:scalaz.stream.Process[scalaz.concurrent.Task,B])(f:(A,B)=&gt;C):scalaz.stream.mongodb.channel.ChannelResult[R,C]"></a>
+      <a id="yipWith[B,C](Process[Task,B])((A,B)⇒C):ChannelResult[R,C]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">yipWith</span><span class="tparams">[<span name="B">B</span>, <span name="C">C</span>]</span><span class="params">(<span name="p2">p2: <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.yipWith.B">B</span>]</span>)</span><span class="params">(<span name="f">f: (<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.yipWith.B">B</span>) ⇒ <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.yipWith.C">C</span></span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.yipWith.C">C</span>]</span>
+        <span class="name">yipWith</span><span class="tparams">[<span name="B">B</span>, <span name="C">C</span>]</span><span class="params">(<span name="p2">p2: <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.yipWith.B">B</span>]</span>)</span><span class="params">(<span name="f">f: (<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.yipWith.B">B</span>) ⇒ <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.yipWith.C">C</span></span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.yipWith.C">C</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.yipWith">scalaz.stream.Process.yipWith</span> on resulting stream *</p><div class="fullcomment"><div class="comment cmt"><p>applies <span class="extype" name="scalaz.stream.Process.yipWith">scalaz.stream.Process.yipWith</span> on resulting stream *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps">ChannelResultOps</a></dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.channel.ChannelResultOps#zip" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="zip[B](p2:scalaz.stream.Process[scalaz.concurrent.Task,B]):scalaz.stream.mongodb.channel.ChannelResult[(A,B)]"></a>
-      <a id="zip[B](Process[Task,B]):ChannelResult[(A,B)]"></a>
+      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.yipWith">scalaz.stream.Process.yipWith</span> on resulting stream *</p>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#zip" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="zip[B](ch2:scalaz.stream.mongodb.channel.ChannelResult[R,B]):scalaz.stream.mongodb.channel.ChannelResult[R,(A,B)]"></a>
+      <a id="zip[B](ChannelResult[R,B]):ChannelResult[R,(A,B)]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">zip</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="p2">p2: <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.zip.B">B</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[(<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.zip.B">B</span>)]</span>
+        <span class="name">zip</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="ch2">ch2: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.zip.B">B</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, (<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.zip.B">B</span>)]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.zip">scalaz.stream.Process.zip</span> on resulting stream *</p><div class="fullcomment"><div class="comment cmt"><p>applies <span class="extype" name="scalaz.stream.Process.zip">scalaz.stream.Process.zip</span> on resulting stream *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps">ChannelResultOps</a></dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.channel.ChannelResultOps#zipWith" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="zipWith[B,C](p2:scalaz.stream.Process[scalaz.concurrent.Task,B])(f:(A,B)=&gt;C):scalaz.stream.mongodb.channel.ChannelResult[C]"></a>
-      <a id="zipWith[B,C](Process[Task,B])((A,B)⇒C):ChannelResult[C]"></a>
+      <p class="shortcomment cmt">zips two channels together</p>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#zip" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="zip[B](p2:scalaz.stream.Process[scalaz.concurrent.Task,B]):scalaz.stream.mongodb.channel.ChannelResult[R,(A,B)]"></a>
+      <a id="zip[B](Process[Task,B]):ChannelResult[R,(A,B)]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">zipWith</span><span class="tparams">[<span name="B">B</span>, <span name="C">C</span>]</span><span class="params">(<span name="p2">p2: <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.zipWith.B">B</span>]</span>)</span><span class="params">(<span name="f">f: (<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.zipWith.B">B</span>) ⇒ <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.zipWith.C">C</span></span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.zipWith.C">C</span>]</span>
+        <span class="name">zip</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="p2">p2: <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.zip.B">B</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, (<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.zip.B">B</span>)]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.zipWith">scalaz.stream.Process.zipWith</span> on resulting stream *</p><div class="fullcomment"><div class="comment cmt"><p>applies <span class="extype" name="scalaz.stream.Process.zipWith">scalaz.stream.Process.zipWith</span> on resulting stream *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps">ChannelResultOps</a></dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.channel.ChannelResultOps#|&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="|&gt;[B](p2:scalaz.stream.Process.Process1[A,B]):scalaz.stream.mongodb.channel.ChannelResult[B]"></a>
-      <a id="|&gt;[B](Process1[A,B]):ChannelResult[B]"></a>
+      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.zip">scalaz.stream.Process.zip</span> on resulting stream *</p>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#zipWith" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="zipWith[B,C](ch2:scalaz.stream.mongodb.channel.ChannelResult[R,B])(f:(A,B)=&gt;C):scalaz.stream.mongodb.channel.ChannelResult[R,C]"></a>
+      <a id="zipWith[B,C](ChannelResult[R,B])((A,B)⇒C):ChannelResult[R,C]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $bar$greater" class="name">|&gt;</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="p2">p2: <span class="extype" name="scalaz.stream.Process.Process1">Process1</span>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.|&gt;.B">B</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps.|&gt;.B">B</span>]</span>
+        <span class="name">zipWith</span><span class="tparams">[<span name="B">B</span>, <span name="C">C</span>]</span><span class="params">(<span name="ch2">ch2: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.zipWith.B">B</span>]</span>)</span><span class="params">(<span name="f">f: (<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.zipWith.B">B</span>) ⇒ <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.zipWith.C">C</span></span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.zipWith.C">C</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.pipe">scalaz.stream.Process.pipe</span> on resulting stream *</p><div class="fullcomment"><div class="comment cmt"><p>applies <span class="extype" name="scalaz.stream.Process.pipe">scalaz.stream.Process.pipe</span> on resulting stream *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps">ChannelResultOps</a></dd></dl></div>
+      <p class="shortcomment cmt">zips inner processes of ChannelResults</p>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#zipWith" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="zipWith[B,C](p2:scalaz.stream.Process[scalaz.concurrent.Task,B])(f:(A,B)=&gt;C):scalaz.stream.mongodb.channel.ChannelResult[R,C]"></a>
+      <a id="zipWith[B,C](Process[Task,B])((A,B)⇒C):ChannelResult[R,C]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">zipWith</span><span class="tparams">[<span name="B">B</span>, <span name="C">C</span>]</span><span class="params">(<span name="p2">p2: <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.zipWith.B">B</span>]</span>)</span><span class="params">(<span name="f">f: (<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.zipWith.B">B</span>) ⇒ <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.zipWith.C">C</span></span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.zipWith.C">C</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.zipWith">scalaz.stream.Process.zipWith</span> on resulting stream *</p>
+    </li><li name="scalaz.stream.mongodb.channel.ChannelResult#|&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="|&gt;[B](p2:scalaz.stream.Process.Process1[A,B]):scalaz.stream.mongodb.channel.ChannelResult[R,B]"></a>
+      <a id="|&gt;[B](Process1[A,B]):ChannelResult[R,B]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bar$greater" class="name">|&gt;</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="p2">p2: <span class="extype" name="scalaz.stream.Process.Process1">Process1</span>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.|&gt;.B">B</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.|&gt;.B">B</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.pipe">scalaz.stream.Process.pipe</span> on resulting stream *</p>
     </li></ol>
             </div>
 
@@ -837,10 +902,6 @@
               <h3>Inherited from <span class="extype" name="scala.Product">Product</span></h3>
             </div><div class="parent" name="scala.Equals">
               <h3>Inherited from <span class="extype" name="scala.Equals">Equals</span></h3>
-            </div><div class="parent" name="scalaz.stream.mongodb.channel.ChannelResultOps">
-              <h3>Inherited from <a href="ChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResultOps">ChannelResultOps</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>]</h3>
-            </div><div class="parent" name="scalaz.syntax.Ops">
-              <h3>Inherited from <span class="extype" name="scalaz.syntax.Ops">Ops</span>[<span class="extype" name="scalaz.stream.Process.Channel">Channel</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="com.mongodb.DBCollection">DBCollection</span>, <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>]]]</h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">

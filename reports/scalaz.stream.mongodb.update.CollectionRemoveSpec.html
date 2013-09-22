@@ -67,24 +67,24 @@
     </head><body><div class="colmask threecol">
             <div class="colmid">
               <div class="colleft">
-                <div class="col1"><div id="central"><html><title>Removing documents</title><a name="Removing+documents"><h2 specId="1241254501">Removing documents</h2></a><status class="ok"><p></p></status><status class="ok"><p></p></status><status class="ok"><div style="display: show; text-indent:30px;"><pre><code class="prettyprint">  Documents are removed from the collection by simple remove command:
-</code></pre></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">query(&quot;key&quot; === 1) and remove</code><br /></div></status><status class="ok"><div style="display: show; text-indent:30px;"><pre><code class="prettyprint">  Additionally you can specify write concern for remove command by ensure 
+                <div class="col1"><div id="central"><html><title>Removing documents</title><a name="Removing+documents"><h2 specId="1912842441">Removing documents</h2></a><status class="ok"><p></p></status><status class="ok"><p></p></status><status class="ok"><div style="display: show; text-indent:30px;"><pre><code class="prettyprint">  Documents are removed from the collection by simple remove command:
+</code></pre></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">query(&quot;key&quot; === 1) and remove</code><br /></div></status><status class="ok"><div style="display: show; text-indent:30px;"><pre><code class="prettyprint">  Additionally you can specify write concern for remove command by using `ensure`
 
-  `query(&quot;key&quot; === 1) and remove.ensure(WriteConcern.MAJORITY)`  
+  `query(&quot;key&quot; === 1) and remove.ensure(WriteConcern.MAJORITY)`
 
 
   Lastly, if the remove command on non sharded collection has to be isolated (this mean that no other updated may interleave during its execution),
-  just add isolated modifier to it  
-</code></pre></div></status><status class="ok"><div style="display: show; text-indent:0px;"><code class="prettyprint">query(&quot;key&quot; === 1) and remove.isolated(true)</code></div></status><status class="ok"><div style="display: show; text-indent:10px;"></div></status><status class="ok"><br /></status><table class="dataTable">
+  just add isolated modifier to it
+</code></pre></div></status><status class="ok"><div style="display: show; text-indent:0px;"><code class="prettyprint">query(&quot;key&quot; === 1) and remove.isolated(true)</code></div></status><status class="ok"><div style="display: show; text-indent:20px;"></div></status><status class="ok"><br /></status><table class="dataTable">
         <tr><th colSpan="2">Total for specification CollectionRemoveSpec</th></tr>
-        <tr><td>Finished in</td><td class="info">3 seconds, 564 ms</td></tr>
+        <tr><td>Finished in</td><td class="info">1 second, 297 ms</td></tr>
         <tr><td>Results</td><td class="success">1 example, 0 failure, 0 error</td></tr>
       </table></html></div></div>
                 <div class="col2"><div id="leftcolumn"><div id="tree">
-      <ul><li id="1241254501"><a href="scalaz.stream.mongodb.update.CollectionRemoveSpec.html#Removing+documents">Removing documents</a>
+      <ul><li id="1912842441"><a href="scalaz.stream.mongodb.update.CollectionRemoveSpec.html#Removing+documents">Removing documents</a>
             
           </li></ul>
-      <script>$(function () {  $('#tree').jstree({'core':{'initially_open':['1241254501','1241254501'], 'animation':200}, 'plugins':['themes', 'html_data']}); });</script>
+      <script>$(function () {  $('#tree').jstree({'core':{'initially_open':['1912842441','1912842441'], 'animation':200}, 'plugins':['themes', 'html_data']}); });</script>
     </div></div></div>
                 <div class="col3"><div id="rightcolumn"></div></div>
               </div>

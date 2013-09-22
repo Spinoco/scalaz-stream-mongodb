@@ -148,15 +148,15 @@ Time: 8:00 AM
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="scalaz.stream.mongodb.query.QueryOps#++" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="++(q:scalaz.stream.mongodb.query.Query):scalaz.stream.mongodb.channel.ChannelResult[com.mongodb.DBObject]"></a>
-      <a id="++(Query):ChannelResult[DBObject]"></a>
+      <a id="++(q:scalaz.stream.mongodb.query.Query):scalaz.stream.mongodb.channel.ChannelResult[com.mongodb.DBCollection,com.mongodb.DBObject]"></a>
+      <a id="++(Query):ChannelResult[DBCollection,DBObject]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $plus$plus" class="name">++</span><span class="params">(<span name="q">q: <a href="Query.html" class="extype" name="scalaz.stream.mongodb.query.Query">Query</a></span>)</span><span class="result">: <a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="com.mongodb.DBObject">DBObject</span>]</span>
+        <span title="gt4s: $plus$plus" class="name">++</span><span class="params">(<span name="q">q: <a href="Query.html" class="extype" name="scalaz.stream.mongodb.query.Query">Query</a></span>)</span><span class="result">: <a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="com.mongodb.DBCollection">DBCollection</span>, <span class="extype" name="com.mongodb.DBObject">DBObject</span>]</span>
       </span>
       </h4>
       <p class="shortcomment cmt">alias for <code>append</code> *</p>
@@ -187,28 +187,28 @@ Time: 8:00 AM
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
     </li><li name="scalaz.stream.mongodb.query.QueryOps#and" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="and[A](a:scalaz.stream.mongodb.query.QueryAction[A]):scalaz.stream.mongodb.channel.ChannelResult[A]"></a>
-      <a id="and[A](QueryAction[A]):ChannelResult[A]"></a>
+      <a id="and[A](a:scalaz.stream.mongodb.query.QueryAction[A]):scalaz.stream.mongodb.channel.ChannelResult[com.mongodb.DBCollection,A]"></a>
+      <a id="and[A](QueryAction[A]):ChannelResult[DBCollection,A]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">and</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="a">a: <a href="QueryAction.html" class="extype" name="scalaz.stream.mongodb.query.QueryAction">QueryAction</a>[<span class="extype" name="scalaz.stream.mongodb.query.QueryOps.and.A">A</span>]</span>)</span><span class="result">: <a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.query.QueryOps.and.A">A</span>]</span>
+        <span class="name">and</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="a">a: <a href="QueryAction.html" class="extype" name="scalaz.stream.mongodb.query.QueryAction">QueryAction</a>[<span class="extype" name="scalaz.stream.mongodb.query.QueryOps.and.A">A</span>]</span>)</span><span class="result">: <a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="com.mongodb.DBCollection">DBCollection</span>, <span class="extype" name="scalaz.stream.mongodb.query.QueryOps.and.A">A</span>]</span>
       </span>
       </h4>
       <p class="shortcomment cmt">Applies action on query result *</p>
     </li><li name="scalaz.stream.mongodb.query.QueryOps#append" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="append(q:scalaz.stream.mongodb.query.Query):scalaz.stream.mongodb.channel.ChannelResult[com.mongodb.DBObject]"></a>
-      <a id="append(Query):ChannelResult[DBObject]"></a>
+      <a id="append(q:scalaz.stream.mongodb.query.Query):scalaz.stream.mongodb.channel.ChannelResult[com.mongodb.DBCollection,com.mongodb.DBObject]"></a>
+      <a id="append(Query):ChannelResult[DBCollection,DBObject]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">append</span><span class="params">(<span name="q">q: <a href="Query.html" class="extype" name="scalaz.stream.mongodb.query.Query">Query</a></span>)</span><span class="result">: <a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="com.mongodb.DBObject">DBObject</span>]</span>
+        <span class="name">append</span><span class="params">(<span name="q">q: <a href="Query.html" class="extype" name="scalaz.stream.mongodb.query.Query">Query</a></span>)</span><span class="result">: <a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="com.mongodb.DBCollection">DBCollection</span>, <span class="extype" name="com.mongodb.DBObject">DBObject</span>]</span>
       </span>
       </h4>
       <p class="shortcomment cmt">Appends results of two queries together *</p>

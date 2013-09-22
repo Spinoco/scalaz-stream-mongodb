@@ -35,14 +35,14 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">InsertAction</span><span class="params">(<span name="o">o: <span class="extype" name="com.mongodb.DBObject">DBObject</span></span>, <span name="wc">wc: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="com.mongodb.WriteConcern">WriteConcern</span>] = <span class="symbol">scala.None</span></span>)</span><span class="result"> extends <a href="../MongoCommand.html" class="extype" name="scalaz.stream.mongodb.MongoCommand">MongoCommand</a>[<a href="WriteResult.html" class="extype" name="scalaz.stream.mongodb.update.WriteResult">WriteResult</a>] with <a href="ObjectIdSupport.html" class="extype" name="scalaz.stream.mongodb.update.ObjectIdSupport">ObjectIdSupport</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">InsertAction</span><span class="params">(<span name="o">o: <span class="extype" name="com.mongodb.DBObject">DBObject</span></span>, <span name="wc">wc: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="com.mongodb.WriteConcern">WriteConcern</span>] = <span class="symbol">scala.None</span></span>)</span><span class="result"> extends <a href="../MongoCollectionCommand.html" class="extype" name="scalaz.stream.mongodb.MongoCollectionCommand">MongoCollectionCommand</a>[<a href="WriteResult.html" class="extype" name="scalaz.stream.mongodb.update.WriteResult">WriteResult</a>] with <a href="ObjectIdSupport.html" class="extype" name="scalaz.stream.mongodb.update.ObjectIdSupport">ObjectIdSupport</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Performs simple insert of document with optional write concern
 </p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.Product">Product</span>, <span class="extype" name="scala.Equals">Equals</span>, <a href="ObjectIdSupport.html" class="extype" name="scalaz.stream.mongodb.update.ObjectIdSupport">ObjectIdSupport</a>, <a href="../MongoCommand.html" class="extype" name="scalaz.stream.mongodb.MongoCommand">MongoCommand</a>[<a href="WriteResult.html" class="extype" name="scalaz.stream.mongodb.update.WriteResult">WriteResult</a>], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.Product">Product</span>, <span class="extype" name="scala.Equals">Equals</span>, <a href="ObjectIdSupport.html" class="extype" name="scalaz.stream.mongodb.update.ObjectIdSupport">ObjectIdSupport</a>, <a href="../MongoCollectionCommand.html" class="extype" name="scalaz.stream.mongodb.MongoCollectionCommand">MongoCollectionCommand</a>[<a href="WriteResult.html" class="extype" name="scalaz.stream.mongodb.update.WriteResult">WriteResult</a>], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -60,7 +60,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="scalaz.stream.mongodb.update.InsertAction"><span>InsertAction</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="scalaz.stream.mongodb.update.ObjectIdSupport"><span>ObjectIdSupport</span></li><li class="in" name="scalaz.stream.mongodb.MongoCommand"><span>MongoCommand</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="scalaz.stream.mongodb.update.InsertAction"><span>InsertAction</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="scalaz.stream.mongodb.update.ObjectIdSupport"><span>ObjectIdSupport</span></li><li class="in" name="scalaz.stream.mongodb.MongoCollectionCommand"><span>MongoCollectionCommand</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -336,18 +336,18 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="scalaz.stream.mongodb.update.InsertAction#toChannelResult" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="toChannelResult:scalaz.stream.mongodb.channel.ChannelResult[scalaz.stream.mongodb.update.WriteResult]"></a>
-      <a id="toChannelResult:ChannelResult[WriteResult]"></a>
+      <a id="toChannelResult:scalaz.stream.mongodb.channel.ChannelResult[com.mongodb.DBCollection,scalaz.stream.mongodb.update.WriteResult]"></a>
+      <a id="toChannelResult:ChannelResult[DBCollection,WriteResult]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">toChannelResult</span><span class="result">: <a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<a href="WriteResult.html" class="extype" name="scalaz.stream.mongodb.update.WriteResult">WriteResult</a>]</span>
+        <span class="name">toChannelResult</span><span class="result">: <a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="com.mongodb.DBCollection">DBCollection</span>, <a href="WriteResult.html" class="extype" name="scalaz.stream.mongodb.update.WriteResult">WriteResult</a>]</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scalaz.stream.mongodb.update.InsertAction">InsertAction</a> → <a href="../MongoCommand.html" class="extype" name="scalaz.stream.mongodb.MongoCommand">MongoCommand</a></dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scalaz.stream.mongodb.update.InsertAction">InsertAction</a> → <a href="../MongoCollectionCommand.html" class="extype" name="scalaz.stream.mongodb.MongoCollectionCommand">MongoCollectionCommand</a></dd></dl></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <a id="wait():Unit"></a>
@@ -437,8 +437,8 @@
               <h3>Inherited from <span class="extype" name="scala.Equals">Equals</span></h3>
             </div><div class="parent" name="scalaz.stream.mongodb.update.ObjectIdSupport">
               <h3>Inherited from <a href="ObjectIdSupport.html" class="extype" name="scalaz.stream.mongodb.update.ObjectIdSupport">ObjectIdSupport</a></h3>
-            </div><div class="parent" name="scalaz.stream.mongodb.MongoCommand">
-              <h3>Inherited from <a href="../MongoCommand.html" class="extype" name="scalaz.stream.mongodb.MongoCommand">MongoCommand</a>[<a href="WriteResult.html" class="extype" name="scalaz.stream.mongodb.update.WriteResult">WriteResult</a>]</h3>
+            </div><div class="parent" name="scalaz.stream.mongodb.MongoCollectionCommand">
+              <h3>Inherited from <a href="../MongoCollectionCommand.html" class="extype" name="scalaz.stream.mongodb.MongoCollectionCommand">MongoCollectionCommand</a>[<a href="WriteResult.html" class="extype" name="scalaz.stream.mongodb.update.WriteResult">WriteResult</a>]</h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">

@@ -67,26 +67,26 @@
     </head><body><div class="colmask threecol">
             <div class="colmid">
               <div class="colleft">
-                <div class="col1"><div id="central"><html><title>BSONSpec</title><a name="BSONSpec"><h2 specId="1103694970">BSONSpec</h2></a><status class="ok"><div style="display: show; text-indent:30px;"><pre><code class="prettyprint">  BSON Constructors
+                <div class="col1"><div id="central"><html><title>BSONSpec</title><a name="BSONSpec"><h2 specId="80587033">BSONSpec</h2></a><status class="ok"><div style="display: show; text-indent:30px;"><pre><code class="prettyprint">  BSON Constructors
 
 
-   Mongo Streams use standard BSON primitives from underlying Java Driver. However there is syntactic sugar that allows 
-   using standard scala Maps, Lists, Sets (and more) to be easily converted to DBObject. It is designed with maximum 
-   type-safety possible. This mean You would not be able to construct DBObject that would contain invalid types (i.e. class Foo)
-   that would not be handled by BSON Serializer. 
+   Mongo Streams use standard BSON primitives from underlying Java Driver. However there is syntactic sugar that allows
+   easy conversions of Scala datastructures (List, Maps, Sets and more) into DBObject. It is designed for maximum
+   type-safety possible. That means You are not be able to construct DBObject that would contain invalid types (i.e. arbitrary class Foo)
+   that would not be handled by Java BSON Serializer.
 
 
    To construct simple BSONObject just use:
 
    Simple               :  
 </code></pre></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">BSONObject(&quot;int&quot; -&gt; int2BSONValue(1), &quot;str&quot; -&gt; &quot;str&quot;, &quot;bool&quot; -&gt; true, &quot;date&quot; -&gt; new Date(), &quot;double&quot; -&gt; 0.1d)</code><br /></div></status><status class="ok"><div style="display: show; text-indent:35px;"><pre><code class="prettyprint">   With lists, sets     :  
-</code></pre></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">BSONObject(&quot;l1&quot; -&gt; BSONList(1, 2, 3), &quot;s1&quot; -&gt; BSONSet(1, 2, 3, 4), &quot;q1&quot; -&gt; BSONList(BSONSet(&quot;a&quot;, &quot;b&quot;), BSONList(1, 2)))</code><br /></div></status><status class="ok"><div style="display: show; text-indent:140px;"><pre><code class="prettyprint">                        or `BSONObject(&quot;l1&quot; -&gt; List(1, 2, 3).asBSON, &quot;s1&quot; -&gt; Set(1, 2, 3, 4).asBSON, &quot;q1&quot; -&gt; BSONList(Set(&quot;a&quot;, &quot;b&quot;).asBSON, List(1, 2).asBSON))`    
+</code></pre></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">BSONObject(&quot;l1&quot; -&gt; BSONList(1, 2, 3), &quot;s1&quot; -&gt; BSONSet(1, 2, 3, 4), &quot;q1&quot; -&gt; BSONList(BSONSet(&quot;a&quot;, &quot;b&quot;), BSONList(1, 2)))</code><br /></div></status><status class="ok"><div style="display: show; text-indent:140px;"><pre><code class="prettyprint">                        or `BSONObject(&quot;l1&quot; -&gt; List(1, 2, 3).asBSON, &quot;s1&quot; -&gt; Set(1, 2, 3, 4).asBSON, &quot;q1&quot; -&gt; BSONList(Set(&quot;a&quot;, &quot;b&quot;).asBSON, List(1, 2).asBSON))`
    Nested objects       :  
 </code></pre></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">BSONObject(&quot;o1&quot; -&gt; BSONObject(&quot;l2&quot; -&gt; BSONList(1, 2, 3)), &quot;o2&quot; -&gt; BSONList(BSONObject(&quot;b&quot; -&gt; 1)))</code><br /></div></status><status class="ok"><div style="display: show; text-indent:35px;"><pre><code class="prettyprint">   Special values:
 
    BSON Specification allows for null              :  
 </code></pre></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">BSONObject(&quot;nullField&quot; -&gt; BSONNull)</code><br /></div></status><status class="ok"><div style="display: show; text-indent:35px;"><pre><code class="prettyprint">   Options are added to object only when nonEmpty :  
-</code></pre></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">BSONObject(&quot;one&quot; -&gt; Some(1))</code><br /></div></status><status class="ok"><div style="display: show; text-indent:35px;"><pre><code class="prettyprint">   To get any value from DBObject you can use syntactic sugar
+</code></pre></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">BSONObject(&quot;one&quot; -&gt; Some(1))</code><br /></div></status><status class="ok"><div style="display: show; text-indent:35px;"><pre><code class="prettyprint">   To get a value from DBObject You can use syntactic sugar
 
    To maybe get String value safely   :  
 </code></pre></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">dbObject.tryGetAs[String](&quot;s1&quot;): Option[Try[String]]</code><br /></div></status><status class="ok"><div style="display: show; text-indent:35px;"><pre><code class="prettyprint">   To maybe get String value unsafe   :  
@@ -101,23 +101,23 @@
 </code></pre></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">dbObject.getAs[Set[String]](&quot;s1&quot;): Option[Set[String]]</code><br /></div></status><status class="ok"><div style="display: show; text-indent:35px;"><pre><code class="prettyprint">   To get Map[String,String]          :  
 </code></pre></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">dbObject.getAs[Map[String, String]](&quot;s1&quot;): Option[Map[String, String]]</code><br /></div></status><status class="ok"><div style="display: show; text-indent:35px;"><pre><code class="prettyprint">   To get Nested List                 :  
 </code></pre></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">dbObject.getAs[List[Set[String]]](&quot;s1&quot;): Option[List[Set[String]]]</code><br /></div></status><status class="ok"><div style="display: show; text-indent:35px;"><pre><code class="prettyprint">   Or nested Set within Map           :  
-</code></pre></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">dbObject.getAs[Map[String, Set[String]]](&quot;s1&quot;): Option[Map[String, Set[String]]]</code><br /></div></status><status class="ok"><div style="display: show; text-indent:35px;"><pre><code class="prettyprint">   Last you may also modify content of the DBObject with simple operations:
+</code></pre></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">dbObject.getAs[Map[String, Set[String]]](&quot;s1&quot;): Option[Map[String, Set[String]]]</code><br /></div></status><status class="ok"><div style="display: show; text-indent:35px;"><pre><code class="prettyprint">   Finally, You may also modify content of the DBObject with simple operations:
 
    To add single key and value pair   :  
 </code></pre></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">dbObject += (&quot;s1&quot; -&gt; &quot;string&quot;)</code><br /></div></status><status class="ok"><div style="display: show; text-indent:35px;"><pre><code class="prettyprint">   To add more key and value pairs    :  
 </code></pre></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">dbObject ++= BSONObject(&quot;s1&quot; -&gt; &quot;string&quot;, &quot;s2&quot; -&gt; &quot;string2&quot;)</code><br /></div></status><status class="ok"><div style="display: show; text-indent:210px;"><pre><code class="prettyprint">                                      or `dbObject ++= otherDbObject`
    To remove single key               :  
 </code></pre></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">dbObject -= &quot;s1&quot;</code><br /></div></status><status class="ok"><div style="display: show; text-indent:35px;"><pre><code class="prettyprint">   To remove more keys                :  
-</code></pre></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">dbObject --= List(&quot;s1&quot;, &quot;s2&quot;)</code><br /></div></status><status class="ok"><div style="display: show; text-indent:35px;"></div></status><status class="ok"><br /></status><table class="dataTable">
+</code></pre></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">dbObject --= List(&quot;s1&quot;, &quot;s2&quot;)</code><br /></div></status><status class="ok"><div style="display: show; text-indent:20px;"></div></status><status class="ok"><br /></status><table class="dataTable">
         <tr><th colSpan="2">Total for specification BSONSpec</th></tr>
-        <tr><td>Finished in</td><td class="info">40 ms</td></tr>
+        <tr><td>Finished in</td><td class="info">544 ms</td></tr>
         <tr><td>Results</td><td class="success">18 examples, 1800 expectations, 0 failure, 0 error</td></tr>
       </table></html></div></div>
                 <div class="col2"><div id="leftcolumn"><div id="tree">
-      <ul><li id="1103694970"><a href="scalaz.stream.mongodb.bson.BSONSpec.html#BSONSpec">BSONSpec</a>
+      <ul><li id="80587033"><a href="scalaz.stream.mongodb.bson.BSONSpec.html#BSONSpec">BSONSpec</a>
             
           </li></ul>
-      <script>$(function () {  $('#tree').jstree({'core':{'initially_open':['1103694970','1103694970'], 'animation':200}, 'plugins':['themes', 'html_data']}); });</script>
+      <script>$(function () {  $('#tree').jstree({'core':{'initially_open':['80587033','80587033'], 'animation':200}, 'plugins':['themes', 'html_data']}); });</script>
     </div></div></div>
                 <div class="col3"><div id="rightcolumn"></div></div>
               </div>

@@ -168,15 +168,15 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
     </li><li name="scalaz.stream.mongodb.channel.ChannelResultSyntax#channelResult2Channel" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="channelResult2Channel[A](r:scalaz.stream.mongodb.channel.ChannelResult[A]):scalaz.stream.Process.Channel[scalaz.concurrent.Task,com.mongodb.DBCollection,scalaz.stream.Process[scalaz.concurrent.Task,A]]"></a>
-      <a id="channelResult2Channel[A](ChannelResult[A]):Channel[Task,DBCollection,Process[Task,A]]"></a>
+      <a id="channelResult2Channel[R,A](r:scalaz.stream.mongodb.channel.ChannelResult[R,A]):scalaz.stream.Process.Channel[scalaz.concurrent.Task,R,scalaz.stream.Process[scalaz.concurrent.Task,A]]"></a>
+      <a id="channelResult2Channel[R,A](ChannelResult[R,A]):Channel[Task,R,Process[Task,A]]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">implicit </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">channelResult2Channel</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="r">r: <a href="ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultSyntax.channelResult2Channel.A">A</span>]</span>)</span><span class="result">: <span class="extype" name="scalaz.stream.Process.Channel">Channel</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="com.mongodb.DBCollection">DBCollection</span>, <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultSyntax.channelResult2Channel.A">A</span>]]</span>
+        <span class="name">channelResult2Channel</span><span class="tparams">[<span name="R">R</span>, <span name="A">A</span>]</span><span class="params">(<span name="r">r: <a href="ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultSyntax.channelResult2Channel.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultSyntax.channelResult2Channel.A">A</span>]</span>)</span><span class="result">: <span class="extype" name="scalaz.stream.Process.Channel">Channel</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultSyntax.channelResult2Channel.R">R</span>, <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultSyntax.channelResult2Channel.A">A</span>]]</span>
       </span>
       </h4>
       
@@ -284,28 +284,28 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
     </li><li name="scalaz.stream.mongodb.channel.ChannelResultSyntax#mongoCommand2Channel" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="mongoCommand2Channel[A](cmd:scalaz.stream.mongodb.MongoCommand[A]):scalaz.stream.Process.Channel[scalaz.concurrent.Task,com.mongodb.DBCollection,scalaz.stream.Process[scalaz.concurrent.Task,A]]"></a>
-      <a id="mongoCommand2Channel[A](MongoCommand[A]):Channel[Task,DBCollection,Process[Task,A]]"></a>
+      <a id="mongoCommand2Channel[A](cmd:scalaz.stream.mongodb.MongoCollectionCommand[A]):scalaz.stream.Process.Channel[scalaz.concurrent.Task,com.mongodb.DBCollection,scalaz.stream.Process[scalaz.concurrent.Task,A]]"></a>
+      <a id="mongoCommand2Channel[A](MongoCollectionCommand[A]):Channel[Task,DBCollection,Process[Task,A]]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">implicit </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">mongoCommand2Channel</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="cmd">cmd: <a href="../MongoCommand.html" class="extype" name="scalaz.stream.mongodb.MongoCommand">MongoCommand</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultSyntax.mongoCommand2Channel.A">A</span>]</span>)</span><span class="result">: <span class="extype" name="scalaz.stream.Process.Channel">Channel</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="com.mongodb.DBCollection">DBCollection</span>, <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultSyntax.mongoCommand2Channel.A">A</span>]]</span>
+        <span class="name">mongoCommand2Channel</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="cmd">cmd: <a href="../MongoCollectionCommand.html" class="extype" name="scalaz.stream.mongodb.MongoCollectionCommand">MongoCollectionCommand</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultSyntax.mongoCommand2Channel.A">A</span>]</span>)</span><span class="result">: <span class="extype" name="scalaz.stream.Process.Channel">Channel</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="com.mongodb.DBCollection">DBCollection</span>, <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultSyntax.mongoCommand2Channel.A">A</span>]]</span>
       </span>
       </h4>
       
     </li><li name="scalaz.stream.mongodb.channel.ChannelResultSyntax#mongoCommand2ChannelResult" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="mongoCommand2ChannelResult[A](cmd:scalaz.stream.mongodb.MongoCommand[A]):scalaz.stream.mongodb.channel.ChannelResult[A]"></a>
-      <a id="mongoCommand2ChannelResult[A](MongoCommand[A]):ChannelResult[A]"></a>
+      <a id="mongoCommand2ChannelResult[A](cmd:scalaz.stream.mongodb.MongoCollectionCommand[A]):scalaz.stream.mongodb.channel.ChannelResult[com.mongodb.DBCollection,A]"></a>
+      <a id="mongoCommand2ChannelResult[A](MongoCollectionCommand[A]):ChannelResult[DBCollection,A]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">implicit </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">mongoCommand2ChannelResult</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="cmd">cmd: <a href="../MongoCommand.html" class="extype" name="scalaz.stream.mongodb.MongoCommand">MongoCommand</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultSyntax.mongoCommand2ChannelResult.A">A</span>]</span>)</span><span class="result">: <a href="ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultSyntax.mongoCommand2ChannelResult.A">A</span>]</span>
+        <span class="name">mongoCommand2ChannelResult</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="cmd">cmd: <a href="../MongoCollectionCommand.html" class="extype" name="scalaz.stream.mongodb.MongoCollectionCommand">MongoCollectionCommand</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultSyntax.mongoCommand2ChannelResult.A">A</span>]</span>)</span><span class="result">: <a href="ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="com.mongodb.DBCollection">DBCollection</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResultSyntax.mongoCommand2ChannelResult.A">A</span>]</span>
       </span>
       </h4>
       
