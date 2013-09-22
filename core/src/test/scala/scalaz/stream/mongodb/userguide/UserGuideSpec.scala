@@ -17,6 +17,7 @@ This library offers wrapper over standard mongodb java driver to work with scala
 
 
 ${ "Basic Usage" ~/ new BasicUsageSpec() }
+${ "Filesystem Usage" ~/ new GridFSUsageSpec() }
 ${ "Query Predicate DSL" ~/ new QueryBuilderSpec() }
 ${ "Query DSL" ~/ new CollectionQuerySpec() }
 ${ "Updating Collection" ~/ new UpdateBuilderSpec() }

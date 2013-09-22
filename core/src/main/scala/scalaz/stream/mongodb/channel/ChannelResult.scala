@@ -3,8 +3,7 @@ package scalaz.stream.mongodb.channel
 import scalaz.stream.Process
 import scalaz.stream.Process._
 import scalaz.concurrent.Task
-import scalaz._
-import scalaz.stream.mongodb.channel.ChannelResult
+import scalaz._ 
 
 
 case class ChannelResult[R, A](channel: Channel[Task, R, Process[Task, A]]) {
@@ -31,9 +30,16 @@ case class ChannelResult[R, A](channel: Channel[Task, R, Process[Task, A]]) {
 
   /** applies [[scalaz.stream.Process.append]] on resulting stream **/
   def append[B >: A](p2: => Process[Task, B]): ChannelResult[R, B] = modify(_.append(p2))
+  
+  /** append variant taking the ChannelResult as its second argument. Please note her that the argument is strict **/
+  def append[B >: A](ch2:  ChannelResult[R,B]): ChannelResult[R, B] =
+    ChannelResult(channel ++ ch2.channel)
 
   /** applies [[scalaz.stream.Process.append]] on resulting stream **/
   def ++[B >: A]()(p2: => Process[Task, B]): ChannelResult[R, B] = append(p2)
+
+  /** alias for `append` of ChannelResult **/
+  def ++[B >: A](ch2: ChannelResult[R,B]): ChannelResult[R, B] = append(ch2)
 
   /** applies [[scalaz.stream.Process.then]] on resulting stream **/
   def fby[B >: A](p2: => Process[Task, B]): ChannelResult[R, B] = modify(_.then(p2))

@@ -11,6 +11,7 @@ import scalaz.stream.Process._
 import scala.language.implicitConversions
 import scalaz.stream.mongodb.update.{UpdateSyntax, FindAndModifySyntax}
 import scalaz.syntax.monad._
+import scalaz.stream.mongodb.filesystem.FileSystemSyntax
 
 trait Collection {
 
@@ -23,18 +24,18 @@ trait Collection {
   def use(c: DBCollection): Process[Task, DBCollection] = emit(Task.now(c)).eval
 
   implicit class DBCollectionSyntax(c: DBCollection) {
-    def through[A](f: Channel[Task, DBCollection, Process[Task, A]]): Process[Task, A] =  
+    def through[A](f: Channel[Task, DBCollection, Process[Task, A]]): Process[Task, A] =
       (wrap(Task.now(c)) through f).join
-    
+
 
     def >>>[A](f: Channel[Task, DBCollection, Process[Task, A]]): Process[Task, A] = through(f)
   }
 
   implicit class DBSyntax(d: DB) {
 
-    def through[A](f: Channel[Task, DB, Process[Task, A]]): Process[Task, A] =  
+    def through[A](f: Channel[Task, DB, Process[Task, A]]): Process[Task, A] =
       (wrap(Task.now(d)) through f).join
-   
+
 
     def >>>[A](f: Channel[Task, DB, Process[Task, A]]): Process[Task, A] = through(f)
 
@@ -54,6 +55,7 @@ object collectionSyntax extends Collection
                                 with CollectionIndexSyntax
                                 with channel.ChannelResultSyntax
                                 with UpdateSyntax with FindAndModifySyntax
+                                with FileSystemSyntax
                                 with BSONValues with BSONValuesImplicits
  
 

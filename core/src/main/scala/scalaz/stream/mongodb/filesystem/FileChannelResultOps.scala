@@ -19,14 +19,14 @@ trait FileChannelResultOps extends Ops[ChannelResult[DB, MongoFileRead]] {
     self flatMap (file=>FileUtil.singleFileReader(buffSize).map(f=>(file,f(file))))
 
   /** reads very first file listed **/
-  def readFile(buffSize:Int = GridFS.DEFAULT_CHUNKSIZE): ChannelResult[DB, Bytes] = {
+  def readOneFile(buffSize:Int = GridFS.DEFAULT_CHUNKSIZE): ChannelResult[DB, Bytes] = {
     (self |> take(1))
     .flatMap(file=>FileUtil.singleFileReader(buffSize).map(f=>f(file)))
     .flatMapProcess(p => p)  //todo: join?
   }
 
   /** deletes very first file listed. **/
-  def deleteFile: ChannelResult[DB, Unit] = {
+  def deleteOneFile: ChannelResult[DB, Unit] = {
     (self |> take(1))
     .flatMap(file=>FileUtil.singleFileRemove.map(f=>f(file)))
     .flatMapProcess(p => p) //todo: join 

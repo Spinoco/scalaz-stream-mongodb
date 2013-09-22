@@ -1,6 +1,7 @@
 package scalaz.stream.mongodb.query
 
 import org.bson.types.ObjectId
+import java.util.Date
 
 
 /**
@@ -25,5 +26,6 @@ object QueryPredicateWitness {
   
   implicit val objectIdWitness = new QueryPredicateWitness[ObjectId] {}
 
+  implicit val dateWitness = new QueryPredicateWitness[Date] {}
 
 }

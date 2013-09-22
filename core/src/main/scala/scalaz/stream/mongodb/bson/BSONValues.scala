@@ -42,6 +42,6 @@ trait BSONValues {
   type BSONObject = Map[String, BSONAny]
 
   /** Constructor to create objects */
-  object BSONObject {def apply(ps: (String, BSONAny)*) = Map[String, BSONAny](ps: _*)}
+  object BSONObject {def apply(ps: (String, BSONAny)*) : Map[String, BSONAny] = Map[String, BSONAny](ps: _*)}
 
 }

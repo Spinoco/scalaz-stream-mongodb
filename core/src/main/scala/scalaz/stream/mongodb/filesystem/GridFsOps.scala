@@ -55,7 +55,7 @@ trait GridFsOps extends Ops[GridFs] {
   /**
    * Will list all files that do satisfy given predicate  
    */
-  def list(qry: FileQuery): ChannelResult[DB, MongoFileRead] = ChannelResult {
+  def list(qry: FileQuery = FileQuery(query())): ChannelResult[DB, MongoFileRead] = ChannelResult {
     import Task._
 
     val channel: Channel[Task, DB, Process[Task, MongoFileRead]] = {
