@@ -1,7 +1,7 @@
 package scalaz.stream.mongodb
 
 import java.util.UUID
-import com.mongodb.DBCollection
+import com.mongodb.{DB, DBCollection}
 import org.specs2.specification.{Step, Fragments, Scope}
 import org.specs2.SpecificationLike
 
@@ -45,9 +45,10 @@ trait MongoSpecificationBase extends SpecificationLike {
    * and multiple collection may be retrieved by their name  
    */
   class WithMongoCollections(val dbName: String = randomMongoName) extends Scope {
+    val db: DB = instance.db(dbName)
 
     /** Provides collection of given name */
-    def collection(collName: String): DBCollection = instance.db(dbName).getCollection(collName)
+    def collection(collName: String): DBCollection = db.getCollection(collName)
 
   }
 
@@ -57,7 +58,8 @@ trait MongoSpecificationBase extends SpecificationLike {
    */
   class WithMongoCollection(val collName: String = randomMongoName) extends Scope {
     val dbName    : String       = randomMongoName
-    val collection: DBCollection = instance.db(dbName).getCollection(collName)
+    val db        : DB           = instance.db(dbName)
+    val collection: DBCollection = db.getCollection(collName)
   }
 
   /**
