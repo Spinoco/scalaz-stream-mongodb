@@ -16,31 +16,31 @@ class CollectionFindAndModifySpec extends Specification with Snippets with Mongo
 
   def is =
     s2"""
-      
+
        ${"Find And Modify".title}
-      
-       
-       On mongoDB collection there is findAndModify command that allows to return either original or updated document 
-       when performing document update. 
-       
-       This is implemented in MongoStreams as two separate operations: 
-       
+
+
+       On mongoDB collection there is findAndModify command that allows user to return either original or updated document
+       when performing document update.
+
+       This is implemented in MongoStreams as two separate operations:
+
        ${ snippet { query("key1" === 1) and updateOne("key" := 33) }} $qu1
-       
-       and for document removal 
-       
+
+       and for document removal
+
        ${ snippet { query("key1" === 1) and removeOne }}              $qu2
-       
-       
+
+
        Both variants support additional modifiers:
-       
+
        To return new document instead of old one:                     ${ snippet { query("key1" === 1) and updateOne("key" := 33).returnNew(true) }}              $qu3
        To first sort the documents before picking one to update:      ${ snippet { query().sort("key" Descending) and updateOne("key" := 33) }}                   $qu4
        To limit the keys in returned document using projection:       ${ snippet { query("key1" === 1).project("key") and updateOne("key" := 33) }}               $qu5
-       
+
        To first sort documents before actually removing them:         ${ snippet { query().sort("key" Descending) and removeOne }}                                $qu6
-       To limit the keys in returned document oce removed:            ${ snippet { query("key1" === 1).project("key") and removeOne }}                            $qu7
-       
+       To limit the keys in returned document once removed:            ${ snippet { query("key1" === 1).project("key") and removeOne }}                            $qu7
+
     """
 
 

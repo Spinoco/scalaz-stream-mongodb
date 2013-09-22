@@ -29,12 +29,12 @@ class IndexBuilderSpec extends Specification with Snippets with SnippetFormatter
       s2"""
 
      ${"Collection Indexes".title}
-       
-       
-     Collection indexes can be specified with simple index builder that allows simple expressive syntax. 
-     
-     Index examples (assuming `import collection.Order._`): 
-     
+
+
+     Collection indexes can be specified with index builder that provides simple expressive syntax.
+
+     Index examples (assuming `import collection.Order._`):
+
      ${ snippet { 1 -> index("foo" -> Ascending) }.verify }
      ${ snippet { 2 -> index("foo" -> Ascending, "boo" -> Descending) }.verify }
      ${ snippet { 3 -> index("foo" -> Ascending).background(true) }.verify }
