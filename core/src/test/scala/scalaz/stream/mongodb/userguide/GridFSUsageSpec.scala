@@ -2,7 +2,7 @@ package scalaz.stream.mongodb.userguide
 
 import org.specs2.Specification
 import org.specs2.specification.Snippets
-import com.mongodb.{DBObject, DB}
+import com.mongodb.DB
 import scalaz.stream.mongodb.collectionSyntax._
 import scalaz.stream.{Bytes, Process}
 import scalaz.concurrent.Task
@@ -11,7 +11,9 @@ import java.util.Date
 import scalaz.stream.processes._
 import scalaz.syntax.monad._
 import java.io.InputStream
-import scalaz.stream.mongodb.filesystem.{FSListSpec, MongoFileRead}
+import scalaz.stream.mongodb.filesystem.FSListSpec
+import scala.Some
+import scalaz.stream.mongodb.filesystem.MongoFileRead
 
 /**
  *
@@ -41,9 +43,9 @@ Default name of this filesystem is `fs`. To specify filesystem following constru
 
 ${ snippet {
 
-    val defaultFilesystem = filesystem()
+    val defaultFilesystem = filesystem(filesDb)
 
-    val namedFileSystem = filesystem("fsName")
+    val namedFileSystem = filesystem(filesDb, filesystemName = "fsName")
 
   }}
             
@@ -55,25 +57,23 @@ in filesystem use `list()` directive as shown below:
 
 ${ snippet {
 
-    val listAllFiles = filesystem() list()
+    val listAllFiles = list files()
 
-    val listAllFilesInFoo = filesystem("foo") list()
 
-    val listAllFilesNamedGoo = filesystem() list named("goo")
+    val listAllFilesNamedGoo = list named ("goo")
 
     //running the queries 
 
-    (filesDb through listAllFiles): Process[Task, MongoFileRead]
-    (filesDb through listAllFilesInFoo): Process[Task, MongoFileRead]
-    (filesDb through listAllFilesNamedGoo): Process[Task, MongoFileRead]
+    (filesystem(filesDb) through listAllFiles): Process[Task, MongoFileRead]
+    (filesystem(filesDb) through listAllFilesNamedGoo): Process[Task, MongoFileRead]
 
     //combining the results 
 
-    val listEverything = listAllFiles ++ listAllFilesInFoo ++ listAllFilesNamedGoo
+    val listEverything = listAllFiles ++ listAllFilesNamedGoo
 
     //then running them
 
-    (filesDb through listEverything): Process[Task, MongoFileRead]
+    (filesystem(filesDb) through listEverything): Process[Task, MongoFileRead]
 
   }}
              
@@ -84,13 +84,13 @@ ${ snippet {
     val fileId: ObjectId = ???
 
 
-    val filesMatchingFoo = filesystem() list named("foo")
-    val filesWithSuppliedId = filesystem() list withId(fileId)
+    val filesMatchingFoo = list named ("foo")
+    val filesWithSuppliedId = list withId (fileId)
 
     //complex queries 
 
-    val filesWithRegex = filesystem() list files("filename" regex "report.*")
-    val olderFiles = filesystem() list files("uploadDate" <= new Date)
+    val filesWithRegex = list files ("filename" regex "report.*")
+    val olderFiles = list files ("uploadDate" <= new Date)
 
 
   }}        
@@ -107,18 +107,18 @@ reading multiple files:
 ${ snippet {
     val fileId: ObjectId = ???
 
-    val readSingleFile = filesystem() list withId(fileId) readOneFile()
+    val readSingleFile = list withId (fileId) and readFile()
 
-    val readAllFiles = filesystem() list() readFiles()
+    val readAllFiles = list files() foreach readFile()
 
     //run the reads  
-    (filesDb through readSingleFile): Process[Task, Bytes]
+    (filesystem(filesDb) through readSingleFile): Process[Task, Bytes]
 
     //run the multiple Files, please not the different type
-    val allFiles = (filesDb through readAllFiles): Process[Task, (MongoFileRead, Process[Task, Bytes])]
+    val allFiles = ((filesystem(filesDb)) through readAllFiles): Process[Task, (MongoFileRead, Process[Task, Bytes])]
 
     //now to read every file that has size >= 100 bytes and concatenate their output
-    ((allFiles |> filter { case (file, _) => file.length > 100 }).map(v=>v._2).join) : Process[Task,Bytes]
+    ((allFiles |> filter { case (file, _) => file.length > 100 }).map(v => v._2).join): Process[Task, Bytes]
 
 
   }}               
@@ -131,12 +131,12 @@ any time `toArray` method that will allocate `Array[Byte]`.
 If there is need to specify custom size of read buffer (default is == `com.mongodb.gridfs.GridFS.DEFAULT_CHUNKSIZE`) 
 you can pass this to `read` command as argument:
 
-${snippet{
-    
-    //specify read buffer of 1024 bytes
-    val customRead = filesystem() list() readOneFile(1024)
+${snippet {
 
-    
+    //specify read buffer of 1024 bytes
+    val customRead = filesystem(filesDb) through (list files() and readFile(1024))
+
+
   }}
               
               
@@ -146,32 +146,31 @@ In order to write file to filesystem, the Mongo Streams library builds the Sink,
 Bytes. File to which data will be written needs to be specified with `file()` command : 
 
 ${snippet {
-   
+
     //creates file named `foo.txt` with supplied ObjectId. Please note `id` must be unique in given filesystem
     file("foo.txt", id = new ObjectId)
-    
+
     //creates file named `foo.txt` with metadata setting `owner` key to `luke` value
-    file("foo.txt", meta = Some(BSONObject("owner"->"luke")))
-    
-    
-    
+    file("foo.txt", meta = Some(BSONObject("owner" -> "luke")))
+
+
   }}
 
 To write into such created file simply use the write syntax
 
 ${snippet {
-    
+
     val fileId = new ObjectId
-    
+
     //write to single file
-    val writeToFile  =  filesystem() write file("foo.txt", id = fileId)
-    
-    val fileSource : InputStream = ???
-    val readBuffer = new Array[Byte](1024*1024)
-    
-    //read from one file and write to single file 
-    (Process.wrap(Task.now(readBuffer)) through unsafeChunkR(fileSource)) to (filesDb using writeToFile)
-    
+    val writeToFile = write file("foo.txt", id = fileId)
+
+    val fileSource: InputStream = ???
+    val readBuffer = new Array[Byte](1024 * 1024)
+
+    //read from one file (inputstream) and write to single file 
+    (Process.wrap(Task.now(readBuffer)) through unsafeChunkR(fileSource)) to (filesystem(filesDb) using writeToFile)
+
   }}
 
 
@@ -180,14 +179,14 @@ ${snippet {
 Files can be removed from filesystem by using delete command. 
               
 ${ snippet {
-    
-    // deletes single file that matched the query
-    filesystem() list named("old") deleteOneFile
 
-    // delete all finles that matched the query
-    filesystem() list named("old") deleteFiles 
-    
-}}
+    // deletes all files that matches the query
+    filesystem(filesDb) through (list named ("old") and removeFile)
+
+    // provides process that allows to run delete for each file in query
+    filesystem(filesDb) through (list named ("old") foreach removeFile)
+
+  }}
                
       
       

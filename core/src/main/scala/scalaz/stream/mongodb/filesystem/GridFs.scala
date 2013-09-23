@@ -1,13 +1,28 @@
 package scalaz.stream.mongodb.filesystem
 
-import com.mongodb.{DBObject, DB}
-import scalaz.stream.mongodb.channel.ChannelResult
-import scalaz.concurrent.Task
 import com.mongodb.gridfs.GridFS
+import scalaz.stream.Bytes
+import scalaz.concurrent.Task
+import scalaz.stream.Process
+import scalaz.stream.Process._
+import com.mongodb.DB
+import scalaz.syntax.monad._
 
 
 /**
  * Represents grid fs instance 
- * @param name           Name of the bucket (default is fs)
+ * @param db              Underlying database for gridfs
+ * @param filesystemName  Name of gfs                    
  */
-case class GridFs(name: String)  
+case class GridFs(db: DB, filesystemName: String = "fs") {
+
+  lazy val gfs: GridFS = new GridFS(db, filesystemName)
+
+  def using(cmd: WriteCommand): Process[Task, Bytes => Task[Unit]] =
+    (wrap(Task.now(gfs)) through cmd.toChannelResult.channel).join
+
+  def through[A](cmd: GridFsCommand[A]): Process[Task, A] =
+    (wrap(Task.now(gfs)) through cmd.toChannelResult.channel).join
+
+
+}  

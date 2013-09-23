@@ -3,9 +3,9 @@ package scalaz.stream.mongodb
 import scalaz.stream.mongodb.query.{QueryEnums, QuerySyntax}
 import scalaz.stream.mongodb.bson.{BSONValuesImplicits, BSONValues}
 import scalaz.stream.mongodb.index.CollectionIndexSyntax
-import com.mongodb.{DB, DBCollection}
+import com.mongodb.DBCollection
 import scalaz.concurrent.Task
-import scalaz.stream.{Bytes, Process}
+import scalaz.stream.Process
 import scalaz.stream.Process._
 
 import scala.language.implicitConversions
@@ -29,17 +29,6 @@ trait Collection {
 
 
     def >>>[A](f: Channel[Task, DBCollection, Process[Task, A]]): Process[Task, A] = through(f)
-  }
-
-  implicit class DBSyntax(d: DB) {
-
-    def through[A](f: Channel[Task, DB, Process[Task, A]]): Process[Task, A] =
-      (wrap(Task.now(d)) through f).join
-
-
-    def >>>[A](f: Channel[Task, DB, Process[Task, A]]): Process[Task, A] = through(f)
-
-    def using[A](f: Channel[Task, DB, Process[Task, Bytes => Task[Unit]]]): Process[Task, Bytes => Task[Unit]] = through(f)
   }
 
 

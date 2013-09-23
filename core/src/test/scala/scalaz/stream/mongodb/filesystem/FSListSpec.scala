@@ -8,19 +8,11 @@ import scalaz.stream.mongodb.MongoRuntimeSpecification
 import org.specs2.matcher.MatchResult
 import org.scalacheck.{Gen, Arbitrary}
 import com.mongodb.gridfs.GridFS
-import scalaz.stream.mongodb.channel.ChannelResult
-import com.mongodb.DB
 import org.bson.types.ObjectId
 
 import scala.language.reflectiveCalls
 
-/**
- *
- * User: pach
- * Date: 9/22/13
- * Time: 7:58 AM
- * (c) 2011-2013 Spinoco Czech Republic, a.s.
- */
+
 class FSListSpec extends Specification with Snippets with MongoRuntimeSpecification with ScalaCheck {
 
   lazy val fileId: ObjectId = ???
@@ -35,12 +27,12 @@ class FSListSpec extends Specification with Snippets with MongoRuntimeSpecificat
  
 To list files named with given name use `named` syntax:
  
-${ snippet { filesystem() list named("file1") }}    $listNamed
+${ snippet { list named ("file1") }}    $listNamed
        
 
 Concrete files can be queried by specifying their `id` :
        
-${ snippet { filesystem() list withId(fileId) }}    $listId       
+${ snippet { list withId (fileId) }}    $listId       
        
 
 ### Complex queries
@@ -61,9 +53,9 @@ are some specific properties that are included in this document:
 Metadata are thus residing in `metadata` key, and anything that has to be queried in metadata must be prefixed by `metadata`. 
 Following are the examples of complex file queries : 
 
-* Where file name contains character `a`:    ${ snippet { filesystem() list files("filename" regex ".*a.*") } }   ${filesTest.namedA}
-* Where file MIME type is `text/plain; charset=UTF-8` : ${ snippet { filesystem() list files("contentType" === "text/plain; charset=UTF-8") } }  ${filesTest.listFileMime}
-* Where metadata key `user` is `luke`: ${ snippet { filesystem() list files("metadata.user" === "luke") } }  ${filesTest.listMeta}     
+* Where file name contains character `a`:    ${ snippet { list files ("filename" regex ".*a.*") } }   ${filesTest.namedA}
+* Where file MIME type is `text/plain; charset=UTF-8` : ${ snippet { list files ("contentType" === "text/plain; charset=UTF-8") } }  ${filesTest.listFileMime}
+* Where metadata key `user` is `luke`: ${ snippet { list files ("metadata.user" === "luke") } }  ${filesTest.listMeta}     
  
 
 ### Combining result of listing the files
@@ -72,10 +64,10 @@ The individual listing of the files can be combined together to make different q
 via `append` (or `++`) combinator.
 
 ${ snippet {
-    
-      val allFiles = (filesystem() list named("alpha")) ++ 
-        (filesystem() list named("beta")) ++
-        (filesystem() list files("filename" regex "g.*")) 
+
+      val allFiles = (list named ("alpha")) ++
+        (list named ("beta")) ++
+        (list files ("filename" regex "g.*"))
 
     }} ${filesTest.listCompose}
         
@@ -86,12 +78,12 @@ ${ snippet {
 
   def listNamed = {
     FileSystemCommand(
-      filesystem() list named("gamma")
+      list named "gamma"
     ).verify({
       case read if read.size == 1 && read.head.name == "gamma" => ok
       case other => ko
     }) and FileSystemCommand(
-      filesystem() list named("---")
+      list named "---"
     ).verify({
       case Seq() => ok
       case other => ko
@@ -99,39 +91,40 @@ ${ snippet {
   }
 
   def listId = FileSystemCommand(
-    filesystem() list withId(defaultFiles(3).id)
+    list withId defaultFiles(3).id
   ).verify({
     case read if read.size == 1 && read.head.name == "delta" => ok
     case other => ko
   }) and FileSystemCommand(
-    filesystem() list withId(new ObjectId())
+    list withId (new ObjectId())
   ).verify({
     case Seq() => ok
     case other => ko
   })
 
-  def filesQuery(fq: FileQuery, expected: Seq[MongoFileWrite]) = {
-    FileSystemCommand(filesystem() list fq).verify(got => got.map(_.id) must haveTheSameElementsAs(expected.map(_.id)))
+  def filesQuery(fsCommand: ListCommand, expected: Seq[MongoFileWrite]) = {
+    FileSystemCommand(fsCommand).verify(got => got.map(_.id) must haveTheSameElementsAs(expected.map(_.id)))
   }
 
-  
-  def filesTest = new  {
-    def namedA = filesQuery(files("filename" regex ".*a.*"), defaultFiles.init)
-    
-    def listFileMime =  filesQuery(files("contentType" === "text/plain; charset=UTF-8"), Seq(defaultFiles(1)))
-    
-    def listMeta =  filesQuery(files("metadata.user" === "luke"), Seq(defaultFiles(2)))
-    
+
+  def filesTest = new {
+    def namedA = filesQuery(list.files("filename" regex ".*a.*"), defaultFiles.init)
+
+    def listFileMime = filesQuery(list files ("contentType" === "text/plain; charset=UTF-8"), Seq(defaultFiles(1)))
+
+    def listMeta = filesQuery(list files ("metadata.user" === "luke"), Seq(defaultFiles(2)))
+
+
     def listCompose = FileSystemCommand(
-      (filesystem() list named("alpha")) ++
-      (filesystem() list named("beta")) ++
-      (filesystem() list files("filename" regex "g.*"))
-    ).verify( result =>
-      result.map(_.id) must haveTheSameElementsAs(Seq(defaultFiles(0), defaultFiles(1), defaultFiles(2)).map(_.id) )
-    )
-    
-  } 
-  
+      (list named ("alpha")) ++
+        (list named ("beta")) ++
+        (list files ("filename" regex "g.*"))
+    ).verify(result =>
+      result.map(_.id) must haveTheSameElementsAs(Seq(defaultFiles(0), defaultFiles(1), defaultFiles(2)).map(_.id))
+                      )
+
+  }
+
 
   ///////////////////////////////////////////////////////////////////////////////////////////
   // SUPPORT
@@ -147,7 +140,7 @@ ${ snippet {
     , file("epsilon")
   )
 
-  case class FileSystemCommand(query: ChannelResult[DB, MongoFileRead]
+  case class FileSystemCommand(fsCommand: GridFsCommand[MongoFileRead]
                                , files: Seq[MongoFileWrite] = defaultFiles) {
 
     val mongo = new WithMongoCollection()
@@ -166,7 +159,7 @@ ${ snippet {
           file.save()
       }
 
-      f((mongo.db through query).collect.run)
+      f((filesystem(mongo.db) through fsCommand).collect.run)
 
     }
   }

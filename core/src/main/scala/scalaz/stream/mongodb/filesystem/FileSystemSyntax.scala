@@ -1,27 +1,25 @@
 package scalaz.stream.mongodb.filesystem
 
-import com.mongodb.{DBObject, DB}
-import scalaz.concurrent.Task
+import com.mongodb.{DB, DBObject}
 
-import scalaz.stream.{Bytes, Process}
-import scalaz.stream.Process._
-
-import scalaz.stream.mongodb.collectionSyntax._
+import scala.language.implicitConversions
+import scala.language.postfixOps
+import com.mongodb.gridfs.GridFS
 import org.bson.types.ObjectId
-import scalaz.stream.mongodb.query.{Query, BasicQuery, QueryPair}
 
 import scalaz.stream.mongodb.channel.ChannelResult
+import scalaz.stream.Process
+import scalaz.concurrent.Task
+
+trait FileSystemSyntax extends FileUtil {
 
 
-import scala.language.postfixOps
+  /** filesystem syntax, wrapper around gridFs **/
+  def filesystem(db: DB, filesystemName: String = "fs"): GridFs = GridFs(db, filesystemName)
 
-trait FileSystemSyntax {
+  val list: ListCommandSyntax = new ListCommandSyntax {}
 
-  /**
-   * Creates filesystem instance. 
-   * @param name         Name of the bucket, default is `fs`
-   */
-  def filesystem(name: String = "fs"): GridFs = GridFs(name)
+  val write: WriteCommandSyntax = new WriteCommandSyntax {}
 
 
   /**
@@ -30,40 +28,24 @@ trait FileSystemSyntax {
    * @param id          unique file identifier
    * @param meta        optional metadata to store with file 
    */
-  def file(name: String, id: ObjectId = new ObjectId, meta: Option[DBObject] = None, contentType: Option[String] = None): MongoFileWrite =
-    MongoFileWrite(name, id, meta, contentType)
-
-  /**
-   * Creates the query, that uniquely identifies the single file to be read from database    
-   */
-  def named(name: String): FileQuery = FileQuery(query("filename" === name))
-
-  /**
-   * Creates the query, that uniquely identifies the single file to be read from database    
-   */
-  def withId(id: ObjectId): FileQuery = FileQuery(query("_id" === id))
+  def file(name: String, id: ObjectId = new ObjectId, meta: Option[DBObject] = None, contentType: Option[String] = None, chunkSize: Long = GridFS.DEFAULT_CHUNKSIZE): MongoFileWrite =
+    MongoFileWrite(name, id, meta, contentType, chunkSize)
 
 
-  /**
-   * Creates the query, that identifies multiple files in filesystem with metadata query
-   */
-  def files[A](q: QueryPair[A]*): FileQuery = FileQuery(Query(BasicQuery(q: _*)))
-
-  /**
-   * Creates the query, that identifies multiple files in filesystem with metadata query
-   */
-  def files(bq: BasicQuery): FileQuery = FileQuery(Query(bq))
-
-  /**
-   * Creates the query, that identifies multiple files in filesystem with metadata query
-   */
-  def files(o: DBObject): FileQuery = FileQuery(Query(BasicQuery(o)))
+  /** conversion of listCommand to process */
+  implicit def listCmd2ChannelResult(cmd: ListCommand) = cmd.toChannelResult
 
 
-  /** Syntax for GridFs **/
-  implicit class GridFsSyntax(val self: GridFs) extends GridFsOps
+  /** syntax sugar on listCommand channelResult **/
+  implicit class ListChannelResultSyntax(val self: ChannelResult[GridFS, MongoFileRead]) {
 
-  /** Specific operations when channel is type of MongoFileRead */
-  implicit class FileChannelResultSyntax(val self: ChannelResult[DB, MongoFileRead]) extends FileChannelResultOps
+    def and[A](ch: ChannelResult[GridFS, MongoFileRead => Process[Task, A]]): ChannelResult[GridFS, A] =
+      ListAndCommand.combine(self)(ch)
+
+    def foreach[A](ch: ChannelResult[GridFS, MongoFileRead => Process[Task, A]]): ChannelResult[GridFS, (MongoFileRead, Process[Task, A])] =
+      ListForEachCommand.combine(self)(ch)
+
+
+  }
 
 }
