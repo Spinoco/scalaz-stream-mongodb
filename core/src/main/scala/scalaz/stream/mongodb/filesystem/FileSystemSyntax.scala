@@ -15,7 +15,7 @@ trait FileSystemSyntax extends FileUtil {
 
 
   /** filesystem syntax, wrapper around gridFs **/
-  def filesystem(db: DB, filesystemName: String = "fs"): GridFs = GridFs(db, filesystemName)
+  def filesystem(db: DB, filesystemName: String = GridFS.DEFAULT_BUCKET): GridFs = GridFs(db, filesystemName)
 
   val list: ListCommandSyntax = new ListCommandSyntax {}
 
@@ -33,7 +33,7 @@ trait FileSystemSyntax extends FileUtil {
 
 
   /** conversion of listCommand to process */
-  implicit def listCmd2ChannelResult(cmd: ListCommand) = cmd.toChannelResult
+  implicit def readCmd2ChannelResult[A](cmd: ReadCommand[A]) = cmd.toChannelResult
 
 
   /** syntax sugar on listCommand channelResult **/

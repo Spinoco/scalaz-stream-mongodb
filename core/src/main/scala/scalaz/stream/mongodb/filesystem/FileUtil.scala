@@ -7,6 +7,7 @@ import scalaz.stream.Process
 import scalaz.stream.processes._
 import java.io.{FileNotFoundException, InputStream}
 import com.mongodb.gridfs.GridFS
+import scalaz.stream.Process.End
 
 
 object FileUtil extends FileUtil
@@ -16,6 +17,7 @@ trait FileUtil {
   /** Produces ChannelResult, that will read single file **/
   def readFile(buffSize: Int = GridFS.DEFAULT_CHUNKSIZE): ChannelResult[GridFS, MongoFileRead => Process[Task, Bytes]] = ChannelResult {
     import Task._
+
     (gfs: GridFS) => now {
       (file: MongoFileRead) =>
         resource[(InputStream, Array[Byte]), Bytes](delay {
@@ -28,7 +30,11 @@ trait FileUtil {
         })({
           case (is, buff) => delay {
             val read = is.read(buff)
-            new Bytes(buff, read)
+            if (read >= 0) {
+              new Bytes(buff, read)
+            } else {
+              throw End
+            }
           }
         })
     }

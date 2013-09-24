@@ -11,6 +11,7 @@ import com.mongodb.gridfs.GridFS
 import org.bson.types.ObjectId
 
 import scala.language.reflectiveCalls
+import scalaz.stream.mongodb.channel.ChannelResult
 
 
 class FSListSpec extends Specification with Snippets with MongoRuntimeSpecification with ScalaCheck {
@@ -20,7 +21,7 @@ class FSListSpec extends Specification with Snippets with MongoRuntimeSpecificat
   def is =
     s2"""
     
-      ${"Listing files in filesystem".title}
+${"Listing files in filesystem".title}
       
        
 ### Basic lists
@@ -70,7 +71,11 @@ ${ snippet {
         (list files ("filename" regex "g.*"))
 
     }} ${filesTest.listCompose}
-        
+   
+       
+### Sorting the listing of the files
+
+       ${todo}
       
     """
 
@@ -140,7 +145,7 @@ ${ snippet {
     , file("epsilon")
   )
 
-  case class FileSystemCommand(fsCommand: GridFsCommand[MongoFileRead]
+  case class FileSystemCommand(fsCommand: ChannelResult[GridFS,MongoFileRead]
                                , files: Seq[MongoFileWrite] = defaultFiles) {
 
     val mongo = new WithMongoCollection()

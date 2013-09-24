@@ -18,11 +18,7 @@ case class ListCommand(query: FileQuery) extends ReadCommand[MongoFileRead] with
 
   def foreach[A](ch: ChannelResult[GridFS, MongoFileRead => Process[Task, A]]): ListForEachCommand[A] = ListForEachCommand(query, ch)
 
-  def append(other: ListCommand): AppendedCommands[MongoFileRead] = AppendedCommands(this, other)
-
-  def ++(other: ListCommand): AppendedCommands[MongoFileRead] = append(other)
-
-
+  
 }
 
 
