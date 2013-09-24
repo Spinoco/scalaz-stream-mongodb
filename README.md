@@ -17,9 +17,9 @@ If you are interested on the functionality please take a look on [UserGuide](htt
 
 Library is supposed to have all the functionality that makes sense to wrap in scalaz-stream. Following functionality is currently missing and is planned for future versions:
 
-* GridFS
 * Aggregation framework
 * Javascript queries
+* Streaming tailable collections
 * Asynchronous execution of mongodb queries
 
 
