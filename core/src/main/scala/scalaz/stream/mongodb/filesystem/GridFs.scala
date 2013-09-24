@@ -19,9 +19,12 @@ case class GridFs(db: DB, filesystemName: String = "fs") {
 
   lazy val gfs: GridFS = new GridFS(db, filesystemName)
 
+  def using(ch: ChannelResult[GridFS,Bytes => Task[Unit]]): Process[Task, Bytes => Task[Unit]] =
+    (repeatWrap(Task.now(gfs)) through ch.channel).join
+
   def using(cmd: WriteCommand): Process[Task, Bytes => Task[Unit]] =
     (repeatWrap(Task.now(gfs)) through cmd.toChannelResult.channel).join
-
+  
   def through[A](cmd: GridFsCommand[A]): Process[Task, A] =
     (repeatWrap(Task.now(gfs)) through cmd.toChannelResult.channel).join
 

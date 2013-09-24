@@ -25,9 +25,9 @@ case class WriteCommand(file: MongoFileWrite) extends GridFsCommand[Bytes => Tas
             gfsFile.setChunkSize(file.chunkSize)
             gfsFile.getOutputStream
           })({
-            os => delay(os.close)
+            os => delay { os.close }
           })({
-            os => now(bytes => now(os.write(bytes.bytes)))
+            os => now(bytes => now(os.write(bytes.bytes, 0, bytes.n)))
           })
         }
       }

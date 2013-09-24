@@ -35,6 +35,8 @@ trait FileSystemSyntax extends FileUtil {
   /** conversion of listCommand to process */
   implicit def readCmd2ChannelResult[A](cmd: ReadCommand[A]) = cmd.toChannelResult
 
+  /** conversion of WriteCommand to sink */
+  implicit def writeCmd2ChannelResult[A](cmd: WriteCommand) = cmd.toChannelResult
 
   /** syntax sugar on listCommand channelResult **/
   implicit class ListChannelResultSyntax(val self: ChannelResult[GridFS, MongoFileRead]) {
