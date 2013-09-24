@@ -9,6 +9,7 @@ import org.bson.types.ObjectId
 
 import scalaz.stream.mongodb.channel.ChannelResult
 import scalaz.stream.Process
+import scalaz.stream.processes._
 import scalaz.concurrent.Task
 
 trait FileSystemSyntax extends FileUtil {
@@ -42,7 +43,7 @@ trait FileSystemSyntax extends FileUtil {
   implicit class ListChannelResultSyntax(val self: ChannelResult[GridFS, MongoFileRead]) {
 
     def and[A](ch: ChannelResult[GridFS, MongoFileRead => Process[Task, A]]): ChannelResult[GridFS, A] =
-      ListAndCommand.combine(self)(ch)
+      ListAndCommand.combine(self |> take(1))(ch)
 
     def foreach[A](ch: ChannelResult[GridFS, MongoFileRead => Process[Task, A]]): ChannelResult[GridFS, (MongoFileRead, Process[Task, A])] =
       ListForEachCommand.combine(self)(ch)

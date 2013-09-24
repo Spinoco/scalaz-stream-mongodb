@@ -2,8 +2,7 @@ package scalaz.stream.mongodb.filesystem
 
 import scalaz.stream.mongodb.channel.ChannelResult
 import scalaz.concurrent.Task
-import scalaz.stream.Bytes
-import scalaz.stream.Process
+import scalaz.stream.{Process, Bytes}
 import scalaz.stream.processes._
 import java.io.{FileNotFoundException, InputStream}
 import com.mongodb.gridfs.GridFS
@@ -43,11 +42,20 @@ trait FileUtil {
   /** Produces ChannelResult, that will remove single file. `true` is returned when file was removed **/
   val removeFile: ChannelResult[GridFS, MongoFileRead => Process[Task, Unit]] = ChannelResult {
     import Task._
-    (gfs: GridFS) => now {
-      (file: MongoFileRead) => Process.wrap(now {
-        gfs.remove(file.id)
-      })
+    Process.wrap {
+      now {
+        (gfs: GridFS) => now {
+          Process.repeatWrap {
+            now {
+              (file: MongoFileRead) => Process.wrap(now { 
+                gfs.remove(file.id) 
+              })
+            }
+          }
+        }
+      }
     }
+
   }
 
 }

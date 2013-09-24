@@ -4,6 +4,7 @@ import scalaz.stream.mongodb.channel.ChannelResult
 import com.mongodb.gridfs.GridFS
 import scalaz.concurrent.Task
 import scalaz.stream.Process
+import scalaz.stream.processes._
 
 
 /**
@@ -14,7 +15,7 @@ case class ListAndCommand[A](query: FileQuery
   extends ReadCommand[A] with ListCommandOps {
 
   def toChannelResult: ChannelResult[GridFS, A] =
-    ListAndCommand.combine(makeListChannelResult)(ch)
+    ListAndCommand.combine(makeListChannelResult |> take(1))(ch)
 
 }
 

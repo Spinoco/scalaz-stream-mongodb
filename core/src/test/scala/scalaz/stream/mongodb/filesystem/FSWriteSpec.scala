@@ -13,7 +13,6 @@ import scalaz.stream.Process._
 import scalaz.stream.processes._
 
 import collection.JavaConverters._
-import com.sun.xml.internal.messaging.saaj.util.ByteOutputStream
 
 import scala.language.reflectiveCalls
 import java.io.InputStream
@@ -56,19 +55,19 @@ ${ snippet { source10k to (filesystem(fileDb) using (write file ("foo.txt"))) }}
 
   val source10k = repeatWrap(Task.now(Bytes(Array[Byte](1, 2, 3, 4, 5, 6, 7, 8, 9, 0)))) |> take(2000)
 
-  
-  def extractBytes(is:InputStream, array:Array[Byte]) : Array[Byte] = {
-    def go(acc:Array[Byte]): Array[Byte] = {
+
+  def extractBytes(is: InputStream, array: Array[Byte]): Array[Byte] = {
+    def go(acc: Array[Byte]): Array[Byte] = {
       is.read(array) match {
         case -1 => acc
-        case read => go(acc ++ array.take(read)) 
+        case read => go(acc ++ array.take(read))
       }
     }
-    
+
     go(Array.empty)
-    
+
   }
-  
+
   def single = new {
 
     val mongo = new WithMongoCollection()
@@ -85,19 +84,19 @@ ${ snippet { source10k to (filesystem(fileDb) using (write file ("foo.txt"))) }}
       (source10k to (filesystem(mongo.db) using (write file("foo.txt", fileId, meta, contentType, chunkSize)))).run.run
 
       gfs.find("foo.txt").asScala.toList match {
-        case gfsFile :: Nil =>  
-          val in = extractBytes(gfsFile.getInputStream,Array.ofDim[Byte](1024))
+        case gfsFile :: Nil =>
+          val in = extractBytes(gfsFile.getInputStream, Array.ofDim[Byte](1024))
           (in must_== source10k.collect.run.map(_.toArray).reduce(_ ++ _)) and
             (gfsFile.getFilename must_== "foo.txt") and
             (gfsFile.getContentType must_== "text/plain; charset=UTF-8") and
             (gfsFile.getChunkSize must_== chunkSize) and
             (gfsFile.getMetaData.getAs[String]("user") must_== Some("luke"))
-          
-          
+
+
         case other => ko(other.toString)
       }
-      
-      
+
+
     }
 
   }

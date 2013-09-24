@@ -96,8 +96,7 @@ ${ snippet {
     })
 
     def readStandardChunk = ReadTest.single(list named ("oneMeg") and readFile()).verify({
-      case bytes if bytes.size == 4 =>
-        println("bytes", bytes.size, bytes.map(_.size))
+      case bytes if bytes.size == 4 => 
         val concatenate = bytes.reduce(_ ++ _)
         (concatenate.size must_== defaultFiles(1)._2.size) and
           (concatenate must_== defaultFiles(1)._2)
@@ -126,9 +125,8 @@ ${ snippet {
 
   def multiple = new {
 
-    def readAndConcatenate = ReadTest.multiple(((list named ("lorem.txt")) ++ (list named ("ipsum.txt"))).map(v => {println("$$$$", v); v }) foreach readFile()).verify({
-      case Seq(lorem, ipsum) =>
-        println("$$$$$$$$$$$$$$$$$$$$$$$$$", lorem, ipsum)
+    def readAndConcatenate = ReadTest.multiple(((list named ("lorem.txt")) ++ (list named ("ipsum.txt"))) foreach readFile()).verify({
+      case Seq(lorem, ipsum) => 
         (lorem must_== "lorem.txt\nLorem") and
           (ipsum must_== "ipsum.txt\nIpsum")
     })

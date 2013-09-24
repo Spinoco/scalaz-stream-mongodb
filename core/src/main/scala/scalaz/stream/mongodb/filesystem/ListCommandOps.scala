@@ -24,7 +24,6 @@ trait ListCommandOps {
           gfs: GridFS =>
             val bucket = gfs.getBucketName
             delay {
-
               (gfs.getDB.getCollection(bucket + ".files") through query.q) |> lift(MongoFileRead(_, bucket))
             }
         }
