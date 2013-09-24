@@ -70,8 +70,19 @@ case class StartingMongoInstance(port: Int) extends MongoInstance {
     // give chance to db to warm up before we will load it 
     tryConnection(50, 200)
 
-   // Thread.sleep(2000)
-    new MongoClient(ip, port)
+    def tryAcquire(remains:Int) : MongoClient = {
+      try {
+        val client = new MongoClient(ip,port)
+        client.getConnector.isOpen
+        client
+      } catch {
+        case t if (remains > 0) => 
+          Thread.sleep(200)
+          tryAcquire(remains - 1)
+      }
+    }
+
+    tryAcquire(5)
 
   }
 
