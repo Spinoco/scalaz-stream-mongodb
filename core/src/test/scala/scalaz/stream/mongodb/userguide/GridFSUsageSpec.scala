@@ -11,8 +11,10 @@ import java.util.Date
 import scalaz.stream.processes._
 import scalaz.syntax.monad._
 import java.io.InputStream
-import scalaz.stream.mongodb.filesystem.{FSWriteSpec, FSReadSpec, FSListSpec, MongoFileRead}
+import scalaz.stream.mongodb.filesystem._
 import scala.Some
+import scala.Some
+import scalaz.stream.mongodb.filesystem.MongoFileRead
 
 /**
  *
@@ -27,7 +29,7 @@ class GridFSUsageSpec extends Specification with Snippets {
 
   def is = s2"""
 
-${"Mongodb filesystem usage"} 
+${"Mongodb filesystem usage".title} 
              
 Mongo streams allow simple usage of mongodb GridFS.  Files can be listed, read, written and combined with 
 other scalaz-stream processes.
@@ -189,7 +191,7 @@ ${ snippet {
 
   }}
                
-      
+Please see more in ${link(new FSDeleteSpec)}.       
       
 """
 
