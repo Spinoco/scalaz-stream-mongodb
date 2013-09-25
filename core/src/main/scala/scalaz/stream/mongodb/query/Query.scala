@@ -27,7 +27,7 @@ import scalaz.stream.mongodb.channel.ChannelResult
  * @param readPreference   ReadPreference of the query 
  */
 case class Query(bq: BasicQuery,
-                 where: Option[JavaScript] = None, //todo: implement javascript 
+                 where: Option[String] = None,
                  sort: Option[QuerySort] = None,
                  hint: Option[QueryHint] = None,
                  limit: Option[Int] = None,
@@ -78,6 +78,7 @@ case class Query(bq: BasicQuery,
   lazy val asDBObject: DBObject = {
     val o = new BasicDBObject()
     o.put("$query", bq.o)
+    where.foreach(o.put("$where",_))
     sort.foreach(s => o.put("$orderby", s.o))
     explainFlag.foreach {
       case ExplainVerbosity.Normal => o.put("$explain", true) //setting this to false disable explain. Not sure how to get normal non.verbose explain....

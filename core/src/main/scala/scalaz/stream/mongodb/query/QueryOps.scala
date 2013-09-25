@@ -15,6 +15,8 @@ import com.mongodb.{DBCollection, DBObject}
  */
 trait QueryOps extends Ops[Query] {
 
+  def where(js:String) : Query = self.copy(where = Some(js))
+  
   def sort(h: OrderPair, t: OrderPair*): Query = self.copy(sort = Some(QuerySort(h +: t)))
 
   def orderby(h: OrderPair, t: OrderPair*): Query = sort(h, t: _*)

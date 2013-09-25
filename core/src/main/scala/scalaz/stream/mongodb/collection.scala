@@ -15,9 +15,6 @@ import scalaz.stream.mongodb.filesystem.FileSystemSyntax
 
 trait Collection {
 
-  //todo: This is TBD when we would decide how to implement javascript
-  type JavaScript = String
-
 
   implicit def dbCollection2Process(c: DBCollection): Process[Task, DBCollection] = emit(Task.now(c)).eval
 
