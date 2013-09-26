@@ -12,7 +12,7 @@ import GitKeys._
 
 object build extends Build {
 
-  lazy val specs2Version = "2.3-scalaz-7.1.0-SNAPSHOT"
+  lazy val specs2Version = "2.2.2"
 
   lazy val resolverSettings =
     resolvers ++= Seq(
@@ -36,11 +36,9 @@ object build extends Build {
 
   lazy val libraries = Seq(
     libraryDependencies ++= Seq(
-      "org.scalaz" %% "scalaz-core" % "7.1.0-SNAPSHOT" withSources()
-      , "org.scalaz" %% "scalaz-concurrent" % "7.1.0-SNAPSHOT" withSources()
-      , "org.scalaz" %% "scalaz-scalacheck-binding" % "7.1.0-SNAPSHOT" % "test" withSources()
+      "org.scalaz" %% "scalaz-scalacheck-binding" % "7.0.4-S1-SNAPSHOT" % "test" withSources()
       , "org.mongodb" % "mongo-java-driver" % "2.11.2" withSources()
-      , "spinoco" %% "scalaz-stream" % "0.1.0.31-SNAPSHOT" withSources()
+      , "spinoco" %% "scalaz-stream" % "0.1.0.33-SNAPSHOT" withSources()
     )
   )
 
