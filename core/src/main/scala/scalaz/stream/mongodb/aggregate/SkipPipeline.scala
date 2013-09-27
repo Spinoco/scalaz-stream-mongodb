@@ -7,6 +7,6 @@ package scalaz.stream.mongodb.aggregate
  * Time: 7:33 AM
  * (c) 2011-2013 Spinoco Czech Republic, a.s.
  */
-case class SkipPipeline (count:Int) extends PipelineOperatorAfterQuery {
-  def asDBObject = ???
+case class SkipPipeline (count:Int) extends PipelineOperator  {
+  lazy val asDBObject = ???
 }

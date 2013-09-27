@@ -26,6 +26,7 @@ trait AggregationStringOps extends Ops[String] {
   def push(value: String): ComputedField = compute(self, value, "$push")
 
   def sum(value: String): ComputedField = compute(self, value, "$sum")
+   
   
   def setTo[A:BSONSerializable](v:A) : SetField[A] = ???
   

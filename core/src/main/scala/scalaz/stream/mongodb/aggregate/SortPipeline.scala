@@ -9,6 +9,6 @@ import scalaz.stream.mongodb.query.OrderPair
  * Time: 7:39 AM
  * (c) 2011-2013 Spinoco Czech Republic, a.s.
  */
-case class SortPipeline(op: Seq[OrderPair]) extends PipelineOperatorAfterQuery{
-  def asDBObject = ???
+case class SortPipeline(op: Seq[OrderPair]) extends PipelineOperator {
+  lazy val asDBObject = ???
 }
