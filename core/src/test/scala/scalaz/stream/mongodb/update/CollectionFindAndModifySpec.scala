@@ -36,10 +36,10 @@ class CollectionFindAndModifySpec extends Specification with Snippets with Mongo
 
        To return new document instead of old one:                     ${ snippet { query("key1" === 1) and updateOne("key" := 33).returnNew(true) }}              $qu3
        To first sort the documents before picking one to update:      ${ snippet { query().sort("key" Descending) and updateOne("key" := 33) }}                   $qu4
-       To limit the keys in returned document using projection:       ${ snippet { query("key1" === 1).project("key") and updateOne("key" := 33) }}               $qu5
+       To limit the keys in returned document using projection:       ${ snippet { query("key1" === 1).project("key" include) and updateOne("key" := 33) }}       $qu5
 
        To first sort documents before actually removing them:         ${ snippet { query().sort("key" Descending) and removeOne }}                                $qu6
-       To limit the keys in returned document once removed:            ${ snippet { query("key1" === 1).project("key") and removeOne }}                            $qu7
+       To limit the keys in returned document once removed:           ${ snippet { query("key1" === 1).project("key" include) and removeOne }}                    $qu7
 
     """
 
@@ -68,7 +68,7 @@ class CollectionFindAndModifySpec extends Specification with Snippets with Mongo
         (r must_== docs.find(_[Int]("key") == 4))
   }
 
-  def qu5 = updateWith(query("key" === 1).project("key") and updateOne("key" := 33)).andVerify {
+  def qu5 = updateWith(query("key" === 1).project("key" include) and updateOne("key" := 33)).andVerify {
     case (docs, result, r) =>
       (result.find(_[Int]("key") == 33).isDefined must_== true) and
         (r.map(_[ObjectId]("_id")) must_== docs.find(_[Int]("key") == 1).map(_[ObjectId]("_id"))) and
@@ -81,7 +81,7 @@ class CollectionFindAndModifySpec extends Specification with Snippets with Mongo
         (r must_== docs.find(_[Int]("key") == 4))
   }
 
-  def qu7 = updateWith(query("key" === 1).project("key") and removeOne).andVerify {
+  def qu7 = updateWith(query("key" === 1).project("key" include) and removeOne).andVerify {
     case (docs, result, r) =>
       result.find(_[Int]("key") == 1).isDefined must_== false and
         (r.map(_[ObjectId]("_id")) must_== docs.find(_[Int]("key") == 1).map(_[ObjectId]("_id"))) and

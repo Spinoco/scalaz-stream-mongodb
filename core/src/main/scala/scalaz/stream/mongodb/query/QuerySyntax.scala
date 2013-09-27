@@ -22,9 +22,7 @@ trait QuerySyntax {
   implicit class QueryKeyPairBuilderSyntax(val self: String) extends QueryPairBuilderOps with OrderingOps with ProjectionOps
 
   implicit class QueryPairSyntax2[A](val self: QueryPair[A]) extends QueryPairOps[A]
-
-  implicit def string2ProjectionPair(s: String) = SimpleProjection(s)
-
+ 
   implicit class BasicQuerySyntax(val self: BasicQuery) extends BasicQueryOps
 
   implicit def rpv2ReadPreference(rp: ReadPreference.Value) = ReadPreference(rp)

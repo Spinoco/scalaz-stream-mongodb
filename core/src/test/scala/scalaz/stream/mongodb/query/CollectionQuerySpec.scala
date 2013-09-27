@@ -75,12 +75,12 @@ ${ snippet {
 For the complex documents you maybe want to get only certain data as a result of the query to reduce time when deserializing data. This is achieved
 with project combinator:
 
-${ snippet { query("key" -> "value") project("key1", "key2" $, "key3" first 4, "key4" last 6, "key5" skip 6 limit 5, "key6" elementMatch ("ek" -> 1)) }}
+${ snippet { query("key" -> "value") project("key1" include, "key2" $, "key3" first 4, "key4" last 6, "key5" skip 6 limit 5, "key6" elementMatch ("ek" -> 1)) }}
 
 As you may see projection combinator acepts many form of limiting the content of documents returned. Lets describe their meaning
 For more information you can see detailed description of their functionality in mongoDB docs [[http://docs.mongodb.org/manual/reference/operator/projection/]]
 
-To return only key1 from documents  :                     ${ snippet { query() project ("key1") }}                               ${projections.q1}
+To return only key1 from documents  :                     ${ snippet { query() project ("key1" include) }}                       ${projections.q1}
 To return only first element of any array under key1:     ${ snippet { query("key3" >= 1) project ("key3" $) }}                  ${projections.q2}
 To return only first 4 elements of any array under key1:  ${ snippet { query() project ("key1" first 4) }}                       ${projections.q3}
 To return only last 4 elements of any array under key1:   ${ snippet { query() project ("key1" last 4) }}                        ${projections.q4}
@@ -174,7 +174,7 @@ ${ snippet { query("key1" -> "value") comment ("Long duration query") }}
   def projections = new {
 
     def q1 =
-      QueryOf(_.query("key1") project ("key1"))
+      QueryOf(_.query("key1") project ("key1" include))
       .mustBeSameAs((d, c) => c.find(DBO.append("key1", d.hk[String]("key1")), DBO.append("key1", 1)))
 
 

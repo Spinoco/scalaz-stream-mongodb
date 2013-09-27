@@ -2,8 +2,8 @@ package scalaz.stream.mongodb.query
 
 import com.mongodb.{BasicDBObject, DBObject}
 import scala.collection.JavaConverters._
+import scalaz.stream.mongodb.aggregate.ProjectPipelineAction
 
- 
 
 sealed trait QueryPair[+A] {
   val key: String
@@ -63,7 +63,7 @@ case class BasicQueryPair[+A](key: String, pattern: A, dbo: Option[DBObject] = N
 
 }
 
-sealed trait ProjectionPair {
+sealed trait ProjectionPair extends ProjectPipelineAction {
   val key: String
 
   def append(to: BasicDBObject): BasicDBObject

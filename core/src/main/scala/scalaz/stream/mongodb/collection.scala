@@ -12,6 +12,7 @@ import scala.language.implicitConversions
 import scalaz.stream.mongodb.update.{UpdateSyntax, FindAndModifySyntax}
 import scalaz.syntax.monad._
 import scalaz.stream.mongodb.filesystem.FileSystemSyntax
+import scalaz.stream.mongodb.aggregate.AggregationSyntax
 
 trait Collection {
 
@@ -42,6 +43,7 @@ object collectionSyntax extends Collection
                                 with channel.ChannelResultSyntax
                                 with UpdateSyntax with FindAndModifySyntax
                                 with FileSystemSyntax
+                                with AggregationSyntax
                                 with BSONValues with BSONValuesImplicits
  
 

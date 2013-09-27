@@ -6,6 +6,8 @@ import scalaz.syntax.Ops
 trait ProjectionOps extends Ops[String]{ 
 
   def exclude = SimpleProjection(self, true)
+  
+  def include = SimpleProjection(self)
 
   def $ = SimpleProjection(self + ".$")
 

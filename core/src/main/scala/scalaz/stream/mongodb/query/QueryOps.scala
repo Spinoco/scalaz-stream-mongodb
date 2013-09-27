@@ -5,6 +5,7 @@ import scalaz.stream.mongodb.index.CollectionIndex
 import scalaz.stream.mongodb.channel.ChannelResult
 import scalaz.stream.mongodb.collectionSyntax._
 import com.mongodb.{DBCollection, DBObject}
+import scalaz.stream.mongodb.aggregate.{MapReduce, PipelineOperatorAfterQuery, PipelineOperator}
 
 /**
  *
@@ -43,7 +44,20 @@ trait QueryOps extends Ops[Query] {
 
   /** Applies action on query result **/
   def and[A](a: QueryAction[A]): ChannelResult[DBCollection,A] = a.withQuery(self)
+  
+  /** Applies aggregation command to documents selected by query **/
+  def and[A](a: PipelineOperatorAfterQuery, others:PipelineOperator*) :  ChannelResult[DBCollection,A] = ???
+  
+  /** Applies mapreduce function to query. Honors sorts from query, if specified */
+  def mapReduce(mapReduce:MapReduce) :  ChannelResult[DBCollection,DBObject] = ???
 
+  /** Counts the documents that matched the query **/
+  def count : ChannelResult[DBCollection,Long]  = ???
+  
+  /** Returns all distinct values of key in query **/
+  def distinct[A](key:String) : ChannelResult[DBCollection,A] = ???
+  
+  
   /** Appends results of two queries together **/
   def append(q: Query): ChannelResult[DBCollection,DBObject] = ChannelResult {
     self.toChannelResult.channel.zipWith(q.toChannelResult.channel) {
