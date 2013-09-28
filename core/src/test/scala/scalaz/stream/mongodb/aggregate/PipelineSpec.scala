@@ -110,7 +110,7 @@ ${snippet {
 
 ###  Projecting the result documents
  
-Pipeline allows to transform resulting document with `project` syntax this allows you to include or exclude certian keys from document
+Pipeline allows to transform resulting document with `project` syntax this allows you to include or exclude certain keys from document
 
  ${snippet {
       query("key" -> "value") |>> project("key2" include, "key3" exclude)

@@ -9,6 +9,6 @@ package scalaz.stream.mongodb.aggregate
  */
 
 /** limits returned results from pipeline **/
-case class LimitPipeline (count:Int) extends PipelineOperatorAfterQuery   {
-  def asDBObject = ???
+case class LimitPipeline (count:Int) extends PipelineOperator    {
+  lazy val asDBObject = ???
 }

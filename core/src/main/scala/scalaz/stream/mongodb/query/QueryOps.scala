@@ -5,9 +5,9 @@ import scalaz.stream.mongodb.index.CollectionIndex
 import scalaz.stream.mongodb.channel.ChannelResult
 import scalaz.stream.mongodb.collectionSyntax._
 import com.mongodb.{DBCollection, DBObject}
-import scalaz.stream.mongodb.aggregate.{MapReduce, PipelineOperator}
+import scalaz.stream.mongodb.aggregate.{MapReduceDefinition, PipelineOperator}
 
- 
+
 trait QueryOps extends Ops[Query] {
 
   def where(js: String): Query = self.copy(where = Some(js))
@@ -46,7 +46,7 @@ trait QueryOps extends Ops[Query] {
   def |>>[A](p: PipelineOperator): ChannelResult[DBCollection, A] = pipeThrough(p)
 
   /** Applies mapreduce function to query. Honors sorts from query, if specified */
-  def mapReduce(mapReduce: MapReduce): ChannelResult[DBCollection, DBObject] = ???
+  def mapReduce(mapReduce: MapReduceDefinition): ChannelResult[DBCollection, DBObject] = ???
 
   /** Counts the documents that matched the query **/
   def count: ChannelResult[DBCollection, Long] = ???
