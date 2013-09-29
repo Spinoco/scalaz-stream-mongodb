@@ -30,6 +30,6 @@ trait AggregationStringOps extends Ops[String] {
   
   def setTo[A:BSONSerializable](v:A) : SetField[A] = ???
   
-  def reduce(reduceF:String) : MapReduce = ???
+  def reduce(reduceF:String) : MapReduce =  MapReduce(self, reduceF)
 
 }

@@ -52,7 +52,7 @@ trait QueryOps extends Ops[Query] {
   def |>>[A](p: PipelineOperator): ChannelResult[DBCollection, A] = pipeThrough(p)
 
   /** Applies mapreduce function to query. Honors sorts from query, if specified */
-  def mapReduce(mapReduce: MapReduceDefinition): ChannelResult[DBCollection, DBObject] = ???
+  def mapReduce(mapReduce: MapReduceDefinition): ChannelResult[DBCollection, DBObject] = mapReduce.toChannelResult(self)
 
   /** Counts the documents that matched the query **/
   def count: ChannelResult[DBCollection, Long] = ChannelResult {
@@ -68,7 +68,7 @@ trait QueryOps extends Ops[Query] {
   def distinct[A: BSONSerializable](key: String): ChannelResult[DBCollection, A] = ChannelResult {
     import Task._
     val serializable = implicitly[BSONSerializable[A]]
-    //todo: current java driver is non-strict on distinct operation, we have to reconsider if it can be implemented lazily 
+    //todo: current java driver is strict on distinct operation, we have to reconsider if it can be implemented lazily 
     Process.wrap {
       now {
         c: DBCollection => now {
