@@ -28,6 +28,7 @@ ${ "Index DSL" ~/ new IndexBuilderSpec() }
 ${ "Removing Index" ~/ new CollectionEnsureIndexSpec() }
 ${ "Dropping Index" ~/ new CollectionDropIndexSpec() }
 ${ "BSON DSL" ~/ new BSONSpec() }
+${ "Aggregation Framework" ~/ new AggregationUsageSpec() }              
  
               
 """
