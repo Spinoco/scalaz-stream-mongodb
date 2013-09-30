@@ -1,6 +1,7 @@
 package scalaz.stream.mongodb.aggregate
 
 import scalaz.stream.mongodb.query.OrderPair
+import com.mongodb.{BasicDBObject, DBObject}
 
 /**
  *
@@ -10,5 +11,11 @@ import scalaz.stream.mongodb.query.OrderPair
  * (c) 2011-2013 Spinoco Czech Republic, a.s.
  */
 case class SortPipeline(op: Seq[OrderPair]) extends PipelineOperator {
-  lazy val asDBObject = ???
+  lazy val asDBObject: DBObject = {
+    val o = new BasicDBObject()
+    op.foreach(p=>{
+      o.append(p.k, p.o.id)
+    })
+    new BasicDBObject("$sort",o)
+  }
 }

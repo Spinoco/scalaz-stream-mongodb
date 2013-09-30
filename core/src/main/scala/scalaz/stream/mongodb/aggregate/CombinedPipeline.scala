@@ -1,5 +1,7 @@
 package scalaz.stream.mongodb.aggregate
 
+import com.mongodb.BasicDBObject
+
 /**
  *
  * User: pach
@@ -11,5 +13,5 @@ package scalaz.stream.mongodb.aggregate
  
 
 case class CombinedPipeline(operators:Seq[PipelineOperator]) extends PipelineOperator {
-  lazy val asDBObject = ???
+  lazy val asDBObject = new BasicDBObject() //never called
 }

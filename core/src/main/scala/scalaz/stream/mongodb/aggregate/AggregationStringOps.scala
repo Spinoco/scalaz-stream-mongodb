@@ -1,7 +1,7 @@
 package scalaz.stream.mongodb.aggregate
 
 import scalaz.syntax.Ops
-import scalaz.stream.mongodb.bson.BSONSerializable
+import com.mongodb.DBObject
 
 
 /**
@@ -26,10 +26,11 @@ trait AggregationStringOps extends Ops[String] {
   def push(value: String): ComputedField = compute(self, value, "$push")
 
   def sum(value: String): ComputedField = compute(self, value, "$sum")
-   
-  
-  def setTo[A:BSONSerializable](v:A) : SetField[A] = ???
-  
-  def reduce(reduceF:String) : MapReduce =  MapReduce(self, reduceF)
+
+
+  def setTo(v: String): SetField = SetField(self, v)
+ 
+
+  def reduce(reduceF: String): MapReduce = MapReduce(self, reduceF)
 
 }

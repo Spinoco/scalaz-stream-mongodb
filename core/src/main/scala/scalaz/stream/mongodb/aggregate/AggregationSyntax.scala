@@ -16,7 +16,7 @@ trait AggregationSyntax {
   /**
    * Creates the group pipeline operation 
    */
-  def group[A: BSONSerializable](p1: (String, A), p2: (String, A)*): GroupId = GroupId(???)
+  def group[A: BSONSerializable](p1: (String, A), p2: (String, A)*): GroupId = GroupId(p1, p2: _*)
 
   /**
    * Creates the group pipeline operation 
@@ -50,43 +50,6 @@ trait AggregationSyntax {
 
 }
 
-
-object o {
-
-
-  query() pipeThrough (group("foo" -> "$foo") compute ("sss" push "$foo"))
-
-  query() pipeThrough (project(
-    "this" include
-    , "that" exclude
-    , "ffff" max "$goosh"
-    , "goosh" setTo "poosh"
-    , "foosh" setTo BSONObject("aha" -> "yes")))
-
-  query() pipeThrough (limit(3))
-
-  query() pipeThrough (skip(3))
-
-  query() pipeThrough (unwind("foo"))
-
-  query() pipeThrough (sort("key" Descending))
-
-  query() |>>
-    ((group("foo" -> "$foo") compute ("sss" push "$foo")) |>>
-      project("this" include, "that" exclude) |>>
-      limit(3) |>>
-      skip(1) |>>
-      unwind("foo") |>>
-      sort("key" Descending) |>>
-      only("foo" -> "boo"))
-
-
-  query() mapReduce ("jsCode" reduce "another" finalize "last")
-
-
-  query("key" -> "value") |>> (group("grouped" -> "$key1") compute ("sumKey" sum "$key3", "avgKey" avg "$key4"))
-  
-}
 
 
 

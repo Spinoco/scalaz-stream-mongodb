@@ -1,6 +1,7 @@
 package scalaz.stream.mongodb.aggregate
 
 import scalaz.stream.mongodb.query.BasicQuery
+import com.mongodb.{BasicDBObject, DBObject}
 
 /**
  *
@@ -10,5 +11,7 @@ import scalaz.stream.mongodb.query.BasicQuery
  * (c) 2011-2013 Spinoco Czech Republic, a.s.
  */
 case class MatchPipeline(q:BasicQuery) extends PipelineOperator {
-  lazy val asDBObject = ???
+  lazy val asDBObject : DBObject = {
+    new BasicDBObject().append("$match", q.o)
+  }
 }
