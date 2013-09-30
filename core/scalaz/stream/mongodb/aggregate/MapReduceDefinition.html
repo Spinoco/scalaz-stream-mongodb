@@ -2,17 +2,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>DBSyntax - scalaz.stream.mongodb.Collection.DBSyntax</title>
-          <meta name="description" content="DBSyntax - scalaz.stream.mongodb.Collection.DBSyntax" />
-          <meta name="keywords" content="DBSyntax scalaz.stream.mongodb.Collection.DBSyntax" />
+          <title>MapReduceDefinition - scalaz.stream.mongodb.aggregate.MapReduceDefinition</title>
+          <meta name="description" content="MapReduceDefinition - scalaz.stream.mongodb.aggregate.MapReduceDefinition" />
+          <meta name="keywords" content="MapReduceDefinition scalaz.stream.mongodb.aggregate.MapReduceDefinition" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
-      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
-      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
       <script type="text/javascript">
          if(top === self) {
-            var url = '../../../index.html';
-            var hash = 'scalaz.stream.mongodb.Collection$DBSyntax';
+            var url = '../../../../index.html';
+            var hash = 'scalaz.stream.mongodb.aggregate.MapReduceDefinition';
             var anchor = window.location.hash;
             var anchor_opt = '';
             if (anchor.length >= 1)
@@ -24,24 +24,27 @@
         </head>
         <body class="type">
       <div id="definition">
-        <img src="../../../lib/class_big.png" />
-        <p id="owner"><a href="../../package.html" class="extype" name="scalaz">scalaz</a>.<a href="../package.html" class="extype" name="scalaz.stream">stream</a>.<a href="package.html" class="extype" name="scalaz.stream.mongodb">mongodb</a>.<a href="Collection.html" class="extype" name="scalaz.stream.mongodb.Collection">Collection</a></p>
-        <h1>DBSyntax</h1>
+        <img src="../../../../lib/trait_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="scalaz">scalaz</a>.<a href="../../package.html" class="extype" name="scalaz.stream">stream</a>.<a href="../package.html" class="extype" name="scalaz.stream.mongodb">mongodb</a>.<a href="package.html" class="extype" name="scalaz.stream.mongodb.aggregate">aggregate</a></p>
+        <h1>MapReduceDefinition</h1>
       </div>
 
       <h4 id="signature" class="signature">
       <span class="modifier_kind">
-        <span class="modifier">implicit </span>
-        <span class="kind">class</span>
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <span class="name">DBSyntax</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <span class="name">MapReduceDefinition</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div><div class="toggleContainer block">
+          <span class="toggle">Known Subclasses</span>
+          <div class="subClasses hiddenContent"><a href="MapReduce.html" class="extype" name="scalaz.stream.mongodb.aggregate.MapReduce">MapReduce</a>, <a href="MapReducePersistent.html" class="extype" name="scalaz.stream.mongodb.aggregate.MapReducePersistent">MapReducePersistent</a></div>
         </div></div>
         
 
@@ -59,7 +62,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="scalaz.stream.mongodb.Collection.DBSyntax"><span>DBSyntax</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="scalaz.stream.mongodb.aggregate.MapReduceDefinition"><span>MapReduceDefinition</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -77,30 +80,30 @@
 
       <div id="template">
         <div id="allMembers">
-        <div id="constructors" class="members">
-              <h3>Instance Constructors</h3>
-              <ol><li name="scalaz.stream.mongodb.Collection.DBSyntax#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(d:com.mongodb.DB):Collection.this.DBSyntax"></a>
-      <a id="&lt;init&gt;:DBSyntax"></a>
+        
+
+        
+
+        <div id="values" class="values members">
+              <h3>Abstract Value Members</h3>
+              <ol><li name="scalaz.stream.mongodb.aggregate.MapReduceDefinition#toChannelResult" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="toChannelResult(q:scalaz.stream.mongodb.query.Query):scalaz.stream.mongodb.channel.ChannelResult[com.mongodb.DBCollection,com.mongodb.DBObject]"></a>
+      <a id="toChannelResult(Query):ChannelResult[DBCollection,DBObject]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">new</span>
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">DBSyntax</span><span class="params">(<span name="d">d: <span class="extype" name="com.mongodb.DB">DB</span></span>)</span>
+        <span class="name">toChannelResult</span><span class="params">(<span name="q">q: <a href="../query/Query.html" class="extype" name="scalaz.stream.mongodb.query.Query">Query</a></span>)</span><span class="result">: <a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="com.mongodb.DBCollection">DBCollection</span>, <span class="extype" name="com.mongodb.DBObject">DBObject</span>]</span>
       </span>
       </h4>
       
     </li></ol>
             </div>
 
-        
-
-        
-
         <div id="values" class="values members">
-              <h3>Value Members</h3>
+              <h3>Concrete Value Members</h3>
               <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(x$1:AnyRef):Boolean"></a>
       <a id="!=(AnyRef):Boolean"></a>
@@ -166,19 +169,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.Collection.DBSyntax#&gt;&gt;&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&gt;&gt;&gt;[A](f:scalaz.stream.Process.Channel[scalaz.concurrent.Task,com.mongodb.DB,scalaz.stream.Process[scalaz.concurrent.Task,A]]):scalaz.stream.Process[scalaz.concurrent.Task,A]"></a>
-      <a id="&gt;&gt;&gt;[A](Channel[Task,DB,Process[Task,A]]):Process[Task,A]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span title="gt4s: $greater$greater$greater" class="name">&gt;&gt;&gt;</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="f">f: <span class="extype" name="scalaz.stream.Process.Channel">Channel</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="com.mongodb.DB">DB</span>, <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.Collection.DBSyntax.&gt;&gt;&gt;.A">A</span>]]</span>)</span><span class="result">: <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.Collection.DBSyntax.&gt;&gt;&gt;.A">A</span>]</span>
-      </span>
-      </h4>
-      
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -204,7 +194,7 @@
         <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
       <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
@@ -249,7 +239,7 @@
         <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
       <span class="symbol">classOf[java.lang.Throwable]</span>
@@ -347,19 +337,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.Collection.DBSyntax#through" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="through[A](f:scalaz.stream.Process.Channel[scalaz.concurrent.Task,com.mongodb.DB,scalaz.stream.Process[scalaz.concurrent.Task,A]]):scalaz.stream.Process[scalaz.concurrent.Task,A]"></a>
-      <a id="through[A](Channel[Task,DB,Process[Task,A]]):Process[Task,A]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">through</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="f">f: <span class="extype" name="scalaz.stream.Process.Channel">Channel</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="com.mongodb.DB">DB</span>, <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.Collection.DBSyntax.through.A">A</span>]]</span>)</span><span class="result">: <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.Collection.DBSyntax.through.A">A</span>]</span>
-      </span>
-      </h4>
-      
     </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="toString():String"></a>
       <a id="toString():String"></a>
@@ -373,19 +350,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.Collection.DBSyntax#using" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="using[A](f:scalaz.stream.Process.Channel[scalaz.concurrent.Task,com.mongodb.DB,scalaz.stream.Process[scalaz.concurrent.Task,scalaz.stream.Bytes=&gt;scalaz.concurrent.Task[Unit]]]):scalaz.stream.Process[scalaz.concurrent.Task,scalaz.stream.Bytes=&gt;scalaz.concurrent.Task[Unit]]"></a>
-      <a id="using[A](Channel[Task,DB,Process[Task,(Bytes)⇒Task[Unit]]]):Process[Task,(Bytes)⇒Task[Unit]]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">using</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="f">f: <span class="extype" name="scalaz.stream.Process.Channel">Channel</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="com.mongodb.DB">DB</span>, <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, (<span class="extype" name="scalaz.stream.Bytes">Bytes</span>) ⇒ <span class="extype" name="scalaz.concurrent.Task">Task</span>[<span class="extype" name="scala.Unit">Unit</span>]]]</span>)</span><span class="result">: <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, (<span class="extype" name="scalaz.stream.Bytes">Bytes</span>) ⇒ <span class="extype" name="scalaz.concurrent.Task">Task</span>[<span class="extype" name="scala.Unit">Unit</span>]]</span>
-      </span>
-      </h4>
-      
     </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <a id="wait():Unit"></a>
@@ -472,6 +436,6 @@
       <div id="tooltip"></div>
 
       <div id="footer">  </div>
-      <script defer="defer" type="text/javascript" id="jquery-js" src="../../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../../lib/template.js"></script>
+      <script defer="defer" type="text/javascript" id="jquery-js" src="../../../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../../../lib/template.js"></script>
     </body>
       </html>

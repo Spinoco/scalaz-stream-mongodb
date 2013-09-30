@@ -35,7 +35,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">MongoFileWrite</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="id">id: <span class="extype" name="org.bson.types.ObjectId">ObjectId</span></span>, <span name="userMeta">userMeta: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="com.mongodb.DBObject">DBObject</span>]</span>, <span name="contentType">contentType: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result"> extends <a href="MongoFile.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFile">MongoFile</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">MongoFileWrite</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="id">id: <span class="extype" name="org.bson.types.ObjectId">ObjectId</span></span>, <span name="userMeta">userMeta: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="com.mongodb.DBObject">DBObject</span>] = <span class="symbol">scala.None</span></span>, <span name="contentType">contentType: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="chunkSize">chunkSize: <span class="extype" name="scala.Long">Long</span> = <span class="defval" name="com.mongodb.gridfs.GridFS.DEFAULT_CHUNKSIZE">...</span></span>)</span><span class="result"> extends <a href="MongoFile.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFile">MongoFile</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
@@ -82,7 +82,7 @@
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="scalaz.stream.mongodb.filesystem.MongoFileWrite#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;init&gt;(name:String,id:org.bson.types.ObjectId,userMeta:Option[com.mongodb.DBObject],contentType:Option[String]):scalaz.stream.mongodb.filesystem.MongoFileWrite"></a>
+      <a id="&lt;init&gt;(name:String,id:org.bson.types.ObjectId,userMeta:Option[com.mongodb.DBObject],contentType:Option[String],chunkSize:Long):scalaz.stream.mongodb.filesystem.MongoFileWrite"></a>
       <a id="&lt;init&gt;:MongoFileWrite"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -90,7 +90,7 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">MongoFileWrite</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="id">id: <span class="extype" name="org.bson.types.ObjectId">ObjectId</span></span>, <span name="userMeta">userMeta: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="com.mongodb.DBObject">DBObject</span>]</span>, <span name="contentType">contentType: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span>
+        <span class="name">MongoFileWrite</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="id">id: <span class="extype" name="org.bson.types.ObjectId">ObjectId</span></span>, <span name="userMeta">userMeta: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="com.mongodb.DBObject">DBObject</span>] = <span class="symbol">scala.None</span></span>, <span name="contentType">contentType: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="chunkSize">chunkSize: <span class="extype" name="scala.Long">Long</span> = <span class="defval" name="com.mongodb.gridfs.GridFS.DEFAULT_CHUNKSIZE">...</span></span>)</span>
       </span>
       </h4>
       <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">name</dt><dd class="cmt"><p>Name of the file</p></dd><dt class="param">userMeta</dt><dd class="cmt"><p>Any associated metadata of the file.</p></dd><dt class="param">contentType</dt><dd class="cmt"><p>Eventually assigned content type to file
@@ -182,6 +182,19 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scalaz.stream.mongodb.filesystem.MongoFileWrite#chunkSize" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="chunkSize:Long"></a>
+      <a id="chunkSize:Long"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">chunkSize</span><span class="result">: <span class="extype" name="scala.Long">Long</span></span>
+      </span>
+      </h4>
+      
     </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a>
       <a id="clone():AnyRef"></a>
@@ -201,7 +214,7 @@
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.filesystem.MongoFileWrite#contentType" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="scalaz.stream.mongodb.filesystem.MongoFileWrite#contentType" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="contentType:Option[String]"></a>
       <a id="contentType:Option[String]"></a>
       <h4 class="signature">
@@ -214,8 +227,7 @@
       </span>
       </h4>
       <p class="shortcomment cmt">Eventually assigned content type to file
-</p><div class="fullcomment"><div class="comment cmt"><p>Eventually assigned content type to file
-</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFileWrite">MongoFileWrite</a> → <a href="MongoFile.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFile">MongoFile</a></dd></dl></div>
+</p>
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a>
       <a id="eq(AnyRef):Boolean"></a>
@@ -287,20 +299,7 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.filesystem.MongoFileWrite#meta" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="meta:com.mongodb.DBObject"></a>
-      <a id="meta:DBObject"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">lazy val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">meta</span><span class="result">: <span class="extype" name="com.mongodb.DBObject">DBObject</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFileWrite">MongoFileWrite</a> → <a href="MongoFile.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFile">MongoFile</a></dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.filesystem.MongoFileWrite#name" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="scalaz.stream.mongodb.filesystem.MongoFileWrite#name" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="name:String"></a>
       <a id="name:String"></a>
       <h4 class="signature">
@@ -312,7 +311,7 @@
         <span class="name">name</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Name of the file</p><div class="fullcomment"><div class="comment cmt"><p>Name of the file</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFileWrite">MongoFileWrite</a> → <a href="MongoFile.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFile">MongoFile</a></dd></dl></div>
+      <p class="shortcomment cmt">Name of the file</p>
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>

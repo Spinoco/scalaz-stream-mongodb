@@ -39,11 +39,7 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>User: pach
-Date: 9/19/13
-Time: 8:00 AM
-(c) 2011-2013 Spinoco Czech Republic, a.s.
-</p></div><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scalaz.syntax.Ops">Ops</span>[<a href="Query.html" class="extype" name="scalaz.stream.mongodb.query.Query">Query</a>], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div><div class="toggleContainer block">
@@ -257,6 +253,32 @@ Time: 8:00 AM
       </span>
       </h4>
       
+    </li><li name="scalaz.stream.mongodb.query.QueryOps#count" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="count:scalaz.stream.mongodb.channel.ChannelResult[com.mongodb.DBCollection,Long]"></a>
+      <a id="count:ChannelResult[DBCollection,Long]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">count</span><span class="result">: <a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="com.mongodb.DBCollection">DBCollection</span>, <span class="extype" name="scala.Long">Long</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Counts the documents that matched the query *</p>
+    </li><li name="scalaz.stream.mongodb.query.QueryOps#distinct" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="distinct[A](key:String)(implicitevidence$1:scalaz.stream.mongodb.bson.BSONSerializable[A]):scalaz.stream.mongodb.channel.ChannelResult[com.mongodb.DBCollection,A]"></a>
+      <a id="distinct[A](String)(BSONSerializable[A]):ChannelResult[DBCollection,A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">distinct</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="key">key: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="../bson/BSONSerializable.html" class="extype" name="scalaz.stream.mongodb.bson.BSONSerializable">BSONSerializable</a>[<span class="extype" name="scalaz.stream.mongodb.query.QueryOps.distinct.A">A</span>]</span>)</span><span class="result">: <a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="com.mongodb.DBCollection">DBCollection</span>, <span class="extype" name="scalaz.stream.mongodb.query.QueryOps.distinct.A">A</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Returns all distinct values of key in query *</p>
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a>
       <a id="eq(AnyRef):Boolean"></a>
@@ -419,6 +441,19 @@ Time: 8:00 AM
       </span>
       </h4>
       
+    </li><li name="scalaz.stream.mongodb.query.QueryOps#mapReduce" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="mapReduce(mapReduce:scalaz.stream.mongodb.aggregate.MapReduceDefinition):scalaz.stream.mongodb.channel.ChannelResult[com.mongodb.DBCollection,com.mongodb.DBObject]"></a>
+      <a id="mapReduce(MapReduceDefinition):ChannelResult[DBCollection,DBObject]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">mapReduce</span><span class="params">(<span name="mapReduce">mapReduce: <a href="../aggregate/MapReduceDefinition.html" class="extype" name="scalaz.stream.mongodb.aggregate.MapReduceDefinition">MapReduceDefinition</a></span>)</span><span class="result">: <a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="com.mongodb.DBCollection">DBCollection</span>, <span class="extype" name="com.mongodb.DBObject">DBObject</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Applies mapreduce function to query.</p><div class="fullcomment"><div class="comment cmt"><p>Applies mapreduce function to query. Honors sorts from query, if specified</p></div></div>
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>
@@ -471,6 +506,19 @@ Time: 8:00 AM
       </span>
       </h4>
       
+    </li><li name="scalaz.stream.mongodb.query.QueryOps#pipeThrough" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="pipeThrough(p:scalaz.stream.mongodb.aggregate.PipelineOperator):scalaz.stream.mongodb.channel.ChannelResult[com.mongodb.DBCollection,com.mongodb.DBObject]"></a>
+      <a id="pipeThrough(PipelineOperator):ChannelResult[DBCollection,DBObject]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">pipeThrough</span><span class="params">(<span name="p">p: <a href="../aggregate/PipelineOperator.html" class="extype" name="scalaz.stream.mongodb.aggregate.PipelineOperator">PipelineOperator</a></span>)</span><span class="result">: <a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="com.mongodb.DBCollection">DBCollection</span>, <span class="extype" name="com.mongodb.DBObject">DBObject</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Pipes result of this query though aggregation command *</p>
     </li><li name="scalaz.stream.mongodb.query.QueryOps#project" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="project(h:scalaz.stream.mongodb.query.ProjectionPair,t:scalaz.stream.mongodb.query.ProjectionPair*):scalaz.stream.mongodb.query.Query"></a>
       <a id="project(ProjectionPair,ProjectionPair*):Query"></a>
@@ -606,6 +654,32 @@ Time: 8:00 AM
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="scalaz.stream.mongodb.query.QueryOps#where" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="where(js:String):scalaz.stream.mongodb.query.Query"></a>
+      <a id="where(String):Query"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">where</span><span class="params">(<span name="js">js: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="Query.html" class="extype" name="scalaz.stream.mongodb.query.Query">Query</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="scalaz.stream.mongodb.query.QueryOps#|&gt;&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="|&gt;&gt;(p:scalaz.stream.mongodb.aggregate.PipelineOperator):scalaz.stream.mongodb.channel.ChannelResult[com.mongodb.DBCollection,com.mongodb.DBObject]"></a>
+      <a id="|&gt;&gt;(PipelineOperator):ChannelResult[DBCollection,DBObject]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bar$greater$greater" class="name">|&gt;&gt;</span><span class="params">(<span name="p">p: <a href="../aggregate/PipelineOperator.html" class="extype" name="scalaz.stream.mongodb.aggregate.PipelineOperator">PipelineOperator</a></span>)</span><span class="result">: <a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="com.mongodb.DBCollection">DBCollection</span>, <span class="extype" name="com.mongodb.DBObject">DBObject</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Pipes result of this query through aggregation pipeline *</p>
     </li></ol>
             </div>
 

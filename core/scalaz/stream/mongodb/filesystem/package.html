@@ -58,21 +58,7 @@
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="scalaz.stream.mongodb.filesystem.FileChannelResultOps" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="FileChannelResultOpsextendsOps[scalaz.stream.mongodb.channel.ChannelResult[com.mongodb.DB,scalaz.stream.mongodb.filesystem.MongoFileRead]]"></a>
-      <a id="FileChannelResultOps:FileChannelResultOps"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">trait</span>
-      </span>
-      <span class="symbol">
-        <a href="FileChannelResultOps.html"><span class="name">FileChannelResultOps</span></a><span class="result"> extends <span class="extype" name="scalaz.syntax.Ops">Ops</span>[<a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="com.mongodb.DB">DB</span>, <a href="MongoFileRead.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFileRead">MongoFileRead</a>]]</span>
-      </span>
-      </h4>
-      <p class="comment cmt">Ops to be available for list() command
-</p>
-    </li><li name="scalaz.stream.mongodb.filesystem.FileQuery" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+              <ol><li name="scalaz.stream.mongodb.filesystem.FileQuery" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="FileQueryextendsProductwithSerializable"></a>
       <a id="FileQuery:FileQuery"></a>
       <h4 class="signature">
@@ -86,7 +72,7 @@
       </h4>
       <p class="comment cmt">Query that allows to pick multiple files</p>
     </li><li name="scalaz.stream.mongodb.filesystem.FileSystemSyntax" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="FileSystemSyntaxextendsAnyRef"></a>
+      <a id="FileSystemSyntaxextendsFileUtil"></a>
       <a id="FileSystemSyntax:FileSystemSyntax"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -94,7 +80,20 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="FileSystemSyntax.html"><span class="name">FileSystemSyntax</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <a href="FileSystemSyntax.html"><span class="name">FileSystemSyntax</span></a><span class="result"> extends <a href="FileUtil.html" class="extype" name="scalaz.stream.mongodb.filesystem.FileUtil">FileUtil</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="scalaz.stream.mongodb.filesystem.FileUtil" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="FileUtilextendsAnyRef"></a>
+      <a id="FileUtil:FileUtil"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="FileUtil.html"><span class="name">FileUtil</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       
@@ -107,26 +106,93 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="GridFs.html"><span class="name">GridFs</span></a><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a href="GridFs.html"><span class="name">GridFs</span></a><span class="params">(<span name="db">db: <span class="extype" name="com.mongodb.DB">DB</span></span>, <span name="filesystemName">filesystemName: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;fs&quot;</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       <p class="comment cmt">Represents grid fs instance</p>
-    </li><li name="scalaz.stream.mongodb.filesystem.GridFsOps" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="GridFsOpsextendsOps[scalaz.stream.mongodb.filesystem.GridFs]"></a>
-      <a id="GridFsOps:GridFsOps"></a>
+    </li><li name="scalaz.stream.mongodb.filesystem.GridFsCommand" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="GridFsCommand[A]extendsAnyRef"></a>
+      <a id="GridFsCommand[A]:GridFsCommand[A]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="GridFsOps.html"><span class="name">GridFsOps</span></a><span class="result"> extends <span class="extype" name="scalaz.syntax.Ops">Ops</span>[<a href="GridFs.html" class="extype" name="scalaz.stream.mongodb.filesystem.GridFs">GridFs</a>]</span>
+        <a href="GridFsCommand.html"><span class="name">GridFsCommand</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="scalaz.stream.mongodb.filesystem.ListAndCommand" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ListAndCommand[A]extendsReadCommand[A]withListCommandOpswithProductwithSerializable"></a>
+      <a id="ListAndCommand[A]:ListAndCommand[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ListAndCommand.html"><span class="name">ListAndCommand</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="query">query: <a href="FileQuery.html" class="extype" name="scalaz.stream.mongodb.filesystem.FileQuery">FileQuery</a></span>, <span name="ch">ch: <a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="com.mongodb.gridfs.GridFS">GridFS</span>, (<a href="MongoFileRead.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFileRead">MongoFileRead</a>) ⇒ <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.filesystem.ListAndCommand.A">A</span>]]</span>)</span><span class="result"> extends <a href="ReadCommand.html" class="extype" name="scalaz.stream.mongodb.filesystem.ReadCommand">ReadCommand</a>[<span class="extype" name="scalaz.stream.mongodb.filesystem.ListAndCommand.A">A</span>] with <a href="ListCommandOps.html" class="extype" name="scalaz.stream.mongodb.filesystem.ListCommandOps">ListCommandOps</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">List command that runs supplied channel for all supplied files.</p>
+    </li><li name="scalaz.stream.mongodb.filesystem.ListCommand" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ListCommandextendsReadCommand[scalaz.stream.mongodb.filesystem.MongoFileRead]withListCommandOpswithProductwithSerializable"></a>
+      <a id="ListCommand:ListCommand"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ListCommand.html"><span class="name">ListCommand</span></a><span class="params">(<span name="query">query: <a href="FileQuery.html" class="extype" name="scalaz.stream.mongodb.filesystem.FileQuery">FileQuery</a></span>)</span><span class="result"> extends <a href="ReadCommand.html" class="extype" name="scalaz.stream.mongodb.filesystem.ReadCommand">ReadCommand</a>[<a href="MongoFileRead.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFileRead">MongoFileRead</a>] with <a href="ListCommandOps.html" class="extype" name="scalaz.stream.mongodb.filesystem.ListCommandOps">ListCommandOps</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Command that list files</p>
+    </li><li name="scalaz.stream.mongodb.filesystem.ListCommandOps" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ListCommandOpsextendsAnyRef"></a>
+      <a id="ListCommandOps:ListCommandOps"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ListCommandOps.html"><span class="name">ListCommandOps</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">operations on list commands
+</p>
+    </li><li name="scalaz.stream.mongodb.filesystem.ListCommandSyntax" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ListCommandSyntaxextendsAnyRef"></a>
+      <a id="ListCommandSyntax:ListCommandSyntax"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ListCommandSyntax.html"><span class="name">ListCommandSyntax</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       <p class="comment cmt">User: pach
-Date: 9/19/13
-Time: 9:09 PM
+Date: 9/23/13
+Time: 4:59 PM
 (c) 2011-2013 Spinoco Czech Republic, a.</p>
+    </li><li name="scalaz.stream.mongodb.filesystem.ListForEachCommand" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ListForEachCommand[A]extendsReadCommand[(scalaz.stream.mongodb.filesystem.MongoFileRead,scalaz.stream.Process[scalaz.concurrent.Task,A])]withListCommandOpswithProductwithSerializable"></a>
+      <a id="ListForEachCommand[A]:ListForEachCommand[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ListForEachCommand.html"><span class="name">ListForEachCommand</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="query">query: <a href="FileQuery.html" class="extype" name="scalaz.stream.mongodb.filesystem.FileQuery">FileQuery</a></span>, <span name="ch">ch: <a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="com.mongodb.gridfs.GridFS">GridFS</span>, (<a href="MongoFileRead.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFileRead">MongoFileRead</a>) ⇒ <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.filesystem.ListForEachCommand.A">A</span>]]</span>)</span><span class="result"> extends <a href="ReadCommand.html" class="extype" name="scalaz.stream.mongodb.filesystem.ReadCommand">ReadCommand</a>[(<a href="MongoFileRead.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFileRead">MongoFileRead</a>, <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.filesystem.ListForEachCommand.A">A</span>])] with <a href="ListCommandOps.html" class="extype" name="scalaz.stream.mongodb.filesystem.ListCommandOps">ListCommandOps</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">ListCommand that runs supplied channel for every file listed
+</p>
     </li><li name="scalaz.stream.mongodb.filesystem.MongoFile" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="MongoFileextendsAnyRef"></a>
       <a id="MongoFile:MongoFile"></a>
@@ -153,6 +219,19 @@ Time: 9:09 PM
       </span>
       </h4>
       <p class="comment cmt">Mongo file information that are read from the filesystem</p>
+    </li><li name="scalaz.stream.mongodb.filesystem.MongoFileRef" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoFileRefextendsMongoFilewithProductwithSerializable"></a>
+      <a id="MongoFileRef:MongoFileRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="MongoFileRef.html"><span class="name">MongoFileRef</span></a><span class="params">(<span name="id">id: <span class="extype" name="org.bson.types.ObjectId">ObjectId</span></span>)</span><span class="result"> extends <a href="MongoFile.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFile">MongoFile</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Mongo file identified by its id *</p>
     </li><li name="scalaz.stream.mongodb.filesystem.MongoFileWrite" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="MongoFileWriteextendsMongoFilewithProductwithSerializable"></a>
       <a id="MongoFileWrite:MongoFileWrite"></a>
@@ -162,11 +241,54 @@ Time: 9:09 PM
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="MongoFileWrite.html"><span class="name">MongoFileWrite</span></a><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="id">id: <span class="extype" name="org.bson.types.ObjectId">ObjectId</span></span>, <span name="userMeta">userMeta: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="com.mongodb.DBObject">DBObject</span>]</span>, <span name="contentType">contentType: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result"> extends <a href="MongoFile.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFile">MongoFile</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a href="MongoFileWrite.html"><span class="name">MongoFileWrite</span></a><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="id">id: <span class="extype" name="org.bson.types.ObjectId">ObjectId</span></span>, <span name="userMeta">userMeta: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="com.mongodb.DBObject">DBObject</span>] = <span class="symbol">scala.None</span></span>, <span name="contentType">contentType: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="chunkSize">chunkSize: <span class="extype" name="scala.Long">Long</span> = <span class="defval" name="com.mongodb.gridfs.GridFS.DEFAULT_CHUNKSIZE">...</span></span>)</span><span class="result"> extends <a href="MongoFile.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFile">MongoFile</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       <p class="comment cmt">Object holding information about the concrete file to be written
 </p>
+    </li><li name="scalaz.stream.mongodb.filesystem.ReadCommand" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ReadCommand[A]extendsGridFsCommand[A]"></a>
+      <a id="ReadCommand[A]:ReadCommand[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ReadCommand.html"><span class="name">ReadCommand</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="result"> extends <a href="GridFsCommand.html" class="extype" name="scalaz.stream.mongodb.filesystem.GridFsCommand">GridFsCommand</a>[<span class="extype" name="scalaz.stream.mongodb.filesystem.ReadCommand.A">A</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">tag trait for commands that only reads from grid fs *</p>
+    </li><li name="scalaz.stream.mongodb.filesystem.WriteCommand" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="WriteCommandextendsGridFsCommand[scalaz.stream.Bytes=&gt;scalaz.concurrent.Task[Unit]]withProductwithSerializable"></a>
+      <a id="WriteCommand:WriteCommand"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="WriteCommand.html"><span class="name">WriteCommand</span></a><span class="params">(<span name="file">file: <a href="MongoFileWrite.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFileWrite">MongoFileWrite</a></span>)</span><span class="result"> extends <a href="GridFsCommand.html" class="extype" name="scalaz.stream.mongodb.filesystem.GridFsCommand">GridFsCommand</a>[(<span class="extype" name="scalaz.stream.Bytes">Bytes</span>) ⇒ <span class="extype" name="scalaz.concurrent.Task">Task</span>[<span class="extype" name="scala.Unit">Unit</span>]] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">write command
+</p>
+    </li><li name="scalaz.stream.mongodb.filesystem.WriteCommandSyntax" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="WriteCommandSyntaxextendsAnyRef"></a>
+      <a id="WriteCommandSyntax:WriteCommandSyntax"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="WriteCommandSyntax.html"><span class="name">WriteCommandSyntax</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">User: pach
+Date: 9/23/13
+Time: 5:13 PM
+(c) 2011-2013 Spinoco Czech Republic, a.</p>
     </li></ol>
             </div>
 
@@ -183,13 +305,49 @@ Time: 9:09 PM
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="FileUtil$.html"><span class="name">FileUtil</span></a>
+        <a href="FileUtil$.html"><span class="name">FileUtil</span></a><span class="result"> extends <a href="FileUtil.html" class="extype" name="scalaz.stream.mongodb.filesystem.FileUtil">FileUtil</a></span>
       </span>
       </h4>
-      <p class="comment cmt">User: pach
-Date: 9/21/13
-Time: 9:34 AM
-(c) 2011-2013 Spinoco Czech Republic, a.</p>
+      
+    </li><li name="scalaz.stream.mongodb.filesystem.ListAndCommand" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ListAndCommand"></a>
+      <a id="ListAndCommand:ListAndCommand"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ListAndCommand$.html"><span class="name">ListAndCommand</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="scalaz.stream.mongodb.filesystem.ListForEachCommand" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ListForEachCommand"></a>
+      <a id="ListForEachCommand:ListForEachCommand"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ListForEachCommand$.html"><span class="name">ListForEachCommand</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="scalaz.stream.mongodb.filesystem.MongoFile" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoFile"></a>
+      <a id="MongoFile:MongoFile"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MongoFile$.html"><span class="name">MongoFile</span></a>
+      </span>
+      </h4>
+      
     </li></ol>
             </div>
 

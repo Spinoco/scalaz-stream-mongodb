@@ -1,0 +1,86 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <style type="text/css" media="all">
+        @import url('./css/maven-base.css');
+        @import url('./css/maven-theme.css');
+      </style>
+      <link href="./css/prettify.css" type="text/css" rel="stylesheet" />
+      <script type="text/javascript" src="./css/prettify.js"></script>
+      <link rel="stylesheet" href="./css/print.css" type="text/css" media="print" />
+      <link href="./css/tooltip.css" rel="stylesheet" type="text/css" />
+      <link href="./css/specs2-user.css" type="text/css" rel="stylesheet" />
+
+      <script type="text/javascript" src="./css/jquery.js"></script>
+      <script type="text/javascript" src="./css/jquery.cookie.js"></script>
+      <script type="text/javascript" src="./css/jquery.hotkeys.js"></script>
+      <script type="text/javascript" src="./css/jquery.jstree.js"></script>
+      <script type="text/javascript" src="./css/tooltip.js"></script>
+      <script type="text/javascript" src="./js/specs2-user.js"></script>
+      <script language="javascript">$.getScript("./js/specs2-user.js", initUserScript(document));</script>
+      <script language="javascript">
+      function init() {  prettyPrint(); };
+      /* found on : http://www.tek-tips.com/faqs.cfm?fid=6620 */
+      String.prototype.endsWith = function(str) { return (this.match(str+'$') == str) };
+      function changeWidth(id,width) {  document.getElementById(id).style.width = width; };
+      function changeMarginLeft(id, margin) { document.getElementById(id).style.marginLeft = margin; };
+      function toggleImage(image) {
+        if (image.src.endsWith('images/expanded.gif')) 
+          image.src = image.src.replace('expanded', 'collapsed');
+        else 
+          image.src = image.src.replace('collapsed', 'expanded');
+      };
+      function showHide(id) {
+        element = document.getElementById(id);
+        element.style.display = (element.style.display == 'block')? 'none' : 'block';
+      };
+      function showHideByClass(name) {
+        var elements = document.getElementsByClassName(name);
+        for (i = 0; i < elements.length; i++) {
+          elements[i].style.display = (elements[i].style.display == 'none') ? elements[i].style.display = '': 'none';
+        }
+      };
+      function showByClass(name) {
+        var elements = document.getElementsByClassName(name);
+        for (i = 0; i < elements.length; i++) {
+          elements[i].style.display = 'block';
+        }
+      };
+      function hideByClass(name) {
+        var elements = document.getElementsByClassName(name);
+        for (i = 0; i < elements.length; i++) {
+          elements[i].style.display = 'none';
+        }
+      };
+      function showById(id) {
+        document.getElementById(id).style.display = ''
+      };
+      function hideById(id) {
+        document.getElementById(id).style.display = 'none'
+      };
+    </script>
+      <script language="javascript">window.onload=init;</script>
+      <!-- the tabber.js file must be loaded after the onload function has been set, in order to run the
+           tabber code, then the init code -->
+      <script type="text/javascript" src="./css/tabber.js"></script>
+      <link rel="stylesheet" href="./css/tabber.css" type="text/css" media="screen" />
+      <title>Aggregation framework</title>
+    </head><body><div class="colmask threecol">
+            <div class="colmid">
+              <div class="colleft">
+                <div class="col1"><div id="central"><html><title>Aggregation framework</title><a name="Aggregation+framework"><h2 specId="1283190205">Aggregation framework</h2></a><status class="ok"><div style="display: show; text-indent:20px;"><p>Mongo Streams has support for all aggregation framework operations that are supported by mongodb.<br />Please take look into following examples to see more:</p><a name="Simple+Aggregation+operations"><h3>Simple Aggregation operations</h3></a><p>These are simple operations to return count of elements or distinct values. For more please look </p></div></status><subtoc specId="1942167656"></subtoc><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> here <a href="scalaz.stream.mongodb.aggregate.BasicAggregationSpec.html" tooltip="">BasicAggregationSpec</a></div></status><status class="ok"><div style="display: show; text-indent:0px;"><p>.</p><a name="Map-Reduce+aggregation+operations"><h3>Map-Reduce aggregation operations</h3></a><p>Mongo Streams allows you to create mongo's mapreduce javascript aggregation operations. For syntax and examples look </p></div></status><subtoc specId="108309209"></subtoc><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> here <a href="scalaz.stream.mongodb.aggregate.MapReduceSpec.html" tooltip="">MapReduce aggregation</a></div></status><status class="ok"><div style="display: show; text-indent:0px;"><p>.</p><a name="Aggregation+Pipieline+operations"><h3>Aggregation Pipieline operations</h3></a><p>Mongo Streams has limitted support for aggregation pipeline commands. All the aggregation pipeline commands are now<br />supported, but only basic expressions are supported now for $project operation. For list and exmaples of supported<br />functionality, please look </p></div></status><subtoc specId="1839060378"></subtoc><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> here <a href="scalaz.stream.mongodb.aggregate.PipelineSpec.html" tooltip="">Aggregation Pipeline</a></div></status><status class="ok"><div style="display: show; text-indent:0px;"><p>.</p></div></status></html></div></div>
+                <div class="col2"><div id="leftcolumn"><div id="tree">
+      <ul><li id="1283190205"><a href="scalaz.stream.mongodb.userguide.AggregationUsageSpec.html#Aggregation+framework">Aggregation framework</a>
+            <ul><li id=""><a href="scalaz.stream.mongodb.userguide.AggregationUsageSpec.html#Simple+Aggregation+operations">Simple Aggregation operations</a>
+            <ul></ul>
+          </li><li id=""><a href="scalaz.stream.mongodb.userguide.AggregationUsageSpec.html#Map-Reduce+aggregation+operations">Map-Reduce aggregation operations</a>
+            <ul></ul>
+          </li><li id=""><a href="scalaz.stream.mongodb.userguide.AggregationUsageSpec.html#Aggregation+Pipieline+operations">Aggregation Pipieline operations</a>
+            <ul></ul>
+          </li></ul>
+          </li></ul>
+      <script>$(function () {  $('#tree').jstree({'core':{'initially_open':['1283190205','1283190205'], 'animation':200}, 'plugins':['themes', 'html_data']}); });</script>
+    </div></div></div>
+                <div class="col3"><div id="rightcolumn"></div></div>
+              </div>
+            </div>
+          </div></body></html>

@@ -35,11 +35,11 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">GridFs</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">GridFs</span><span class="params">(<span name="db">db: <span class="extype" name="com.mongodb.DB">DB</span></span>, <span name="filesystemName">filesystemName: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;fs&quot;</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Represents grid fs instance</p></div><dl class="paramcmts block"><dt class="param">name</dt><dd class="cmt"><p>Name of the bucket (default is fs)
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Represents grid fs instance</p></div><dl class="paramcmts block"><dt class="param">db</dt><dd class="cmt"><p>Underlying database for gridfs</p></dd><dt class="param">filesystemName</dt><dd class="cmt"><p>Name of gfs
 </p></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.Product">Product</span>, <span class="extype" name="scala.Equals">Equals</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
@@ -81,7 +81,7 @@
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="scalaz.stream.mongodb.filesystem.GridFs#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;init&gt;(name:String):scalaz.stream.mongodb.filesystem.GridFs"></a>
+      <a id="&lt;init&gt;(db:com.mongodb.DB,filesystemName:String):scalaz.stream.mongodb.filesystem.GridFs"></a>
       <a id="&lt;init&gt;:GridFs"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -89,10 +89,10 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">GridFs</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>)</span>
+        <span class="name">GridFs</span><span class="params">(<span name="db">db: <span class="extype" name="com.mongodb.DB">DB</span></span>, <span name="filesystemName">filesystemName: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;fs&quot;</span></span>)</span>
       </span>
       </h4>
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">name</dt><dd class="cmt"><p>Name of the bucket (default is fs)
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">db</dt><dd class="cmt"><p>Underlying database for gridfs</p></dd><dt class="param">filesystemName</dt><dd class="cmt"><p>Name of gfs
 </p></dd></dl></div>
     </li></ol>
             </div>
@@ -200,6 +200,19 @@
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="scalaz.stream.mongodb.filesystem.GridFs#db" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="db:com.mongodb.DB"></a>
+      <a id="db:DB"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">db</span><span class="result">: <span class="extype" name="com.mongodb.DB">DB</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Underlying database for gridfs</p>
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a>
       <a id="eq(AnyRef):Boolean"></a>
@@ -213,6 +226,20 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scalaz.stream.mongodb.filesystem.GridFs#filesystemName" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="filesystemName:String"></a>
+      <a id="filesystemName:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">filesystemName</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Name of gfs
+</p>
     </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <a id="finalize():Unit"></a>
@@ -245,6 +272,19 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scalaz.stream.mongodb.filesystem.GridFs#gfs" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="gfs:com.mongodb.gridfs.GridFS"></a>
+      <a id="gfs:GridFS"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">gfs</span><span class="result">: <span class="extype" name="com.mongodb.gridfs.GridFS">GridFS</span></span>
+      </span>
+      </h4>
+      
     </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <a id="isInstanceOf[T0]:Boolean"></a>
@@ -258,20 +298,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.filesystem.GridFs#name" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="name:String"></a>
-      <a id="name:String"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">name</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Name of the bucket (default is fs)
-</p>
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>
@@ -324,6 +350,58 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scalaz.stream.mongodb.filesystem.GridFs#through" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="through[A](ch:scalaz.stream.mongodb.channel.ChannelResult[com.mongodb.gridfs.GridFS,A]):scalaz.stream.Process[scalaz.concurrent.Task,A]"></a>
+      <a id="through[A](ChannelResult[GridFS,A]):Process[Task,A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">through</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="ch">ch: <a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="com.mongodb.gridfs.GridFS">GridFS</span>, <span class="extype" name="scalaz.stream.mongodb.filesystem.GridFs.through.A">A</span>]</span>)</span><span class="result">: <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.filesystem.GridFs.through.A">A</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li name="scalaz.stream.mongodb.filesystem.GridFs#through" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="through[A](cmd:scalaz.stream.mongodb.filesystem.GridFsCommand[A]):scalaz.stream.Process[scalaz.concurrent.Task,A]"></a>
+      <a id="through[A](GridFsCommand[A]):Process[Task,A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">through</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="cmd">cmd: <a href="GridFsCommand.html" class="extype" name="scalaz.stream.mongodb.filesystem.GridFsCommand">GridFsCommand</a>[<span class="extype" name="scalaz.stream.mongodb.filesystem.GridFs.through.A">A</span>]</span>)</span><span class="result">: <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.filesystem.GridFs.through.A">A</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li name="scalaz.stream.mongodb.filesystem.GridFs#using" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="using(cmd:scalaz.stream.mongodb.filesystem.WriteCommand):scalaz.stream.Process[scalaz.concurrent.Task,scalaz.stream.Bytes=&gt;scalaz.concurrent.Task[Unit]]"></a>
+      <a id="using(WriteCommand):Process[Task,(Bytes)⇒Task[Unit]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">using</span><span class="params">(<span name="cmd">cmd: <a href="WriteCommand.html" class="extype" name="scalaz.stream.mongodb.filesystem.WriteCommand">WriteCommand</a></span>)</span><span class="result">: <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, (<span class="extype" name="scalaz.stream.Bytes">Bytes</span>) ⇒ <span class="extype" name="scalaz.concurrent.Task">Task</span>[<span class="extype" name="scala.Unit">Unit</span>]]</span>
+      </span>
+      </h4>
+      
+    </li><li name="scalaz.stream.mongodb.filesystem.GridFs#using" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="using(ch:scalaz.stream.mongodb.channel.ChannelResult[com.mongodb.gridfs.GridFS,scalaz.stream.Bytes=&gt;scalaz.concurrent.Task[Unit]]):scalaz.stream.Process[scalaz.concurrent.Task,scalaz.stream.Bytes=&gt;scalaz.concurrent.Task[Unit]]"></a>
+      <a id="using(ChannelResult[GridFS,(Bytes)⇒Task[Unit]]):Process[Task,(Bytes)⇒Task[Unit]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">using</span><span class="params">(<span name="ch">ch: <a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="com.mongodb.gridfs.GridFS">GridFS</span>, (<span class="extype" name="scalaz.stream.Bytes">Bytes</span>) ⇒ <span class="extype" name="scalaz.concurrent.Task">Task</span>[<span class="extype" name="scala.Unit">Unit</span>]]</span>)</span><span class="result">: <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, (<span class="extype" name="scalaz.stream.Bytes">Bytes</span>) ⇒ <span class="extype" name="scalaz.concurrent.Task">Task</span>[<span class="extype" name="scala.Unit">Unit</span>]]</span>
+      </span>
+      </h4>
+      
     </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <a id="wait():Unit"></a>

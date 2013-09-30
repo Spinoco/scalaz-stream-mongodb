@@ -24,9 +24,9 @@
         </head>
         <body class="value">
       <div id="definition">
-        <img src="../../../../lib/object_big.png" />
+        <a href="FileUtil.html" title="Go to companion"><img src="../../../../lib/object_to_trait_big.png" /></a>
         <p id="owner"><a href="../../../package.html" class="extype" name="scalaz">scalaz</a>.<a href="../../package.html" class="extype" name="scalaz.stream">stream</a>.<a href="../package.html" class="extype" name="scalaz.stream.mongodb">mongodb</a>.<a href="package.html" class="extype" name="scalaz.stream.mongodb.filesystem">filesystem</a></p>
-        <h1>FileUtil</h1>
+        <h1><a href="FileUtil.html" title="Go to companion">FileUtil</a></h1>
       </div>
 
       <h4 id="signature" class="signature">
@@ -35,17 +35,13 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <span class="name">FileUtil</span>
+        <span class="name">FileUtil</span><span class="result"> extends <a href="FileUtil.html" class="extype" name="scalaz.stream.mongodb.filesystem.FileUtil">FileUtil</a></span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>User: pach
-Date: 9/21/13
-Time: 9:34 AM
-(c) 2011-2013 Spinoco Czech Republic, a.s.
-</p></div><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><a href="FileUtil.html" class="extype" name="scalaz.stream.mongodb.filesystem.FileUtil">FileUtil</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -63,7 +59,7 @@ Time: 9:34 AM
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="scalaz.stream.mongodb.filesystem.FileUtil"><span>FileUtil</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="scalaz.stream.mongodb.filesystem.FileUtil"><span>FileUtil</span></li><li class="in" name="scalaz.stream.mongodb.filesystem.FileUtil"><span>FileUtil</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -309,32 +305,32 @@ Time: 9:34 AM
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.filesystem.FileUtil#singleFileReader" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="singleFileReader(buffSize:Int):scalaz.stream.mongodb.channel.ChannelResult[com.mongodb.DB,scalaz.stream.mongodb.filesystem.MongoFileRead=&gt;scalaz.stream.Process[scalaz.concurrent.Task,scalaz.stream.Bytes]]"></a>
-      <a id="singleFileReader(Int):ChannelResult[DB,(MongoFileRead)⇒Process[Task,Bytes]]"></a>
+    </li><li name="scalaz.stream.mongodb.filesystem.FileUtil#readFile" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="readFile(buffSize:Int):scalaz.stream.mongodb.channel.ChannelResult[com.mongodb.gridfs.GridFS,scalaz.stream.mongodb.filesystem.MongoFileRead=&gt;scalaz.stream.Process[scalaz.concurrent.Task,scalaz.stream.Bytes]]"></a>
+      <a id="readFile(Int):ChannelResult[GridFS,(MongoFileRead)⇒Process[Task,Bytes]]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">singleFileReader</span><span class="params">(<span name="buffSize">buffSize: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="com.mongodb.DB">DB</span>, (<a href="MongoFileRead.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFileRead">MongoFileRead</a>) ⇒ <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.Bytes">Bytes</span>]]</span>
+        <span class="name">readFile</span><span class="params">(<span name="buffSize">buffSize: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">GridFS.DEFAULT_CHUNKSIZE</span></span>)</span><span class="result">: <a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="com.mongodb.gridfs.GridFS">GridFS</span>, (<a href="MongoFileRead.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFileRead">MongoFileRead</a>) ⇒ <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.Bytes">Bytes</span>]]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Produces ChannelResult, that will read single file *</p>
-    </li><li name="scalaz.stream.mongodb.filesystem.FileUtil#singleFileRemove" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="singleFileRemove:scalaz.stream.mongodb.channel.ChannelResult[com.mongodb.DB,scalaz.stream.mongodb.filesystem.MongoFileRead=&gt;scalaz.stream.Process[scalaz.concurrent.Task,Unit]]"></a>
-      <a id="singleFileRemove:ChannelResult[DB,(MongoFileRead)⇒Process[Task,Unit]]"></a>
+      <p class="shortcomment cmt">Produces ChannelResult, that will read single file *</p><div class="fullcomment"><div class="comment cmt"><p>Produces ChannelResult, that will read single file *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="FileUtil.html" class="extype" name="scalaz.stream.mongodb.filesystem.FileUtil">FileUtil</a></dd></dl></div>
+    </li><li name="scalaz.stream.mongodb.filesystem.FileUtil#removeFile" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="removeFile:scalaz.stream.mongodb.channel.ChannelResult[com.mongodb.gridfs.GridFS,scalaz.stream.mongodb.filesystem.MongoFileRead=&gt;scalaz.stream.Process[scalaz.concurrent.Task,Unit]]"></a>
+      <a id="removeFile:ChannelResult[GridFS,(MongoFileRead)⇒Process[Task,Unit]]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">singleFileRemove</span><span class="result">: <a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="com.mongodb.DB">DB</span>, (<a href="MongoFileRead.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFileRead">MongoFileRead</a>) ⇒ <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scala.Unit">Unit</span>]]</span>
+        <span class="name">removeFile</span><span class="result">: <a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="com.mongodb.gridfs.GridFS">GridFS</span>, (<a href="MongoFileRead.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFileRead">MongoFileRead</a>) ⇒ <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scala.Unit">Unit</span>]]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Produces ChannelResult, that will remove single file.</p><div class="fullcomment"><div class="comment cmt"><p>Produces ChannelResult, that will remove single file. <code>true</code> is returned when file was removed *</p></div></div>
+      <p class="shortcomment cmt">Produces ChannelResult, that will remove single file.</p><div class="fullcomment"><div class="comment cmt"><p>Produces ChannelResult, that will remove single file. <code>true</code> is returned when file was removed *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="FileUtil.html" class="extype" name="scalaz.stream.mongodb.filesystem.FileUtil">FileUtil</a></dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>
@@ -427,7 +423,9 @@ Time: 9:34 AM
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="scala.AnyRef">
+        <div class="parent" name="scalaz.stream.mongodb.filesystem.FileUtil">
+              <h3>Inherited from <a href="FileUtil.html" class="extype" name="scalaz.stream.mongodb.filesystem.FileUtil">FileUtil</a></h3>
+            </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">
               <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>

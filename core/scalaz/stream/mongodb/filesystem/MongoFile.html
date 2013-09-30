@@ -24,9 +24,9 @@
         </head>
         <body class="type">
       <div id="definition">
-        <img src="../../../../lib/trait_big.png" />
+        <a href="MongoFile$.html" title="Go to companion"><img src="../../../../lib/trait_to_object_big.png" /></a>
         <p id="owner"><a href="../../../package.html" class="extype" name="scalaz">scalaz</a>.<a href="../../package.html" class="extype" name="scalaz.stream">stream</a>.<a href="../package.html" class="extype" name="scalaz.stream.mongodb">mongodb</a>.<a href="package.html" class="extype" name="scalaz.stream.mongodb.filesystem">filesystem</a></p>
-        <h1>MongoFile</h1>
+        <h1><a href="MongoFile$.html" title="Go to companion">MongoFile</a></h1>
       </div>
 
       <h4 id="signature" class="signature">
@@ -44,7 +44,7 @@
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div><div class="toggleContainer block">
           <span class="toggle">Known Subclasses</span>
-          <div class="subClasses hiddenContent"><a href="MongoFileRead.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFileRead">MongoFileRead</a>, <a href="MongoFileWrite.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFileWrite">MongoFileWrite</a></div>
+          <div class="subClasses hiddenContent"><a href="MongoFileRead.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFileRead">MongoFileRead</a>, <a href="MongoFileRef.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFileRef">MongoFileRef</a>, <a href="MongoFileWrite.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFileWrite">MongoFileWrite</a></div>
         </div></div>
         
 
@@ -86,20 +86,7 @@
 
         <div id="values" class="values members">
               <h3>Abstract Value Members</h3>
-              <ol><li name="scalaz.stream.mongodb.filesystem.MongoFile#contentType" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="contentType:Option[String]"></a>
-      <a id="contentType:Option[String]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">abstract </span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">contentType</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">content type of file *</p>
-    </li><li name="scalaz.stream.mongodb.filesystem.MongoFile#id" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+              <ol><li name="scalaz.stream.mongodb.filesystem.MongoFile#id" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="id:org.bson.types.ObjectId"></a>
       <a id="id:ObjectId"></a>
       <h4 class="signature">
@@ -112,32 +99,6 @@
       </span>
       </h4>
       <p class="shortcomment cmt">unique identification of the file *</p>
-    </li><li name="scalaz.stream.mongodb.filesystem.MongoFile#meta" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="meta:com.mongodb.DBObject"></a>
-      <a id="meta:DBObject"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">abstract </span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">meta</span><span class="result">: <span class="extype" name="com.mongodb.DBObject">DBObject</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">metadata of file *</p>
-    </li><li name="scalaz.stream.mongodb.filesystem.MongoFile#name" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="name:String"></a>
-      <a id="name:String"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">abstract </span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">name</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">name of the file, must not be unique *</p>
     </li></ol>
             </div>
 

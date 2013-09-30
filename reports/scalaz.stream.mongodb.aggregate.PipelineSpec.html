@@ -1,0 +1,134 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <style type="text/css" media="all">
+        @import url('./css/maven-base.css');
+        @import url('./css/maven-theme.css');
+      </style>
+      <link href="./css/prettify.css" type="text/css" rel="stylesheet" />
+      <script type="text/javascript" src="./css/prettify.js"></script>
+      <link rel="stylesheet" href="./css/print.css" type="text/css" media="print" />
+      <link href="./css/tooltip.css" rel="stylesheet" type="text/css" />
+      <link href="./css/specs2-user.css" type="text/css" rel="stylesheet" />
+
+      <script type="text/javascript" src="./css/jquery.js"></script>
+      <script type="text/javascript" src="./css/jquery.cookie.js"></script>
+      <script type="text/javascript" src="./css/jquery.hotkeys.js"></script>
+      <script type="text/javascript" src="./css/jquery.jstree.js"></script>
+      <script type="text/javascript" src="./css/tooltip.js"></script>
+      <script type="text/javascript" src="./js/specs2-user.js"></script>
+      <script language="javascript">$.getScript("./js/specs2-user.js", initUserScript(document));</script>
+      <script language="javascript">
+      function init() {  prettyPrint(); };
+      /* found on : http://www.tek-tips.com/faqs.cfm?fid=6620 */
+      String.prototype.endsWith = function(str) { return (this.match(str+'$') == str) };
+      function changeWidth(id,width) {  document.getElementById(id).style.width = width; };
+      function changeMarginLeft(id, margin) { document.getElementById(id).style.marginLeft = margin; };
+      function toggleImage(image) {
+        if (image.src.endsWith('images/expanded.gif')) 
+          image.src = image.src.replace('expanded', 'collapsed');
+        else 
+          image.src = image.src.replace('collapsed', 'expanded');
+      };
+      function showHide(id) {
+        element = document.getElementById(id);
+        element.style.display = (element.style.display == 'block')? 'none' : 'block';
+      };
+      function showHideByClass(name) {
+        var elements = document.getElementsByClassName(name);
+        for (i = 0; i < elements.length; i++) {
+          elements[i].style.display = (elements[i].style.display == 'none') ? elements[i].style.display = '': 'none';
+        }
+      };
+      function showByClass(name) {
+        var elements = document.getElementsByClassName(name);
+        for (i = 0; i < elements.length; i++) {
+          elements[i].style.display = 'block';
+        }
+      };
+      function hideByClass(name) {
+        var elements = document.getElementsByClassName(name);
+        for (i = 0; i < elements.length; i++) {
+          elements[i].style.display = 'none';
+        }
+      };
+      function showById(id) {
+        document.getElementById(id).style.display = ''
+      };
+      function hideById(id) {
+        document.getElementById(id).style.display = 'none'
+      };
+    </script>
+      <script language="javascript">window.onload=init;</script>
+      <!-- the tabber.js file must be loaded after the onload function has been set, in order to run the
+           tabber code, then the init code -->
+      <script type="text/javascript" src="./css/tabber.js"></script>
+      <link rel="stylesheet" href="./css/tabber.css" type="text/css" media="screen" />
+      <title>Aggregation Pipeline</title>
+    </head><body><div class="colmask threecol">
+            <div class="colmid">
+              <div class="colleft">
+                <div class="col1"><div id="central"><html><title>Aggregation Pipeline</title><a name="Aggregation+Pipeline"><h2 specId="1639304042">Aggregation Pipeline</h2></a><status class="ok"><p></p></status><status class="ok"><p></p></status><status class="ok"><div style="display: show; text-indent:20px;"><p>Mongodb allows to from so called aggregation pipeline as one of the basic methods in aggregation framework.<br />Mongo Streams has simple syntactic sugar for these aggregation pipeline queries and commands.<br />Supported commands are: </p>
+<ul>
+  <li>$match (<code class="prettyprint">query</code> and <code class="prettyprint">only</code> syntax)</li>
+  <li>$project</li>
+  <li>$limit</li>
+  <li>$skip</li>
+  <li>$unwind</li>
+  <li>$group</li>
+  <li>$sort</li>
+</ul><p>Below is description of syntax for every command supported</p><a name="Limiting+result+with+query+and+only"><h3>Limiting result with query and only</h3></a><p>Each aggregation command starts with initial query, that is turned to very first match. For example<br /><code class="prettyprint">query(&quot;key&quot; -&gt; &quot;value&quot;) |&gt;&gt; limit(1)</code> will turn to aggregation command in json<br /><code class="prettyprint">{ &quot; $match&quot; : { &quot;key&quot; : &quot;value&quot; } }</code> and <code class="prettyprint">{ &quot; $limit&quot; : 1 }</code>.</p><p>Additionally multiple queries may be chained together with <code class="prettyprint">only</code> syntax<br />(please note the <code class="prettyprint">collectionSyntax</code> prefix is not necessary):</p></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">query(&quot;key&quot; -&gt; &quot;value&quot;) |&gt;&gt; ( limit(5) |&gt;&gt; collectionSyntax.only(&quot;key2&quot; === 3))</code><br /></div></status><status class="ok"><div style="display: show; text-indent:20px;"><p><code class="prettyprint">only</code> syntax is <em>converted</em> to $match in Aggregation pipeline. </p><a name="Grouping+documents"><h3>Grouping documents</h3></a><p>Basic aggregation pipeline command is <code class="prettyprint">group</code>. Group allows to pick unique <code class="prettyprint">id</code> for the documents that may consist<br />of multiple keys found in document. Then it looks for documents that have this <code class="prettyprint">id</code> same, and when found will for<br />each document compute the aggregation expression. </p>
+<pre><code class="prettyprint">// creates aggregation pipeline, that first filters all documents where `key == value` then it groups all 
+      // returned documents based on content of `key1` and for each document where `key1` is same will count sum of values in 
+      // `key3` that is stored in `sumKey` key.
+      query(&quot;key&quot; -&gt; &quot;value&quot;) |&gt;&gt; (group(&quot;grouped&quot; -&gt; &quot;$key1&quot;) compute (&quot;sumKey&quot; sum &quot;$key3&quot;))
+
+      //multiple computations may be specified on the query: 
+
+      (query(&quot;key&quot; -&gt; &quot;value&quot;) |&gt;&gt; (group(&quot;grouped&quot; -&gt; &quot;$key1&quot;) compute(&quot;sumKey&quot; sum &quot;$key3&quot;, &quot;avgKey&quot; avg &quot;$key4&quot;))): ChannelResult[DBCollection, DBObject]
+</code></pre><p>There are few grouping expressions for <code class="prettyprint">group</code> command: </p>
+<ul>
+  <li>sum :</li>
+</ul></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">query() |&gt;&gt; (group(&quot;g&quot; -&gt; &quot;$k&quot;) compute (&quot;sumKey&quot; sum &quot;$key3&quot;))</code><br /></div></status><status class="ok"><div style="display: show; text-indent:0px;"><ul>
+  <li>avg :</li>
+</ul></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">query() |&gt;&gt; (group(&quot;g&quot; -&gt; &quot;$k&quot;) compute (&quot;avgKey&quot; avg &quot;$key3&quot;))</code><br /></div></status><status class="ok"><div style="display: show; text-indent:0px;"><ul>
+  <li>min :</li>
+</ul></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">query() |&gt;&gt; (group(&quot;g&quot; -&gt; &quot;$k&quot;) compute (&quot;minKey&quot; min &quot;$key3&quot;))</code><br /></div></status><status class="ok"><div style="display: show; text-indent:0px;"><ul>
+  <li>max :</li>
+</ul></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">query() |&gt;&gt; (group(&quot;g&quot; -&gt; &quot;$k&quot;) compute (&quot;maxKey&quot; max &quot;$key3&quot;))</code><br /></div></status><status class="ok"><div style="display: show; text-indent:0px;"><ul>
+  <li>last :</li>
+</ul></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">query() |&gt;&gt; (group(&quot;g&quot; -&gt; &quot;$k&quot;) compute (&quot;lastKey&quot; last &quot;$key3&quot;))</code><br /></div></status><status class="ok"><div style="display: show; text-indent:0px;"><ul>
+  <li>first :</li>
+</ul></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">query() |&gt;&gt; (group(&quot;g&quot; -&gt; &quot;$k&quot;) compute (&quot;firstKey&quot; first &quot;$key3&quot;))</code><br /></div></status><status class="ok"><div style="display: show; text-indent:0px;"><ul>
+  <li>addToSet :</li>
+</ul></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">query() |&gt;&gt; (group(&quot;g&quot; -&gt; &quot;$k&quot;) compute (&quot;setKey&quot; addToSet &quot;$key3&quot;))</code><br /></div></status><status class="ok"><div style="display: show; text-indent:0px;"><ul>
+  <li>push :</li>
+</ul></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">query() |&gt;&gt; (group(&quot;g&quot; -&gt; &quot;$k&quot;) compute (&quot;listKey&quot; push &quot;$key3&quot;))</code><br /></div></status><status class="ok"><div style="display: show; text-indent:35px;"><a name="Sorting+documents"><h3>Sorting documents</h3></a><p>Similarly as in plain queries, the aggregation pipeline allows the sorting of the documents. This is achieved<br />simply via sort syntax. Please note that sorting documents <em>before</em> the aggregation pipeline has no effects.</p></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">query(&quot;key&quot; -&gt; &quot;value&quot;) |&gt;&gt; sort(&quot;key1&quot; Ascending)</code><br /></div></status><status class="ok"><div style="display: show; text-indent:0px;"><a name="Limiting+and+skipping+documents"><h3>Limiting and skipping documents</h3></a><p>To limit results or skip unwanted results, limit and skip aggregation pipelines can be used. Following example<br />will skip first 10 results and then will limit the query by 20 results. </p></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">query(&quot;key&quot; -&gt; &quot;value&quot;) |&gt;&gt; (skip(10) |&gt;&gt; limit(20))</code><br /></div></status><status class="ok"><div style="display: show; text-indent:30px;"><a name="Unwinding+the+documents"><h3>Unwinding the documents</h3></a><p>If the documents contains field, that is of list type and eventually contains document, the <code class="prettyprint">unwind</code> syntax allows to<br />convert the field to documents, that will instead of that key of list type contain each entry from the list and all other<br />keys of the document.</p></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">query(&quot;key&quot; -&gt; &quot;value&quot;) |&gt;&gt; unwind(&quot;key2&quot;)</code><br /></div></status><status class="ok"><div style="display: show; text-indent:35px;"><a name="Projecting+the+result+documents"><h3>Projecting the result documents</h3></a><p>Pipeline allows to transform resulting document with <code class="prettyprint">project</code> syntax this allows you to include or exclude certain keys from document</p><p><code class="prettyprint">query(&quot;key&quot; -&gt; &quot;value&quot;) |&gt;&gt; project(&quot;key2&quot; include, &quot;key3&quot; exclude)</code> </p><p>Moreover there is a possibility to add whole new fields with their values or rename the fields:</p>
+<ul>
+  <li>renaming the fields :</li>
+</ul></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">query() |&gt;&gt; (project(&quot;key2&quot; include, &quot;nkey2&quot; setTo &quot;$key2&quot;))</code><br /></div></status><status class="ok"><div style="display: show; text-indent:20px;"></div></status><status class="ok"><br /></status><table class="dataTable">
+        <tr><th colSpan="2">Total for specification PipelineSpec</th></tr>
+        <tr><td>Finished in</td><td class="info">9 seconds, 921 ms</td></tr>
+        <tr><td>Results</td><td class="success">13 examples, 0 failure, 0 error</td></tr>
+      </table></html></div></div>
+                <div class="col2"><div id="leftcolumn"><div id="tree">
+      <ul><li id="1639304042"><a href="scalaz.stream.mongodb.aggregate.PipelineSpec.html#Aggregation+Pipeline">Aggregation Pipeline</a>
+            <ul><li id=""><a href="scalaz.stream.mongodb.aggregate.PipelineSpec.html#Limiting+result+with+query+and+only">Limiting result with query and only</a>
+            
+          </li><li id=""><a href="scalaz.stream.mongodb.aggregate.PipelineSpec.html#Grouping+documents">Grouping documents</a>
+            
+          </li><li id=""><a href="scalaz.stream.mongodb.aggregate.PipelineSpec.html#Sorting+documents">Sorting documents</a>
+            
+          </li><li id=""><a href="scalaz.stream.mongodb.aggregate.PipelineSpec.html#Limiting+and+skipping+documents">Limiting and skipping documents</a>
+            
+          </li><li id=""><a href="scalaz.stream.mongodb.aggregate.PipelineSpec.html#Unwinding+the+documents">Unwinding the documents</a>
+            
+          </li><li id=""><a href="scalaz.stream.mongodb.aggregate.PipelineSpec.html#Projecting+the+result+documents">Projecting the result documents</a>
+            
+          </li></ul>
+          </li></ul>
+      <script>$(function () {  $('#tree').jstree({'core':{'initially_open':['1639304042','1639304042'], 'animation':200}, 'plugins':['themes', 'html_data']}); });</script>
+    </div></div></div>
+                <div class="col3"><div id="rightcolumn"></div></div>
+              </div>
+            </div>
+          </div></body></html>

@@ -35,13 +35,13 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <span class="name">FileSystemSyntax</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <span class="name">FileSystemSyntax</span><span class="result"> extends <a href="FileUtil.html" class="extype" name="scalaz.stream.mongodb.filesystem.FileUtil">FileUtil</a></span>
       </span>
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><a href="FileUtil.html" class="extype" name="scalaz.stream.mongodb.filesystem.FileUtil">FileUtil</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div><div class="toggleContainer block">
           <span class="toggle">Known Subclasses</span>
           <div class="subClasses hiddenContent"><a href="../collectionSyntax$.html" class="extype" name="scalaz.stream.mongodb.collectionSyntax">collectionSyntax</a></div>
@@ -62,7 +62,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="scalaz.stream.mongodb.filesystem.FileSystemSyntax"><span>FileSystemSyntax</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="scalaz.stream.mongodb.filesystem.FileSystemSyntax"><span>FileSystemSyntax</span></li><li class="in" name="scalaz.stream.mongodb.filesystem.FileUtil"><span>FileUtil</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -84,32 +84,19 @@
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="scalaz.stream.mongodb.filesystem.FileSystemSyntax.FileChannelResultSyntax" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="FileChannelResultSyntaxextendsFileChannelResultOps"></a>
-      <a id="FileChannelResultSyntax:FileChannelResultSyntax"></a>
+              <ol><li name="scalaz.stream.mongodb.filesystem.FileSystemSyntax.ListChannelResultSyntax" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ListChannelResultSyntaxextendsAnyRef"></a>
+      <a id="ListChannelResultSyntax:ListChannelResultSyntax"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">implicit </span>
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="FileSystemSyntax$FileChannelResultSyntax.html"><span class="name">FileChannelResultSyntax</span></a><span class="result"> extends <a href="FileChannelResultOps.html" class="extype" name="scalaz.stream.mongodb.filesystem.FileChannelResultOps">FileChannelResultOps</a></span>
+        <a href="FileSystemSyntax$ListChannelResultSyntax.html"><span class="name">ListChannelResultSyntax</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
-      <p class="comment cmt">Specific operations when channel is type of MongoFileRead</p>
-    </li><li name="scalaz.stream.mongodb.filesystem.FileSystemSyntax.GridFsSyntax" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="GridFsSyntaxextendsGridFsOps"></a>
-      <a id="GridFsSyntax:GridFsSyntax"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">implicit </span>
-        <span class="kind">class</span>
-      </span>
-      <span class="symbol">
-        <a href="FileSystemSyntax$GridFsSyntax.html"><span class="name">GridFsSyntax</span></a><span class="result"> extends <a href="GridFsOps.html" class="extype" name="scalaz.stream.mongodb.filesystem.GridFsOps">GridFsOps</a></span>
-      </span>
-      </h4>
-      <p class="comment cmt">Syntax for GridFs *</p>
+      <p class="comment cmt">syntax sugar on listCommand channelResult *</p>
     </li></ol>
             </div>
 
@@ -241,75 +228,32 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="scalaz.stream.mongodb.filesystem.FileSystemSyntax#file" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="file(name:String,id:org.bson.types.ObjectId,meta:Option[com.mongodb.DBObject],contentType:Option[String]):scalaz.stream.mongodb.filesystem.MongoFileWrite"></a>
-      <a id="file(String,ObjectId,Option[DBObject],Option[String]):MongoFileWrite"></a>
+      <a id="file(name:String,id:org.bson.types.ObjectId,meta:Option[com.mongodb.DBObject],contentType:Option[String],chunkSize:Long):scalaz.stream.mongodb.filesystem.MongoFileWrite"></a>
+      <a id="file(String,ObjectId,Option[DBObject],Option[String],Long):MongoFileWrite"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">file</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="id">id: <span class="extype" name="org.bson.types.ObjectId">ObjectId</span> = <span class="symbol">new ObjectId</span></span>, <span name="meta">meta: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="com.mongodb.DBObject">DBObject</span>] = <span class="symbol">None</span></span>, <span name="contentType">contentType: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>)</span><span class="result">: <a href="MongoFileWrite.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFileWrite">MongoFileWrite</a></span>
+        <span class="name">file</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="id">id: <span class="extype" name="org.bson.types.ObjectId">ObjectId</span> = <span class="symbol">new ObjectId</span></span>, <span name="meta">meta: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="com.mongodb.DBObject">DBObject</span>] = <span class="symbol">None</span></span>, <span name="contentType">contentType: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="chunkSize">chunkSize: <span class="extype" name="scala.Long">Long</span> = <span class="symbol">GridFS.DEFAULT_CHUNKSIZE</span></span>)</span><span class="result">: <a href="MongoFileWrite.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFileWrite">MongoFileWrite</a></span>
       </span>
       </h4>
       <p class="shortcomment cmt">Creates information that uniquely identifies single file in filesystem</p><div class="fullcomment"><div class="comment cmt"><p>Creates information that uniquely identifies single file in filesystem</p></div><dl class="paramcmts block"><dt class="param">name</dt><dd class="cmt"><p>name of the file (required, must be unique)</p></dd><dt class="param">id</dt><dd class="cmt"><p>unique file identifier</p></dd><dt class="param">meta</dt><dd class="cmt"><p>optional metadata to store with file
 </p></dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.filesystem.FileSystemSyntax#files" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="files(o:com.mongodb.DBObject):scalaz.stream.mongodb.filesystem.FileQuery"></a>
-      <a id="files(DBObject):FileQuery"></a>
+    </li><li name="scalaz.stream.mongodb.filesystem.FileSystemSyntax#filesystem" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="filesystem(db:com.mongodb.DB,filesystemName:String):scalaz.stream.mongodb.filesystem.GridFs"></a>
+      <a id="filesystem(DB,String):GridFs"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">files</span><span class="params">(<span name="o">o: <span class="extype" name="com.mongodb.DBObject">DBObject</span></span>)</span><span class="result">: <a href="FileQuery.html" class="extype" name="scalaz.stream.mongodb.filesystem.FileQuery">FileQuery</a></span>
+        <span class="name">filesystem</span><span class="params">(<span name="db">db: <span class="extype" name="com.mongodb.DB">DB</span></span>, <span name="filesystemName">filesystemName: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">GridFS.DEFAULT_BUCKET</span></span>)</span><span class="result">: <a href="GridFs.html" class="extype" name="scalaz.stream.mongodb.filesystem.GridFs">GridFs</a></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Creates the query, that identifies multiple files in filesystem with metadata query
-</p>
-    </li><li name="scalaz.stream.mongodb.filesystem.FileSystemSyntax#files" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="files(bq:scalaz.stream.mongodb.query.BasicQuery):scalaz.stream.mongodb.filesystem.FileQuery"></a>
-      <a id="files(BasicQuery):FileQuery"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">files</span><span class="params">(<span name="bq">bq: <a href="../query/BasicQuery.html" class="extype" name="scalaz.stream.mongodb.query.BasicQuery">BasicQuery</a></span>)</span><span class="result">: <a href="FileQuery.html" class="extype" name="scalaz.stream.mongodb.filesystem.FileQuery">FileQuery</a></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Creates the query, that identifies multiple files in filesystem with metadata query
-</p>
-    </li><li name="scalaz.stream.mongodb.filesystem.FileSystemSyntax#files" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="files[A](q:scalaz.stream.mongodb.query.QueryPair[A]*):scalaz.stream.mongodb.filesystem.FileQuery"></a>
-      <a id="files[A](QueryPair[A]*):FileQuery"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">files</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="q">q: <a href="../query/QueryPair.html" class="extype" name="scalaz.stream.mongodb.query.QueryPair">QueryPair</a>[<span class="extype" name="scalaz.stream.mongodb.filesystem.FileSystemSyntax.files.A">A</span>]*</span>)</span><span class="result">: <a href="FileQuery.html" class="extype" name="scalaz.stream.mongodb.filesystem.FileQuery">FileQuery</a></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Creates the query, that identifies multiple files in filesystem with metadata query
-</p>
-    </li><li name="scalaz.stream.mongodb.filesystem.FileSystemSyntax#filesystem" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="filesystem(name:String):scalaz.stream.mongodb.filesystem.GridFs"></a>
-      <a id="filesystem(String):GridFs"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">filesystem</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;fs&quot;</span></span>)</span><span class="result">: <a href="GridFs.html" class="extype" name="scalaz.stream.mongodb.filesystem.GridFs">GridFs</a></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Creates filesystem instance.</p><div class="fullcomment"><div class="comment cmt"><p>Creates filesystem instance.</p></div><dl class="paramcmts block"><dt class="param">name</dt><dd class="cmt"><p>Name of the bucket, default is <code>fs</code>
-</p></dd></dl></div>
+      <p class="shortcomment cmt">filesystem syntax, wrapper around gridFs *</p>
     </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <a id="finalize():Unit"></a>
@@ -368,20 +312,19 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.filesystem.FileSystemSyntax#named" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="named(name:String):scalaz.stream.mongodb.filesystem.FileQuery"></a>
-      <a id="named(String):FileQuery"></a>
+    </li><li name="scalaz.stream.mongodb.filesystem.FileSystemSyntax#list" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="list:scalaz.stream.mongodb.filesystem.ListCommandSyntax"></a>
+      <a id="list:ListCommandSyntax"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">def</span>
+        <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">named</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="FileQuery.html" class="extype" name="scalaz.stream.mongodb.filesystem.FileQuery">FileQuery</a></span>
+        <span class="name">list</span><span class="result">: <a href="ListCommandSyntax.html" class="extype" name="scalaz.stream.mongodb.filesystem.ListCommandSyntax">ListCommandSyntax</a></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Creates the query, that uniquely identifies the single file to be read from database
-</p>
+      
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>
@@ -421,6 +364,45 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scalaz.stream.mongodb.filesystem.FileSystemSyntax#readCmd2ChannelResult" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="readCmd2ChannelResult[A](cmd:scalaz.stream.mongodb.filesystem.ReadCommand[A]):scalaz.stream.mongodb.channel.ChannelResult[com.mongodb.gridfs.GridFS,A]"></a>
+      <a id="readCmd2ChannelResult[A](ReadCommand[A]):ChannelResult[GridFS,A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">readCmd2ChannelResult</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="cmd">cmd: <a href="ReadCommand.html" class="extype" name="scalaz.stream.mongodb.filesystem.ReadCommand">ReadCommand</a>[<span class="extype" name="scalaz.stream.mongodb.filesystem.FileSystemSyntax.readCmd2ChannelResult.A">A</span>]</span>)</span><span class="result">: <a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="com.mongodb.gridfs.GridFS">GridFS</span>, <span class="extype" name="scalaz.stream.mongodb.filesystem.FileSystemSyntax.readCmd2ChannelResult.A">A</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">conversion of listCommand to process</p>
+    </li><li name="scalaz.stream.mongodb.filesystem.FileUtil#readFile" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="readFile(buffSize:Int):scalaz.stream.mongodb.channel.ChannelResult[com.mongodb.gridfs.GridFS,scalaz.stream.mongodb.filesystem.MongoFileRead=&gt;scalaz.stream.Process[scalaz.concurrent.Task,scalaz.stream.Bytes]]"></a>
+      <a id="readFile(Int):ChannelResult[GridFS,(MongoFileRead)⇒Process[Task,Bytes]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">readFile</span><span class="params">(<span name="buffSize">buffSize: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">GridFS.DEFAULT_CHUNKSIZE</span></span>)</span><span class="result">: <a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="com.mongodb.gridfs.GridFS">GridFS</span>, (<a href="MongoFileRead.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFileRead">MongoFileRead</a>) ⇒ <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.Bytes">Bytes</span>]]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Produces ChannelResult, that will read single file *</p><div class="fullcomment"><div class="comment cmt"><p>Produces ChannelResult, that will read single file *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="FileUtil.html" class="extype" name="scalaz.stream.mongodb.filesystem.FileUtil">FileUtil</a></dd></dl></div>
+    </li><li name="scalaz.stream.mongodb.filesystem.FileUtil#removeFile" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="removeFile:scalaz.stream.mongodb.channel.ChannelResult[com.mongodb.gridfs.GridFS,scalaz.stream.mongodb.filesystem.MongoFileRead=&gt;scalaz.stream.Process[scalaz.concurrent.Task,Unit]]"></a>
+      <a id="removeFile:ChannelResult[GridFS,(MongoFileRead)⇒Process[Task,Unit]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">removeFile</span><span class="result">: <a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="com.mongodb.gridfs.GridFS">GridFS</span>, (<a href="MongoFileRead.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFileRead">MongoFileRead</a>) ⇒ <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scala.Unit">Unit</span>]]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Produces ChannelResult, that will remove single file.</p><div class="fullcomment"><div class="comment cmt"><p>Produces ChannelResult, that will remove single file. <code>true</code> is returned when file was removed *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="FileUtil.html" class="extype" name="scalaz.stream.mongodb.filesystem.FileUtil">FileUtil</a></dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>
@@ -504,20 +486,32 @@
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.filesystem.FileSystemSyntax#withId" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="withId(id:org.bson.types.ObjectId):scalaz.stream.mongodb.filesystem.FileQuery"></a>
-      <a id="withId(ObjectId):FileQuery"></a>
+    </li><li name="scalaz.stream.mongodb.filesystem.FileSystemSyntax#write" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="write:scalaz.stream.mongodb.filesystem.WriteCommandSyntax"></a>
+      <a id="write:WriteCommandSyntax"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">write</span><span class="result">: <a href="WriteCommandSyntax.html" class="extype" name="scalaz.stream.mongodb.filesystem.WriteCommandSyntax">WriteCommandSyntax</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="scalaz.stream.mongodb.filesystem.FileSystemSyntax#writeCmd2ChannelResult" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="writeCmd2ChannelResult[A](cmd:scalaz.stream.mongodb.filesystem.WriteCommand):scalaz.stream.mongodb.channel.ChannelResult[com.mongodb.gridfs.GridFS,scalaz.stream.Bytes=&gt;scalaz.concurrent.Task[Unit]]"></a>
+      <a id="writeCmd2ChannelResult[A](WriteCommand):ChannelResult[GridFS,(Bytes)⇒Task[Unit]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">withId</span><span class="params">(<span name="id">id: <span class="extype" name="org.bson.types.ObjectId">ObjectId</span></span>)</span><span class="result">: <a href="FileQuery.html" class="extype" name="scalaz.stream.mongodb.filesystem.FileQuery">FileQuery</a></span>
+        <span class="name">writeCmd2ChannelResult</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="cmd">cmd: <a href="WriteCommand.html" class="extype" name="scalaz.stream.mongodb.filesystem.WriteCommand">WriteCommand</a></span>)</span><span class="result">: <a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="com.mongodb.gridfs.GridFS">GridFS</span>, (<span class="extype" name="scalaz.stream.Bytes">Bytes</span>) ⇒ <span class="extype" name="scalaz.concurrent.Task">Task</span>[<span class="extype" name="scala.Unit">Unit</span>]]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Creates the query, that uniquely identifies the single file to be read from database
-</p>
+      <p class="shortcomment cmt">conversion of WriteCommand to sink</p>
     </li></ol>
             </div>
 
@@ -527,7 +521,9 @@
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="scala.AnyRef">
+        <div class="parent" name="scalaz.stream.mongodb.filesystem.FileUtil">
+              <h3>Inherited from <a href="FileUtil.html" class="extype" name="scalaz.stream.mongodb.filesystem.FileUtil">FileUtil</a></h3>
+            </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">
               <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
