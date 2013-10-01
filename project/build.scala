@@ -38,7 +38,7 @@ object build extends Build {
     libraryDependencies ++= Seq(
       "org.scalaz" %% "scalaz-scalacheck-binding" % "7.0.4-S1-SNAPSHOT" % "test" withSources()
       , "org.mongodb" % "mongo-java-driver" % "2.11.2" withSources()
-      , "spinoco" %% "scalaz-stream" % "0.1.0.33-SNAPSHOT" withSources()
+      , "spinoco" %% "scalaz-stream" % "0.1.0.41-SNAPSHOT" withSources()
     )
   )
 
@@ -81,6 +81,7 @@ object build extends Build {
         }
         , shellPrompt := ShellPrompt.buildShellPrompt
         , testOptions in Test += Tests.Argument("html", "console", "junitxml")
+        , concurrentRestrictions in Global += Tags.limit(Tags.Test, java.lang.Runtime.getRuntime.availableProcessors() / 2 min 1 max 4) //restrict tests to max 4 threads
       ) ++
       resolverSettings ++
       credentialsSettings ++

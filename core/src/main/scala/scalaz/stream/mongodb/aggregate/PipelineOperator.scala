@@ -39,7 +39,7 @@ object PipelineOperator {
 
   def toChannelResult(q: Query, pipeline: PipelineOperator): ChannelResult[DBCollection, DBObject] = ChannelResult {
     import Task._
-    Process.wrap[Task, DBCollection => Task[Process[Task, DBObject]]] {
+    Process.eval[Task, DBCollection => Task[Process[Task, DBObject]]] {
       now {
         c: DBCollection =>
           val result =

@@ -47,7 +47,7 @@ case class MapReduce(mapF: String
 
   def toChannelResult(q: Query): ChannelResult[DBCollection, DBObject] = ChannelResult {
     import Task._
-    Process.wrap[Task, DBCollection => Task[Process[Task, DBObject]]] {
+    Process.eval[Task, DBCollection => Task[Process[Task, DBObject]]] {
       now {
         c: DBCollection => now {
           val command = buildMrCommand(c, q)
@@ -113,7 +113,7 @@ case class MapReducePersistent(mr: MapReduce
 
   def toChannelResult(q: Query): ChannelResult[DBCollection, DBObject] = ChannelResult {
     import Task._
-    Process.wrap[Task, DBCollection => Task[Process[Task, DBObject]]] {
+    Process.eval[Task, DBCollection => Task[Process[Task, DBObject]]] {
       now {
         c: DBCollection => now {
           val command = mr.buildMrCommand(c, q)

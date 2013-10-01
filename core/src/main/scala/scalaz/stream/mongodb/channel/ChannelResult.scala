@@ -23,7 +23,7 @@ case class ChannelResult[R, A](channel: Channel[Task, R, Process[Task, A]]) {
     channel.map(
       (g: R => Task[Process[Task, A]]) => (r: R) =>
         g(r).map(pa => pa.flatMap((a: A) =>
-          f(a).channel.flatMap(h => wrap(h(r)).flatMap(identity))
+          f(a).channel.flatMap(h => eval(h(r)).flatMap(identity))
         ))
     )
   }
@@ -155,7 +155,7 @@ object ChannelResult {
 
   /** Helper to wrap simple tasks in channel result **/
   def apply[R, A](f: R => Task[A]): ChannelResult[R, A] =
-    ChannelResult(wrap(Task.now((res: R) => Task.now(wrap(f(res))))))
+    ChannelResult(eval(Task.now((res: R) => Task.now(eval(f(res))))))
 
 
 }

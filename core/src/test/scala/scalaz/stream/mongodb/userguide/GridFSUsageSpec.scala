@@ -4,17 +4,16 @@ import org.specs2.Specification
 import org.specs2.specification.Snippets
 import com.mongodb.DB
 import scalaz.stream.mongodb.collectionSyntax._
-import scalaz.stream.{Bytes, Process}
+import scalaz.stream.Process
 import scalaz.concurrent.Task
 import org.bson.types.ObjectId
 import java.util.Date
 import scalaz.stream.processes._
 import scalaz.syntax.monad._
 import java.io.InputStream
-import scalaz.stream.mongodb.filesystem._
-import scala.Some
-import scala.Some
+import scalaz.stream.mongodb.filesystem._ 
 import scalaz.stream.mongodb.filesystem.MongoFileRead
+import scalaz.stream.mongodb.util.Bytes
 
 /**
  *
@@ -171,7 +170,7 @@ ${snippet {
     val readBuffer = new Array[Byte](1024 * 1024)
 
     //read from one file (inputstream) and write to single file 
-    (Process.wrap(Task.now(readBuffer)) through unsafeChunkR(fileSource)) to (filesystem(filesDb) using writeToFile)
+    (Process.eval(Task.now(readBuffer)) through unsafeChunkR(fileSource)).map(Bytes(_)) to (filesystem(filesDb) using writeToFile)
 
   }}
 

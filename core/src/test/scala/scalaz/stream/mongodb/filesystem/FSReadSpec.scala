@@ -6,8 +6,7 @@ import scalaz.stream.mongodb.MongoRuntimeSpecification
 
 import scalaz.stream.mongodb.collectionSyntax._
 import org.bson.types.ObjectId
-import com.mongodb.DB
-import scalaz.stream.Bytes
+import com.mongodb.DB 
 import scalaz.concurrent.Task
 import scalaz.stream.Process
 import com.mongodb.gridfs.GridFS
@@ -16,6 +15,7 @@ import org.specs2.matcher.MatchResult
 
 import scala.language.reflectiveCalls
 import scalaz.stream.mongodb.channel.ChannelResult
+import scalaz.stream.mongodb.util.Bytes
 
 
 class FSReadSpec extends Specification with Snippets with MongoRuntimeSpecification {
@@ -33,7 +33,7 @@ ${"Reading files in filesystem".title}
     
 Files are read from the filesystem in chunks of `Bytes` that are configurable and defaults to `GridFS.DEFAULT_CHUNKSIZE` size.    
 Provided `Bytes` internally recycles array of bytes read. The reading of the files is always based on first listing (or querying) 
-the files in filesystem and then either applying the read operation fro all results or only for the first result returned. 
+the files in filesystem and then either applying the read operation for all results or only for the first result returned. 
 
 
 ### Reading single file
@@ -67,7 +67,7 @@ ${ snippet {
       def readFiles =
         (list files ("filename" regex "a.*") foreach (readFile())) flatMapProcess {
           case (file, reader) =>
-            Process.wrap(Task.now("content of: " + file.name + "\n")) ++ reader.map(bytes => new String(bytes.toArray))
+            Process.eval(Task.now("content of: " + file.name + "\n")) ++ reader.map(bytes => new String(bytes.toArray))
 
         }
 

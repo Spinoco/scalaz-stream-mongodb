@@ -23,7 +23,7 @@ trait Collection {
 
   implicit class DBCollectionSyntax(c: DBCollection) {
     def through[A](f: Channel[Task, DBCollection, Process[Task, A]]): Process[Task, A] =
-      (wrap(Task.now(c)) through f).join
+      (eval(Task.now(c)) through f).join
 
 
     def >>>[A](f: Channel[Task, DBCollection, Process[Task, A]]): Process[Task, A] = through(f)

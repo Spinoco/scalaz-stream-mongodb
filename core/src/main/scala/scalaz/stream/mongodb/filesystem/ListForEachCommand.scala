@@ -20,7 +20,7 @@ case class ListForEachCommand[A](query: FileQuery
 object ListForEachCommand {
 
   def combine[A](ch1: ChannelResult[GridFS, MongoFileRead])(ch2: ChannelResult[GridFS, MongoFileRead => Process[Task, A]]): ChannelResult[GridFS, (MongoFileRead, Process[Task, A])] = {
-    val ch3 = ChannelResult(ch2.channel.flatMap(fa => repeatWrap(Task.now((gfs: GridFS) => fa(gfs)))))
+    val ch3 = ChannelResult(ch2.channel.flatMap(fa => repeatEval(Task.now((gfs: GridFS) => fa(gfs)))))
     (ch1).zipWith(ch3) { (file, chf) => (file, chf(file)) }
   }
 

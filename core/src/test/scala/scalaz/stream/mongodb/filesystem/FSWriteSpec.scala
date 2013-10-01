@@ -6,8 +6,7 @@ import scalaz.stream.mongodb.MongoRuntimeSpecification
 import scalaz.stream.mongodb.collectionSyntax._
 import org.bson.types.ObjectId
 import com.mongodb.{DBObject, DB}
-import scalaz.concurrent.Task
-import scalaz.stream.Bytes
+import scalaz.concurrent.Task 
 import com.mongodb.gridfs.GridFS
 import scalaz.stream.Process._
 import scalaz.stream.processes._
@@ -16,6 +15,7 @@ import collection.JavaConverters._
 
 import scala.language.reflectiveCalls
 import java.io.InputStream
+import scalaz.stream.mongodb.util.Bytes
 
 class FSWriteSpec extends Specification with Snippets with MongoRuntimeSpecification {
 
@@ -53,7 +53,7 @@ ${ snippet { source10k to (filesystem(fileDb) using (write file ("foo.txt"))) }}
        
     """
 
-  val source10k = repeatWrap(Task.now(Bytes(Array[Byte](1, 2, 3, 4, 5, 6, 7, 8, 9, 0)))) |> take(2000)
+  val source10k = repeatEval(Task.now(Bytes(Array[Byte](1, 2, 3, 4, 5, 6, 7, 8, 9, 0)))) |> take(2000)
 
 
   def extractBytes(is: InputStream, array: Array[Byte]): Array[Byte] = {

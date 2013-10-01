@@ -19,7 +19,7 @@ trait ListCommandOps {
   private[filesystem] def makeListChannelResult: ChannelResult[GridFS, MongoFileRead] = ChannelResult {
     import Task._
     val channel: Channel[Task, GridFS, Process[Task, MongoFileRead]] = {
-      Process.wrap {
+      Process.eval {
         now {
           gfs: GridFS =>
             val bucket = gfs.getBucketName

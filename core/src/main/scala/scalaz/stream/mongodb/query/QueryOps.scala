@@ -69,7 +69,7 @@ trait QueryOps extends Ops[Query] {
     import Task._
     val serializable = implicitly[BSONSerializable[A]]
     //todo: current java driver is strict on distinct operation, we have to reconsider if it can be implemented lazily 
-    Process.wrap {
+    Process.eval {
       now {
         c: DBCollection => now {
           emitAll(
