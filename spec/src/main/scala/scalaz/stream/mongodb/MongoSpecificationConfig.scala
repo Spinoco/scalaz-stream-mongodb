@@ -78,7 +78,7 @@ case class MongoRuntimeConfig(bindPort: Int = 27717
  *
  */
 case class MongoInstanceConfig(bindPort: Int = 27017
-                               , bindIp: String = "127.0.0.1
+                               , bindIp: String = "127.0.0.1"
                                , prefix: String = "spec_"
                                , uniqueName: Boolean = true
                                , dropDatabases: Boolean = true) extends MongoSpecificationConfig 
