@@ -28,7 +28,8 @@ sealed trait MongoSpecificationConfig {
  * @param dataPath         path where data for mongo instance are stored, leave empty for system to generate temp dir and 
  *                         clean up it when needed
  * @param nssSize          size of namespace file in MB. For testing we have decreased default to low value (1 MB).
- * @param noPrealloc       by default this is false, but hence we sparing resources in specs we set this to true
+ * @param noJournal        by default this is true, and disables journalling. This speeds up the startup of database in certain situations
+ * @param noPrealloc       by default this is true, but hence we sparing resources in specs we set this to true
  * @param cmdLinePars      other command line parameters to pass. please see `http://docs.mongodb.org/manual/reference/program/mongod/`
  *                         for possibilities
  * @param mongodPath       To run mongod from specific location this has to be set. 
@@ -38,20 +39,21 @@ sealed trait MongoSpecificationConfig {
  * @param mongodEchoStdErr If specified, Echoes stderr output of mongod process to provided stream                        
  *
  */
-case class MongoRuntimeConfig(bindPort: Int = 27717,
-                              bindIp: String = "127.0.0.1",
-                              dataPath: Option[Path] = None,
-                              nssSize: Int = 1,
-                              noPrealloc: Boolean = true,
-                              cmdLinePars: Option[String] = None,
-                              mongodPath: Option[Path] = None,
-                              mongodEchoStdOut: Option[OutputStream] = None,
-                              mongodEchoStdErr: Option[OutputStream] = None
+case class MongoRuntimeConfig(bindPort: Int = 27717
+                              , bindIp: String = "127.0.0.1"
+                              , dataPath: Option[Path] = None
+                              , nssSize: Int = 1
+                              , noPrealloc: Boolean = true
+                              , noJournal: Boolean = true
+                              , cmdLinePars: Option[String] = None
+                              , mongodPath: Option[Path] = None
+                              , mongodEchoStdOut: Option[OutputStream] = None
+                              , mongodEchoStdErr: Option[OutputStream] = None
                                ) extends MongoSpecificationConfig {
 
   def toCommandLinePars(dataPathProvider: => Path): (String, Path) = {
     val dataHome = mongodPath.getOrElse(dataPathProvider)
-    val pars = s"--port $bindPort --bind_ip $bindIp --dbpath $dataHome --nssize $nssSize ${if (noPrealloc) "--noprealloc" else ""} " + cmdLinePars.getOrElse("")
+    val pars = s"--port $bindPort --bind_ip $bindIp --dbpath $dataHome --nssize $nssSize ${if (noPrealloc) "--noprealloc" else ""} ${ if (noJournal) "--nojournal" else ""}" + cmdLinePars.getOrElse("")
     (pars, dataHome)
   }
 
@@ -75,11 +77,11 @@ case class MongoRuntimeConfig(bindPort: Int = 27717,
  *                          When set to false databases are leaved for other inspection.
  *
  */
-case class MongoInstanceConfig(bindPort: Int = 27017,
-                               bindIp: String = "127.0.0.1",
-                               prefix: String = "spec_",
-                               uniqueName: Boolean = true,
-                               dropDatabases: Boolean = true) extends MongoSpecificationConfig 
+case class MongoInstanceConfig(bindPort: Int = 27017
+                               , bindIp: String = "127.0.0.1
+                               , prefix: String = "spec_"
+                               , uniqueName: Boolean = true
+                               , dropDatabases: Boolean = true) extends MongoSpecificationConfig 
 
 
  
