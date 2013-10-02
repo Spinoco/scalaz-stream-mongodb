@@ -12,10 +12,15 @@ object ShellPrompt {
 
   val current = """\*\s+([\w-]+)""".r
 
-  def currBranch = (
-    ("git status -sb" lines_! devnull headOption)
-      getOrElse "-" stripPrefix "## "
-    )
+  def currBranch =  
+    try {
+      (("git status -sb" lines_! devnull headOption)
+      getOrElse "-" stripPrefix "## ")
+      
+    } catch {
+      case t : Throwable => "NO-GIT"
+    }
+    
 
   val buildShellPrompt = {
     (state: State) => {

@@ -55,6 +55,16 @@ object build extends Build {
     scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature")
     , scalacOptions in Test ++= Seq("-Yrangepos")
   )
+  
+  lazy val publishSettings = Seq (
+    publishTo <<= (version).apply { v =>
+      val nexus = "https://maven.spinoco.com/"
+      if (v.trim.endsWith("SNAPSHOT"))
+        Some("Snapshots" at nexus + "nexus/content/repositories/snapshots")
+      else
+        Some("Releases" at nexus + "nexus/content/repositories/releases")
+    }
+  )
 
 
   lazy val webSettings = SbtSite.site.settings ++ SbtSite.site.includeScaladoc()
@@ -89,6 +99,7 @@ object build extends Build {
       testLibraries ++
       compileSettings ++
       webSettings ++
+      publishSettings ++
       net.virtualvoid.sbt.graph.Plugin.graphSettings
 
 
