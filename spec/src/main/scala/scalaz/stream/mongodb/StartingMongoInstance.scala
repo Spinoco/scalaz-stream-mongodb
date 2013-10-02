@@ -71,13 +71,13 @@ case class StartingMongoInstance(port: Int) extends MongoInstance {
     // give chance to db to warm up before we will load it 
     tryConnection(50, 200)
 
-    def tryAcquire(remains:Int) : MongoClient = {
+    def tryAcquire(remains: Int): MongoClient = {
       try {
-        val client = new MongoClient(ip,port)
-        println("################### SEEING SERVERS:   " + client.getServerAddressList.asScala)
+        val client = new MongoClient(ip, port)
+        client.getServerAddressList.asScala //force isMaster
         client
       } catch {
-        case t if (remains > 0) => 
+        case t if (remains > 0) =>
           Thread.sleep(200)
           tryAcquire(remains - 1)
       }
@@ -97,8 +97,8 @@ case class StartingMongoInstance(port: Int) extends MongoInstance {
           throw new Exception(s"Mongo binary cannot be resolved. Configured: ${runtime.mongodPath} from system (env SPEC_MONGO_HOME) ${sys.env.get("SPEC_MONGO_HOME")}")
         })
 
-      val ourRuntime : MongoRuntimeConfig = runtime.copy(bindPort = port)
-      
+      val ourRuntime: MongoRuntimeConfig = runtime.copy(bindPort = port)
+
       val (pars, dataPath) = ourRuntime.toCommandLinePars(Files.createTempDirectory("mongoSpec"))
 
       val mongod = ScalaProcess(mongoBin + " " + pars)
