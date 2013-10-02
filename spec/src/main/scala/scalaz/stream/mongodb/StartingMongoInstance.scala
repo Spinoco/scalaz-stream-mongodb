@@ -11,6 +11,7 @@ import scala.Some
 import scala.util.Success
 import java.nio.file.{Files, Paths}
 import scala.sys.process.{Process => ScalaProcess, ProcessIO}
+import collection.JavaConverters._
 
 
 /**
@@ -73,7 +74,7 @@ case class StartingMongoInstance(port: Int) extends MongoInstance {
     def tryAcquire(remains:Int) : MongoClient = {
       try {
         val client = new MongoClient(ip,port)
-        client.getConnector.isOpen
+        println("################### SEEING SERVERS:   " + client.getServerAddressList.asScala)
         client
       } catch {
         case t if (remains > 0) => 
