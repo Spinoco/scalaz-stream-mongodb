@@ -126,7 +126,7 @@ object build extends Build {
   )).dependsOn(spec % "test")
 
   lazy val spec = Project("scalaz-stream-mongodb-spec", file("spec"), settings = buildSettings ++ siteSettings ++ Seq(
-    libraryDependencies += "org.specs2" %% "specs2" % specs2Version withSources() exclude("org.scalaz", "*")
+    libraryDependencies += "org.specs2" %% "specs2" % specs2Version exclude("org.scalaz", "*")
     , libraryDependencies <+= (scalaVersion)("org.scala-lang" % "scala-reflect" % _)
     , previewSite <<= sourceDirectory map (_ => ())
   ))
