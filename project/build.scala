@@ -36,16 +36,16 @@ object build extends Build {
 
   lazy val libraries = Seq(
     libraryDependencies ++= Seq(
-      "org.scalaz" %% "scalaz-scalacheck-binding" % "7.0.4-S1-SNAPSHOT" % "test" withSources()
-      , "org.mongodb" % "mongo-java-driver" % "2.11.2" withSources()
-      , "spinoco" %% "scalaz-stream" % "0.1.0.41-SNAPSHOT" withSources()
+      "org.scalaz" %% "scalaz-scalacheck-binding" % "7.0.4-S1-SNAPSHOT" % "test" 
+      , "org.mongodb" % "mongo-java-driver" % "2.11.2" 
+      , "spinoco" %% "scalaz-stream" % "0.1.0.41-SNAPSHOT" 
     )
   )
 
   lazy val testLibraries =
     libraryDependencies ++= Seq(
-      "org.scalacheck" %% "scalacheck" % "1.10.0" % "test" withSources()
-      , "org.specs2" %% "specs2" % specs2Version % "test" withSources() exclude("org.scalaz", "*")
+      "org.scalacheck" %% "scalacheck" % "1.10.0" % "test" 
+      , "org.specs2" %% "specs2" % specs2Version % "test" exclude("org.scalaz", "*")
       , "org.pegdown" % "pegdown" % "1.2.1" % "test"
       , "junit" % "junit" % "4.7" % "test"
     )
