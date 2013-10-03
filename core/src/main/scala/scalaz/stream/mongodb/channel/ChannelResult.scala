@@ -93,7 +93,7 @@ case class ChannelResult[R, A](channel: Channel[Task, R, Process[Task, A]]) {
   def wye[B, C](p2: Process[Task, B])(y: Wye[A, B, C]): ChannelResult[R, C] = modify(_.wye(p2)(y))
 
   /** applies [[scalaz.stream.Process.attempt]] on resulting stream **/
-  def attempt[B](f: Throwable => Process[Task, B] = (t: Throwable) => emit(Task.fail(t)).eval): ChannelResult[R, B \/ A] = modify(_.attempt(f))
+  def attempt[B](f: Throwable => Process[Task, B] = (t: Throwable) => emit(t)): ChannelResult[R, B \/ A] = modify(_.attempt(f))
 
   /** applies [[scalaz.stream.Process.handle]] on resulting stream **/
   def handle[B](f: PartialFunction[Throwable, Process[Task, B]]): ChannelResult[R, B] = modify(_.handle(f))

@@ -31,10 +31,12 @@ class InsertAndSaveSpec extends Specification with Snippets with MongoRuntimeSpe
   
       There is a possibility to recover from insertion or update failures:
       
-      ${ snippet { insert(document).toChannelResult attempt()}}               $pureInsertCatchException
+      ${ snippet { insert(document).toChannelResult attempt() }}               $pureInsertCatchException
        
        
     """
+
+  def is2 = pureInsertCatchException
 
 
   def pureInsert = intoCollection(insert(BSONObject("key" -> 1))).andVerify {
@@ -50,16 +52,16 @@ class InsertAndSaveSpec extends Specification with Snippets with MongoRuntimeSpe
         (wr must beAnInstanceOf[InsertWriteResult])
 
   }
-  
+
   def pureInsertCatchException = {
     val mongo = new WithMongoCollection()
     (mongo.collection through ensure(index("key" Ascending).unique(true))).run.run
     (mongo.collection through insert(BSONObject("key" -> 1))).run.run
-    ((mongo.collection through insert(BSONObject("key" -> 1)) attempt()).map(_.isLeft)).collect.run must_== Seq(true)
+    ((mongo.collection through insert(BSONObject("key" -> 1)).toChannelResult.attempt()).map(_.isLeft)).collect.run must_== Seq(true)
   }
 
 
-  case class intoCollection(p: ChannelResult[DBCollection,WriteResult]) {
+  case class intoCollection(p: ChannelResult[DBCollection, WriteResult]) {
 
     lazy val mongo = new WithMongoCollection()
 
