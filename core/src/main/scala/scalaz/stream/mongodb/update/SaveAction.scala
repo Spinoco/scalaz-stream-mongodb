@@ -12,7 +12,7 @@ case class SaveAction(o: DBObject, wc: Option[WriteConcern] = None) extends Mong
   def ensure(wc: WriteConcern) = copy(wc = Some(wc))
 
   def toChannelResult: ChannelResult[DBCollection,WriteResult] = ChannelResult {
-    c => Task.now {
+    c => Task.delay {
       WriteResult(c.save(assureId(o), wc.getOrElse(c.getWriteConcern)), o)
     }
   }

@@ -41,7 +41,7 @@ object PipelineOperator {
     import Task._
     Process.eval[Task, DBCollection => Task[Process[Task, DBObject]]] {
       now {
-        c: DBCollection =>
+        c: DBCollection => delay {
           val result =
             pipeline match {
               case CombinedPipeline(head :: tail) => c.aggregate(head.asDBObject, tail.map(_.asDBObject): _*)
@@ -49,10 +49,11 @@ object PipelineOperator {
             }
 
           if (result.getCommandResult.ok()) {
-            now(Process.emitAll(result.results().asScala.toSeq).evalMap(now(_)))
+            Process.emitAll(result.results().asScala.toSeq).evalMap(now(_))
           } else {
-            now(Process.fail(result.getCommandResult.getException))
+            Process.fail(result.getCommandResult.getException)
           }
+        }
 
       }
     }

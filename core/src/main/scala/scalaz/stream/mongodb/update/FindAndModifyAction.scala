@@ -23,7 +23,7 @@ case class FindAndModifyAction(update: SimpleUpdate
   def withQuery(q: Query): ChannelResult[DBCollection,Option[DBObject]] = {
     ChannelResult {
       c =>
-        Task.now(
+        Task.delay(
           Option(
             c.findAndModify(
               q.bq.o

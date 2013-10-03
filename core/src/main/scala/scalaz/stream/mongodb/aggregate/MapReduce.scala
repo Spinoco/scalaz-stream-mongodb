@@ -49,7 +49,7 @@ case class MapReduce(mapF: String
     import Task._
     Process.eval[Task, DBCollection => Task[Process[Task, DBObject]]] {
       now {
-        c: DBCollection => now {
+        c: DBCollection => delay {
           val command = buildMrCommand(c, q)
           val executed = c.mapReduce(command)
           if (executed.getCommandResult().ok()) {
@@ -115,7 +115,7 @@ case class MapReducePersistent(mr: MapReduce
     import Task._
     Process.eval[Task, DBCollection => Task[Process[Task, DBObject]]] {
       now {
-        c: DBCollection => now {
+        c: DBCollection => delay {
           val command = mr.buildMrCommand(c, q)
           val out = new BasicDBObject()
           current match {

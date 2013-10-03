@@ -12,7 +12,7 @@ case class InsertAction(o: DBObject, wc: Option[WriteConcern] = None) extends Mo
   def ensure(wc: WriteConcern) = copy(wc = Some(wc))
 
   def toChannelResult: ChannelResult[DBCollection,WriteResult] = ChannelResult {
-    c => Task.now {
+    c => Task.delay {
       WriteResult(c.insert(assureId(o), wc.getOrElse(c.getWriteConcern)), o)
     }
   }

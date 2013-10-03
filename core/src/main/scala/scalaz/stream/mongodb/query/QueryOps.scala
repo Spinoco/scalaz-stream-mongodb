@@ -71,7 +71,7 @@ trait QueryOps extends Ops[Query] {
     //todo: current java driver is strict on distinct operation, we have to reconsider if it can be implemented lazily 
     Process.eval {
       now {
-        c: DBCollection => now {
+        c: DBCollection => delay {
           emitAll(
             c.distinct(key
               , self.bq.o

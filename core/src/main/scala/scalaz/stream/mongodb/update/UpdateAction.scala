@@ -24,7 +24,7 @@ case class UpdateAction(update: SimpleUpdate
 
   def withQuery(q: Query): ChannelResult[DBCollection,WriteResult] = ChannelResult {
     c =>
-      Task.now {
+      Task.delay {
         val qq =
           if (isIsolated) {
             val o = new BasicDBObject()

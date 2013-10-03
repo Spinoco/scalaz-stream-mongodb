@@ -8,5 +8,5 @@ import com.mongodb.DBCollection
 
 case class EnsureIndex(idx: CollectionIndex) extends MongoCollectionCommand[Unit] {
   def toChannelResult: ChannelResult[DBCollection,Unit] =
-    ChannelResult(c => Task.now(c.ensureIndex(idx.keysAsBson, idx.optionsAsBson)))
+    ChannelResult(c => Task.delay(c.ensureIndex(idx.keysAsBson, idx.optionsAsBson)))
 }

@@ -28,7 +28,7 @@ case class WriteCommand(file: MongoFileWrite) extends GridFsCommand[Bytes=> Task
           })({
             os => delay { os.close }
           })({
-            os => now(bytes => now(os.write(bytes.bytes, 0, bytes.n)))
+            os => now(bytes => delay(os.write(bytes.bytes, 0, bytes.n)))
           })
         }
       }

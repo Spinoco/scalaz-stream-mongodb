@@ -9,11 +9,11 @@ import com.mongodb.DBCollection
 
 case class DropIndexByName(name: String) extends MongoCollectionCommand[Unit] {
   def toChannelResult: ChannelResult[DBCollection,Unit] =
-    ChannelResult(c => Task.now(c.dropIndex(name)))
+    ChannelResult(c => Task.delay(c.dropIndex(name)))
 
 }
 
 case class DropIndexByKeys(idx: CollectionIndex) extends MongoCollectionCommand[Unit] {
   def toChannelResult: ChannelResult[DBCollection,Unit] =
-    ChannelResult(c => Task.now(c.dropIndex(idx.keysAsBson)))
+    ChannelResult(c => Task.delay(c.dropIndex(idx.keysAsBson)))
 }

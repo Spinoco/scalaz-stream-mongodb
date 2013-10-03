@@ -11,6 +11,7 @@ sealed trait WriteResult {
   val n           : Int
   val errorMessage: Option[String]
   val serverUri   : Option[String]
+  val ok: Boolean
 }
 
 /**
@@ -19,7 +20,9 @@ sealed trait WriteResult {
  * @param errorMessage  Message in case the operation was not successful
  * @param serverUri     uri of server where request was executed
  */
-case class UpdateWriteResult(n: Int, errorMessage: Option[String], serverUri: Option[String]) extends WriteResult
+case class UpdateWriteResult(n: Int, errorMessage: Option[String], serverUri: Option[String]) extends WriteResult {
+  val ok = errorMessage.isEmpty
+}
 
 /**
  * Result of Insert Operation. 
@@ -30,6 +33,7 @@ case class UpdateWriteResult(n: Int, errorMessage: Option[String], serverUri: Op
  */
 case class InsertWriteResult(n: Int, errorMessage: Option[String], serverUri: Option[String], document: DBObject) extends WriteResult {
   lazy val id : ObjectId = document.as[ObjectId]("_id")
+  val ok = errorMessage.isEmpty
 }
 
 

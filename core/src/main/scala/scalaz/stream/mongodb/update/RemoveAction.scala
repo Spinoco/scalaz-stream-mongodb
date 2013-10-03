@@ -15,7 +15,7 @@ case class RemoveAction(isIsolated: Boolean = false, wc: Option[WriteConcern] = 
 
 
   def withQuery(q: Query): ChannelResult[DBCollection,WriteResult] = ChannelResult {
-    c => Task.now {
+    c => Task.delay {
       val qq =
         if (isIsolated) {
           val o = new BasicDBObject()
