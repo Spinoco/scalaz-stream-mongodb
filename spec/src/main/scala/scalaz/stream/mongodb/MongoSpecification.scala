@@ -4,13 +4,34 @@ import java.util.UUID
 import com.mongodb.{DB, DBCollection}
 import org.specs2.specification.{Step, Fragments, Scope}
 import org.specs2.SpecificationLike
+import java.nio.file.{Paths, Path}
 
 
 /**
  * Specification, that will spawn the mongo databases for each spec instance run and shares the instance between examples
+ * The mongo binary is downloaded to local filesystem if not supplied with SPEC_MONGO_HOME system environment or java defined variable
  */
 trait MongoRuntimeSpecification extends MongoSpecificationBase {
+  lazy val version: MongoVersion = MongoVersion("2.4.6")
   val mongoInstanceConfig: MongoSpecificationConfig = MongoRuntimeConfig()
+  override lazy val instance: MongoInstance = {
+    mongoInstanceConfig match {
+      case runtime: MongoRuntimeConfig =>
+        val path = 
+        runtime.mongodPath orElse (Option(System.getenv("SPEC_MONGO_HOME")) orElse Option(System.getProperty("SPEC_MONGO_HOME"))).map(Paths.get(_)) match {
+          case Some(configured) =>  configured
+          case None => 
+            MongoBinaryResolver.resolve(version)
+        }
+
+        MongoInstances.getInstance(runtime.copy(mongodPath = Some(path)))
+        
+      case other =>
+        MongoInstances.getInstance(mongoInstanceConfig)
+    } 
+    
+    
+  }
 }
 
 /**
@@ -36,6 +57,7 @@ trait MongoSpecificationBase extends SpecificationLike {
    * @return configuration of `mongod` to be used with this spec
    */
   val mongoInstanceConfig: MongoSpecificationConfig
+
 
   lazy val instance: MongoInstance = MongoInstances.getInstance(mongoInstanceConfig)
 

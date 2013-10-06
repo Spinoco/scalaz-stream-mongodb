@@ -52,7 +52,7 @@ case class MongoRuntimeConfig(bindPort: Int = 27717
                                ) extends MongoSpecificationConfig {
 
   def toCommandLinePars(dataPathProvider: => Path): (String, Path) = {
-    val dataHome = mongodPath.getOrElse(dataPathProvider)
+    val dataHome = dataPath.getOrElse(dataPathProvider)
     val pars = s"--port $bindPort --bind_ip $bindIp --dbpath $dataHome --nssize $nssSize ${if (noPrealloc) "--noprealloc" else ""} ${ if (noJournal) "--nojournal" else ""}" + cmdLinePars.getOrElse("")
     (pars, dataHome)
   }
