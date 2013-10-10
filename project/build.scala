@@ -36,15 +36,14 @@ object build extends Build {
 
   lazy val libraries = Seq(
     libraryDependencies ++= Seq(
-      "org.scalaz" %% "scalaz-scalacheck-binding" % "7.0.4-S1-SNAPSHOT" % "test" 
-      , "org.mongodb" % "mongo-java-driver" % "2.11.2" 
-      , "spinoco" %% "scalaz-stream" % "0.1.0.41-SNAPSHOT" 
+      "org.mongodb" % "mongo-java-driver" % "2.11.3" 
+      , "spinoco" %% "scalaz-stream" % "0.1.0.48-SNAPSHOT" exclude("org.scala-lang", "*")
     )
   )
 
   lazy val testLibraries =
     libraryDependencies ++= Seq(
-      "org.scalacheck" %% "scalacheck" % "1.10.0" % "test" 
+      "org.scalacheck" %% "scalacheck" % "1.10.0" % "test"  exclude("org.scala-lang", "*")
       , "org.specs2" %% "specs2" % specs2Version % "test" exclude("org.scalaz", "*")
       , "org.pegdown" % "pegdown" % "1.2.1" % "test"
       , "junit" % "junit" % "4.7" % "test"
@@ -85,10 +84,7 @@ object build extends Build {
         organization := "spinoco"
         , version := "0.1.0-SNAPSHOT"
         , scalaVersion := "2.10.2"
-        , conflictWarning ~= {
-          cw =>
-            cw.copy(filter = (id: ModuleID) => true, group = (id: ModuleID) => id.organization + ":" + id.name, level = Level.Error, failOnConflict = true)
-        }
+        , conflictManager := ConflictManager.strict
         , shellPrompt := ShellPrompt.buildShellPrompt
         , testOptions in Test += Tests.Argument("html", "console", "junitxml")
         , concurrentRestrictions in Global += Tags.limit(Tags.Test, java.lang.Runtime.getRuntime.availableProcessors() / 2 min 1 max 4) //restrict tests to max 4 threads
