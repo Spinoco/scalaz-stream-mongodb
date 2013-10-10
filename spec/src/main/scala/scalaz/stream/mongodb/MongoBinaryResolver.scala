@@ -1,7 +1,6 @@
 package scalaz.stream.mongodb
 
 import java.nio.file._
-import java.io.{BufferedOutputStream, OutputStream}
 
 /**
  * Helper object to resolve Mongo binaries either from local cache path (~/.streams.mongodb, or from internet
@@ -9,9 +8,13 @@ import java.io.{BufferedOutputStream, OutputStream}
  */
 object MongoBinaryResolver {
 
-  lazy val cachePath = Paths.get(System.getProperty("user.home")).resolve(".streams.mongodb")
-
-  
+  lazy val cachePath = {
+    val subdir = ".streams.mongodb"
+    val dir = Paths.get(System.getProperty("user.home")).resolve(subdir)
+    println(s"trying to create the $subdir path under home")
+    dir.toFile.mkdir()
+    dir
+  }
 
 
   /**
@@ -20,12 +23,12 @@ object MongoBinaryResolver {
    * @return
    */
   def resolve(version: MongoVersion): Path = synchronized {
-    val localBinDir = cachePath.resolve(version.localFileDirName) 
+    val localBinDir = cachePath.resolve(version.localFileDirName)
     if (Files.exists(localBinDir)) {
       localBinDir
     } else {
       println("Mongo binary not present, starting download")
-      extract(version,download(version)) 
+      extract(version, download(version))
     }
   }
 
@@ -48,25 +51,25 @@ object MongoBinaryResolver {
       println("Downloading the binary of mongo from " + version.downloadPath)
 
       println("Downloaded binary will be stored to " + destination)
-   
 
-      val buff = Array.ofDim[Byte](100*1024) //100k buff
-      def go(read:Long) : Long = {
-         val i = is.read(buff)
-         if ( i >= 0) {
-           os.write(buff,0,i)
-           val total = read + i
-           // println(total, dotEvery, total % dotEvery < read % dotEvery)
-           if (total % dotEvery < read % dotEvery) print(".")
-           go(total)
-         } else {
-           os.flush()
-           read
-         }
+
+      val buff = Array.ofDim[Byte](100 * 1024) //100k buff
+      def go(read: Long): Long = {
+        val i = is.read(buff)
+        if (i >= 0) {
+          os.write(buff, 0, i)
+          val total = read + i
+          // println(total, dotEvery, total % dotEvery < read % dotEvery)
+          if (total % dotEvery < read % dotEvery) print(".")
+          go(total)
+        } else {
+          os.flush()
+          read
+        }
       }
       val copied = go(0)
       println() //lf only
- 
+
       println(s"Downloaded $copied bytes")
       cachePath.resolve(version.localFileName)
     } catch {
@@ -80,19 +83,19 @@ object MongoBinaryResolver {
     }
 
   }
-  
-  def extract(version:MongoVersion,archive:Path) : Path = {
+
+  def extract(version: MongoVersion, archive: Path): Path = {
     import scala.sys.process._
     import scala.language.postfixOps
-    
+
     version.osName match {
       case "linux" => s"tar xf $archive  -C $cachePath" !
       case "win32" => sys.error("not implemented yet")
-      case "osx" =>   s"tar xf $archive  -C $cachePath" !
+      case "osx" => s"tar xf $archive  -C $cachePath" !
     }
-    
-   
-    println(s"Extracted to ${cachePath.resolve(version.localFileDirName)}")  
+
+
+    println(s"Extracted to ${cachePath.resolve(version.localFileDirName)}")
     Files.delete(archive)
     cachePath.resolve(version.localFileDirName)
   }
