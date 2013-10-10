@@ -55,7 +55,7 @@ ${ snippet {
 
     def queryOnlyActive = query("active" === true)
 
-    val allActiveUsers = (users through queryOnlyActive).collect.run
+    val allActiveUsers = (users through queryOnlyActive).runLog.run
   }}
 
 Note you may apply process combinators on the query *BEFORE* the query is actually combined with connection:
@@ -64,7 +64,7 @@ ${ snippet {
 
     def queryOnlyFirst50Active = query("active" === true) |> take(50)
 
-    val first50ActiveUsers = (users through queryOnlyFirst50Active).collect.run
+    val first50ActiveUsers = (users through queryOnlyFirst50Active).runLog.run
   }}
 
 In example above we also piped (|>) result to another process, which further transformed the information from mongoDB. This

@@ -141,7 +141,7 @@ how the results will be stored. By default results override any results found in
 
     def verify(f: (Seq[DBObject], DBCollection) => MatchResult[Any]) = {
       documents.foreach(mongo.collection.insert(_))
-      f((mongo.collection through ch).collect.run.toList, mongo.collection)
+      f((mongo.collection through ch).runLog.run.toList, mongo.collection)
     }
 
   }
