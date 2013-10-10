@@ -57,7 +57,7 @@ class InsertAndSaveSpec extends Specification with Snippets with MongoRuntimeSpe
     val mongo = new WithMongoCollection()
     (mongo.collection through ensure(index("key" Ascending).unique(true))).run.run
     (mongo.collection through insert(BSONObject("key" -> 1))).run.run
-    ((mongo.collection through insert(BSONObject("key" -> 1)).toChannelResult.attempt()).map(_.isLeft)).collect.run must_== Seq(true)
+    ((mongo.collection through insert(BSONObject("key" -> 1)).toChannelResult.attempt()).map(_.isLeft)).runLog.run must_== Seq(true)
   }
 
 
@@ -70,7 +70,7 @@ class InsertAndSaveSpec extends Specification with Snippets with MongoRuntimeSpe
 
       val result = (mongo.collection through p).runLast.run
 
-      val present = (mongo.collection through query()).collect.run
+      val present = (mongo.collection through query()).runLog.run
 
       f(present, result.get)
     }

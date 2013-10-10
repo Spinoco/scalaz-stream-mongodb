@@ -71,7 +71,7 @@ ${ snippet {
 
         }
 
-      val output: Seq[String] = (filesystem(fileDb) through readFiles).collect.run
+      val output: Seq[String] = (filesystem(fileDb) through readFiles).runLog.run
 
     }}
        
@@ -168,7 +168,7 @@ ${ snippet {
       }
 
 
-      f((filesystem(mongo.db) through cmd).map(extract).collect.run)
+      f((filesystem(mongo.db) through cmd).map(extract).runLog.run)
 
     }
 
@@ -179,7 +179,7 @@ ${ snippet {
     def single(cmd: ChannelResult[GridFS, Bytes]) = ReadTest[Bytes, Array[Byte]](cmd, b => b.toArray)
 
     def multiple(cmd: ChannelResult[GridFS, (MongoFileRead, Process[Task, Bytes])]) =
-      ReadTest[(MongoFileRead, Process[Task, Bytes]), String](cmd, e => e._1.name + "\n" + e._2.map(b => new String(b.toArray)).collect.run.mkString)
+      ReadTest[(MongoFileRead, Process[Task, Bytes]), String](cmd, e => e._1.name + "\n" + e._2.map(b => new String(b.toArray)).runLog.run.mkString)
 
   }
 

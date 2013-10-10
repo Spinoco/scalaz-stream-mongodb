@@ -86,7 +86,7 @@ ${ snippet { source10k to (filesystem(fileDb) using (write file ("foo.txt"))) }}
       gfs.find("foo.txt").asScala.toList match {
         case gfsFile :: Nil =>
           val in = extractBytes(gfsFile.getInputStream, Array.ofDim[Byte](1024))
-          (in must_== source10k.collect.run.map(_.toArray).reduce(_ ++ _)) and
+          (in must_== source10k.runLog.run.map(_.toArray).reduce(_ ++ _)) and
             (gfsFile.getFilename must_== "foo.txt") and
             (gfsFile.getContentType must_== "text/plain; charset=UTF-8") and
             (gfsFile.getChunkSize must_== chunkSize) and

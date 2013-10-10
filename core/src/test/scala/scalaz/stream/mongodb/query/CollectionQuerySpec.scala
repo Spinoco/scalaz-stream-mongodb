@@ -242,8 +242,8 @@ ${ snippet { query("key1" -> "value") comment ("Long duration query") }}
 
   val singleObjectGen = for {
     id <- oidGen
-    key1 <- Arbitrary.arbitrary[String] suchThat (_.nonEmpty) //Gen.alphaStr suchThat (_.nonEmpty)
-    key2 <- Arbitrary.arbitrary[String] suchThat (_.nonEmpty)
+    key1 <- Gen.alphaStr.suchThat (_.nonEmpty) 
+    key2 <- Gen.alphaStr.suchThat (_.nonEmpty)
     key3size <- Gen.choose[Int](1, 20)
     key3 <- Gen.containerOfN[List, Int](key3size, Arbitrary.arbInt.arbitrary)
     key4size <- Gen.choose[Int](1, 20)
@@ -286,7 +286,7 @@ ${ snippet { query("key1" -> "value") comment ("Long duration query") }}
 
           saveDocuments(mongo.collection, documents)
 
-          val r = (mongo.collection through q).collect.run
+          val r = (mongo.collection through q).runLog.run
 
           val expected = vf(documents, mongo.collection).iterator().asScala.toList
           

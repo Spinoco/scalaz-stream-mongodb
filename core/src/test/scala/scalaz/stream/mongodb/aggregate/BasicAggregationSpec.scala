@@ -60,7 +60,7 @@ aggregation functions are:
       mongo.collection.insert(BSONObject("key" -> "c", "key2" -> 4))
 
 
-      f((mongo.collection through ch).collect.run.toList)
+      f((mongo.collection through ch).runLog.run.toList)
     }
 
   }

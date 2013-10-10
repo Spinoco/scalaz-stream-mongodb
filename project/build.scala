@@ -43,7 +43,7 @@ object build extends Build {
 
   lazy val testLibraries =
     libraryDependencies ++= Seq(
-      "org.scalacheck" %% "scalacheck" % "1.10.0" % "test"  exclude("org.scala-lang", "*")
+      "org.scalacheck" %% "scalacheck" % "1.10.1" % "test"  exclude("org.scala-lang", "*")
       , "org.specs2" %% "specs2" % specs2Version % "test" exclude("org.scalaz", "*")
       , "org.pegdown" % "pegdown" % "1.2.1" % "test"
       , "junit" % "junit" % "4.7" % "test"

@@ -287,7 +287,7 @@ Moreover there is a possibility to add whole new fields with their values or ren
 
     def verify(f: (Seq[DBObject], DBCollection) => MatchResult[Any]) = {
       documents.foreach(mongo.collection.insert(_))
-      f((mongo.collection through ch).collect.run.toList, mongo.collection)
+      f((mongo.collection through ch).runLog.run.toList, mongo.collection)
     }
 
   }

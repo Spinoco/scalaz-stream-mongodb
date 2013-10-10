@@ -42,7 +42,7 @@ case class ChannelResult[R, A](channel: Channel[Task, R, Process[Task, A]]) {
   def ++[B >: A](ch2: ChannelResult[R,B]): ChannelResult[R, B] = append(ch2)
 
   /** applies [[scalaz.stream.Process.then]] on resulting stream **/
-  def fby[B >: A](p2: => Process[Task, B]): ChannelResult[R, B] = modify(_.then(p2))
+  def fby[B >: A](p2: => Process[Task, B]): ChannelResult[R, B] = modify(_ fby p2)
 
   /** applies [[scalaz.stream.Process.repeat]] on resulting stream **/
   def repeat[B >: A]: ChannelResult[R, B] = modify(_.repeat)

@@ -164,7 +164,7 @@ ${ snippet {
           file.save()
       }
 
-      f((filesystem(mongo.db) through fsCommand).collect.run)
+      f((filesystem(mongo.db) through fsCommand).runLog.run)
 
     }
   }
