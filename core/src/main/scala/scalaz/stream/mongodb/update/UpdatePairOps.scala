@@ -17,7 +17,11 @@ trait UpdatePairOps extends Ops[String] {
   def set[A: BSONSerializable](a: A) = ValueUpdatePair("$set", self, a)
 
   /* $set field if a is Some or $unset if a is None*/
-  def :=[A: BSONSerializable](a: Some[A]) = set(a.get)
+  def :=[A: BSONSerializable](a: Option[A]) = a match {
+    case Some(value) => set(value)
+    case None  => remove
+  }
+
   def :=[A <: Option[Nothing]](a: A) = remove
 
 
