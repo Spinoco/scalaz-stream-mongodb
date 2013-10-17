@@ -6,7 +6,6 @@ import scalaz.stream.mongodb.bson.BSONSerializable
 
 trait UpdatePairOps extends Ops[String] {
 
-
   /* $inc field */
   def +=[A: Numeric](a: A) = inc(a)
 
@@ -16,6 +15,11 @@ trait UpdatePairOps extends Ops[String] {
   def :=[A: BSONSerializable](a: A) = set(a)
 
   def set[A: BSONSerializable](a: A) = ValueUpdatePair("$set", self, a)
+
+  /* $set field if a is Some or $unset if a is None*/
+  def :=[A: BSONSerializable](a: Some[A]) = set(a.get)
+  def :=[A <: Option[Nothing]](a: A) = remove
+
 
   /* $unset field */
   def - = remove

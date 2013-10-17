@@ -24,7 +24,8 @@ class UpdateBuilderSpec extends Specification with Snippets with SnippetFormatte
     .add("key6", Seq(
       dbo.add("n1", 1).add("n2", 4).get,
       dbo.add("n1", 3).add("n2", 2).get
-    ).asJava).get
+    ).asJava)
+    .add("key7", 5).get
 
   lazy val examples = makeExamples
 
@@ -46,7 +47,8 @@ class UpdateBuilderSpec extends Specification with Snippets with SnippetFormatte
         (found.get("key3") must_== expectation.get("key3")) and
         (found.get("key4") must_== expectation.get("key4")) and
         (found.getAs[List[Int]]("key5") must_== expectation.getAs[List[Int]]("key5")) and
-        (found.getAs[List[Map[String, Int]]]("key6") must_== expectation.getAs[List[Map[String, Int]]]("key6")))
+        (found.getAs[List[Map[String, Int]]]("key6") must_== expectation.getAs[List[Map[String, Int]]]("key6")) and
+        (found.getAs[Int]("key7") must_== expectation.getAs[Int]("key7")))
     }
   }
  
@@ -87,8 +89,10 @@ class UpdateBuilderSpec extends Specification with Snippets with SnippetFormatte
     ${ snippet { 15 -> update("key" & 7) }.verify }  
     ${ snippet { 16 -> update("key" | 7) }.verify }  
     ${ snippet { 17 -> update("key5" popLast) }.verify } 
-    ${ snippet { 18 -> update("key5" popFirst) }.verify }  
-    
+    ${ snippet { 18 -> update("key5" popFirst) }.verify }
+    ${ snippet { 19 -> update("key7" := Some(12)) }.verify }
+    ${ snippet { 20 -> update("key7" := None) }.verify }
+
    """, examples)
 
 
@@ -111,6 +115,9 @@ class UpdateBuilderSpec extends Specification with Snippets with SnippetFormatte
     (16, ("Performs bitwise or", (dbo.add("$bit", dbo.add("key", dbo.add("or", 7).get).get).get, testDoc, testDoc +=("key", 10 | 7)))),
     (17, ("Pops last item in array", (dbo.add("$pop", dbo.add("key5", 1).get).get, testDoc, testDoc +=("key5", Seq(1, 2))))),
     (18, ("Pops first item in array", (dbo.add("$pop", dbo.add("key5", -1).get).get, testDoc, testDoc +=("key5", Seq(2, 3))))),
+    (19, ("Set field if updating Option wih Some value", (dbo.add("$set", dbo.add("key7", 12).get).get, testDoc, testDoc += ("key7", 12)))),
+    (20, ("Unset field if updating Option wih None value", (dbo.add("$unset", dbo.add("key7", "").get).get, testDoc, testDoc -= "key7"))),
+
 
     (1000000, ("Replacing the document with new one", (document, document, document)))
   )
