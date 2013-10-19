@@ -1,24 +1,25 @@
 Welcome to Mongo Streams
-=====================
+========================
 
-Mongo Streams is a library that allows you to use scalaz-stream with mongo database. Mongo Streams is based on standard mongo java driver and thus shall support all of the java driver functionality.
+[![Build Status](https://travis-ci.org/Spinoco/scalaz-stream-mongodb.png?branch=master)](https://travis-ci.org/Spinoco/scalaz-stream-mongodb)
 
-Project is now under development and first release is expected after first release of scalaz-stream.
+Mongo Streams is a library that allows you to use scalaz-stream with mongo database. Mongo Streams are based on standard mongo java driver and support all of the java driver functionality,  plus the functionality offered by scalaz-stream. 
 
-Building the library from sources
+Please visit [project pages](http://spinoco.github.io/scalaz-stream-mongodb) for more information and [User Guide](http://spinoco.github.io/scalaz-stream-mongodb/reports/scalaz.stream.mongodb.userguide.UserGuideSpec.html) .
+ 
+If you want to give try to mongo streams you can include it in your sbt build file : 
 
-At this moment (unfortunately) there is no binary version of the library. In order to build it, you will have to get latest snapshots of scalaz, scalaz-stream, specs2 (please use the version build against the 7.1.0-SNAPSHOT). Once the library will be released all these dependencies will get fixed.
+``` scala
 
-## User Guide
+resolvers ++= Seq("snapshots" at "http://oss.sonatype.org/content/repositories/snapshots")
+ 
+libraryDependencies += "com.spinoco" %% "scalaz-stream-mongodb" % "0.1"
 
-If you are interested on the functionality please take a look on [UserGuide](http://spinoco.github.io/scalaz-stream-mongodb/reports/scalaz.stream.mongodb.userguide.UserGuideSpec.html) and eventually on the [API](http://spinoco.github.io/scalaz-stream-mongodb/core/#package).
+//if you want to add Specs2 support for your Mongo Streams just add also this
+ 
+libraryDependencies += "com.spinoco" %% "scalaz-stream-mongodb-spec" % "0.1" 
 
-## What is missing
-
-Library is supposed to have all the functionality that makes sense to wrap in scalaz-stream. Following functionality is currently missing and is planned for future versions:
-
-* Streaming tailable collections
-* Asynchronous execution of mongodb queries
+ 
+```
 
 
-Thank you for your interest in Mongo Streams.
