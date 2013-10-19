@@ -106,7 +106,7 @@ object build extends Build {
     Defaults.defaultSettings ++
       Seq(
         organization := "com.spinoco"
-        , version := "0.1.0-SNAPSHOT"
+        , version := "0.1.0"
         , scalaVersion := "2.10.2"
         , conflictManager := ConflictManager.strict
         , shellPrompt := ShellPrompt.buildShellPrompt
