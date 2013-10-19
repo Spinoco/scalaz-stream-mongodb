@@ -1,2 +1,41 @@
 <scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats timestamp="1380520994335"><stats time="1883" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats>
 <scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats timestamp="1380521009471"><stats time="692" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats timestamp="1380613826364"><stats time="3582" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats timestamp="1380613854792"><stats time="683" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats timestamp="1380613874165"><stats time="3736" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats timestamp="1380613889532"><stats time="2265" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats timestamp="1380613977381"><stats time="602" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats timestamp="1380614023828"><stats time="599" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats timestamp="1380614324626"><stats time="774" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats timestamp="1380614333416"><stats time="2416" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats timestamp="1380690022263"><stats time="4067" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats timestamp="1380690043029"><stats time="607" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats timestamp="1380690135956"><stats time="3569" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats timestamp="1380690136066"><stats time="931" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats timestamp="1380813009407"><stats time="1890" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats timestamp="1380813055659"><stats time="951" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSDeleteSpec-results timestamp="1380975512904"><result location="scalaz.stream.mongodb.MongoSpecificationBase (MongoSpecification.scala:97)" id="-1100313156"><stats expectations="1" skipped="1" examples="1"></stats></result>
+<result location="scalaz.stream.mongodb.MongoSpecificationBase (MongoSpecification.scala:98)" id="-1100313156"><stats expectations="1" skipped="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="1071122199"><stats expectations="1" skipped="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-263041072"><stats expectations="1" skipped="1" examples="1"></stats></result>
+<result location="scalaz.stream.mongodb.MongoSpecificationBase (MongoSpecification.scala:100)" id="-1100313156"><stats expectations="1" skipped="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.filesystem.FSDeleteSpec-results>
+<scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats timestamp="1380975512928"><stats time="1" expectations="5" skipped="5" examples="5"><trend><stats time="1" expectations="3" skipped="5" successes="-2" examples="3"></stats></trend></stats></scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSDeleteSpec-results timestamp="1380975514969"><result location="scalaz.stream.mongodb.MongoSpecificationBase (MongoSpecification.scala:97)" id="1223730100"><stats time="1" expectations="1" errors="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="1071122199"><stats expectations="1" skipped="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-263041072"><stats expectations="1" skipped="1" examples="1"></stats></result>
+<result location="scalaz.stream.mongodb.MongoSpecificationBase (MongoSpecification.scala:100)" id="-1100313156"><stats expectations="1" skipped="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.filesystem.FSDeleteSpec-results>
+<scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats timestamp="1380975514971"><stats time="2" expectations="4" errors="1" skipped="3" examples="4"><trend><stats time="2" expectations="-1" errors="1" skipped="-2" examples="-1"></stats></trend></stats></scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats timestamp="1380975880351"><stats time="3629" expectations="2" successes="2" examples="2"><trend><stats time="3629" expectations="-2" errors="-1" skipped="-3" successes="2" examples="-2"></stats></trend></stats></scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats timestamp="1380975908146"><stats time="933" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats timestamp="1380976132391"><stats time="3137" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats timestamp="1380976139404"><stats time="811" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats timestamp="1380985289446"><stats time="4599" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats timestamp="1380985307058"><stats time="1015" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats timestamp="1381379852418"><stats time="1622" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats timestamp="1381379854937"><stats time="1328" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats timestamp="1381379999283"><stats time="1694" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats timestamp="1381380012160"><stats time="2238" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats timestamp="1381380478760"><stats time="2000" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats timestamp="1381380480237"><stats time="992" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats>

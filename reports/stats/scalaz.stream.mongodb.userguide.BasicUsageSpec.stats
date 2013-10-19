@@ -1,3 +1,45 @@
 <scalaz.stream.mongodb.userguide.BasicUsageSpec-results timestamp="1380520995924"><result location="scalaz.stream.mongodb.userguide.BasicUsageSpec (BasicUsageSpec.scala:78)" id="-1470617948"><stats pending="1" expectations="1" examples="1"></stats></result>
 </scalaz.stream.mongodb.userguide.BasicUsageSpec-results>
 <scalaz.stream.mongodb.userguide.BasicUsageSpec-stats timestamp="1380520995955"><stats pending="1" time="1" expectations="1" examples="1"></stats></scalaz.stream.mongodb.userguide.BasicUsageSpec-stats>
+<scalaz.stream.mongodb.userguide.BasicUsageSpec-results timestamp="1380613836106"><result location="scalaz.stream.mongodb.userguide.BasicUsageSpec (BasicUsageSpec.scala:78)" id="-1470617948"><stats pending="1" expectations="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.userguide.BasicUsageSpec-results>
+<scalaz.stream.mongodb.userguide.BasicUsageSpec-stats timestamp="1380613836190"><stats pending="1" time="1" expectations="1" examples="1"></stats></scalaz.stream.mongodb.userguide.BasicUsageSpec-stats>
+<scalaz.stream.mongodb.userguide.BasicUsageSpec-results timestamp="1380613875505"><result location="scalaz.stream.mongodb.userguide.BasicUsageSpec (BasicUsageSpec.scala:78)" id="-1470617948"><stats pending="1" time="1" expectations="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.userguide.BasicUsageSpec-results>
+<scalaz.stream.mongodb.userguide.BasicUsageSpec-stats timestamp="1380613875532"><stats pending="1" time="45" expectations="1" examples="1"></stats></scalaz.stream.mongodb.userguide.BasicUsageSpec-stats>
+<scalaz.stream.mongodb.userguide.BasicUsageSpec-results timestamp="1380613980713"><result location="scalaz.stream.mongodb.userguide.BasicUsageSpec (BasicUsageSpec.scala:78)" id="-1470617948"><stats pending="1" expectations="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.userguide.BasicUsageSpec-results>
+<scalaz.stream.mongodb.userguide.BasicUsageSpec-stats timestamp="1380613980715"><stats pending="1" time="1" expectations="1" examples="1"></stats></scalaz.stream.mongodb.userguide.BasicUsageSpec-stats>
+<scalaz.stream.mongodb.userguide.BasicUsageSpec-results timestamp="1380614313110"><result location="scalaz.stream.mongodb.userguide.BasicUsageSpec (BasicUsageSpec.scala:78)" id="-1470617948"><stats pending="1" time="132" expectations="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.userguide.BasicUsageSpec-results>
+<scalaz.stream.mongodb.userguide.BasicUsageSpec-stats timestamp="1380614313136"><stats pending="1" time="43" expectations="1" examples="1"></stats></scalaz.stream.mongodb.userguide.BasicUsageSpec-stats>
+<scalaz.stream.mongodb.userguide.BasicUsageSpec-results timestamp="1380690036485"><result location="scalaz.stream.mongodb.userguide.BasicUsageSpec (BasicUsageSpec.scala:78)" id="-1470617948"><stats pending="1" expectations="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.userguide.BasicUsageSpec-results>
+<scalaz.stream.mongodb.userguide.BasicUsageSpec-stats timestamp="1380690036487"><stats pending="1" expectations="1" examples="1"></stats></scalaz.stream.mongodb.userguide.BasicUsageSpec-stats>
+<scalaz.stream.mongodb.userguide.BasicUsageSpec-results timestamp="1380690111256"><result location="scalaz.stream.mongodb.userguide.BasicUsageSpec (BasicUsageSpec.scala:78)" id="-1470617948"><stats pending="1" time="13" expectations="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.userguide.BasicUsageSpec-results>
+<scalaz.stream.mongodb.userguide.BasicUsageSpec-stats timestamp="1380690111273"><stats pending="1" time="48" expectations="1" examples="1"></stats></scalaz.stream.mongodb.userguide.BasicUsageSpec-stats>
+<scalaz.stream.mongodb.userguide.BasicUsageSpec-results timestamp="1380813019973"><result location="scalaz.stream.mongodb.userguide.BasicUsageSpec (BasicUsageSpec.scala:78)" id="-1470617948"><stats pending="1" expectations="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.userguide.BasicUsageSpec-results>
+<scalaz.stream.mongodb.userguide.BasicUsageSpec-stats timestamp="1380813020031"><stats pending="1" time="2" expectations="1" examples="1"></stats></scalaz.stream.mongodb.userguide.BasicUsageSpec-stats>
+<scalaz.stream.mongodb.userguide.BasicUsageSpec-results timestamp="1380975511746"><result location="scalaz.stream.mongodb.userguide.BasicUsageSpec (BasicUsageSpec.scala:78)" id="-1470617948"><stats pending="1" expectations="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.userguide.BasicUsageSpec-results>
+<scalaz.stream.mongodb.userguide.BasicUsageSpec-stats timestamp="1380975511753"><stats pending="1" expectations="1" examples="1"></stats></scalaz.stream.mongodb.userguide.BasicUsageSpec-stats>
+<scalaz.stream.mongodb.userguide.BasicUsageSpec-results timestamp="1380975882115"><result location="scalaz.stream.mongodb.userguide.BasicUsageSpec (BasicUsageSpec.scala:78)" id="-1470617948"><stats pending="1" time="2" expectations="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.userguide.BasicUsageSpec-results>
+<scalaz.stream.mongodb.userguide.BasicUsageSpec-stats timestamp="1380975882120"><stats pending="1" time="1" expectations="1" examples="1"></stats></scalaz.stream.mongodb.userguide.BasicUsageSpec-stats>
+<scalaz.stream.mongodb.userguide.BasicUsageSpec-results timestamp="1380976135353"><result location="scalaz.stream.mongodb.userguide.BasicUsageSpec (BasicUsageSpec.scala:78)" id="-1470617948"><stats pending="1" expectations="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.userguide.BasicUsageSpec-results>
+<scalaz.stream.mongodb.userguide.BasicUsageSpec-stats timestamp="1380976135355"><stats pending="1" time="2" expectations="1" examples="1"></stats></scalaz.stream.mongodb.userguide.BasicUsageSpec-stats>
+<scalaz.stream.mongodb.userguide.BasicUsageSpec-results timestamp="1380985281807"><result location="scalaz.stream.mongodb.userguide.BasicUsageSpec (BasicUsageSpec.scala:78)" id="-1470617948"><stats pending="1" expectations="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.userguide.BasicUsageSpec-results>
+<scalaz.stream.mongodb.userguide.BasicUsageSpec-stats timestamp="1380985281809"><stats pending="1" time="1" expectations="1" examples="1"></stats></scalaz.stream.mongodb.userguide.BasicUsageSpec-stats>
+<scalaz.stream.mongodb.userguide.BasicUsageSpec-results timestamp="1381379849207"><result location="scalaz.stream.mongodb.userguide.BasicUsageSpec (BasicUsageSpec.scala:78)" id="-1470617948"><stats pending="1" time="1" expectations="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.userguide.BasicUsageSpec-results>
+<scalaz.stream.mongodb.userguide.BasicUsageSpec-stats timestamp="1381379849233"><stats pending="1" expectations="1" examples="1"></stats></scalaz.stream.mongodb.userguide.BasicUsageSpec-stats>
+<scalaz.stream.mongodb.userguide.BasicUsageSpec-results timestamp="1381380022505"><result location="scalaz.stream.mongodb.userguide.BasicUsageSpec (BasicUsageSpec.scala:78)" id="-1470617948"><stats pending="1" expectations="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.userguide.BasicUsageSpec-results>
+<scalaz.stream.mongodb.userguide.BasicUsageSpec-stats timestamp="1381380022507"><stats pending="1" expectations="1" examples="1"></stats></scalaz.stream.mongodb.userguide.BasicUsageSpec-stats>
+<scalaz.stream.mongodb.userguide.BasicUsageSpec-results timestamp="1381380481862"><result location="scalaz.stream.mongodb.userguide.BasicUsageSpec (BasicUsageSpec.scala:78)" id="-1470617948"><stats pending="1" expectations="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.userguide.BasicUsageSpec-results>
+<scalaz.stream.mongodb.userguide.BasicUsageSpec-stats timestamp="1381380481886"><stats pending="1" expectations="1" examples="1"></stats></scalaz.stream.mongodb.userguide.BasicUsageSpec-stats>

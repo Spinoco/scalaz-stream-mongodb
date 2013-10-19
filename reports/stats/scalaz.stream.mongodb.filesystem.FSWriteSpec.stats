@@ -1,2 +1,39 @@
 <scalaz.stream.mongodb.filesystem.FSWriteSpec-stats timestamp="1380521004552"><stats time="5652" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.filesystem.FSWriteSpec-stats>
 <scalaz.stream.mongodb.filesystem.FSWriteSpec-stats timestamp="1380521009471"><stats time="1560" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.filesystem.FSWriteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSWriteSpec-stats timestamp="1380613834876"><stats time="5740" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.filesystem.FSWriteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSWriteSpec-stats timestamp="1380613854792"><stats time="911" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.filesystem.FSWriteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSWriteSpec-stats timestamp="1380613879699"><stats time="4056" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.filesystem.FSWriteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSWriteSpec-stats timestamp="1380613889531"><stats time="1561" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.filesystem.FSWriteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSWriteSpec-stats timestamp="1380613977381"><stats time="996" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.filesystem.FSWriteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSWriteSpec-stats timestamp="1380614018735"><stats time="704" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.filesystem.FSWriteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSWriteSpec-stats timestamp="1380614324626"><stats time="1062" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.filesystem.FSWriteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSWriteSpec-stats timestamp="1380614332777"><stats time="2214" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.filesystem.FSWriteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSWriteSpec-stats timestamp="1380690028247"><stats time="1875" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.filesystem.FSWriteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSWriteSpec-stats timestamp="1380690043029"><stats time="436" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.filesystem.FSWriteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSWriteSpec-stats timestamp="1380690126384"><stats time="1313" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.filesystem.FSWriteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSWriteSpec-stats timestamp="1380690136065"><stats time="1449" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.filesystem.FSWriteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSWriteSpec-stats timestamp="1380813015244"><stats time="1672" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.filesystem.FSWriteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSWriteSpec-stats timestamp="1380813055659"><stats time="880" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.filesystem.FSWriteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSWriteSpec-results timestamp="1380975512910"><result location="scalaz.stream.mongodb.MongoSpecificationBase (MongoSpecification.scala:97)" id="-1100313156"><stats expectations="1" skipped="1" examples="1"></stats></result>
+<result location="scalaz.stream.mongodb.MongoSpecificationBase (MongoSpecification.scala:98)" id="-1100313156"><stats expectations="1" skipped="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="2052830782"><stats expectations="1" skipped="1" examples="1"></stats></result>
+<result location="scalaz.stream.mongodb.MongoSpecificationBase (MongoSpecification.scala:100)" id="-1100313156"><stats expectations="1" skipped="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.filesystem.FSWriteSpec-results>
+<scalaz.stream.mongodb.filesystem.FSWriteSpec-stats timestamp="1380975512927"><stats time="1" expectations="4" skipped="4" examples="4"><trend><stats time="1" expectations="3" skipped="4" successes="-1" examples="3"></stats></trend></stats></scalaz.stream.mongodb.filesystem.FSWriteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSWriteSpec-results timestamp="1380975515729"><result location="scalaz.stream.mongodb.MongoSpecificationBase (MongoSpecification.scala:97)" id="1223730100"><stats time="1" expectations="1" errors="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="2052830782"><stats expectations="1" skipped="1" examples="1"></stats></result>
+<result location="scalaz.stream.mongodb.MongoSpecificationBase (MongoSpecification.scala:100)" id="-1100313156"><stats expectations="1" skipped="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.filesystem.FSWriteSpec-results>
+<scalaz.stream.mongodb.filesystem.FSWriteSpec-stats timestamp="1380975515732"><stats time="2" expectations="3" errors="1" skipped="2" examples="3"><trend><stats time="2" expectations="-1" errors="1" skipped="-2" examples="-1"></stats></trend></stats></scalaz.stream.mongodb.filesystem.FSWriteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSWriteSpec-stats timestamp="1380975884175"><stats time="2115" expectations="1" successes="1" examples="1"><trend><stats time="2115" expectations="-2" errors="-1" skipped="-2" successes="1" examples="-2"></stats></trend></stats></scalaz.stream.mongodb.filesystem.FSWriteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSWriteSpec-stats timestamp="1380975908146"><stats time="1138" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.filesystem.FSWriteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSWriteSpec-stats timestamp="1380976116593"><stats time="178803" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.filesystem.FSWriteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSWriteSpec-stats timestamp="1380976132391"><stats time="1883" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.filesystem.FSWriteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSWriteSpec-stats timestamp="1380985274672"><stats time="214768" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.filesystem.FSWriteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSWriteSpec-stats timestamp="1380985307058"><stats time="1655" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.filesystem.FSWriteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSWriteSpec-stats timestamp="1381379849601"><stats time="2019" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.filesystem.FSWriteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSWriteSpec-stats timestamp="1381379854936"><stats time="1068" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.filesystem.FSWriteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSWriteSpec-stats timestamp="1381380012160"><stats time="2498" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.filesystem.FSWriteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSWriteSpec-stats timestamp="1381380018026"><stats time="1051" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.filesystem.FSWriteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSWriteSpec-stats timestamp="1381380472133"><stats time="2088" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.filesystem.FSWriteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSWriteSpec-stats timestamp="1381380480236"><stats time="1546" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.filesystem.FSWriteSpec-stats>

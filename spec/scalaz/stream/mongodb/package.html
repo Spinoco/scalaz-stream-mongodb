@@ -122,7 +122,7 @@ between examples
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="MongoRuntimeConfig.html"><span class="name">MongoRuntimeConfig</span></a><span class="params">(<span name="bindPort">bindPort: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">27717</span></span>, <span name="bindIp">bindIp: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;127.0.0.1&quot;</span></span>, <span name="dataPath">dataPath: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="java.nio.file.Path">Path</span>] = <span class="symbol">scala.None</span></span>, <span name="nssSize">nssSize: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">1</span></span>, <span name="noPrealloc">noPrealloc: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">true</span></span>, <span name="cmdLinePars">cmdLinePars: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="mongodPath">mongodPath: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="java.nio.file.Path">Path</span>] = <span class="symbol">scala.None</span></span>, <span name="mongodEchoStdOut">mongodEchoStdOut: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="java.io.OutputStream">OutputStream</span>] = <span class="symbol">scala.None</span></span>, <span name="mongodEchoStdErr">mongodEchoStdErr: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="java.io.OutputStream">OutputStream</span>] = <span class="symbol">scala.None</span></span>)</span><span class="result"> extends <a href="MongoSpecificationConfig.html" class="extype" name="scalaz.stream.mongodb.MongoSpecificationConfig">MongoSpecificationConfig</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a href="MongoRuntimeConfig.html"><span class="name">MongoRuntimeConfig</span></a><span class="params">(<span name="bindPort">bindPort: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">27717</span></span>, <span name="bindIp">bindIp: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;127.0.0.1&quot;</span></span>, <span name="dataPath">dataPath: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="java.nio.file.Path">Path</span>] = <span class="symbol">scala.None</span></span>, <span name="nssSize">nssSize: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">1</span></span>, <span name="noPrealloc">noPrealloc: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">true</span></span>, <span name="noJournal">noJournal: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">true</span></span>, <span name="cmdLinePars">cmdLinePars: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="mongodPath">mongodPath: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="java.nio.file.Path">Path</span>] = <span class="symbol">scala.None</span></span>, <span name="mongodEchoStdOut">mongodEchoStdOut: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="java.io.OutputStream">OutputStream</span>] = <span class="symbol">scala.None</span></span>, <span name="mongodEchoStdErr">mongodEchoStdErr: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="java.io.OutputStream">OutputStream</span>] = <span class="symbol">scala.None</span></span>)</span><span class="result"> extends <a href="MongoSpecificationConfig.html" class="extype" name="scalaz.stream.mongodb.MongoSpecificationConfig">MongoSpecificationConfig</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       <p class="comment cmt">Basic configuration class to fine-tune mongo runtime.</p>
@@ -139,6 +139,7 @@ between examples
       </span>
       </h4>
       <p class="comment cmt">Specification, that will spawn the mongo databases for each spec instance run and shares the instance between examples
+The mongo binary is downloaded to local filesystem if not supplied with SPEC_MONGO_HOME system environment or java defined variable
 </p>
     </li><li name="scalaz.stream.mongodb.MongoSpecificationBase" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="MongoSpecificationBaseextendsSpecificationLike"></a>
@@ -166,6 +167,19 @@ between examples
       </span>
       </h4>
       
+    </li><li name="scalaz.stream.mongodb.MongoVersion" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoVersionextendsProductwithSerializable"></a>
+      <a id="MongoVersion:MongoVersion"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="MongoVersion.html"><span class="name">MongoVersion</span></a><span class="params">(<span name="version">version: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="architecture">architecture: <a href="MongoArchitecture$.html#ValueextendsOrdered[Enumeration.this.Value]withSerializable" class="extmbr" name="scalaz.stream.mongodb.MongoArchitecture.Value">MongoArchitecture.Value</a> = <span class="symbol">MongoArchitecture.Default</span></span>, <span name="nightly">nightly: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Version of Mongodb library to use for execution and download.</p>
     </li><li name="scalaz.stream.mongodb.RunningMongoInstance" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="RunningMongoInstanceextendsMongoInstancewithProductwithSerializable"></a>
       <a id="RunningMongoInstance:RunningMongoInstance"></a>
@@ -199,7 +213,49 @@ between examples
 
         <div id="values" class="values members">
               <h3>Value Members</h3>
-              <ol><li name="scalaz.stream.mongodb.MongoInstances" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+              <ol><li name="scalaz.stream.mongodb.DownloadApp" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DownloadApp"></a>
+      <a id="DownloadApp:DownloadApp"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="DownloadApp$.html"><span class="name">DownloadApp</span></a><span class="result"> extends <span class="extype" name="scala.App">App</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">User: pach
+Date: 10/5/13
+Time: 7:58 AM
+(c) 2011-2013 Spinoco Czech Republic, a.</p>
+    </li><li name="scalaz.stream.mongodb.MongoArchitecture" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoArchitecture"></a>
+      <a id="MongoArchitecture:MongoArchitecture"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MongoArchitecture$.html"><span class="name">MongoArchitecture</span></a><span class="result"> extends <span class="extype" name="scala.Enumeration">Enumeration</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="scalaz.stream.mongodb.MongoBinaryResolver" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MongoBinaryResolver"></a>
+      <a id="MongoBinaryResolver:MongoBinaryResolver"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MongoBinaryResolver$.html"><span class="name">MongoBinaryResolver</span></a>
+      </span>
+      </h4>
+      <p class="comment cmt">Helper object to resolve Mongo binaries either from local cache path (~/.</p>
+    </li><li name="scalaz.stream.mongodb.MongoInstances" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="MongoInstances"></a>
       <a id="MongoInstances:MongoInstances"></a>
       <h4 class="signature">

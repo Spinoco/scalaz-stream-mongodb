@@ -2,9 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>channel - scalaz.stream.mongodb.channel</title>
-          <meta name="description" content="channel - scalaz.stream.mongodb.channel" />
-          <meta name="keywords" content="channel scalaz.stream.mongodb.channel" />
+          <title>util - scalaz.stream.mongodb.util</title>
+          <meta name="description" content="util - scalaz.stream.mongodb.util" />
+          <meta name="keywords" content="util scalaz.stream.mongodb.util" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
@@ -12,7 +12,7 @@
       <script type="text/javascript">
          if(top === self) {
             var url = '../../../../index.html';
-            var hash = 'scalaz.stream.mongodb.channel.package';
+            var hash = 'scalaz.stream.mongodb.util.package';
             var anchor = window.location.hash;
             var anchor_opt = '';
             if (anchor.length >= 1)
@@ -26,7 +26,7 @@
       <div id="definition">
         <img src="../../../../lib/package_big.png" />
         <p id="owner"><a href="../../../package.html" class="extype" name="scalaz">scalaz</a>.<a href="../../package.html" class="extype" name="scalaz.stream">stream</a>.<a href="../package.html" class="extype" name="scalaz.stream.mongodb">mongodb</a></p>
-        <h1>channel</h1>
+        <h1>util</h1>
       </div>
 
       <h4 id="signature" class="signature">
@@ -35,7 +35,7 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <span class="name">channel</span>
+        <span class="name">util</span>
       </span>
       </h4>
       
@@ -58,32 +58,19 @@
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="scalaz.stream.mongodb.channel.ChannelResult" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="ChannelResult[R,A]extendsProductwithSerializable"></a>
-      <a id="ChannelResult[R,A]:ChannelResult[R,A]"></a>
+              <ol><li name="scalaz.stream.mongodb.util.Bytes" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BytesextendsAnyRef"></a>
+      <a id="Bytes:Bytes"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">case class</span>
+        <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="ChannelResult.html"><span class="name">ChannelResult</span></a><span class="tparams">[<span name="R">R</span>, <span name="A">A</span>]</span><span class="params">(<span name="channel">channel: <span class="extype" name="scalaz.stream.Process.Channel">Process.Channel</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>]]</span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a href="Bytes.html"><span class="name">Bytes</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
-      
-    </li><li name="scalaz.stream.mongodb.channel.ChannelResultSyntax" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="ChannelResultSyntaxextendsAnyRef"></a>
-      <a id="ChannelResultSyntax:ChannelResultSyntax"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">trait</span>
-      </span>
-      <span class="symbol">
-        <a href="ChannelResultSyntax.html"><span class="name">ChannelResultSyntax</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
-      </span>
-      </h4>
-      <p class="comment cmt">Syntax helpers for channel
+      <p class="comment cmt">Helper class, immutable view into Array[Byte], before we will find the better option in scalaz-stream
 </p>
     </li></ol>
             </div>
@@ -92,16 +79,16 @@
 
         <div id="values" class="values members">
               <h3>Value Members</h3>
-              <ol><li name="scalaz.stream.mongodb.channel.ChannelResult" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="ChannelResult"></a>
-      <a id="ChannelResult:ChannelResult"></a>
+              <ol><li name="scalaz.stream.mongodb.util.Bytes" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Bytes"></a>
+      <a id="Bytes:Bytes"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="ChannelResult$.html"><span class="name">ChannelResult</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a href="Bytes$.html"><span class="name">Bytes</span></a>
       </span>
       </h4>
       

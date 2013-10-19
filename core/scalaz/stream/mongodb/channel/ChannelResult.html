@@ -35,7 +35,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">ChannelResult</span><span class="tparams">[<span name="R">R</span>, <span name="A">A</span>]</span><span class="params">(<span name="channel">channel: <span class="extype" name="scalaz.stream.Process.Channel">Channel</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>]]</span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">ChannelResult</span><span class="tparams">[<span name="R">R</span>, <span name="A">A</span>]</span><span class="params">(<span name="channel">channel: <span class="extype" name="scalaz.stream.Process.Channel">Process.Channel</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>]]</span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
@@ -88,7 +88,7 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">ChannelResult</span><span class="params">(<span name="channel">channel: <span class="extype" name="scalaz.stream.Process.Channel">Channel</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>]]</span>)</span>
+        <span class="name">ChannelResult</span><span class="params">(<span name="channel">channel: <span class="extype" name="scalaz.stream.Process.Channel">Process.Channel</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>]]</span>)</span>
       </span>
       </h4>
       
@@ -240,7 +240,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">attempt</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="scala.Throwable">Throwable</span>) ⇒ <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.attempt.B">B</span>] = <span class="defval" name='<span class="name"><a href="../../../package.html">(t: Throwable) =&gt; emit(Task.fail(t)).eval</a></span>'>...</span></span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.\/">\/</span>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.attempt.B">B</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>]]</span>
+        <span class="name">attempt</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="scala.Throwable">Throwable</span>) ⇒ <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.attempt.B">B</span>] = <span class="symbol"><span class="name"><a href="../../../package.html">(t: Throwable) =&gt; emit(t)</a></span></span></span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.\/">\/</span>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.attempt.B">B</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>]]</span>
       </span>
       </h4>
       <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.attempt">scalaz.stream.Process.attempt</span> on resulting stream *</p>
@@ -259,14 +259,14 @@
       <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.causedBy">scalaz.stream.Process.causedBy</span> on resulting stream *</p>
     </li><li name="scalaz.stream.mongodb.channel.ChannelResult#channel" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="channel:scalaz.stream.Process.Channel[scalaz.concurrent.Task,R,scalaz.stream.Process[scalaz.concurrent.Task,A]]"></a>
-      <a id="channel:Channel[Task,R,Process[Task,A]]"></a>
+      <a id="channel:Process.Channel[Task,R,Process[Task,A]]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">channel</span><span class="result">: <span class="extype" name="scalaz.stream.Process.Channel">Channel</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>]]</span>
+        <span class="name">channel</span><span class="result">: <span class="extype" name="scalaz.stream.Process.Channel">Process.Channel</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>]]</span>
       </span>
       </h4>
       
@@ -609,14 +609,14 @@
       <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.partialAttempt">scalaz.stream.Process.partialAttempt</span> on resulting stream *</p>
     </li><li name="scalaz.stream.mongodb.channel.ChannelResult#pipe" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="pipe[B](p2:scalaz.stream.Process.Process1[A,B]):scalaz.stream.mongodb.channel.ChannelResult[R,B]"></a>
-      <a id="pipe[B](Process1[A,B]):ChannelResult[R,B]"></a>
+      <a id="pipe[B](Process.Process1[A,B]):ChannelResult[R,B]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">pipe</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="p2">p2: <span class="extype" name="scalaz.stream.Process.Process1">Process1</span>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.pipe.B">B</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.pipe.B">B</span>]</span>
+        <span class="name">pipe</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="p2">p2: <span class="extype" name="scalaz.stream.Process.Process1">Process.Process1</span>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.pipe.B">B</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.pipe.B">B</span>]</span>
       </span>
       </h4>
       <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.pipe">scalaz.stream.Process.pipe</span> on resulting stream *</p>
@@ -648,27 +648,27 @@
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="scalaz.stream.mongodb.channel.ChannelResult#tee" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="tee[B,C](p2:scalaz.stream.Process[scalaz.concurrent.Task,B])(t:scalaz.stream.Process.Tee[A,B,C]):scalaz.stream.mongodb.channel.ChannelResult[R,C]"></a>
-      <a id="tee[B,C](Process[Task,B])(Tee[A,B,C]):ChannelResult[R,C]"></a>
+      <a id="tee[B,C](Process[Task,B])(Process.Tee[A,B,C]):ChannelResult[R,C]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">tee</span><span class="tparams">[<span name="B">B</span>, <span name="C">C</span>]</span><span class="params">(<span name="p2">p2: <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.tee.B">B</span>]</span>)</span><span class="params">(<span name="t">t: <span class="extype" name="scalaz.stream.Process.Tee">Tee</span>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.tee.B">B</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.tee.C">C</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.tee.C">C</span>]</span>
+        <span class="name">tee</span><span class="tparams">[<span name="B">B</span>, <span name="C">C</span>]</span><span class="params">(<span name="p2">p2: <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.tee.B">B</span>]</span>)</span><span class="params">(<span name="t">t: <span class="extype" name="scalaz.stream.Process.Tee">Process.Tee</span>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.tee.B">B</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.tee.C">C</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.tee.C">C</span>]</span>
       </span>
       </h4>
       <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.tee">scalaz.stream.Process.tee</span> on resulting stream *</p>
     </li><li name="scalaz.stream.mongodb.channel.ChannelResult#through" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="through[B](p:scalaz.stream.Process.Channel[scalaz.concurrent.Task,A,B]):scalaz.stream.mongodb.channel.ChannelResult[R,B]"></a>
-      <a id="through[B](Channel[Task,A,B]):ChannelResult[R,B]"></a>
+      <a id="through[B](Process.Channel[Task,A,B]):ChannelResult[R,B]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">through</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="p">p: <span class="extype" name="scalaz.stream.Process.Channel">Channel</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.through.B">B</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.through.B">B</span>]</span>
+        <span class="name">through</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="p">p: <span class="extype" name="scalaz.stream.Process.Channel">Process.Channel</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.through.B">B</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.through.B">B</span>]</span>
       </span>
       </h4>
       <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.ProcessSyntax.through">scalaz.stream.Process.ProcessSyntax.through</span> on resulting stream *</p>
@@ -783,14 +783,14 @@
       <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.when">scalaz.stream.Process.when</span> on resulting stream *</p>
     </li><li name="scalaz.stream.mongodb.channel.ChannelResult#wye" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="wye[B,C](p2:scalaz.stream.Process[scalaz.concurrent.Task,B])(y:scalaz.stream.Process.Wye[A,B,C]):scalaz.stream.mongodb.channel.ChannelResult[R,C]"></a>
-      <a id="wye[B,C](Process[Task,B])(Wye[A,B,C]):ChannelResult[R,C]"></a>
+      <a id="wye[B,C](Process[Task,B])(Process.Wye[A,B,C]):ChannelResult[R,C]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">wye</span><span class="tparams">[<span name="B">B</span>, <span name="C">C</span>]</span><span class="params">(<span name="p2">p2: <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.wye.B">B</span>]</span>)</span><span class="params">(<span name="y">y: <span class="extype" name="scalaz.stream.Process.Wye">Wye</span>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.wye.B">B</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.wye.C">C</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.wye.C">C</span>]</span>
+        <span class="name">wye</span><span class="tparams">[<span name="B">B</span>, <span name="C">C</span>]</span><span class="params">(<span name="p2">p2: <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.wye.B">B</span>]</span>)</span><span class="params">(<span name="y">y: <span class="extype" name="scalaz.stream.Process.Wye">Process.Wye</span>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.wye.B">B</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.wye.C">C</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.wye.C">C</span>]</span>
       </span>
       </h4>
       <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.wye">scalaz.stream.Process.wye</span> on resulting stream *</p>
@@ -874,14 +874,14 @@
       <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.zipWith">scalaz.stream.Process.zipWith</span> on resulting stream *</p>
     </li><li name="scalaz.stream.mongodb.channel.ChannelResult#|&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="|&gt;[B](p2:scalaz.stream.Process.Process1[A,B]):scalaz.stream.mongodb.channel.ChannelResult[R,B]"></a>
-      <a id="|&gt;[B](Process1[A,B]):ChannelResult[R,B]"></a>
+      <a id="|&gt;[B](Process.Process1[A,B]):ChannelResult[R,B]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $bar$greater" class="name">|&gt;</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="p2">p2: <span class="extype" name="scalaz.stream.Process.Process1">Process1</span>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.|&gt;.B">B</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.|&gt;.B">B</span>]</span>
+        <span title="gt4s: $bar$greater" class="name">|&gt;</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="p2">p2: <span class="extype" name="scalaz.stream.Process.Process1">Process.Process1</span>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.A">A</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.|&gt;.B">B</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.R">R</span>, <span class="extype" name="scalaz.stream.mongodb.channel.ChannelResult.|&gt;.B">B</span>]</span>
       </span>
       </h4>
       <p class="shortcomment cmt">applies <span class="extype" name="scalaz.stream.Process.pipe">scalaz.stream.Process.pipe</span> on resulting stream *</p>

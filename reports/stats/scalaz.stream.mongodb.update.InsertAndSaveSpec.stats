@@ -1,1 +1,66 @@
 <scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1380520988675"><stats time="4809" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1380613835980"><stats time="6057" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1380613874528"><stats time="4102" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1380613993223"><stats time="587" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1380614315495"><stats time="794" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1380690029371"><stats time="1088" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1380690121121"><stats time="2038" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-results timestamp="1380812208943"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-1674176388"><stats time="755" expectations="1" failures="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.update.InsertAndSaveSpec-results>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1380812208963"><stats time="981" expectations="3" failures="1" successes="2" examples="3"><trend><stats time="981" expectations="1" failures="1" examples="1"></stats></trend></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-results timestamp="1380812235078"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-1674176388"><stats time="699" expectations="1" failures="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.update.InsertAndSaveSpec-results>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1380812235101"><stats time="921" expectations="3" failures="1" successes="2" examples="3"></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-results timestamp="1380812265687"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-1674176388"><stats time="674" expectations="1" failures="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.update.InsertAndSaveSpec-results>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1380812265714"><stats time="864" expectations="3" failures="1" successes="2" examples="3"></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1380812327691"><stats time="909" expectations="3" successes="3" examples="3"><trend><stats time="909" failures="-1" successes="1"></stats></trend></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1380813034263"><stats time="1250" expectations="3" successes="3" examples="3"></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-results timestamp="1380816067498"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-1674176388"><stats time="1021" expectations="1" errors="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.update.InsertAndSaveSpec-results>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1380816067545"><stats time="1431" expectations="3" errors="1" successes="2" examples="3"><trend><stats time="1431" errors="1" successes="-1"></stats></trend></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-results timestamp="1380816067871"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-1674176388"><stats time="836" expectations="1" errors="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.update.InsertAndSaveSpec-results>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1380816067901"><stats time="1791" expectations="3" errors="1" successes="2" examples="3"></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-results timestamp="1380816165153"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-1674176388"><stats time="722" expectations="1" errors="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.update.InsertAndSaveSpec-results>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1380816165183"><stats time="932" expectations="3" errors="1" successes="2" examples="3"></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-results timestamp="1380816219906"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-1674176388"><stats time="749" expectations="1" errors="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.update.InsertAndSaveSpec-results>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1380816219937"><stats time="969" expectations="3" errors="1" successes="2" examples="3"></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-results timestamp="1380816253836"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-1674176388"><stats time="719" expectations="1" errors="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.update.InsertAndSaveSpec-results>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1380816253868"><stats time="941" expectations="3" errors="1" successes="2" examples="3"></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-results timestamp="1380816300183"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-1674176388"><stats time="726" expectations="1" errors="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.update.InsertAndSaveSpec-results>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1380816300217"><stats time="1184" expectations="3" errors="1" successes="2" examples="3"></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-results timestamp="1380818800229"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-1674176388"><stats time="2420639" expectations="1" errors="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.update.InsertAndSaveSpec-results>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1380818800266"><stats time="2420882" expectations="3" errors="1" successes="2" examples="3"></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1380819251123"><stats time="733" expectations="1" successes="1" examples="1"><trend><stats time="733" expectations="-2" errors="-1" successes="-1" examples="-2"></stats></trend></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1380819291245"><stats time="601" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1380819386082"><stats time="696" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1380819959944"><stats time="760" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1380820001822"><stats time="560" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1380820058375"><stats time="545" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1380820127586"><stats time="547" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1380820153779"><stats time="617" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1380820175892"><stats time="596" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1380820222319"><stats time="633" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1380820260568"><stats time="537" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1380820278117"><stats time="560" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1380820554661"><stats time="695" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1380820577330"><stats time="916" expectations="3" successes="3" examples="3"><trend><stats time="916" expectations="2" successes="2" examples="2"></stats></trend></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-results timestamp="1380975509956"><result location="scalaz.stream.mongodb.MongoSpecificationBase (MongoSpecification.scala:97)" id="1223730100"><stats time="35" expectations="1" errors="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-115329759"><stats time="2" expectations="1" skipped="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="114381228"><stats expectations="1" skipped="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-1674176388"><stats expectations="1" skipped="1" examples="1"></stats></result>
+<result location="scalaz.stream.mongodb.MongoSpecificationBase (MongoSpecification.scala:100)" id="-1100313156"><stats expectations="1" skipped="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.update.InsertAndSaveSpec-results>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1380975509983"><stats time="68" expectations="5" errors="1" skipped="4" examples="5"><trend><stats time="68" expectations="2" errors="1" skipped="4" successes="-3" examples="2"></stats></trend></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1380975880362"><stats time="3604" expectations="3" successes="3" examples="3"><trend><stats time="3604" expectations="-2" errors="-1" skipped="-4" successes="3" examples="-2"></stats></trend></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1380976116430"><stats time="178485" expectations="3" successes="3" examples="3"></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1380985274668"><stats time="214570" expectations="3" successes="3" examples="3"></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1381379848154"><stats time="1794" expectations="3" successes="3" examples="3"></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1381379999645"><stats time="2132" expectations="3" successes="3" examples="3"></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1381380483194"><stats time="721" expectations="3" successes="3" examples="3"></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>

@@ -67,7 +67,7 @@
     </head><body><div class="colmask threecol">
             <div class="colmid">
               <div class="colleft">
-                <div class="col1"><div id="central"><html><title>Mongodb filesystem usage</title><a name="Mongodb+filesystem+usage"><h2 specId="1929370935">Mongodb filesystem usage</h2></a><status class="ok"><div style="display: show; text-indent:5px;"><p>Mongo streams allow simple usage of mongodb GridFS. Files can be listed, read, written and combined with<br />other scalaz-stream processes.</p><p>Similarly with collection queries, the binding of GridFS to actual database where the files are stored is<br />delayed up to the very last time. This allows for great reuse of code and nice abstraction.</p><a name="Filesystem"><h3>Filesystem</h3></a><p>Initial construct of Mongo Streams is the <code class="prettyprint">filesystem</code> construct. It references to mongodb<code class="prettyprint">s filesystem (or bucket). 
+                <div class="col1"><div id="central"><html><title>Mongodb filesystem usage</title><a name="Mongodb+filesystem+usage"><h2 specId="1055328655">Mongodb filesystem usage</h2></a><status class="ok"><div style="display: show; text-indent:5px;"><p>Mongo streams allow simple usage of mongodb GridFS. Files can be listed, read, written and combined with<br />other scalaz-stream processes.</p><p>Similarly with collection queries, the binding of GridFS to actual database where the files are stored is<br />delayed up to the very last time. This allows for great reuse of code and nice abstraction.</p><a name="Filesystem"><h3>Filesystem</h3></a><p>Initial construct of Mongo Streams is the <code class="prettyprint">filesystem</code> construct. It references to mongodb<code class="prettyprint">s filesystem (or bucket). 
 Default name of this filesystem is</code>fs`. To specify filesystem following constructs are available : </p>
 <pre><code class="prettyprint">val defaultFilesystem = filesystem(filesDb)
 
@@ -100,7 +100,7 @@ Default name of this filesystem is</code>fs`. To specify filesystem following co
 
     val filesWithRegex = list files (&quot;filename&quot; regex &quot;report.*&quot;)
     val olderFiles = list files (&quot;uploadDate&quot; &lt;= new Date)
-</code></pre><p>Please see more in </p></div></status><subtoc specId="684973607"></subtoc><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <a href="scalaz.stream.mongodb.filesystem.FSListSpec.html" tooltip="">Listing files in filesystem</a></div></status><status class="ok"><div style="display: show; text-indent:0px;"><p>. </p><a name="Reading+from+files"><h3>Reading from files</h3></a><p>Reading is an action on the returned list of files. There are two possible variants of reading. Files are either<br />read directly (first file matching the list) or process with result of reading the files is returned to allow for<br />reading multiple files:</p>
+</code></pre><p>Please see more in </p></div></status><subtoc specId="1971689579"></subtoc><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <a href="scalaz.stream.mongodb.filesystem.FSListSpec.html" tooltip="">Listing files in filesystem</a></div></status><status class="ok"><div style="display: show; text-indent:0px;"><p>. </p><a name="Reading+from+files"><h3>Reading from files</h3></a><p>Reading is an action on the returned list of files. There are two possible variants of reading. Files are either<br />read directly (first file matching the list) or process with result of reading the files is returned to allow for<br />reading multiple files:</p>
 <pre><code class="prettyprint">val fileId: ObjectId = ???
 
     val readSingleFile = list withId (fileId) and readFile()
@@ -117,7 +117,7 @@ Default name of this filesystem is</code>fs`. To specify filesystem following co
     ((allFiles |&gt; filter { case (file, _) =&gt; file.length &gt; 100 }).map(v =&gt; v._2).join): Process[Task, Bytes]
 </code></pre><p>Please note that read operation recycles the inner array object on every read attempt. The object is encapsulated<br />within <code class="prettyprint">scalaz.stream.Bytes</code> primitive and underlying array must not be mutated. It is safe however to call at<br />any time <code class="prettyprint">toArray</code> method that will allocate <code class="prettyprint">Array[Byte]</code>.</p><p>If there is need to specify custom size of read buffer (default is == <code class="prettyprint">com.mongodb.gridfs.GridFS.DEFAULT_CHUNKSIZE</code>)<br />you can pass this to <code class="prettyprint">read</code> command as argument:</p></div></status><status class="ok"><div style="display: show; text-indent:0px;"><pre><code class="prettyprint">//specify read buffer of 1024 bytes
     val customRead = filesystem(filesDb) through (list files() and readFile(1024))
-</code></pre><p>Please see more in </p></div></status><subtoc specId="2091755165"></subtoc><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <a href="scalaz.stream.mongodb.filesystem.FSReadSpec.html" tooltip="">Reading files in filesystem</a></div></status><status class="ok"><div style="display: show; text-indent:0px;"><p>. </p><a name="Writing+to+files"><h3>Writing to files</h3></a><p>In order to write file to filesystem, the Mongo Streams library builds the Sink, that can be used to write any source of<br />Bytes. File to which data will be written needs to be specified with <code class="prettyprint">file()</code> command : </p>
+</code></pre><p>Please see more in </p></div></status><subtoc specId="1519900547"></subtoc><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <a href="scalaz.stream.mongodb.filesystem.FSReadSpec.html" tooltip="">Reading files in filesystem</a></div></status><status class="ok"><div style="display: show; text-indent:0px;"><p>. </p><a name="Writing+to+files"><h3>Writing to files</h3></a><p>In order to write file to filesystem, the Mongo Streams library builds the Sink, that can be used to write any source of<br />Bytes. File to which data will be written needs to be specified with <code class="prettyprint">file()</code> command : </p>
 <pre><code class="prettyprint">//creates file named `foo.txt` with supplied ObjectId. Please note `id` must be unique in given filesystem
     file(&quot;foo.txt&quot;, id = new ObjectId)
 
@@ -132,23 +132,23 @@ Default name of this filesystem is</code>fs`. To specify filesystem following co
     val readBuffer = new Array[Byte](1024 * 1024)
 
     //read from one file (inputstream) and write to single file 
-    (Process.wrap(Task.now(readBuffer)) through unsafeChunkR(fileSource)) to (filesystem(filesDb) using writeToFile)
-</code></pre><p>Please see more in </p></div></status><subtoc specId="321765042"></subtoc><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <a href="scalaz.stream.mongodb.filesystem.FSWriteSpec.html" tooltip="">Writing files to filesystem</a></div></status><status class="ok"><div style="display: show; text-indent:0px;"><p>. </p><a name="Deleting+files"><h3>Deleting files</h3></a><p>Files can be removed from filesystem by using delete command. </p></div></status><status class="ok"><div style="display: show; text-indent:0px;"><pre><code class="prettyprint">// deletes all files that matches the query
+    (Process.eval(Task.now(readBuffer)) through unsafeChunkR(fileSource)).map(Bytes(_)) to (filesystem(filesDb) using writeToFile)
+</code></pre><p>Please see more in </p></div></status><subtoc specId="1198086230"></subtoc><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <a href="scalaz.stream.mongodb.filesystem.FSWriteSpec.html" tooltip="">Writing files to filesystem</a></div></status><status class="ok"><div style="display: show; text-indent:0px;"><p>. </p><a name="Deleting+files"><h3>Deleting files</h3></a><p>Files can be removed from filesystem by using delete command. </p></div></status><status class="ok"><div style="display: show; text-indent:0px;"><pre><code class="prettyprint">// deletes all files that matches the query
     filesystem(filesDb) through (list named (&quot;old&quot;) and removeFile)
 
     // provides process that allows to run delete for each file in query
     filesystem(filesDb) through (list named (&quot;old&quot;) foreach removeFile)
-</code></pre><p>Please see more in </p></div></status><subtoc specId="474969872"></subtoc><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <a href="scalaz.stream.mongodb.filesystem.FSDeleteSpec.html" tooltip="">Removing files to filesystem</a></div></status><status class="ok"><div style="display: show; text-indent:0px;"><p>. </p></div></status><status class="ok"><br /></status><table class="dataTable">
+</code></pre><p>Please see more in </p></div></status><subtoc specId="678887084"></subtoc><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <a href="scalaz.stream.mongodb.filesystem.FSDeleteSpec.html" tooltip="">Removing files to filesystem</a></div></status><status class="ok"><div style="display: show; text-indent:0px;"><p>. </p></div></status><status class="ok"><br /></status><table class="dataTable">
         <tr><th colSpan="2">Total for specification GridFSUsageSpec</th></tr>
-        <tr><td>Finished in</td><td class="info">11 seconds, 649 ms</td></tr>
+        <tr><td>Finished in</td><td class="info">10 seconds, 89 ms</td></tr>
         <tr><td>Results</td><td class="success">16 examples, 0 failure, 0 error, 1 pending</td></tr>
       </table></html></div></div>
                 <div class="col2"><div id="leftcolumn"><div id="tree">
-      <ul><li id="1929370935"><a href="scalaz.stream.mongodb.userguide.GridFSUsageSpec.html#Mongodb+filesystem+usage">Mongodb filesystem usage</a>
+      <ul><li id="1055328655"><a href="scalaz.stream.mongodb.userguide.GridFSUsageSpec.html#Mongodb+filesystem+usage">Mongodb filesystem usage</a>
             <ul><li id=""><a href="scalaz.stream.mongodb.userguide.GridFSUsageSpec.html#Filesystem">Filesystem</a>
             
           </li><li id=""><a href="scalaz.stream.mongodb.userguide.GridFSUsageSpec.html#Listing+files">Listing files</a>
-            <ul><li id="684973607"><a href="scalaz.stream.mongodb.filesystem.FSListSpec.html#Listing+files+in+filesystem">Listing files in filesystem</a>
+            <ul><li id="1971689579"><a href="scalaz.stream.mongodb.filesystem.FSListSpec.html#Listing+files+in+filesystem">Listing files in filesystem</a>
             <ul><li id=""><a href="scalaz.stream.mongodb.filesystem.FSListSpec.html#Basic+lists">Basic lists</a>
             
           </li><li id=""><a href="scalaz.stream.mongodb.filesystem.FSListSpec.html#Complex+queries">Complex queries</a>
@@ -160,7 +160,7 @@ Default name of this filesystem is</code>fs`. To specify filesystem following co
           </li></ul>
           </li></ul>
           </li><li id=""><a href="scalaz.stream.mongodb.userguide.GridFSUsageSpec.html#Reading+from+files">Reading from files</a>
-            <ul><li id="2091755165"><a href="scalaz.stream.mongodb.filesystem.FSReadSpec.html#Reading+files+in+filesystem">Reading files in filesystem</a>
+            <ul><li id="1519900547"><a href="scalaz.stream.mongodb.filesystem.FSReadSpec.html#Reading+files+in+filesystem">Reading files in filesystem</a>
             <ul><li id=""><a href="scalaz.stream.mongodb.filesystem.FSReadSpec.html#Reading+single+file">Reading single file</a>
             
           </li><li id=""><a href="scalaz.stream.mongodb.filesystem.FSReadSpec.html#Reading+multiple+files">Reading multiple files</a>
@@ -170,7 +170,7 @@ Default name of this filesystem is</code>fs`. To specify filesystem following co
           </li></ul>
           </li></ul>
           </li><li id=""><a href="scalaz.stream.mongodb.userguide.GridFSUsageSpec.html#Writing+to+files">Writing to files</a>
-            <ul><li id="321765042"><a href="scalaz.stream.mongodb.filesystem.FSWriteSpec.html#Writing+files+to+filesystem">Writing files to filesystem</a>
+            <ul><li id="1198086230"><a href="scalaz.stream.mongodb.filesystem.FSWriteSpec.html#Writing+files+to+filesystem">Writing files to filesystem</a>
             
           </li><li id=""><a href="scalaz.stream.mongodb.filesystem.FSWriteSpec.html#File+syntax">File syntax</a>
             
@@ -178,12 +178,12 @@ Default name of this filesystem is</code>fs`. To specify filesystem following co
             
           </li></ul>
           </li><li id=""><a href="scalaz.stream.mongodb.userguide.GridFSUsageSpec.html#Deleting+files">Deleting files</a>
-            <ul><li id="474969872"><a href="scalaz.stream.mongodb.filesystem.FSDeleteSpec.html#Removing+files+to+filesystem">Removing files to filesystem</a>
+            <ul><li id="678887084"><a href="scalaz.stream.mongodb.filesystem.FSDeleteSpec.html#Removing+files+to+filesystem">Removing files to filesystem</a>
             
           </li></ul>
           </li></ul>
           </li></ul>
-      <script>$(function () {  $('#tree').jstree({'core':{'initially_open':['1929370935','1929370935'], 'animation':200}, 'plugins':['themes', 'html_data']}); });</script>
+      <script>$(function () {  $('#tree').jstree({'core':{'initially_open':['1055328655','1055328655'], 'animation':200}, 'plugins':['themes', 'html_data']}); });</script>
     </div></div></div>
                 <div class="col3"><div id="rightcolumn"></div></div>
               </div>

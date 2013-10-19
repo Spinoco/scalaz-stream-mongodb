@@ -67,7 +67,7 @@
     </head><body><div id="breadcrumbs"><a href="scalaz.stream.mongodb.userguide.GridFSUsageSpec.html">GridFSUsageSpec</a><t> / </t><a href="scalaz.stream.mongodb.filesystem.FSReadSpec.html">FSReadSpec</a></div><div class="colmask threecol">
             <div class="colmid">
               <div class="colleft">
-                <div class="col1"><div id="central"><html><title>Reading files in filesystem</title><a name="Reading+files+in+filesystem"><h2 specId="2091755165">Reading files in filesystem</h2></a><status class="ok"><p></p></status><status class="ok"><p></p></status><status class="ok"><div style="display: show; text-indent:20px;"><p>Files are read from the filesystem in chunks of <code class="prettyprint">Bytes</code> that are configurable and defaults to <code class="prettyprint">GridFS.DEFAULT_CHUNKSIZE</code> size.<br />Provided <code class="prettyprint">Bytes</code> internally recycles array of bytes read. The reading of the files is always based on first listing (or querying)<br />the files in filesystem and then either applying the read operation fro all results or only for the first result returned. </p><a name="Reading+single+file"><h3>Reading single file</h3></a><p>Reading single file provides syntax sugar that will result in <code class="prettyprint">Process[Task,Bytes]</code> signature once applied.<br />Please see examples below:</p>
+                <div class="col1"><div id="central"><html><title>Reading files in filesystem</title><a name="Reading+files+in+filesystem"><h2 specId="1519900547">Reading files in filesystem</h2></a><status class="ok"><p></p></status><status class="ok"><p></p></status><status class="ok"><div style="display: show; text-indent:20px;"><p>Files are read from the filesystem in chunks of <code class="prettyprint">Bytes</code> that are configurable and defaults to <code class="prettyprint">GridFS.DEFAULT_CHUNKSIZE</code> size.<br />Provided <code class="prettyprint">Bytes</code> internally recycles array of bytes read. The reading of the files is always based on first listing (or querying)<br />the files in filesystem and then either applying the read operation for all results or only for the first result returned. </p><a name="Reading+single+file"><h3>Reading single file</h3></a><p>Reading single file provides syntax sugar that will result in <code class="prettyprint">Process[Task,Bytes]</code> signature once applied.<br />Please see examples below:</p>
 <ul>
   <li>Reading single file with default buffer size :</li>
 </ul></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">list withId (fileId) and readFile()</code><br /></div></status><status class="ok"><div style="display: show; text-indent:0px;"><ul>
@@ -77,22 +77,22 @@
 </ul></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">list withId (fileId) and readFile()</code><br /></div></status><status class="ok"><div style="display: show; text-indent:20px;"><p>All the above examples can be later applied to gridfs by following syntax : </p><p><code class="prettyprint">filesystem(fileDb) through (list withId (fileId) and readFile()): Process[Task, Bytes]</code> </p><a name="Reading+multiple+files"><h3>Reading multiple files</h3></a><p>When reading over multiple files, instead of directly returning the process that reads all files, Mongo Streams return<br />tuple of <code class="prettyprint">(MongoReadFile,Process[Task,Byte])</code> to eventually separate read content of files from each other. </p><p>Following example reads the files starting their name with <code class="prettyprint">a</code> and concatenates their content<br />(splits chunk reads by new line), that will be separated with name of the file : </p></div></status><status class="ok"><div style="display: show; text-indent:0px;"><pre><code class="prettyprint">def readFiles =
         (list files (&quot;filename&quot; regex &quot;a.*&quot;) foreach (readFile())) flatMapProcess {
           case (file, reader) =&gt;
-            Process.wrap(Task.now(&quot;content of: &quot; + file.name + &quot;\n&quot;)) ++ reader.map(bytes =&gt; new String(bytes.toArray))
+            Process.eval(Task.now(&quot;content of: &quot; + file.name + &quot;\n&quot;)) ++ reader.map(bytes =&gt; new String(bytes.toArray))
 
         }
 
-      val output: Seq[String] = (filesystem(fileDb) through readFiles).collect.run
+      val output: Seq[String] = (filesystem(fileDb) through readFiles).runLog.run
 </code></pre><a name="Additional+verifications"><h4>Additional verifications</h4></a></div></status><status class="ok"><div style="display: show; text-indent:35px;"><img src="./images/icon_success_sml.gif" /> * Large file is correctly split into chunks<br /></div></status><status class="ok"><div style="display: show; text-indent:35px;"></div></status><status class="ok"><div style="display: show; text-indent:35px;"><img src="./images/icon_success_sml.gif" /> * Empty file is correctly read<br /></div></status><status class="ok"><div style="display: show; text-indent:10px;"></div></status><status class="ok"><div style="display: show; text-indent:10px;"><img src="./images/icon_success_sml.gif" /> * Reads multiple files<br /></div></status><status class="ok"><div style="display: show; text-indent:35px;"></div></status><status class="ok"><br /></status><table class="dataTable">
         <tr><th colSpan="2">Total for specification FSReadSpec</th></tr>
-        <tr><td>Finished in</td><td class="info">1 second, 862 ms</td></tr>
+        <tr><td>Finished in</td><td class="info">2 seconds, 946 ms</td></tr>
         <tr><td>Results</td><td class="success">6 examples, 0 failure, 0 error</td></tr>
       </table></html></div></div>
                 <div class="col2"><div id="leftcolumn"><div id="tree">
-      <ul><li id="1929370935"><a href="scalaz.stream.mongodb.userguide.GridFSUsageSpec.html#Mongodb+filesystem+usage">Mongodb filesystem usage</a>
+      <ul><li id="1055328655"><a href="scalaz.stream.mongodb.userguide.GridFSUsageSpec.html#Mongodb+filesystem+usage">Mongodb filesystem usage</a>
             <ul><li id=""><a href="scalaz.stream.mongodb.userguide.GridFSUsageSpec.html#Filesystem">Filesystem</a>
             
           </li><li id=""><a href="scalaz.stream.mongodb.userguide.GridFSUsageSpec.html#Listing+files">Listing files</a>
-            <ul><li id="684973607"><a href="scalaz.stream.mongodb.filesystem.FSListSpec.html#Listing+files+in+filesystem">Listing files in filesystem</a>
+            <ul><li id="1971689579"><a href="scalaz.stream.mongodb.filesystem.FSListSpec.html#Listing+files+in+filesystem">Listing files in filesystem</a>
             <ul><li id=""><a href="scalaz.stream.mongodb.filesystem.FSListSpec.html#Basic+lists">Basic lists</a>
             
           </li><li id=""><a href="scalaz.stream.mongodb.filesystem.FSListSpec.html#Complex+queries">Complex queries</a>
@@ -104,7 +104,7 @@
           </li></ul>
           </li></ul>
           </li><li id=""><a href="scalaz.stream.mongodb.userguide.GridFSUsageSpec.html#Reading+from+files">Reading from files</a>
-            <ul><li id="2091755165"><a href="scalaz.stream.mongodb.filesystem.FSReadSpec.html#Reading+files+in+filesystem">Reading files in filesystem</a>
+            <ul><li id="1519900547"><a href="scalaz.stream.mongodb.filesystem.FSReadSpec.html#Reading+files+in+filesystem">Reading files in filesystem</a>
             <ul><li id=""><a href="scalaz.stream.mongodb.filesystem.FSReadSpec.html#Reading+single+file">Reading single file</a>
             
           </li><li id=""><a href="scalaz.stream.mongodb.filesystem.FSReadSpec.html#Reading+multiple+files">Reading multiple files</a>
@@ -114,7 +114,7 @@
           </li></ul>
           </li></ul>
           </li><li id=""><a href="scalaz.stream.mongodb.userguide.GridFSUsageSpec.html#Writing+to+files">Writing to files</a>
-            <ul><li id="321765042"><a href="scalaz.stream.mongodb.filesystem.FSWriteSpec.html#Writing+files+to+filesystem">Writing files to filesystem</a>
+            <ul><li id="1198086230"><a href="scalaz.stream.mongodb.filesystem.FSWriteSpec.html#Writing+files+to+filesystem">Writing files to filesystem</a>
             
           </li><li id=""><a href="scalaz.stream.mongodb.filesystem.FSWriteSpec.html#File+syntax">File syntax</a>
             
@@ -122,12 +122,12 @@
             
           </li></ul>
           </li><li id=""><a href="scalaz.stream.mongodb.userguide.GridFSUsageSpec.html#Deleting+files">Deleting files</a>
-            <ul><li id="474969872"><a href="scalaz.stream.mongodb.filesystem.FSDeleteSpec.html#Removing+files+to+filesystem">Removing files to filesystem</a>
+            <ul><li id="678887084"><a href="scalaz.stream.mongodb.filesystem.FSDeleteSpec.html#Removing+files+to+filesystem">Removing files to filesystem</a>
             
           </li></ul>
           </li></ul>
           </li></ul>
-      <script>$(function () {  $('#tree').jstree({'core':{'initially_open':['1929370935','2091755165'], 'animation':200}, 'plugins':['themes', 'html_data']}); });</script>
+      <script>$(function () {  $('#tree').jstree({'core':{'initially_open':['1055328655','1519900547'], 'animation':200}, 'plugins':['themes', 'html_data']}); });</script>
     </div></div></div>
                 <div class="col3"><div id="rightcolumn"></div></div>
               </div>

@@ -2,17 +2,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>UpdateWriteResult - scalaz.stream.mongodb.update.UpdateWriteResult</title>
-          <meta name="description" content="UpdateWriteResult - scalaz.stream.mongodb.update.UpdateWriteResult" />
-          <meta name="keywords" content="UpdateWriteResult scalaz.stream.mongodb.update.UpdateWriteResult" />
+          <title>MongoVersion - scalaz.stream.mongodb.MongoVersion</title>
+          <meta name="description" content="MongoVersion - scalaz.stream.mongodb.MongoVersion" />
+          <meta name="keywords" content="MongoVersion scalaz.stream.mongodb.MongoVersion" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
-      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
-      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
       <script type="text/javascript">
          if(top === self) {
-            var url = '../../../../index.html';
-            var hash = 'scalaz.stream.mongodb.update.UpdateWriteResult';
+            var url = '../../../index.html';
+            var hash = 'scalaz.stream.mongodb.MongoVersion';
             var anchor = window.location.hash;
             var anchor_opt = '';
             if (anchor.length >= 1)
@@ -24,9 +24,9 @@
         </head>
         <body class="type">
       <div id="definition">
-        <img src="../../../../lib/class_big.png" />
-        <p id="owner"><a href="../../../package.html" class="extype" name="scalaz">scalaz</a>.<a href="../../package.html" class="extype" name="scalaz.stream">stream</a>.<a href="../package.html" class="extype" name="scalaz.stream.mongodb">mongodb</a>.<a href="package.html" class="extype" name="scalaz.stream.mongodb.update">update</a></p>
-        <h1>UpdateWriteResult</h1>
+        <img src="../../../lib/class_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="scalaz">scalaz</a>.<a href="../package.html" class="extype" name="scalaz.stream">stream</a>.<a href="package.html" class="extype" name="scalaz.stream.mongodb">mongodb</a></p>
+        <h1>MongoVersion</h1>
       </div>
 
       <h4 id="signature" class="signature">
@@ -35,14 +35,14 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">UpdateWriteResult</span><span class="params">(<span name="n">n: <span class="extype" name="scala.Int">Int</span></span>, <span name="errorMessage">errorMessage: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="serverUri">serverUri: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result"> extends <a href="WriteResult.html" class="extype" name="scalaz.stream.mongodb.update.WriteResult">WriteResult</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">MongoVersion</span><span class="params">(<span name="version">version: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="architecture">architecture: <a href="MongoArchitecture$.html#ValueextendsOrdered[Enumeration.this.Value]withSerializable" class="extmbr" name="scalaz.stream.mongodb.MongoArchitecture.Value">MongoArchitecture.Value</a> = <span class="symbol">MongoArchitecture.Default</span></span>, <span name="nightly">nightly: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Result of write operation as returned when updating the document</p></div><dl class="paramcmts block"><dt class="param">n</dt><dd class="cmt"><p>documents affected</p></dd><dt class="param">errorMessage</dt><dd class="cmt"><p>Message in case the operation was not successful</p></dd><dt class="param">serverUri</dt><dd class="cmt"><p>uri of server where request was executed
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Version of Mongodb library to use for execution and download.</p></div><dl class="paramcmts block"><dt class="param">version</dt><dd class="cmt"><p>Version to download.</p></dd><dt class="param">architecture</dt><dd class="cmt"><p>Binary version of library. May not be available on certain OS combinations</p></dd><dt class="param">nightly</dt><dd class="cmt"><p>Download nightly build of version
 </p></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.Product">Product</span>, <span class="extype" name="scala.Equals">Equals</span>, <a href="WriteResult.html" class="extype" name="scalaz.stream.mongodb.update.WriteResult">WriteResult</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.Product">Product</span>, <span class="extype" name="scala.Equals">Equals</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -60,7 +60,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="scalaz.stream.mongodb.update.UpdateWriteResult"><span>UpdateWriteResult</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="scalaz.stream.mongodb.update.WriteResult"><span>WriteResult</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="scalaz.stream.mongodb.MongoVersion"><span>MongoVersion</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -80,24 +80,40 @@
         <div id="allMembers">
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
-              <ol><li name="scalaz.stream.mongodb.update.UpdateWriteResult#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;init&gt;(n:Int,errorMessage:Option[String],serverUri:Option[String]):scalaz.stream.mongodb.update.UpdateWriteResult"></a>
-      <a id="&lt;init&gt;:UpdateWriteResult"></a>
+              <ol><li name="scalaz.stream.mongodb.MongoVersion#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="&lt;init&gt;(version:String,architecture:scalaz.stream.mongodb.MongoArchitecture.Value,nightly:Boolean):scalaz.stream.mongodb.MongoVersion"></a>
+      <a id="&lt;init&gt;:MongoVersion"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">UpdateWriteResult</span><span class="params">(<span name="n">n: <span class="extype" name="scala.Int">Int</span></span>, <span name="errorMessage">errorMessage: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="serverUri">serverUri: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span>
+        <span class="name">MongoVersion</span><span class="params">(<span name="version">version: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="architecture">architecture: <a href="MongoArchitecture$.html#ValueextendsOrdered[Enumeration.this.Value]withSerializable" class="extmbr" name="scalaz.stream.mongodb.MongoArchitecture.Value">MongoArchitecture.Value</a> = <span class="symbol">MongoArchitecture.Default</span></span>, <span name="nightly">nightly: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>)</span>
       </span>
       </h4>
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">n</dt><dd class="cmt"><p>documents affected</p></dd><dt class="param">errorMessage</dt><dd class="cmt"><p>Message in case the operation was not successful</p></dd><dt class="param">serverUri</dt><dd class="cmt"><p>uri of server where request was executed
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">version</dt><dd class="cmt"><p>Version to download.</p></dd><dt class="param">architecture</dt><dd class="cmt"><p>Binary version of library. May not be available on certain OS combinations</p></dd><dt class="param">nightly</dt><dd class="cmt"><p>Download nightly build of version
 </p></dd></dl></div>
     </li></ol>
             </div>
 
-        
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scalaz.stream.mongodb.MongoVersion.Regex" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RegexextendsAnyRef"></a>
+      <a id="Regex:Regex"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="MongoVersion$Regex.html"><span class="name">Regex</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      
+    </li></ol>
+            </div>
 
         
 
@@ -168,6 +184,19 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scalaz.stream.mongodb.MongoVersion#architecture" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="architecture:scalaz.stream.mongodb.MongoArchitecture.Value"></a>
+      <a id="architecture:MongoArchitecture.Value"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">architecture</span><span class="result">: <a href="MongoArchitecture$.html#ValueextendsOrdered[Enumeration.this.Value]withSerializable" class="extmbr" name="scalaz.stream.mongodb.MongoArchitecture.Value">MongoArchitecture.Value</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Binary version of library.</p><div class="fullcomment"><div class="comment cmt"><p>Binary version of library. May not be available on certain OS combinations</p></div></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -193,13 +222,26 @@
         <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
       <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="scalaz.stream.mongodb.MongoVersion#downloadPath" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="downloadPath:java.net.URI"></a>
+      <a id="downloadPath:URI"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">downloadPath</span><span class="result">: <span class="extype" name="java.net.URI">URI</span></span>
+      </span>
+      </h4>
+      
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a>
       <a id="eq(AnyRef):Boolean"></a>
@@ -213,19 +255,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.update.UpdateWriteResult#errorMessage" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="errorMessage:Option[String]"></a>
-      <a id="errorMessage:Option[String]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">errorMessage</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Message in case the operation was not successful</p><div class="fullcomment"><div class="comment cmt"><p>Message in case the operation was not successful</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scalaz.stream.mongodb.update.UpdateWriteResult">UpdateWriteResult</a> → <a href="WriteResult.html" class="extype" name="scalaz.stream.mongodb.update.WriteResult">WriteResult</a></dd></dl></div>
     </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <a id="finalize():Unit"></a>
@@ -238,7 +267,7 @@
         <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
       <span class="symbol">classOf[java.lang.Throwable]</span>
@@ -271,19 +300,32 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.update.UpdateWriteResult#n" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="n:Int"></a>
-      <a id="n:Int"></a>
+    </li><li name="scalaz.stream.mongodb.MongoVersion#localFileDirName" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="localFileDirName:String"></a>
+      <a id="localFileDirName:String"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">val</span>
+        <span class="kind">lazy val</span>
       </span>
       <span class="symbol">
-        <span class="name">n</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+        <span class="name">localFileDirName</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">documents affected</p><div class="fullcomment"><div class="comment cmt"><p>documents affected</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scalaz.stream.mongodb.update.UpdateWriteResult">UpdateWriteResult</a> → <a href="WriteResult.html" class="extype" name="scalaz.stream.mongodb.update.WriteResult">WriteResult</a></dd></dl></div>
+      
+    </li><li name="scalaz.stream.mongodb.MongoVersion#localFileName" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="localFileName:String"></a>
+      <a id="localFileName:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">localFileName</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>
@@ -297,6 +339,20 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scalaz.stream.mongodb.MongoVersion#nightly" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="nightly:Boolean"></a>
+      <a id="nightly:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">nightly</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Download nightly build of version
+</p>
     </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notify():Unit"></a>
       <a id="notify():Unit"></a>
@@ -323,34 +379,32 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.update.UpdateWriteResult#ok" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="ok:Boolean"></a>
-      <a id="ok:Boolean"></a>
+    </li><li name="scalaz.stream.mongodb.MongoVersion#osName" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="osName:String"></a>
+      <a id="osName:String"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">val</span>
+        <span class="kind">lazy val</span>
       </span>
       <span class="symbol">
-        <span class="name">ok</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+        <span class="name">osName</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scalaz.stream.mongodb.update.UpdateWriteResult">UpdateWriteResult</a> → <a href="WriteResult.html" class="extype" name="scalaz.stream.mongodb.update.WriteResult">WriteResult</a></dd></dl></div>
-    </li><li name="scalaz.stream.mongodb.update.UpdateWriteResult#serverUri" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="serverUri:Option[String]"></a>
-      <a id="serverUri:Option[String]"></a>
+      
+    </li><li name="scalaz.stream.mongodb.MongoVersion#osSuffix" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="osSuffix:String"></a>
+      <a id="osSuffix:String"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">val</span>
+        <span class="kind">lazy val</span>
       </span>
       <span class="symbol">
-        <span class="name">serverUri</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+        <span class="name">osSuffix</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">uri of server where request was executed
-</p><div class="fullcomment"><div class="comment cmt"><p>uri of server where request was executed
-</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scalaz.stream.mongodb.update.UpdateWriteResult">UpdateWriteResult</a> → <a href="WriteResult.html" class="extype" name="scalaz.stream.mongodb.update.WriteResult">WriteResult</a></dd></dl></div>
+      
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>
@@ -364,6 +418,19 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scalaz.stream.mongodb.MongoVersion#version" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="version:String"></a>
+      <a id="version:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">version</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Version to download.</p>
     </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <a id="wait():Unit"></a>
@@ -438,8 +505,6 @@
               <h3>Inherited from <span class="extype" name="scala.Product">Product</span></h3>
             </div><div class="parent" name="scala.Equals">
               <h3>Inherited from <span class="extype" name="scala.Equals">Equals</span></h3>
-            </div><div class="parent" name="scalaz.stream.mongodb.update.WriteResult">
-              <h3>Inherited from <a href="WriteResult.html" class="extype" name="scalaz.stream.mongodb.update.WriteResult">WriteResult</a></h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">
@@ -460,6 +525,6 @@
       <div id="tooltip"></div>
 
       <div id="footer">  </div>
-      <script defer="defer" type="text/javascript" id="jquery-js" src="../../../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../../../lib/template.js"></script>
+      <script defer="defer" type="text/javascript" id="jquery-js" src="../../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../../lib/template.js"></script>
     </body>
       </html>

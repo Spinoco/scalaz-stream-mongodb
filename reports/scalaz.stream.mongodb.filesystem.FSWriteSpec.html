@@ -67,7 +67,7 @@
     </head><body><div id="breadcrumbs"><a href="scalaz.stream.mongodb.userguide.GridFSUsageSpec.html">GridFSUsageSpec</a><t> / </t><a href="scalaz.stream.mongodb.filesystem.FSWriteSpec.html">FSWriteSpec</a></div><div class="colmask threecol">
             <div class="colmid">
               <div class="colleft">
-                <div class="col1"><div id="central"><html><title>Writing files to filesystem</title><a name="Writing+files+to+filesystem"><h2 specId="321765042">Writing files to filesystem</h2></a><status class="ok"><p></p></status><status class="ok"><p></p></status><status class="ok"><div style="display: show; text-indent:30px;"><p>Mongo Streams provides syntax to build sink that writes to mongo filesystem. Syntax can define to what file data has to be<br />written, what can be chunk-size and what metadata should be associated with file. </p><a name="File+syntax"><h1>File syntax</h1></a><p>File syntax creates file reference that indicates where the file has to be saved and with which data.<br />Following syntax is available: </p>
+                <div class="col1"><div id="central"><html><title>Writing files to filesystem</title><a name="Writing+files+to+filesystem"><h2 specId="1198086230">Writing files to filesystem</h2></a><status class="ok"><p></p></status><status class="ok"><p></p></status><status class="ok"><div style="display: show; text-indent:30px;"><p>Mongo Streams provides syntax to build sink that writes to mongo filesystem. Syntax can define to what file data has to be<br />written, what can be chunk-size and what metadata should be associated with file. </p><a name="File+syntax"><h1>File syntax</h1></a><p>File syntax creates file reference that indicates where the file has to be saved and with which data.<br />Following syntax is available: </p>
 <ul>
   <li>File named <code class="prettyprint">foo</code> <code class="prettyprint">file(&quot;foo&quot;)</code></li>
   <li>File named <code class="prettyprint">foo</code> with supplied Id <code class="prettyprint">file(&quot;foo&quot;, id = new ObjectId)</code></li>
@@ -76,15 +76,15 @@
   <li><p>File named <code class="prettyprint">foo</code> with supplied metadata <code class="prettyprint">file(&quot;foo&quot;, meta = Some(BSONObject(&quot;user&quot; -&gt; &quot;luke&quot;)))</code></p><a name="Writing+single+file"><h1>Writing single file</h1></a></li>
 </ul><p>Writing single file is easy simple syntax. Writing operation does not modify supplied Bytes object, therefore the<br />Bytes object may be recycled for better efficiency</p></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">source10k to (filesystem(fileDb) using (write file (&quot;foo.txt&quot;)))</code><br /></div></status><status class="ok"><div style="display: show; text-indent:35px;"></div></status><status class="ok"><br /></status><table class="dataTable">
         <tr><th colSpan="2">Total for specification FSWriteSpec</th></tr>
-        <tr><td>Finished in</td><td class="info">1 second, 560 ms</td></tr>
+        <tr><td>Finished in</td><td class="info">1 second, 546 ms</td></tr>
         <tr><td>Results</td><td class="success">1 example, 0 failure, 0 error</td></tr>
       </table></html></div></div>
                 <div class="col2"><div id="leftcolumn"><div id="tree">
-      <ul><li id="1929370935"><a href="scalaz.stream.mongodb.userguide.GridFSUsageSpec.html#Mongodb+filesystem+usage">Mongodb filesystem usage</a>
+      <ul><li id="1055328655"><a href="scalaz.stream.mongodb.userguide.GridFSUsageSpec.html#Mongodb+filesystem+usage">Mongodb filesystem usage</a>
             <ul><li id=""><a href="scalaz.stream.mongodb.userguide.GridFSUsageSpec.html#Filesystem">Filesystem</a>
             
           </li><li id=""><a href="scalaz.stream.mongodb.userguide.GridFSUsageSpec.html#Listing+files">Listing files</a>
-            <ul><li id="684973607"><a href="scalaz.stream.mongodb.filesystem.FSListSpec.html#Listing+files+in+filesystem">Listing files in filesystem</a>
+            <ul><li id="1971689579"><a href="scalaz.stream.mongodb.filesystem.FSListSpec.html#Listing+files+in+filesystem">Listing files in filesystem</a>
             <ul><li id=""><a href="scalaz.stream.mongodb.filesystem.FSListSpec.html#Basic+lists">Basic lists</a>
             
           </li><li id=""><a href="scalaz.stream.mongodb.filesystem.FSListSpec.html#Complex+queries">Complex queries</a>
@@ -96,7 +96,7 @@
           </li></ul>
           </li></ul>
           </li><li id=""><a href="scalaz.stream.mongodb.userguide.GridFSUsageSpec.html#Reading+from+files">Reading from files</a>
-            <ul><li id="2091755165"><a href="scalaz.stream.mongodb.filesystem.FSReadSpec.html#Reading+files+in+filesystem">Reading files in filesystem</a>
+            <ul><li id="1519900547"><a href="scalaz.stream.mongodb.filesystem.FSReadSpec.html#Reading+files+in+filesystem">Reading files in filesystem</a>
             <ul><li id=""><a href="scalaz.stream.mongodb.filesystem.FSReadSpec.html#Reading+single+file">Reading single file</a>
             
           </li><li id=""><a href="scalaz.stream.mongodb.filesystem.FSReadSpec.html#Reading+multiple+files">Reading multiple files</a>
@@ -106,7 +106,7 @@
           </li></ul>
           </li></ul>
           </li><li id=""><a href="scalaz.stream.mongodb.userguide.GridFSUsageSpec.html#Writing+to+files">Writing to files</a>
-            <ul><li id="321765042"><a href="scalaz.stream.mongodb.filesystem.FSWriteSpec.html#Writing+files+to+filesystem">Writing files to filesystem</a>
+            <ul><li id="1198086230"><a href="scalaz.stream.mongodb.filesystem.FSWriteSpec.html#Writing+files+to+filesystem">Writing files to filesystem</a>
             
           </li><li id=""><a href="scalaz.stream.mongodb.filesystem.FSWriteSpec.html#File+syntax">File syntax</a>
             
@@ -114,12 +114,12 @@
             
           </li></ul>
           </li><li id=""><a href="scalaz.stream.mongodb.userguide.GridFSUsageSpec.html#Deleting+files">Deleting files</a>
-            <ul><li id="474969872"><a href="scalaz.stream.mongodb.filesystem.FSDeleteSpec.html#Removing+files+to+filesystem">Removing files to filesystem</a>
+            <ul><li id="678887084"><a href="scalaz.stream.mongodb.filesystem.FSDeleteSpec.html#Removing+files+to+filesystem">Removing files to filesystem</a>
             
           </li></ul>
           </li></ul>
           </li></ul>
-      <script>$(function () {  $('#tree').jstree({'core':{'initially_open':['1929370935','321765042'], 'animation':200}, 'plugins':['themes', 'html_data']}); });</script>
+      <script>$(function () {  $('#tree').jstree({'core':{'initially_open':['1055328655','1198086230'], 'animation':200}, 'plugins':['themes', 'html_data']}); });</script>
     </div></div></div>
                 <div class="col3"><div id="rightcolumn"></div></div>
               </div>

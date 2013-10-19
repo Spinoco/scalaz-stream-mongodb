@@ -1,1 +1,45 @@
 <scalaz.stream.mongodb.aggregate.PipelineSpec-stats timestamp="1380521003748"><stats time="9921" expectations="13" successes="13" examples="13"></stats></scalaz.stream.mongodb.aggregate.PipelineSpec-stats>
+<scalaz.stream.mongodb.aggregate.PipelineSpec-stats timestamp="1380613840963"><stats time="12070" expectations="13" successes="13" examples="13"></stats></scalaz.stream.mongodb.aggregate.PipelineSpec-stats>
+<scalaz.stream.mongodb.aggregate.PipelineSpec-results timestamp="1380613887336"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="661373539"><stats time="225" expectations="1" errors="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-1503691292"><stats time="221" expectations="1" errors="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-1366866154"><stats time="221" expectations="1" errors="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="1577979926"><stats time="221" expectations="1" errors="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-563018382"><stats time="221" expectations="1" errors="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="1662188000"><stats time="221" expectations="1" errors="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-402867174"><stats time="220" expectations="1" errors="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="709947722"><stats time="223" expectations="1" errors="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="1695378660"><stats time="7" expectations="1" errors="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="1357668749"><stats time="15" expectations="1" errors="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-1120515584"><stats time="20" expectations="1" errors="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-9802703"><stats time="18" expectations="1" errors="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="284423992"><stats time="17" expectations="1" errors="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.aggregate.PipelineSpec-results>
+<scalaz.stream.mongodb.aggregate.PipelineSpec-stats timestamp="1380613887360"><stats time="10648" expectations="13" errors="13" examples="13"><trend><stats time="10648" errors="13" successes="-13"></stats></trend></stats></scalaz.stream.mongodb.aggregate.PipelineSpec-stats>
+<scalaz.stream.mongodb.aggregate.PipelineSpec-stats timestamp="1380613968562"><stats time="2357" expectations="13" successes="13" examples="13"><trend><stats time="2357" errors="-13" successes="13"></stats></trend></stats></scalaz.stream.mongodb.aggregate.PipelineSpec-stats>
+<scalaz.stream.mongodb.aggregate.PipelineSpec-stats timestamp="1380614324355"><stats time="7118" expectations="13" successes="13" examples="13"></stats></scalaz.stream.mongodb.aggregate.PipelineSpec-stats>
+<scalaz.stream.mongodb.aggregate.PipelineSpec-stats timestamp="1380690032338"><stats time="4423" expectations="13" successes="13" examples="13"></stats></scalaz.stream.mongodb.aggregate.PipelineSpec-stats>
+<scalaz.stream.mongodb.aggregate.PipelineSpec-stats timestamp="1380690137520"><stats time="5558" expectations="13" successes="13" examples="13"></stats></scalaz.stream.mongodb.aggregate.PipelineSpec-stats>
+<scalaz.stream.mongodb.aggregate.PipelineSpec-stats timestamp="1380813055875"><stats time="4690" expectations="13" successes="13" examples="13"></stats></scalaz.stream.mongodb.aggregate.PipelineSpec-stats>
+<scalaz.stream.mongodb.aggregate.PipelineSpec-results timestamp="1380975509957"><result location="scalaz.stream.mongodb.MongoSpecificationBase (MongoSpecification.scala:97)" id="1223730100"><stats time="35" expectations="1" errors="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="661373539"><stats time="1" expectations="1" skipped="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-1503691292"><stats expectations="1" skipped="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-1366866154"><stats expectations="1" skipped="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="1577979926"><stats expectations="1" skipped="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-563018382"><stats time="1" expectations="1" skipped="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="1662188000"><stats expectations="1" skipped="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-402867174"><stats expectations="1" skipped="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="709947722"><stats expectations="1" skipped="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="1695378660"><stats expectations="1" skipped="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="1357668749"><stats expectations="1" skipped="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-1120515584"><stats expectations="1" skipped="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-9802703"><stats expectations="1" skipped="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="284423992"><stats expectations="1" skipped="1" examples="1"></stats></result>
+<result location="scalaz.stream.mongodb.MongoSpecificationBase (MongoSpecification.scala:100)" id="-1100313156"><stats expectations="1" skipped="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.aggregate.PipelineSpec-results>
+<scalaz.stream.mongodb.aggregate.PipelineSpec-stats timestamp="1380975509975"><stats time="69" expectations="15" errors="1" skipped="14" examples="15"><trend><stats time="69" expectations="2" errors="1" skipped="14" successes="-13" examples="2"></stats></trend></stats></scalaz.stream.mongodb.aggregate.PipelineSpec-stats>
+<scalaz.stream.mongodb.aggregate.PipelineSpec-stats timestamp="1380975880965"><stats time="4385" expectations="13" successes="13" examples="13"><trend><stats time="4385" expectations="-2" errors="-1" skipped="-14" successes="13" examples="-2"></stats></trend></stats></scalaz.stream.mongodb.aggregate.PipelineSpec-stats>
+<scalaz.stream.mongodb.aggregate.PipelineSpec-stats timestamp="1380976144596"><stats time="5241" expectations="13" successes="13" examples="13"></stats></scalaz.stream.mongodb.aggregate.PipelineSpec-stats>
+<scalaz.stream.mongodb.aggregate.PipelineSpec-stats timestamp="1380985290944"><stats time="6811" expectations="13" successes="13" examples="13"></stats></scalaz.stream.mongodb.aggregate.PipelineSpec-stats>
+<scalaz.stream.mongodb.aggregate.PipelineSpec-stats timestamp="1381379843669"><stats time="6530" expectations="13" successes="13" examples="13"></stats></scalaz.stream.mongodb.aggregate.PipelineSpec-stats>
+<scalaz.stream.mongodb.aggregate.PipelineSpec-stats timestamp="1381380002479"><stats time="4817" expectations="13" successes="13" examples="13"></stats></scalaz.stream.mongodb.aggregate.PipelineSpec-stats>
+<scalaz.stream.mongodb.aggregate.PipelineSpec-stats timestamp="1381380482419"><stats time="2585" expectations="13" successes="13" examples="13"></stats></scalaz.stream.mongodb.aggregate.PipelineSpec-stats>

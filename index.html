@@ -38,34 +38,29 @@
                     class="octicon octicon-link"></span></a>Welcome to Mongo Streams.</h3>
 
         <p>Mongo Streams is a library that allows you to use <a href="https://github.com/scalaz/scalaz-stream" >scalaz-stream</a> with mongo database. 
-        Mongo Streams is based on standard mongo java driver and thus shall support all of the java driver functionality.</p>
+        Mongo Streams is based on standard mongo java driver and supports all of the java driver functionality.</p>
         
-        <p>Project is now under development and first release is expected after first release of scalaz-stream.</p>
+        <h3>Basic usage</h3>
         
-        <h3>Building the library from sources</h3>
+        <p>Mongo Streams can be added to your sbt build. The binary is hosted at Sonatype maven. You can add following to your sbt build:</p>
         
-        <p>At this moment (unfortunately) there is no binary version of the library. In order to build it, you will 
-        have to get latest snapshots of scalaz, scalaz-stream, specs2 (please use the version build against the 7.1.0-SNAPSHOT).
-        Once the library will be released all these dependencies will get fixed. </p>
- 
+        <code>
+            resolvers ++= Seq("snapshots" at "http://oss.sonatype.org/content/repositories/snapshots")
+
+            libraryDependencies += "com.spinoco" %% "scalaz-stream-mongodb" % "0.1.0"
+        </code> 
+        
+        <p>If you plan to test your mong stream code, maybe Specs2 support will come handy for you:</p>
+        
+        <code>
+            libraryDependencies += "com.spinoco" %% "scalaz-stream-mongodb-spec" % "0.1.0"
+        </code>
+        
+        
         <h3>User Guide</h3>
         
-        <p>If you are interested on the functionality please take a look on 
-            <a href="/scalaz-stream-mongodb/reports/scalaz.stream.mongodb.userguide.UserGuideSpec.html">UserGuide</a> and eventually on the 
+        <p>Mongo streams are documented with code examples in this <a href="/scalaz-stream-mongodb/reports/scalaz.stream.mongodb.userguide.UserGuideSpec.html">User Guide</a> and eventually on the 
         <a href="/scalaz-stream-mongodb/core/#package">API</a>.</p>
-        
-        <h3>What is missing</h3>
-        
-        <p>Library is supposed to have all the functionality that makes sense to wrap in scalaz-stream. 
-            Following functionality is currently missing and is planned for future versions:</p>
-        
-        <ul>
-            <li>Aggregation framework</li>
-            <li>Streaming tailable collection</li>
-            <li>Asynchronous execution of mongodb queries</li>
-        </ul>
-
-        <p>Thank you for your interest in Mongo Streams.</p>
 
 
     </section>

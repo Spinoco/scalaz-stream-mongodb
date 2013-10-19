@@ -1,1 +1,34 @@
 <scalaz.stream.mongodb.bson.BSONSpec-stats timestamp="1380521009574"><stats time="13" expectations="1800" successes="18" examples="18"></stats></scalaz.stream.mongodb.bson.BSONSpec-stats>
+<scalaz.stream.mongodb.bson.BSONSpec-stats timestamp="1380613828392"><stats time="214" expectations="1800" successes="18" examples="18"></stats></scalaz.stream.mongodb.bson.BSONSpec-stats>
+<scalaz.stream.mongodb.bson.BSONSpec-stats timestamp="1380613874417"><stats time="305" expectations="1800" successes="18" examples="18"></stats></scalaz.stream.mongodb.bson.BSONSpec-stats>
+<scalaz.stream.mongodb.bson.BSONSpec-stats timestamp="1380613991864"><stats time="3" expectations="1800" successes="18" examples="18"></stats></scalaz.stream.mongodb.bson.BSONSpec-stats>
+<scalaz.stream.mongodb.bson.BSONSpec-stats timestamp="1380614320709"><stats time="4" expectations="1800" successes="18" examples="18"></stats></scalaz.stream.mongodb.bson.BSONSpec-stats>
+<scalaz.stream.mongodb.bson.BSONSpec-stats timestamp="1380690038002"><stats time="7" expectations="1800" successes="18" examples="18"></stats></scalaz.stream.mongodb.bson.BSONSpec-stats>
+<scalaz.stream.mongodb.bson.BSONSpec-stats timestamp="1380690120280"><stats time="2" expectations="1800" successes="18" examples="18"></stats></scalaz.stream.mongodb.bson.BSONSpec-stats>
+<scalaz.stream.mongodb.bson.BSONSpec-stats timestamp="1380813050077"><stats time="7" expectations="1800" successes="18" examples="18"></stats></scalaz.stream.mongodb.bson.BSONSpec-stats>
+<scalaz.stream.mongodb.bson.BSONSpec-stats timestamp="1380975518600"><stats time="2" expectations="1800" successes="18" examples="18"></stats></scalaz.stream.mongodb.bson.BSONSpec-stats>
+<scalaz.stream.mongodb.bson.BSONSpec-stats timestamp="1380975891718"><stats time="4" expectations="1800" successes="18" examples="18"></stats></scalaz.stream.mongodb.bson.BSONSpec-stats>
+<scalaz.stream.mongodb.bson.BSONSpec-stats timestamp="1380976149924"><stats time="17" expectations="1800" successes="18" examples="18"></stats></scalaz.stream.mongodb.bson.BSONSpec-stats>
+<scalaz.stream.mongodb.bson.BSONSpec-stats timestamp="1380985308785"><stats time="61" expectations="1800" successes="18" examples="18"></stats></scalaz.stream.mongodb.bson.BSONSpec-stats>
+<scalaz.stream.mongodb.bson.BSONSpec-results timestamp="1381379851345"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-575925385"><stats time="188" expectations="1" errors="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="2122961767"><stats time="411" expectations="1" errors="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="797842986"><stats time="354" expectations="1" errors="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="1855939925"><stats time="55" expectations="1" errors="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-895064913"><stats time="64" expectations="1" errors="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-1831039171"><stats time="556" expectations="1" errors="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="408997069"><stats time="556" expectations="1" errors="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="1053528422"><stats time="555" expectations="1" errors="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="413235542"><stats time="500" expectations="1" errors="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="603063113"><stats time="491" expectations="1" errors="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-1045742525"><stats time="369" expectations="1" errors="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="1473713955"><stats time="459" expectations="1" errors="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="866679299"><stats time="351" expectations="1" errors="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="457317255"><stats time="257" expectations="1" errors="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-1492680140"><stats time="259" expectations="1" errors="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="1427479043"><stats time="260" expectations="1" errors="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="1950406353"><stats time="258" expectations="1" errors="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="51306930"><stats time="258" expectations="1" errors="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.bson.BSONSpec-results>
+<scalaz.stream.mongodb.bson.BSONSpec-stats timestamp="1381379851394"><stats time="2" expectations="18" errors="18" examples="18"><trend><stats time="2" expectations="-1782" errors="18" successes="-18"></stats></trend></stats></scalaz.stream.mongodb.bson.BSONSpec-stats>
+<scalaz.stream.mongodb.bson.BSONSpec-stats timestamp="1381380021788"><stats time="6" expectations="1800" successes="18" examples="18"><trend><stats time="6" expectations="1782" errors="-18" successes="18"></stats></trend></stats></scalaz.stream.mongodb.bson.BSONSpec-stats>
+<scalaz.stream.mongodb.bson.BSONSpec-stats timestamp="1381380483182"><stats time="2" expectations="1800" successes="18" examples="18"></stats></scalaz.stream.mongodb.bson.BSONSpec-stats>

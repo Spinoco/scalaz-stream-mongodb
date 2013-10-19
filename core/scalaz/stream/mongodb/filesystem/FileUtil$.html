@@ -306,7 +306,7 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="scalaz.stream.mongodb.filesystem.FileUtil#readFile" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="readFile(buffSize:Int):scalaz.stream.mongodb.channel.ChannelResult[com.mongodb.gridfs.GridFS,scalaz.stream.mongodb.filesystem.MongoFileRead=&gt;scalaz.stream.Process[scalaz.concurrent.Task,scalaz.stream.Bytes]]"></a>
+      <a id="readFile(buffSize:Int):scalaz.stream.mongodb.channel.ChannelResult[com.mongodb.gridfs.GridFS,scalaz.stream.mongodb.filesystem.MongoFileRead=&gt;scalaz.stream.Process[scalaz.concurrent.Task,scalaz.stream.mongodb.util.Bytes]]"></a>
       <a id="readFile(Int):ChannelResult[GridFS,(MongoFileRead)⇒Process[Task,Bytes]]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -314,7 +314,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">readFile</span><span class="params">(<span name="buffSize">buffSize: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">GridFS.DEFAULT_CHUNKSIZE</span></span>)</span><span class="result">: <a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="com.mongodb.gridfs.GridFS">GridFS</span>, (<a href="MongoFileRead.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFileRead">MongoFileRead</a>) ⇒ <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <span class="extype" name="scalaz.stream.Bytes">Bytes</span>]]</span>
+        <span class="name">readFile</span><span class="params">(<span name="buffSize">buffSize: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">GridFS.DEFAULT_CHUNKSIZE</span></span>)</span><span class="result">: <a href="../channel/ChannelResult.html" class="extype" name="scalaz.stream.mongodb.channel.ChannelResult">ChannelResult</a>[<span class="extype" name="com.mongodb.gridfs.GridFS">GridFS</span>, (<a href="MongoFileRead.html" class="extype" name="scalaz.stream.mongodb.filesystem.MongoFileRead">MongoFileRead</a>) ⇒ <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.concurrent.Task">Task</span>, <a href="../util/Bytes.html" class="extype" name="scalaz.stream.mongodb.util.Bytes">Bytes</a>]]</span>
       </span>
       </h4>
       <p class="shortcomment cmt">Produces ChannelResult, that will read single file *</p><div class="fullcomment"><div class="comment cmt"><p>Produces ChannelResult, that will read single file *</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="FileUtil.html" class="extype" name="scalaz.stream.mongodb.filesystem.FileUtil">FileUtil</a></dd></dl></div>

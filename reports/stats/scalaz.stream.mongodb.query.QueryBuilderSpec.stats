@@ -4,3 +4,87 @@
 <result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-61157951"><stats pending="1" time="1" expectations="1" examples="1"></stats></result>
 </scalaz.stream.mongodb.query.QueryBuilderSpec-results>
 <scalaz.stream.mongodb.query.QueryBuilderSpec-stats timestamp="1380520987758"><stats pending="4" time="426" expectations="35" successes="31" examples="35"></stats></scalaz.stream.mongodb.query.QueryBuilderSpec-stats>
+<scalaz.stream.mongodb.query.QueryBuilderSpec-results timestamp="1380613831857"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-1031452176"><stats pending="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="73374265"><stats pending="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="1931634900"><stats pending="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-61157951"><stats pending="1" expectations="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.query.QueryBuilderSpec-results>
+<scalaz.stream.mongodb.query.QueryBuilderSpec-stats timestamp="1380613831960"><stats pending="4" time="2" expectations="35" successes="31" examples="35"></stats></scalaz.stream.mongodb.query.QueryBuilderSpec-stats>
+<scalaz.stream.mongodb.query.QueryBuilderSpec-results timestamp="1380613876919"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-1031452176"><stats pending="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="73374265"><stats pending="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="1931634900"><stats pending="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-61157951"><stats pending="1" expectations="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.query.QueryBuilderSpec-results>
+<scalaz.stream.mongodb.query.QueryBuilderSpec-stats timestamp="1380613876973"><stats pending="4" time="4" expectations="35" successes="31" examples="35"></stats></scalaz.stream.mongodb.query.QueryBuilderSpec-stats>
+<scalaz.stream.mongodb.query.QueryBuilderSpec-results timestamp="1380613978812"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-1031452176"><stats pending="1" time="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="73374265"><stats pending="1" time="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="1931634900"><stats pending="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-61157951"><stats pending="1" expectations="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.query.QueryBuilderSpec-results>
+<scalaz.stream.mongodb.query.QueryBuilderSpec-stats timestamp="1380613978815"><stats pending="4" time="4" expectations="35" successes="31" examples="35"></stats></scalaz.stream.mongodb.query.QueryBuilderSpec-stats>
+<scalaz.stream.mongodb.query.QueryBuilderSpec-results timestamp="1380614313110"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-1031452176"><stats pending="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="73374265"><stats pending="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="1931634900"><stats pending="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-61157951"><stats pending="1" expectations="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.query.QueryBuilderSpec-results>
+<scalaz.stream.mongodb.query.QueryBuilderSpec-stats timestamp="1380614313136"><stats pending="4" time="22" expectations="35" successes="31" examples="35"></stats></scalaz.stream.mongodb.query.QueryBuilderSpec-stats>
+<scalaz.stream.mongodb.query.QueryBuilderSpec-results timestamp="1380690001564"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-1031452176"><stats pending="1" time="3" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="73374265"><stats pending="1" time="3" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="1931634900"><stats pending="1" time="3" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-61157951"><stats pending="1" time="3" expectations="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.query.QueryBuilderSpec-results>
+<scalaz.stream.mongodb.query.QueryBuilderSpec-stats timestamp="1380690001689"><stats pending="4" time="107" expectations="35" successes="31" examples="35"></stats></scalaz.stream.mongodb.query.QueryBuilderSpec-stats>
+<scalaz.stream.mongodb.query.QueryBuilderSpec-results timestamp="1380690138410"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-1031452176"><stats pending="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="73374265"><stats pending="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="1931634900"><stats pending="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-61157951"><stats pending="1" expectations="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.query.QueryBuilderSpec-results>
+<scalaz.stream.mongodb.query.QueryBuilderSpec-stats timestamp="1380690138418"><stats pending="4" time="13" expectations="35" successes="31" examples="35"></stats></scalaz.stream.mongodb.query.QueryBuilderSpec-stats>
+<scalaz.stream.mongodb.query.QueryBuilderSpec-results timestamp="1380813046155"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-1031452176"><stats pending="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="73374265"><stats pending="1" time="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="1931634900"><stats pending="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-61157951"><stats pending="1" expectations="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.query.QueryBuilderSpec-results>
+<scalaz.stream.mongodb.query.QueryBuilderSpec-stats timestamp="1380813046166"><stats pending="4" time="23" expectations="35" successes="31" examples="35"></stats></scalaz.stream.mongodb.query.QueryBuilderSpec-stats>
+<scalaz.stream.mongodb.query.QueryBuilderSpec-results timestamp="1380975514017"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-1031452176"><stats pending="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="73374265"><stats pending="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="1931634900"><stats pending="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-61157951"><stats pending="1" expectations="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.query.QueryBuilderSpec-results>
+<scalaz.stream.mongodb.query.QueryBuilderSpec-stats timestamp="1380975514022"><stats pending="4" time="6" expectations="35" successes="31" examples="35"></stats></scalaz.stream.mongodb.query.QueryBuilderSpec-stats>
+<scalaz.stream.mongodb.query.QueryBuilderSpec-results timestamp="1380975899083"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-1031452176"><stats pending="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="73374265"><stats pending="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="1931634900"><stats pending="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-61157951"><stats pending="1" expectations="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.query.QueryBuilderSpec-results>
+<scalaz.stream.mongodb.query.QueryBuilderSpec-stats timestamp="1380975899093"><stats pending="4" time="17" expectations="35" successes="31" examples="35"></stats></scalaz.stream.mongodb.query.QueryBuilderSpec-stats>
+<scalaz.stream.mongodb.query.QueryBuilderSpec-results timestamp="1380976144320"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-1031452176"><stats pending="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="73374265"><stats pending="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="1931634900"><stats pending="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-61157951"><stats pending="1" expectations="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.query.QueryBuilderSpec-results>
+<scalaz.stream.mongodb.query.QueryBuilderSpec-stats timestamp="1380976144326"><stats pending="4" time="8" expectations="35" successes="31" examples="35"></stats></scalaz.stream.mongodb.query.QueryBuilderSpec-stats>
+<scalaz.stream.mongodb.query.QueryBuilderSpec-results timestamp="1380985280114"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-1031452176"><stats pending="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="73374265"><stats pending="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="1931634900"><stats pending="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-61157951"><stats pending="1" expectations="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.query.QueryBuilderSpec-results>
+<scalaz.stream.mongodb.query.QueryBuilderSpec-stats timestamp="1380985280117"><stats pending="4" time="53" expectations="35" successes="31" examples="35"></stats></scalaz.stream.mongodb.query.QueryBuilderSpec-stats>
+<scalaz.stream.mongodb.query.QueryBuilderSpec-results timestamp="1381379856708"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-1031452176"><stats pending="1" time="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="73374265"><stats pending="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="1931634900"><stats pending="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-61157951"><stats pending="1" expectations="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.query.QueryBuilderSpec-results>
+<scalaz.stream.mongodb.query.QueryBuilderSpec-stats timestamp="1381379856734"><stats pending="4" time="2" expectations="35" successes="31" examples="35"></stats></scalaz.stream.mongodb.query.QueryBuilderSpec-stats>
+<scalaz.stream.mongodb.query.QueryBuilderSpec-results timestamp="1381380023696"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-1031452176"><stats pending="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="73374265"><stats pending="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="1931634900"><stats pending="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-61157951"><stats pending="1" expectations="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.query.QueryBuilderSpec-results>
+<scalaz.stream.mongodb.query.QueryBuilderSpec-stats timestamp="1381380023702"><stats pending="4" time="61" expectations="35" successes="31" examples="35"></stats></scalaz.stream.mongodb.query.QueryBuilderSpec-stats>
+<scalaz.stream.mongodb.query.QueryBuilderSpec-results timestamp="1381380474824"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-1031452176"><stats pending="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="73374265"><stats pending="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="1931634900"><stats pending="1" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-61157951"><stats pending="1" expectations="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.query.QueryBuilderSpec-results>
+<scalaz.stream.mongodb.query.QueryBuilderSpec-stats timestamp="1381380474879"><stats pending="4" time="2" expectations="35" successes="31" examples="35"></stats></scalaz.stream.mongodb.query.QueryBuilderSpec-stats>

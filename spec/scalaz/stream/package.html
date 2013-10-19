@@ -39,13 +39,36 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"></div>
+          <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
         
 
       <div id="mbrsel">
         <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
-        
-        
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="scalaz.stream"><span>stream</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+            <a href="http://docs.scala-lang.org/overviews/scaladoc/usage.html#members" target="_blank">Learn more about member selection</a>
+          </div>
         <div id="visbl">
             <span class="filtertype">Visibility</span>
             <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
@@ -56,7 +79,140 @@
         <div id="allMembers">
         
 
-        
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scalaz.stream.Channel" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Channel[+F&lt;:&lt;?&gt;,-I&lt;:&lt;?&gt;,O&lt;:&lt;?&gt;]=scalaz.stream.Process.Channel[F,I,O]"></a>
+      <a id="Channel[+F[_],-I,O]:Channel[F,I,O]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Channel</span><span class="tparams">[<span name="F">+F<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="I">-I</span>, <span name="O">O</span>]</span><span class="result"> = <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.stream.Channel.F">F</span>, (<span class="extype" name="scalaz.stream.Channel.I">I</span>) ⇒ <span class="extype" name="scalaz.stream.Channel.F">F</span>[<span class="extype" name="scalaz.stream.Channel.O">O</span>]]</span>
+      </span>
+      </h4>
+      
+    </li><li name="scalaz.stream.Process0" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Process0[+O&lt;:&lt;?&gt;]=scalaz.stream.Process.Process0[O]"></a>
+      <a id="Process0[+O]:Process0[O]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Process0</span><span class="tparams">[<span name="O">+O</span>]</span><span class="result"> = <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.stream.Process.Env.Is">Is</span>, <span class="extype" name="scalaz.stream.Process0.O">O</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li name="scalaz.stream.Process1" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Process1[-I&lt;:&lt;?&gt;,+O&lt;:&lt;?&gt;]=scalaz.stream.Process.Process1[I,O]"></a>
+      <a id="Process1[-I,+O]:Process1[I,O]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Process1</span><span class="tparams">[<span name="I">-I</span>, <span name="O">+O</span>]</span><span class="result"> = <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.stream.Process.Env.Is">Is</span>, <span class="extype" name="scalaz.stream.Process1.O">O</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li name="scalaz.stream.Process1W" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Process1W[+W&lt;:&lt;?&gt;,-I&lt;:&lt;?&gt;,+O&lt;:&lt;?&gt;]=scalaz.stream.Process.Process1W[W,I,O]"></a>
+      <a id="Process1W[+W,-I,+O]:Process1W[W,I,O]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Process1W</span><span class="tparams">[<span name="W">+W</span>, <span name="I">-I</span>, <span name="O">+O</span>]</span><span class="result"> = <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.stream.Process.Env.Is">Is</span>, <span class="extype" name="scalaz.\/">\/</span>[<span class="extype" name="scalaz.stream.Process1W.W">W</span>, <span class="extype" name="scalaz.stream.Process1W.O">O</span>]]</span>
+      </span>
+      </h4>
+      
+    </li><li name="scalaz.stream.Sink" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Sink[+F&lt;:&lt;?&gt;,-O&lt;:&lt;?&gt;]=scalaz.stream.Process.Sink[F,O]"></a>
+      <a id="Sink[+F[_],-O]:Sink[F,O]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Sink</span><span class="tparams">[<span name="F">+F<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="O">-O</span>]</span><span class="result"> = <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.stream.Sink.F">F</span>, (<span class="extype" name="scalaz.stream.Sink.O">O</span>) ⇒ <span class="extype" name="scalaz.stream.Sink.F">F</span>[<span class="extype" name="scala.Unit">Unit</span>]]</span>
+      </span>
+      </h4>
+      
+    </li><li name="scalaz.stream.Tee" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Tee[-I&lt;:&lt;?&gt;,-I2&lt;:&lt;?&gt;,+O&lt;:&lt;?&gt;]=scalaz.stream.Process.Tee[I,I2,O]"></a>
+      <a id="Tee[-I,-I2,+O]:Tee[I,I2,O]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Tee</span><span class="tparams">[<span name="I">-I</span>, <span name="I2">-I2</span>, <span name="O">+O</span>]</span><span class="result"> = <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.stream.Process.Env.T">T</span>, <span class="extype" name="scalaz.stream.Tee.O">O</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li name="scalaz.stream.TeeW" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TeeW[+W&lt;:&lt;?&gt;,-I&lt;:&lt;?&gt;,-I2&lt;:&lt;?&gt;,+O&lt;:&lt;?&gt;]=scalaz.stream.Process.TeeW[W,I,I2,O]"></a>
+      <a id="TeeW[+W,-I,-I2,+O]:TeeW[W,I,I2,O]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">TeeW</span><span class="tparams">[<span name="W">+W</span>, <span name="I">-I</span>, <span name="I2">-I2</span>, <span name="O">+O</span>]</span><span class="result"> = <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.stream.Process.Env.T">T</span>, <span class="extype" name="scalaz.\/">\/</span>[<span class="extype" name="scalaz.stream.TeeW.W">W</span>, <span class="extype" name="scalaz.stream.TeeW.O">O</span>]]</span>
+      </span>
+      </h4>
+      
+    </li><li name="scalaz.stream.Writer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Writer[+F&lt;:&lt;?&gt;,+W&lt;:&lt;?&gt;,+A&lt;:&lt;?&gt;]=scalaz.stream.Process.Writer[F,W,A]"></a>
+      <a id="Writer[+F[_],+W,+A]:Writer[F,W,A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Writer</span><span class="tparams">[<span name="F">+F<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="W">+W</span>, <span name="A">+A</span>]</span><span class="result"> = <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.stream.Writer.F">F</span>, <span class="extype" name="scalaz.\/">\/</span>[<span class="extype" name="scalaz.stream.Writer.W">W</span>, <span class="extype" name="scalaz.stream.Writer.A">A</span>]]</span>
+      </span>
+      </h4>
+      
+    </li><li name="scalaz.stream.Wye" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Wye[-I&lt;:&lt;?&gt;,-I2&lt;:&lt;?&gt;,+O&lt;:&lt;?&gt;]=scalaz.stream.Process.Wye[I,I2,O]"></a>
+      <a id="Wye[-I,-I2,+O]:Wye[I,I2,O]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Wye</span><span class="tparams">[<span name="I">-I</span>, <span name="I2">-I2</span>, <span name="O">+O</span>]</span><span class="result"> = <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.stream.Process.Env.Y">Y</span>, <span class="extype" name="scalaz.stream.Wye.O">O</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li name="scalaz.stream.WyeW" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="WyeW[+W&lt;:&lt;?&gt;,-I&lt;:&lt;?&gt;,-I2&lt;:&lt;?&gt;,+O&lt;:&lt;?&gt;]=scalaz.stream.Process.WyeW[W,I,I2,O]"></a>
+      <a id="WyeW[+W,-I,-I2,+O]:WyeW[W,I,I2,O]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">WyeW</span><span class="tparams">[<span name="W">+W</span>, <span name="I">-I</span>, <span name="I2">-I2</span>, <span name="O">+O</span>]</span><span class="result"> = <span class="extype" name="scalaz.stream.Process">Process</span>[<span class="extype" name="scalaz.stream.Process.Env.Y">Y</span>, <span class="extype" name="scalaz.\/">\/</span>[<span class="extype" name="scalaz.stream.WyeW.W">W</span>, <span class="extype" name="scalaz.stream.WyeW.O">O</span>]]</span>
+      </span>
+      </h4>
+      
+    </li></ol>
+            </div>
 
         
 
@@ -84,7 +240,11 @@
         </div>
 
         <div id="inheritedMembers">
-        
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
         
         </div>
 
