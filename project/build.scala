@@ -37,7 +37,7 @@ object build extends Build {
   lazy val libraries = Seq(
     libraryDependencies ++= Seq(
       "org.mongodb" % "mongo-java-driver" % "2.11.3" 
-      , "spinoco" %% "scalaz-stream" % "0.1.0.48-SNAPSHOT" exclude("org.scala-lang", "*")
+      , "org.scalaz.stream" %% "scalaz-stream" % "0.1" exclude("org.scala-lang", "*")
     )
   )
 
