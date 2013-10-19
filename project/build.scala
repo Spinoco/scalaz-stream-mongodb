@@ -29,21 +29,21 @@ object build extends Build {
         case Seq(Some(user), Some(pass)) =>
           Credentials("Sonatype Nexus Repository Manager", "oss.sonatype.org", user, pass)
         case _ =>
-          Credentials(Path.userHome / ".ivy2" / ".credentials")
+          Credentials(Path.userHome / ".ivy2" / ".credentials.sonatype")
       }
     }
   )
 
   lazy val libraries = Seq(
     libraryDependencies ++= Seq(
-      "org.mongodb" % "mongo-java-driver" % "2.11.3" 
+      "org.mongodb" % "mongo-java-driver" % "2.11.3"
       , "org.scalaz.stream" %% "scalaz-stream" % "0.1" exclude("org.scala-lang", "*")
     )
   )
 
   lazy val testLibraries =
     libraryDependencies ++= Seq(
-      "org.scalacheck" %% "scalacheck" % "1.10.1" % "test"  exclude("org.scala-lang", "*")
+      "org.scalacheck" %% "scalacheck" % "1.10.1" % "test" exclude("org.scala-lang", "*")
       , "org.specs2" %% "specs2" % specs2Version % "test" exclude("org.scalaz", "*")
       , "org.pegdown" % "pegdown" % "1.2.1" % "test"
       , "junit" % "junit" % "4.7" % "test"
@@ -54,16 +54,40 @@ object build extends Build {
     scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature")
     , scalacOptions in Test ++= Seq("-Yrangepos")
   )
-  
-  lazy val publishSettings = Seq (
-    publishTo <<= (version).apply { v =>
-      val nexus = "https://maven.spinoco.com/"
-      if (v.trim.endsWith("SNAPSHOT"))
-        Some("Snapshots" at nexus + "nexus/content/repositories/snapshots")
-      else
-        Some("Releases" at nexus + "nexus/content/repositories/releases")
+
+  lazy val publishSettings = Seq(
+    publishMavenStyle := true
+    , publishTo <<= (version).apply {
+      v =>
+        val nexus = "https://oss.sonatype.org/"
+        if (v.trim.endsWith("SNAPSHOT"))
+          Some("snapshots" at nexus + "content/repositories/snapshots")
+        else
+          Some("releases" at nexus + "service/local/staging/deploy/maven2")
     }
-  )
+    , publishArtifact in Test := false
+    , pomIncludeRepository := { _ => false }
+    , pomExtra := (
+        <url>http://spinoco.github.io/scalaz-stream-mongodb</url>
+        <licenses>
+          <license>
+            <name>MIT</name>
+            <url>https://github.com/Spinoco/scalaz-stream-mongodb/blob/master/LICENSE</url>
+            <distribution>repo</distribution>
+          </license>
+        </licenses>
+        <scm>
+          <url>git@github.com:Spinoco/scalaz-stream-mongodb.git</url>
+          <connection>scm:git:git@github.com:Spinoco/scalaz-stream-mongodb.git</connection>
+        </scm>
+        <developers>
+          <developer>
+            <id>spinoco</id>
+            <name>Spinoco</name>
+            <url>http://www.spinoco.com</url>
+          </developer>
+        </developers>
+      ))
 
 
   lazy val webSettings = SbtSite.site.settings ++ SbtSite.site.includeScaladoc()
@@ -81,7 +105,7 @@ object build extends Build {
   lazy val buildSettings =
     Defaults.defaultSettings ++
       Seq(
-        organization := "spinoco"
+        organization := "com.spinoco"
         , version := "0.1.0-SNAPSHOT"
         , scalaVersion := "2.10.2"
         , conflictManager := ConflictManager.strict
@@ -105,7 +129,7 @@ object build extends Build {
   //
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-  lazy val main = Project("scalaz-stream-mongodb", file("."), settings = buildSettings ++ ghpages.settings ++
+  lazy val main = Project("scalaz-stream-mongodb-main", file("."), settings = buildSettings ++ ghpages.settings ++
     SbtSite.site.addMappingsToSiteDir(mappings in packageDoc in core in Compile, "/core") ++
     SbtSite.site.addMappingsToSiteDir(mappings in packageDoc in spec in Compile, "/spec") ++
     Seq(
@@ -117,7 +141,7 @@ object build extends Build {
       })
     )).aggregate(core, spec)
 
-  lazy val core = Project("scalaz-stream-mongodb-core", file("core"), settings = buildSettings ++ siteSettings ++ Seq(
+  lazy val core = Project("scalaz-stream-mongodb", file("core"), settings = buildSettings ++ siteSettings ++ Seq(
     previewSite <<= sourceDirectory map (_ => ())
   )).dependsOn(spec % "test")
 
