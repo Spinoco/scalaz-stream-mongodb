@@ -13,3 +13,4 @@
 <scalaz.stream.mongodb.userguide.GridFSUsageSpec-stats timestamp="1381379854937"><stats pending="1" time="8125" expectations="16" successes="15" examples="16"></stats></scalaz.stream.mongodb.userguide.GridFSUsageSpec-stats>
 <scalaz.stream.mongodb.userguide.GridFSUsageSpec-stats timestamp="1381380012160"><stats pending="1" time="11636" expectations="16" successes="15" examples="16"></stats></scalaz.stream.mongodb.userguide.GridFSUsageSpec-stats>
 <scalaz.stream.mongodb.userguide.GridFSUsageSpec-stats timestamp="1381380480237"><stats pending="1" time="10089" expectations="16" successes="15" examples="16"></stats></scalaz.stream.mongodb.userguide.GridFSUsageSpec-stats>
+<scalaz.stream.mongodb.userguide.GridFSUsageSpec-stats timestamp="1382364867444"><stats pending="1" time="11408" expectations="16" successes="15" examples="16"></stats></scalaz.stream.mongodb.userguide.GridFSUsageSpec-stats>

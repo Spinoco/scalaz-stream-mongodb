@@ -64,3 +64,4 @@
 <scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1381379848154"><stats time="1794" expectations="3" successes="3" examples="3"></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
 <scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1381379999645"><stats time="2132" expectations="3" successes="3" examples="3"></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
 <scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1381380483194"><stats time="721" expectations="3" successes="3" examples="3"></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>
+<scalaz.stream.mongodb.update.InsertAndSaveSpec-stats timestamp="1382364853703"><stats time="4672" expectations="3" successes="3" examples="3"></stats></scalaz.stream.mongodb.update.InsertAndSaveSpec-stats>

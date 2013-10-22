@@ -18,3 +18,4 @@
 <scalaz.stream.mongodb.index.CollectionDropIndexSpec-stats timestamp="1381379849908"><stats time="1174" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.index.CollectionDropIndexSpec-stats>
 <scalaz.stream.mongodb.index.CollectionDropIndexSpec-stats timestamp="1381380005335"><stats time="1795" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.index.CollectionDropIndexSpec-stats>
 <scalaz.stream.mongodb.index.CollectionDropIndexSpec-stats timestamp="1381380485500"><stats time="1502" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.index.CollectionDropIndexSpec-stats>
+<scalaz.stream.mongodb.index.CollectionDropIndexSpec-stats timestamp="1382364870300"><stats time="1254" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.index.CollectionDropIndexSpec-stats>

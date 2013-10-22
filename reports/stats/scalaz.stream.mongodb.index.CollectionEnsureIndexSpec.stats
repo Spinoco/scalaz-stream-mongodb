@@ -21,3 +21,4 @@
 <scalaz.stream.mongodb.index.CollectionEnsureIndexSpec-stats timestamp="1381379847896"><stats time="1373" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.index.CollectionEnsureIndexSpec-stats>
 <scalaz.stream.mongodb.index.CollectionEnsureIndexSpec-stats timestamp="1381380020911"><stats time="1150" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.index.CollectionEnsureIndexSpec-stats>
 <scalaz.stream.mongodb.index.CollectionEnsureIndexSpec-stats timestamp="1381380474889"><stats time="1686" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.index.CollectionEnsureIndexSpec-stats>
+<scalaz.stream.mongodb.index.CollectionEnsureIndexSpec-stats timestamp="1382364883178"><stats time="5582" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.index.CollectionEnsureIndexSpec-stats>

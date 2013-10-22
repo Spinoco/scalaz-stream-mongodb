@@ -43,3 +43,4 @@
 <scalaz.stream.mongodb.aggregate.PipelineSpec-stats timestamp="1381379843669"><stats time="6530" expectations="13" successes="13" examples="13"></stats></scalaz.stream.mongodb.aggregate.PipelineSpec-stats>
 <scalaz.stream.mongodb.aggregate.PipelineSpec-stats timestamp="1381380002479"><stats time="4817" expectations="13" successes="13" examples="13"></stats></scalaz.stream.mongodb.aggregate.PipelineSpec-stats>
 <scalaz.stream.mongodb.aggregate.PipelineSpec-stats timestamp="1381380482419"><stats time="2585" expectations="13" successes="13" examples="13"></stats></scalaz.stream.mongodb.aggregate.PipelineSpec-stats>
+<scalaz.stream.mongodb.aggregate.PipelineSpec-stats timestamp="1382364884147"><stats time="6217" expectations="13" successes="13" examples="13"></stats></scalaz.stream.mongodb.aggregate.PipelineSpec-stats>

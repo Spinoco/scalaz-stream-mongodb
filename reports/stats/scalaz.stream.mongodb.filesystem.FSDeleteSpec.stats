@@ -39,3 +39,5 @@
 <scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats timestamp="1381380012160"><stats time="2238" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats>
 <scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats timestamp="1381380478760"><stats time="2000" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats>
 <scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats timestamp="1381380480237"><stats time="992" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats timestamp="1382364853750"><stats time="4731" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats timestamp="1382364867444"><stats time="923" expectations="2" successes="2" examples="2"></stats></scalaz.stream.mongodb.filesystem.FSDeleteSpec-stats>

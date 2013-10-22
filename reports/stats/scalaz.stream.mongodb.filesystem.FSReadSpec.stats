@@ -47,3 +47,5 @@
 <scalaz.stream.mongodb.filesystem.FSReadSpec-stats timestamp="1381380020986"><stats time="1908" expectations="6" successes="6" examples="6"></stats></scalaz.stream.mongodb.filesystem.FSReadSpec-stats>
 <scalaz.stream.mongodb.filesystem.FSReadSpec-stats timestamp="1381380473782"><stats time="3802" expectations="6" successes="6" examples="6"></stats></scalaz.stream.mongodb.filesystem.FSReadSpec-stats>
 <scalaz.stream.mongodb.filesystem.FSReadSpec-stats timestamp="1381380480236"><stats time="2946" expectations="6" successes="6" examples="6"></stats></scalaz.stream.mongodb.filesystem.FSReadSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSReadSpec-stats timestamp="1382364858601"><stats time="3192" expectations="6" successes="6" examples="6"></stats></scalaz.stream.mongodb.filesystem.FSReadSpec-stats>
+<scalaz.stream.mongodb.filesystem.FSReadSpec-stats timestamp="1382364867443"><stats time="1980" expectations="6" successes="6" examples="6"></stats></scalaz.stream.mongodb.filesystem.FSReadSpec-stats>

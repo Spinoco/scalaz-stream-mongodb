@@ -20,3 +20,4 @@
 <scalaz.stream.mongodb.aggregate.MapReduceSpec-stats timestamp="1381379855784"><stats time="1645" expectations="4" successes="4" examples="4"></stats></scalaz.stream.mongodb.aggregate.MapReduceSpec-stats>
 <scalaz.stream.mongodb.aggregate.MapReduceSpec-stats timestamp="1381380025043"><stats time="1133" expectations="4" successes="4" examples="4"></stats></scalaz.stream.mongodb.aggregate.MapReduceSpec-stats>
 <scalaz.stream.mongodb.aggregate.MapReduceSpec-stats timestamp="1381380485991"><stats time="2244" expectations="4" successes="4" examples="4"></stats></scalaz.stream.mongodb.aggregate.MapReduceSpec-stats>
+<scalaz.stream.mongodb.aggregate.MapReduceSpec-stats timestamp="1382364888750"><stats time="2320" expectations="4" successes="4" examples="4"></stats></scalaz.stream.mongodb.aggregate.MapReduceSpec-stats>

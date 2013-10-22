@@ -32,3 +32,4 @@
 <scalaz.stream.mongodb.bson.BSONSpec-stats timestamp="1381379851394"><stats time="2" expectations="18" errors="18" examples="18"><trend><stats time="2" expectations="-1782" errors="18" successes="-18"></stats></trend></stats></scalaz.stream.mongodb.bson.BSONSpec-stats>
 <scalaz.stream.mongodb.bson.BSONSpec-stats timestamp="1381380021788"><stats time="6" expectations="1800" successes="18" examples="18"><trend><stats time="6" expectations="1782" errors="-18" successes="18"></stats></trend></stats></scalaz.stream.mongodb.bson.BSONSpec-stats>
 <scalaz.stream.mongodb.bson.BSONSpec-stats timestamp="1381380483182"><stats time="2" expectations="1800" successes="18" examples="18"></stats></scalaz.stream.mongodb.bson.BSONSpec-stats>
+<scalaz.stream.mongodb.bson.BSONSpec-stats timestamp="1382364852513"><stats time="47" expectations="1800" successes="18" examples="18"></stats></scalaz.stream.mongodb.bson.BSONSpec-stats>

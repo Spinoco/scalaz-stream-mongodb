@@ -38,3 +38,4 @@
 <scalaz.stream.mongodb.update.UpdateBuilderSpec-stats timestamp="1381379844697"><stats time="8005" expectations="22" successes="22" examples="22"></stats></scalaz.stream.mongodb.update.UpdateBuilderSpec-stats>
 <scalaz.stream.mongodb.update.UpdateBuilderSpec-stats timestamp="1381380013882"><stats time="7629" expectations="22" successes="22" examples="22"></stats></scalaz.stream.mongodb.update.UpdateBuilderSpec-stats>
 <scalaz.stream.mongodb.update.UpdateBuilderSpec-stats timestamp="1381380479735"><stats time="9762" expectations="22" successes="22" examples="22"></stats></scalaz.stream.mongodb.update.UpdateBuilderSpec-stats>
+<scalaz.stream.mongodb.update.UpdateBuilderSpec-stats timestamp="1382364894553"><stats time="4111" expectations="24" successes="24" examples="24"><trend><stats time="4111" expectations="2" successes="2" examples="2"></stats></trend></stats></scalaz.stream.mongodb.update.UpdateBuilderSpec-stats>

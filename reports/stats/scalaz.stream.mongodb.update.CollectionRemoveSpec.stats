@@ -17,3 +17,10 @@
 <scalaz.stream.mongodb.update.CollectionRemoveSpec-stats timestamp="1381379854928"><stats time="1248" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.update.CollectionRemoveSpec-stats>
 <scalaz.stream.mongodb.update.CollectionRemoveSpec-stats timestamp="1381380014974"><stats time="451" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.update.CollectionRemoveSpec-stats>
 <scalaz.stream.mongodb.update.CollectionRemoveSpec-stats timestamp="1381380487957"><stats time="1667" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.update.CollectionRemoveSpec-stats>
+<scalaz.stream.mongodb.update.CollectionRemoveSpec-stats timestamp="1382364873951"><stats time="914" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.update.CollectionRemoveSpec-stats>
+<scalaz.stream.mongodb.update.CollectionRemoveSpec-stats timestamp="1382364921487"><stats time="682" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.update.CollectionRemoveSpec-stats>
+<scalaz.stream.mongodb.update.CollectionRemoveSpec-stats timestamp="1382365049196"><stats time="789" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.update.CollectionRemoveSpec-stats>
+<scalaz.stream.mongodb.update.CollectionRemoveSpec-stats timestamp="1382365116226"><stats time="681" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.update.CollectionRemoveSpec-stats>
+<scalaz.stream.mongodb.update.CollectionRemoveSpec-stats timestamp="1382365191740"><stats time="913" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.update.CollectionRemoveSpec-stats>
+<scalaz.stream.mongodb.update.CollectionRemoveSpec-stats timestamp="1382365291224"><stats time="784" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.update.CollectionRemoveSpec-stats>
+<scalaz.stream.mongodb.update.CollectionRemoveSpec-stats timestamp="1382365394642"><stats time="50465" expectations="1" successes="1" examples="1"></stats></scalaz.stream.mongodb.update.CollectionRemoveSpec-stats>

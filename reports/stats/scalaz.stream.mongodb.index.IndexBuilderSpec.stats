@@ -13,3 +13,4 @@
 <scalaz.stream.mongodb.index.IndexBuilderSpec-stats timestamp="1381379855538"><stats time="2" expectations="13" successes="13" examples="13"></stats></scalaz.stream.mongodb.index.IndexBuilderSpec-stats>
 <scalaz.stream.mongodb.index.IndexBuilderSpec-stats timestamp="1381380022409"><stats time="5" expectations="13" successes="13" examples="13"></stats></scalaz.stream.mongodb.index.IndexBuilderSpec-stats>
 <scalaz.stream.mongodb.index.IndexBuilderSpec-stats timestamp="1381380481474"><stats time="2" expectations="13" successes="13" examples="13"></stats></scalaz.stream.mongodb.index.IndexBuilderSpec-stats>
+<scalaz.stream.mongodb.index.IndexBuilderSpec-stats timestamp="1382364852509"><stats time="39" expectations="13" successes="13" examples="13"></stats></scalaz.stream.mongodb.index.IndexBuilderSpec-stats>

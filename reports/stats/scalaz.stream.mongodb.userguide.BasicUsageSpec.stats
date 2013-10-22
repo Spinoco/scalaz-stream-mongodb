@@ -43,3 +43,6 @@
 <scalaz.stream.mongodb.userguide.BasicUsageSpec-results timestamp="1381380481862"><result location="scalaz.stream.mongodb.userguide.BasicUsageSpec (BasicUsageSpec.scala:78)" id="-1470617948"><stats pending="1" expectations="1" examples="1"></stats></result>
 </scalaz.stream.mongodb.userguide.BasicUsageSpec-results>
 <scalaz.stream.mongodb.userguide.BasicUsageSpec-stats timestamp="1381380481886"><stats pending="1" expectations="1" examples="1"></stats></scalaz.stream.mongodb.userguide.BasicUsageSpec-stats>
+<scalaz.stream.mongodb.userguide.BasicUsageSpec-results timestamp="1382364890353"><result location="scalaz.stream.mongodb.userguide.BasicUsageSpec (BasicUsageSpec.scala:78)" id="-1470617948"><stats pending="1" expectations="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.userguide.BasicUsageSpec-results>
+<scalaz.stream.mongodb.userguide.BasicUsageSpec-stats timestamp="1382364890372"><stats pending="1" expectations="1" examples="1"></stats></scalaz.stream.mongodb.userguide.BasicUsageSpec-stats>

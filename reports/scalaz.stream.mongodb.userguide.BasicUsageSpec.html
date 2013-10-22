@@ -67,7 +67,7 @@
     </head><body><div class="colmask threecol">
             <div class="colmid">
               <div class="colleft">
-                <div class="col1"><div id="central"><html><title>Basic usage patterns</title><a name="Basic+usage+patterns"><h2 specId="1294975187">Basic usage patterns</h2></a><status class="ok"><div style="display: show; text-indent:0px;"><p>Mongo Streams can be used in various ways. It is designed to inject actual dependency on collection as late as possible and provides<br />powerful DSL with combinator syntax to allow expressive, simple to use, readable functional way to interact with mongoDB.</p><p>Any operation on collection is implemented as <code class="prettyprint">ChannelResult[A]</code>. <code class="prettyprint">A</code> Type parameter may be either <code class="prettyprint">DBObject</code> (when querying documents from<br />the collection), or <code class="prettyprint">WriteResult</code> (when performing save, insert or update). Additional types depend on each operation on collection.</p><p>To start with mongo streams include the generic syntax import</p><p><code class="prettyprint">import scalaz.stream.mongodb.collectionSyntax._</code></p><p>this will add to scope required implicits for Mongo Streams DSL.</p><a name="Create+simple+Queries"><h3>Create simple Queries</h3></a><p>Now you can easily create simple queries. The basic directive to do so is findDocuments code:</p><p><code class="prettyprint">query(&quot;key1&quot; === &quot;123&quot;)</code></p><p>This will return <code class="prettyprint">Query</code> object that can be used to perfrom actual query on collection like below:.</p>
+                <div class="col1"><div id="central"><html><title>Basic usage patterns</title><a name="Basic+usage+patterns"><h2 specId="147018588">Basic usage patterns</h2></a><status class="ok"><div style="display: show; text-indent:0px;"><p>Mongo Streams can be used in various ways. It is designed to inject actual dependency on collection as late as possible and provides<br />powerful DSL with combinator syntax to allow expressive, simple to use, readable functional way to interact with mongoDB.</p><p>Any operation on collection is implemented as <code class="prettyprint">ChannelResult[A]</code>. <code class="prettyprint">A</code> Type parameter may be either <code class="prettyprint">DBObject</code> (when querying documents from<br />the collection), or <code class="prettyprint">WriteResult</code> (when performing save, insert or update). Additional types depend on each operation on collection.</p><p>To start with mongo streams include the generic syntax import</p><p><code class="prettyprint">import scalaz.stream.mongodb.collectionSyntax._</code></p><p>this will add to scope required implicits for Mongo Streams DSL.</p><a name="Create+simple+Queries"><h3>Create simple Queries</h3></a><p>Now you can easily create simple queries. The basic directive to do so is findDocuments code:</p><p><code class="prettyprint">query(&quot;key1&quot; === &quot;123&quot;)</code></p><p>This will return <code class="prettyprint">Query</code> object that can be used to perfrom actual query on collection like below:.</p>
 <pre><code class="prettyprint">def queryOnlyActive = query(&quot;active&quot; === true)
 
     val allActiveUsers = (users through queryOnlyActive).runLog.run
@@ -129,7 +129,7 @@
         <tr><td>Results</td><td class="success">1 example, 0 failure, 0 error, 1 pending</td></tr>
       </table></html></div></div>
                 <div class="col2"><div id="leftcolumn"><div id="tree">
-      <ul><li id="1294975187"><a href="scalaz.stream.mongodb.userguide.BasicUsageSpec.html#Basic+usage+patterns">Basic usage patterns</a>
+      <ul><li id="147018588"><a href="scalaz.stream.mongodb.userguide.BasicUsageSpec.html#Basic+usage+patterns">Basic usage patterns</a>
             <ul><li id=""><a href="scalaz.stream.mongodb.userguide.BasicUsageSpec.html#Create+simple+Queries">Create simple Queries</a>
             
           </li><li id=""><a href="scalaz.stream.mongodb.userguide.BasicUsageSpec.html#Serializing+and+deserializing">Serializing and deserializing</a>
@@ -148,7 +148,7 @@
           </li></ul>
           </li></ul>
           </li></ul>
-      <script>$(function () {  $('#tree').jstree({'core':{'initially_open':['1294975187','1294975187'], 'animation':200}, 'plugins':['themes', 'html_data']}); });</script>
+      <script>$(function () {  $('#tree').jstree({'core':{'initially_open':['147018588','147018588'], 'animation':200}, 'plugins':['themes', 'html_data']}); });</script>
     </div></div></div>
                 <div class="col3"><div id="rightcolumn"></div></div>
               </div>

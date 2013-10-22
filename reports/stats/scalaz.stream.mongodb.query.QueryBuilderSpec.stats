@@ -88,3 +88,9 @@
 <result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-61157951"><stats pending="1" expectations="1" examples="1"></stats></result>
 </scalaz.stream.mongodb.query.QueryBuilderSpec-results>
 <scalaz.stream.mongodb.query.QueryBuilderSpec-stats timestamp="1381380474879"><stats pending="4" time="2" expectations="35" successes="31" examples="35"></stats></scalaz.stream.mongodb.query.QueryBuilderSpec-stats>
+<scalaz.stream.mongodb.query.QueryBuilderSpec-results timestamp="1382364855819"><result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-1031452176"><stats pending="1" time="3" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="73374265"><stats pending="1" time="4" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="1931634900"><stats pending="1" time="4" expectations="1" examples="1"></stats></result>
+<result location="scala.collection.LinearSeqOptimized (LinearSeqOptimized.scala:111)" id="-61157951"><stats pending="1" time="4" expectations="1" examples="1"></stats></result>
+</scalaz.stream.mongodb.query.QueryBuilderSpec-results>
+<scalaz.stream.mongodb.query.QueryBuilderSpec-stats timestamp="1382364855875"><stats pending="4" time="3" expectations="35" successes="31" examples="35"></stats></scalaz.stream.mongodb.query.QueryBuilderSpec-stats>

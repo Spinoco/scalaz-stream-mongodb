@@ -19,3 +19,4 @@
 <scalaz.stream.mongodb.aggregate.BasicAggregationSpec-stats timestamp="1381379854611"><stats time="1804" expectations="3" successes="3" examples="3"></stats></scalaz.stream.mongodb.aggregate.BasicAggregationSpec-stats>
 <scalaz.stream.mongodb.aggregate.BasicAggregationSpec-stats timestamp="1381380017369"><stats time="1037" expectations="3" successes="3" examples="3"></stats></scalaz.stream.mongodb.aggregate.BasicAggregationSpec-stats>
 <scalaz.stream.mongodb.aggregate.BasicAggregationSpec-stats timestamp="1381380478537"><stats time="2334" expectations="3" successes="3" examples="3"></stats></scalaz.stream.mongodb.aggregate.BasicAggregationSpec-stats>
+<scalaz.stream.mongodb.aggregate.BasicAggregationSpec-stats timestamp="1382364888730"><stats time="1765" expectations="3" successes="3" examples="3"></stats></scalaz.stream.mongodb.aggregate.BasicAggregationSpec-stats>

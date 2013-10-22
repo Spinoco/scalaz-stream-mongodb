@@ -67,22 +67,22 @@
     </head><body><div id="breadcrumbs"><a href="scalaz.stream.mongodb.userguide.GridFSUsageSpec.html">GridFSUsageSpec</a><t> / </t><a href="scalaz.stream.mongodb.filesystem.FSDeleteSpec.html">FSDeleteSpec</a></div><div class="colmask threecol">
             <div class="colmid">
               <div class="colleft">
-                <div class="col1"><div id="central"><html><title>Removing files to filesystem</title><a name="Removing+files+to+filesystem"><h2 specId="678887084">Removing files to filesystem</h2></a><status class="ok"><p></p></status><status class="ok"><p></p></status><status class="ok"><div style="display: show; text-indent:20px;"><p>Mongo streams allows to remove files based on previsously llisted files, in very simillar way how the reading of the files work.<br />Instead of returning content of the file, it will return <code class="prettyprint">Unit</code>.</p><p>Files can be removed with either single file syntax or multiple file syntax: </p>
+                <div class="col1"><div id="central"><html><title>Removing files to filesystem</title><a name="Removing+files+to+filesystem"><h2 specId="608525385">Removing files to filesystem</h2></a><status class="ok"><p></p></status><status class="ok"><p></p></status><status class="ok"><div style="display: show; text-indent:20px;"><p>Mongo streams allows to remove files based on previsously llisted files, in very simillar way how the reading of the files work.<br />Instead of returning content of the file, it will return <code class="prettyprint">Unit</code>.</p><p>Files can be removed with either single file syntax or multiple file syntax: </p>
 <ul>
   <li>to remove single file use:</li>
 </ul></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">list named (&quot;old_file.txt&quot;) and removeFile</code><br /></div></status><status class="ok"><div style="display: show; text-indent:0px;"><ul>
   <li>to remove multiple files use:</li>
 </ul></div></status><status class="ok"><div style="display: show; text-indent:0px;"></div></status><status class="ok"><div style="display: show; text-indent:0px;"><img src="./images/icon_success_sml.gif" /> <code class="prettyprint">list files() foreach removeFile).flatMapProcess(_._2)</code><br /></div></status><status class="ok"><div style="display: show; text-indent:65px;"></div></status><status class="ok"><br /></status><table class="dataTable">
         <tr><th colSpan="2">Total for specification FSDeleteSpec</th></tr>
-        <tr><td>Finished in</td><td class="info">992 ms</td></tr>
+        <tr><td>Finished in</td><td class="info">923 ms</td></tr>
         <tr><td>Results</td><td class="success">2 examples, 0 failure, 0 error</td></tr>
       </table></html></div></div>
                 <div class="col2"><div id="leftcolumn"><div id="tree">
-      <ul><li id="1055328655"><a href="scalaz.stream.mongodb.userguide.GridFSUsageSpec.html#Mongodb+filesystem+usage">Mongodb filesystem usage</a>
+      <ul><li id="1177505401"><a href="scalaz.stream.mongodb.userguide.GridFSUsageSpec.html#Mongodb+filesystem+usage">Mongodb filesystem usage</a>
             <ul><li id=""><a href="scalaz.stream.mongodb.userguide.GridFSUsageSpec.html#Filesystem">Filesystem</a>
             
           </li><li id=""><a href="scalaz.stream.mongodb.userguide.GridFSUsageSpec.html#Listing+files">Listing files</a>
-            <ul><li id="1971689579"><a href="scalaz.stream.mongodb.filesystem.FSListSpec.html#Listing+files+in+filesystem">Listing files in filesystem</a>
+            <ul><li id="2062871150"><a href="scalaz.stream.mongodb.filesystem.FSListSpec.html#Listing+files+in+filesystem">Listing files in filesystem</a>
             <ul><li id=""><a href="scalaz.stream.mongodb.filesystem.FSListSpec.html#Basic+lists">Basic lists</a>
             
           </li><li id=""><a href="scalaz.stream.mongodb.filesystem.FSListSpec.html#Complex+queries">Complex queries</a>
@@ -94,7 +94,7 @@
           </li></ul>
           </li></ul>
           </li><li id=""><a href="scalaz.stream.mongodb.userguide.GridFSUsageSpec.html#Reading+from+files">Reading from files</a>
-            <ul><li id="1519900547"><a href="scalaz.stream.mongodb.filesystem.FSReadSpec.html#Reading+files+in+filesystem">Reading files in filesystem</a>
+            <ul><li id="1588587454"><a href="scalaz.stream.mongodb.filesystem.FSReadSpec.html#Reading+files+in+filesystem">Reading files in filesystem</a>
             <ul><li id=""><a href="scalaz.stream.mongodb.filesystem.FSReadSpec.html#Reading+single+file">Reading single file</a>
             
           </li><li id=""><a href="scalaz.stream.mongodb.filesystem.FSReadSpec.html#Reading+multiple+files">Reading multiple files</a>
@@ -104,7 +104,7 @@
           </li></ul>
           </li></ul>
           </li><li id=""><a href="scalaz.stream.mongodb.userguide.GridFSUsageSpec.html#Writing+to+files">Writing to files</a>
-            <ul><li id="1198086230"><a href="scalaz.stream.mongodb.filesystem.FSWriteSpec.html#Writing+files+to+filesystem">Writing files to filesystem</a>
+            <ul><li id="2006042620"><a href="scalaz.stream.mongodb.filesystem.FSWriteSpec.html#Writing+files+to+filesystem">Writing files to filesystem</a>
             
           </li><li id=""><a href="scalaz.stream.mongodb.filesystem.FSWriteSpec.html#File+syntax">File syntax</a>
             
@@ -112,12 +112,12 @@
             
           </li></ul>
           </li><li id=""><a href="scalaz.stream.mongodb.userguide.GridFSUsageSpec.html#Deleting+files">Deleting files</a>
-            <ul><li id="678887084"><a href="scalaz.stream.mongodb.filesystem.FSDeleteSpec.html#Removing+files+to+filesystem">Removing files to filesystem</a>
+            <ul><li id="608525385"><a href="scalaz.stream.mongodb.filesystem.FSDeleteSpec.html#Removing+files+to+filesystem">Removing files to filesystem</a>
             
           </li></ul>
           </li></ul>
           </li></ul>
-      <script>$(function () {  $('#tree').jstree({'core':{'initially_open':['1055328655','678887084'], 'animation':200}, 'plugins':['themes', 'html_data']}); });</script>
+      <script>$(function () {  $('#tree').jstree({'core':{'initially_open':['1177505401','608525385'], 'animation':200}, 'plugins':['themes', 'html_data']}); });</script>
     </div></div></div>
                 <div class="col3"><div id="rightcolumn"></div></div>
               </div>

@@ -13,3 +13,4 @@
 <scalaz.stream.mongodb.userguide.AggregationUsageSpec-stats timestamp="1381379846586"><stats><trend><stats expectations="-1"></stats></trend></stats></scalaz.stream.mongodb.userguide.AggregationUsageSpec-stats>
 <scalaz.stream.mongodb.userguide.AggregationUsageSpec-stats timestamp="1381380013848"><stats><trend><stats expectations="-1"></stats></trend></stats></scalaz.stream.mongodb.userguide.AggregationUsageSpec-stats>
 <scalaz.stream.mongodb.userguide.AggregationUsageSpec-stats timestamp="1381380475880"><stats><trend><stats expectations="-1"></stats></trend></stats></scalaz.stream.mongodb.userguide.AggregationUsageSpec-stats>
+<scalaz.stream.mongodb.userguide.AggregationUsageSpec-stats timestamp="1382364874130"><stats time="1"><trend><stats time="1" expectations="-1"></stats></trend></stats></scalaz.stream.mongodb.userguide.AggregationUsageSpec-stats>
