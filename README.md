@@ -11,7 +11,7 @@ If you want to give try to mongo streams you can include it in your sbt build fi
 
 ``` scala
 
-resolvers ++= Seq("snapshots" at "http://oss.sonatype.org/content/repositories/snapshots")
+resolvers ++= Seq("snapshots" at "http://oss.sonatype.org/content/repositories/releases")
  
 libraryDependencies += "com.spinoco" %% "scalaz-stream-mongodb" % "0.1.0"
 
