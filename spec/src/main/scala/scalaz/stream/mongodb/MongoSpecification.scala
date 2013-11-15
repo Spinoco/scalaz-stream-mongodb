@@ -95,7 +95,7 @@ trait MongoSpecificationBase extends SpecificationLike {
    */
   override def map(fs: => Fragments) =
     Step(instance) ^
-      Step(stopOnFail = true) ^
+      Step.stopOnFail ^
       fs ^
       Step(instance.shutdown)
 

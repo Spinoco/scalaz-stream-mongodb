@@ -12,7 +12,7 @@ import GitKeys._
 
 object build extends Build {
 
-  lazy val specs2Version = "2.2.2"
+  lazy val specs2Version = "2.2.3"
 
   lazy val resolverSettings =
     resolvers ++= Seq(
@@ -106,7 +106,7 @@ object build extends Build {
     Defaults.defaultSettings ++
       Seq(
         organization := "com.spinoco"
-        , version := "0.2.0"
+        , version := "0.3.0-SNAPSHOT"
         , scalaVersion := "2.10.2"
         , conflictManager := ConflictManager.strict
         , shellPrompt := ShellPrompt.buildShellPrompt
