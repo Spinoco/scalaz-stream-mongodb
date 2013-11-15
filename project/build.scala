@@ -29,7 +29,7 @@ object build extends Build {
         case Seq(Some(user), Some(pass)) =>
           Credentials("Sonatype Nexus Repository Manager", "oss.sonatype.org", user, pass)
         case _ =>
-          Credentials(Path.userHome / ".ivy2" / ".credentials.sonatype")
+          Credentials(Path.userHome / ".ivy2" / ".credentials")
       }
     }
   )
@@ -55,39 +55,16 @@ object build extends Build {
     , scalacOptions in Test ++= Seq("-Yrangepos")
   )
 
-  lazy val publishSettings = Seq(
-    publishMavenStyle := true
-    , publishTo <<= (version).apply {
-      v =>
-        val nexus = "https://oss.sonatype.org/"
-        if (v.trim.endsWith("SNAPSHOT"))
-          Some("snapshots" at nexus + "content/repositories/snapshots")
-        else
-          Some("releases" at nexus + "service/local/staging/deploy/maven2")
+
+  lazy val publishSettings = Seq (
+    publishTo <<= (version).apply { v =>
+      val nexus = "https://maven.spinoco.com/"
+      if (v.trim.endsWith("SNAPSHOT"))
+        Some("Snapshots" at nexus + "nexus/content/repositories/snapshots")
+      else
+        Some("Releases" at nexus + "nexus/content/repositories/releases")
     }
-    , publishArtifact in Test := false
-    , pomIncludeRepository := { _ => false }
-    , pomExtra := (
-        <url>http://spinoco.github.io/scalaz-stream-mongodb</url>
-        <licenses>
-          <license>
-            <name>MIT</name>
-            <url>https://github.com/Spinoco/scalaz-stream-mongodb/blob/master/LICENSE</url>
-            <distribution>repo</distribution>
-          </license>
-        </licenses>
-        <scm>
-          <url>git@github.com:Spinoco/scalaz-stream-mongodb.git</url>
-          <connection>scm:git:git@github.com:Spinoco/scalaz-stream-mongodb.git</connection>
-        </scm>
-        <developers>
-          <developer>
-            <id>spinoco</id>
-            <name>Spinoco</name>
-            <url>http://www.spinoco.com</url>
-          </developer>
-        </developers>
-      ))
+  )
 
 
   lazy val webSettings = SbtSite.site.settings ++ SbtSite.site.includeScaladoc()
@@ -106,7 +83,7 @@ object build extends Build {
     Defaults.defaultSettings ++
       Seq(
         organization := "com.spinoco"
-        , version := "0.3.0-SNAPSHOT"
+        , version := "0.3.0.S-SNAPSHOT"
         , scalaVersion := "2.10.2"
         , conflictManager := ConflictManager.strict
         , shellPrompt := ShellPrompt.buildShellPrompt
