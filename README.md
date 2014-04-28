@@ -22,4 +22,6 @@ libraryDependencies += "com.spinoco" %% "scalaz-stream-mongodb-spec" % "0.1.0"
  
 ```
 
+The library should be compilable with scalaz.stream 0.4.0, we plan to upgrade it to 0.5.0 when that release will be available. 
+
 
